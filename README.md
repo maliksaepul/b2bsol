@@ -1,0 +1,1 @@
+# inspigo-fe-boilerplate
