@@ -1,0 +1,10 @@
+[
+    {
+        "name": "inspigo-new-cms",
+        "interpreter": "node@14.17.0",
+        "script": "server.js",
+        "interpreter_args": "--harmony",
+        "autorestart": true,
+        "watch": false
+    }
+]

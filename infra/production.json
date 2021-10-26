@@ -1,0 +1,10 @@
+{
+    "name": "inspigo-new-cms",
+    "script": "server.js",
+    "node_args": "--max_old_space_size=250",
+    "instances": 1,
+    "exec_mode": "cluster",
+    "env": {
+        "NODE_ENV": "production"
+    }
+}
