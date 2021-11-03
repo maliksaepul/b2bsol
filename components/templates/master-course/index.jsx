@@ -1,4 +1,4 @@
-import Button from '@/components/atoms/Button'
+import Button from '@/components/atoms/button'
 import CardEvent from '@/components/molecules/card-event'
 import Carousel from '@/components/molecules/carousel'
 import Label from '@/components/molecules/label'

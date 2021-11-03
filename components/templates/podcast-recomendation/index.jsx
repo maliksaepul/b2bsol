@@ -1,4 +1,4 @@
-import Button from '@/components/atoms/Button'
+import Button from '@/components/atoms/button'
 import Label from '@/components/molecules/label'
 import Marquee from '@/components/molecules/marquee'
 import styles from './style.module.scss'

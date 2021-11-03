@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Interweave from 'interweave'
-import Button from 'components/atoms/Button'
+import Button from 'components/atoms/button'
 import styles from './style.module.scss'
 import React from 'react'
 import cx from 'classnames'
