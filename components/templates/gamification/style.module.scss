@@ -1,0 +1,47 @@
+@import 'styles/mixins';
+@import 'styles/dstoken';
+.gamification{
+    background-color: $primary;
+    min-height: 274px;
+    @include global-radius();
+    margin-bottom: 1rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    background-image: url('../../../public/gamification_bg.png');
+    
+    @include media-max-width($tablet-breakpoint){
+        flex-direction: column;
+    }
+
+    &_card{
+        padding: 2.5rem; 
+    }
+    &_badges{
+        height: 29.5rem;
+        position: relative;
+        
+        &_1{
+            position: absolute;
+            top: -1rem;
+            left: 10%;
+
+
+        }
+        &_2{
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform : translate(0, -50%)
+        }
+        &_3{
+            position: absolute;
+            bottom: 10%;
+            left: 0;
+            transform : translate(0, 10%)
+        }
+    }
+    &_item{
+        flex: 1 1 0px;
+    }
+}

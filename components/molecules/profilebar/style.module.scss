@@ -1,0 +1,34 @@
+.profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & > * {
+        margin: 0 0.5rem;
+    }
+
+    &_cover{
+        background-color: #dcdcdc;
+        border-radius: 50%;
+        content: "";
+        width: 2.5rem;
+        height : 2.5rem;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content : center;
+        align-items: center;
+    }
+
+}
+
+.chevron {
+    &_up{
+        transform: rotate(180deg);
+        transition: rotate 1s;
+    }
+
+    &_down{
+        transform: rotate(0deg);
+        transition: rotate 1s;
+    }
+}

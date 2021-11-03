@@ -1,0 +1,25 @@
+@import 'styles/mixins';
+.cardBadge{
+    background-color: #fff;
+    width: 12.5rem;
+    height: 12.5rem;
+    @include global-radius();
+    color: black;
+    padding: 1.25rem;
+
+    @include media-max-width($s-tablet-breakpoint){
+        width: 11rem;
+        height: 11rem;
+        font-size: 0.75rem !important;
+        padding: 1rem;
+
+    }
+
+    @include media-max-width($xs-mobile-breakpoint){
+        width: 10rem;
+        height: 10rem;
+        font-size: 0.75rem !important;
+        padding: 0.75rem;
+    }
+
+}

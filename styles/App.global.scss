@@ -1,5 +1,5 @@
-@import 'styles/color';
-@import 'styles/typo';
+@import './dstoken';
+@import './typo';
 
 * {
     box-sizing: border-box;
@@ -9,9 +9,10 @@
 
 html,
 body {
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif, -apple-system, BlinkMacSystemFont;
+    font-family : $font;
+    background-color: $secondary;
 }
+
 
 a {
     color: inherit;

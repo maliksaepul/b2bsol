@@ -1,0 +1,35 @@
+@import 'styles/mixins';
+.contents{
+    content: "";
+    min-height: 25rem;
+    @include global-radius();
+    background-color: #fff;
+    padding : 2.5rem;
+
+    .toolbar{
+        display: flex;
+        justify-content : space-between;
+        margin-bottom : 1rem;
+
+        &_item{
+            flex: 1 1 0;
+            display: flex;
+            border-radius : 8px;
+            background-color: #dcdcdc;
+            height: 2.5rem;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+    }
+
+    .grid{
+        border-radius : 8px;
+        content : "";
+        min-height: 18.75rem;
+        background-color: #dcdcdc;
+        display : flex;
+        justify-content : center;
+        align-items : center;
+    }
+}

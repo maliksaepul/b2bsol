@@ -1,0 +1,10 @@
+@import 'styles/mixins';
+@import 'styles/dstoken';
+.statistic{
+    background-color: $primary;
+    height: 274px;
+    @include global-radius();
+    margin-bottom: 1rem;
+    color: #fff;
+    padding: 2.5rem;
+}

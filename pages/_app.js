@@ -6,8 +6,9 @@ import Head from 'next/head'
 // Utils
 import { IS_DEVELOPMENT } from 'utils/constants'
 
+
 // Styles
-import 'styles/App.global.scss'
+import '@/styles/App.global.scss'
 
 const App = ({ Component, pageProps }) => {
     const meta = {
@@ -41,7 +42,6 @@ const App = ({ Component, pageProps }) => {
 
                 {IS_DEVELOPMENT && <meta name="robots" content="noindex" />}
             </Head>
-
             <Component {...pageProps} />
         </React.Fragment>
     )

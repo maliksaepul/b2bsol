@@ -1,7 +1,7 @@
 // Libraries
 require('dotenv').config()
 const { createServer } = require('http')
-const { URL } = require('url')
+const parse = require('url-parse')
 const next = require('next')
 
 const PORT = process.env.PORT
@@ -22,7 +22,7 @@ const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
     createServer((req, res) => {
-        const parsedUrl = new URL(req.url)
+        const parsedUrl = parse(req.url, true)
 
         handle(req, res, parsedUrl)
     }).listen(PORT, error => {

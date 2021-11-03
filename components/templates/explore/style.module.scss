@@ -1,0 +1,10 @@
+@import 'styles/mixins';
+.explore{
+    padding : 2.5rem;
+    background-color: #fff;
+    border-radius :1.25rem;
+    min-height: 38.25rem;
+    margin-bottom: 1rem;
+    @include global-radius();
+
+}

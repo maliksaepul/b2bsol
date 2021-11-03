@@ -1,0 +1,46 @@
+@import 'styles/dstoken';
+@import 'styles/mixins';
+.button{
+    outline: none;
+    border: none;
+    @include global-radius();
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width : 15rem;
+    padding: 1rem 2rem; 
+    &_secondary{
+        background-color: $secondary;
+        color: black;
+    }
+    &_primary{
+        background-color: $primary;
+        color: white;
+    }
+
+    &_lg { 
+        max-width : 16.25rem;
+        font-size: 1rem;
+        padding: 1.25rem 3.75rem; 
+        @include media-max-width($tablet-breakpoint) {
+            padding: 0.81rem 3rem;  
+        }
+    }
+    &_xsm{
+        padding: .55rem 0.75rem; 
+        max-width: 8.75rem;
+        
+    }
+
+    &_sm { 
+        padding: .81rem 3.75rem; 
+        max-width : 1rem;
+        font-size: 1rem;
+    }
+
+}
