@@ -1,4 +1,4 @@
-import Button from '@/components/atoms/Button'
+import Button from '@/components/atoms/button'
 import CardBadge from '@/components/molecules/card-badge'
 import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
