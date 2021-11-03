@@ -1,16 +1,15 @@
 @import 'styles/mixins';
-.masterCourse{
+.masterCourse {
     display: flex;
-    align-items : center;
-    @include media-max-width($mobile-breakpoint){
+    align-items: center;
+    @include media-max-width($mobile-breakpoint) {
         flex-direction: column;
     }
-    &_item{
+    &_item {
         flex: 1 1 0;
     }
-    &_courses{
-        width:100%;
-        max-width: 31.25rem ;
+    &_courses {
+        width: 100%;
+        max-width: 31.25rem;
     }
-
 }

@@ -1,7 +1,7 @@
 import styles from './style.module.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
-const Contents = ({children}) => {
+const Contents = ({ children }) => {
     return (
         <div className={styles.contents}>
             <div className={styles.toolbar}>
@@ -13,16 +13,14 @@ const Contents = ({children}) => {
                     <div>Urutkan</div>
                 </div>
             </div>
-            <div className={styles.grid}>
-                content grid
-            </div>
+            <div className={styles.grid}>content grid</div>
             {children}
         </div>
     )
 }
 
 Contents.propTypes = {
-    children: PropTypes.arrayOf(PropTypes.element)
+    children: PropTypes.arrayOf(PropTypes.element),
 }
 
 export default Contents

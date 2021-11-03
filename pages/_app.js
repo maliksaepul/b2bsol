@@ -6,7 +6,6 @@ import Head from 'next/head'
 // Utils
 import { IS_DEVELOPMENT } from 'utils/constants'
 
-
 // Styles
 import '@/styles/App.global.scss'
 

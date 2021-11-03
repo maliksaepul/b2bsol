@@ -3,7 +3,6 @@ import styles from './style.module.scss'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 
-
 const Button = ({ varian, size, cta, id, label, icon }) => {
     let typeOfButton, sizeOfButton
     switch (varian) {
@@ -68,12 +67,12 @@ const Button = ({ varian, size, cta, id, label, icon }) => {
 }
 
 Button.propTypes = {
-    varian : PropTypes.string,
-    size : PropTypes.string,
-    cta : PropTypes.func,
-    id : PropTypes.string,
-    icon : PropTypes.bool,
-    label : PropTypes.string
+    varian: PropTypes.string,
+    size: PropTypes.string,
+    cta: PropTypes.func,
+    id: PropTypes.string,
+    icon: PropTypes.bool,
+    label: PropTypes.string,
 }
 
 export default Button

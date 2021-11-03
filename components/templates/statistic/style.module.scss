@@ -1,6 +1,6 @@
 @import 'styles/mixins';
 @import 'styles/dstoken';
-.statistic{
+.statistic {
     background-color: $primary;
     height: 274px;
     @include global-radius();

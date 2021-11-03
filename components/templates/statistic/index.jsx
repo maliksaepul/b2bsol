@@ -4,20 +4,20 @@ import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
 import React from 'react'
 
-
 const Statistic = () => {
     return (
-       <div className={styles.statistic}>
-            <Label title={"Statistik Pembelajaran"} description={"pantau activitas pembelajaran kamu"} />
+        <div className={styles.statistic}>
+            <Label
+                title={'Statistik Pembelajaran'}
+                description={'pantau activitas pembelajaran kamu'}
+            />
 
-            
             <Carousel>
-            <CounterStats />
-            <CounterStats />
-            <CounterStats />
+                <CounterStats />
+                <CounterStats />
+                <CounterStats />
             </Carousel>
-
-       </div>
+        </div>
     )
 }
 

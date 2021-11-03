@@ -5,7 +5,6 @@ import Banner4x1 from '@/components/templates/banner/4x1'
 import Contents from '@/components/molecules/contents'
 import React from 'react'
 
-
 const audioplaybook = () => {
     return (
         <>
@@ -24,14 +23,12 @@ const audioplaybook = () => {
                 </Section>
                 <Section>
                     <Contents>
-                <div className="">
-                        <div className="">search component</div>
-                        <div className="">filter component</div>
-                        <div className="">sort component</div>
-                    </div>
-                    <div>
-                        audio playbook grid
-                    </div>
+                        <div className="">
+                            <div className="">search component</div>
+                            <div className="">filter component</div>
+                            <div className="">sort component</div>
+                        </div>
+                        <div>audio playbook grid</div>
                     </Contents>
                 </Section>
             </Layout>

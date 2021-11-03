@@ -1,76 +1,69 @@
 @import 'styles/mixins';
 .nav {
     height: 3.5rem;
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     list-style: none;
     background-color: #dcdcdc;
     font-size: 13px;
     @include global-gap();
-    
-    &_left{
+
+    &_left {
         justify-content: flex-start;
     }
 
-    &_right{
+    &_right {
         justify-content: flex-end;
     }
 
-    &_center{
+    &_center {
         justify-content: center;
     }
 
-
-   
-
-    &_item::before{
-        content: "";
-        position:absolute;
+    &_item::before {
+        content: '';
+        position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
-        height : 0.75rem;
-        background-color: #FFEEBD;
+        height: 0.75rem;
+        background-color: #ffeebd;
         // transform-origin: left;
         transform: scaleX(0);
-        transition: transform 0.2s,
-        height 0.4s cubic-bezier(1,0,0,1) 0.2s;
-
+        transition: transform 0.2s, height 0.4s cubic-bezier(1, 0, 0, 1) 0.2s;
     }
 
-    &_item:hover::before{
-        transform : scaleX(1);
-        height : 100%;
-        
+    &_item:hover::before {
+        transform: scaleX(1);
+        height: 100%;
     }
-  
 
-    &_item{
+    &_item {
         height: inherit;
         position: relative;
         text-transform: capitalize;
         display: flex;
         align-items: center;
-        margin:0 0.5rem;
+        margin: 0 0.5rem;
 
-        @include media-max-width($mobile-breakpoint){
+        @include media-max-width($mobile-breakpoint) {
             display: none;
         }
     }
 
-    &_item:first-child{
-        margin-left : unset;
+    &_item:first-child {
+        margin-left: unset;
     }
-    &_item:last-child{
-        margin-right : unset;
+    &_item:last-child {
+        margin-right: unset;
     }
-    &_link{
-        padding : 0.75rem 0;
+    &_link {
+        padding: 0.75rem 0;
         position: relative;
         z-index: 10;
     }
-    &_link:hover::before{
+    &_link:hover::before {
         color: white;
     }
 }

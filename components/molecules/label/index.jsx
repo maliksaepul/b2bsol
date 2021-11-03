@@ -5,24 +5,23 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 
 const Label = ({ title, description, size, varian, headline }) => {
- 
-   let sizeTitle = "";
-   let sizeLabel = "";
-   let align="";
-   let head = "";
+    let sizeTitle = ''
+    let sizeLabel = ''
+    let align = ''
+    let head = ''
 
     switch (size) {
         case 'large':
             sizeLabel = styles.label_lg
-            sizeTitle = "h1"
+            sizeTitle = 'h1'
             break
         case 'small':
             sizeLabel = styles.label_sm
-            sizeTitle = "h5"
+            sizeTitle = 'h5'
             break
         default:
-            sizeLabel=""
-            sizeTitle=""
+            sizeLabel = ''
+            sizeTitle = ''
             break
     }
 
@@ -40,12 +39,12 @@ const Label = ({ title, description, size, varian, headline }) => {
 
     switch (headline) {
         case true:
-        head = styles.label_headline;
-            break;
-    
+            head = styles.label_headline
+            break
+
         default:
-            head = "";
-            break;
+            head = ''
+            break
     }
 
     return (
@@ -57,7 +56,11 @@ const Label = ({ title, description, size, varian, headline }) => {
 }
 
 Label.propTypes = {
-     title : PropTypes.string, description : PropTypes.string, size : PropTypes.string, varian : PropTypes.string , headline : PropTypes.bool 
+    title: PropTypes.string,
+    description: PropTypes.string,
+    size: PropTypes.string,
+    varian: PropTypes.string,
+    headline: PropTypes.bool,
 }
 
 export default Label

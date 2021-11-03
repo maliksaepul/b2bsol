@@ -1,22 +1,21 @@
-@import "styles/mixins";
-@import "styles/dstoken";
-.section{
+@import 'styles/mixins';
+@import 'styles/dstoken';
+.section {
     position: relative;
-    &_container{
+    &_container {
         position: relative;
         @include global-gap();
     }
 
-    &_primary{
+    &_primary {
         background-color: $primary;
         color: white;
     }
 
-    &_decoration{
+    &_decoration {
         position: absolute;
-        width : 100%;
+        width: 100%;
         z-index: 996;
         background-color: transparent;
-        
     }
 }

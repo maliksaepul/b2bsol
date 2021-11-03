@@ -1,12 +1,12 @@
 @import 'styles/mixins';
-.banner{
+.banner {
     background-color: #fff;
     @include global-radius();
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    &_4x1{
-        content: "";
+    &_4x1 {
+        content: '';
         aspect-ratio: 4/1;
     }
 }

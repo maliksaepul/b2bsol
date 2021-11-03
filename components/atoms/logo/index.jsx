@@ -5,17 +5,15 @@ import React from 'react'
 const Logo = () => {
     return (
         <Link href={'/'}>
-            <a >
-            <Image
-                src={Logos}
-                alt="Picture of the author"
-                width={120}
-                height={25}
-            />
+            <a>
+                <Image
+                    src={Logos}
+                    alt="Picture of the author"
+                    width={120}
+                    height={25}
+                />
             </a>
-            
         </Link>
-        
     )
 }
 

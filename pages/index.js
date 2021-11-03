@@ -9,7 +9,7 @@ import Schedule from '@/components/templates/schedule'
 import Section from '@/components/atoms/section'
 import Gamification from '@/components/templates/gamification'
 import PodcastRecomendation from '@/components/templates/podcast-recomendation'
-import MasterCourse from '@/components/templates/master-course';
+import MasterCourse from '@/components/templates/master-course'
 
 // Views
 
@@ -22,10 +22,10 @@ const HomePage = () => {
 
             <Layout>
                 <Section>
-                    <About subtitle={"Learning Platform"} />
+                    <About subtitle={'Learning Platform'} />
                 </Section>
                 <Section>
-                    <Explore user={{name : "Malik"}} />
+                    <Explore user={{ name: 'Malik' }} />
                 </Section>
                 <Section>
                     <Statistic />
@@ -37,10 +37,10 @@ const HomePage = () => {
                     <Gamification />
                 </Section>
                 <Section>
-                    <PodcastRecomendation/>
+                    <PodcastRecomendation />
                 </Section>
-                <Section varian={"primary"}>
-                    <MasterCourse/>
+                <Section varian={'primary'}>
+                    <MasterCourse />
                 </Section>
             </Layout>
         </React.Fragment>

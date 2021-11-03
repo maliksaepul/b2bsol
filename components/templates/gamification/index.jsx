@@ -28,13 +28,13 @@ const Gamification = () => {
             <div className={styles.gamification_item}>
                 <div className={styles.gamification_badges}>
                     <div className={styles.gamification_badges_1}>
-                        <CardBadge icon={"mindfulness"} />
+                        <CardBadge icon={'mindfulness'} />
                     </div>
                     <div className={styles.gamification_badges_2}>
-                        <CardBadge icon={"adventure"} />
+                        <CardBadge icon={'adventure'} />
                     </div>
                     <div className={styles.gamification_badges_3}>
-                        <CardBadge icon={"kidsnfriend"} />
+                        <CardBadge icon={'kidsnfriend'} />
                     </div>
                 </div>
             </div>

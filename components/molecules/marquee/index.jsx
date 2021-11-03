@@ -22,7 +22,8 @@ const Marquee = ({ contents, animationDuration }) => {
 }
 
 Marquee.propTypes = {
-    contents : PropTypes.array, animationDuration : PropTypes.string, 
+    contents: PropTypes.array,
+    animationDuration: PropTypes.string,
 }
 
 export default Marquee

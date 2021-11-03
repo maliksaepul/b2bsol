@@ -1,6 +1,6 @@
 @import 'styles/mixins';
-.countstats{
-    display : flex;
+.countstats {
+    display: flex;
     flex-direction: row;
     align-items: center;
     background-color: #fff;
@@ -9,7 +9,7 @@
     width: 300px;
     border-radius: 8px;
     margin: 1rem;
-    div:first-child{
+    div:first-child {
         margin-right: 1rem;
     }
 }

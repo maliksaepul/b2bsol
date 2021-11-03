@@ -1,18 +1,18 @@
 @import 'styles/mixins';
-.recomended_podcast{
+.recomended_podcast {
     margin-bottom: 1rem;
-    .label_container{
+    .label_container {
         padding: 1rem 12.25rem;
-        @include media-max-width($mobile-breakpoint){
-            padding : 1rem 5vw;
+        @include media-max-width($mobile-breakpoint) {
+            padding: 1rem 5vw;
         }
     }
-    .marquee{
+    .marquee {
         margin-bottom: 1rem;
     }
-    .cta{
+    .cta {
         display: flex;
-        justify-content:center;
-        align-items:center;
-   }
+        justify-content: center;
+        align-items: center;
+    }
 }

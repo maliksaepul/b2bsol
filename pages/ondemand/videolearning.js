@@ -10,21 +10,25 @@ const videolearning = () => {
         <>
             <Layout>
                 <Section>
-                <About title={"Video Learning"} subtitle={""} description={"lorem ipsum dolor sit amet, consectetur adipiscing"} />
+                    <About
+                        title={'Video Learning'}
+                        subtitle={''}
+                        description={
+                            'lorem ipsum dolor sit amet, consectetur adipiscing'
+                        }
+                    />
                 </Section>
                 <Section>
                     <Banner4x1 />
                 </Section>
                 <Section>
                     <Contents>
-                <div className="">
-                        <div className="">search component</div>
-                        <div className="">filter component</div>
-                        <div className="">sort component</div>
-                    </div>
-                    <div>
-                        video grid
-                    </div>
+                        <div className="">
+                            <div className="">search component</div>
+                            <div className="">filter component</div>
+                            <div className="">sort component</div>
+                        </div>
+                        <div>video grid</div>
                     </Contents>
                 </Section>
             </Layout>

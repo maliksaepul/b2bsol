@@ -1,12 +1,11 @@
 @import 'styles/mixins';
-.appbar{
+.appbar {
     display: flex;
-    width : 100%;
-    justify-content : space-between;
+    width: 100%;
+    justify-content: space-between;
     padding: 1rem 130px;
     background-color: #fff;
-    align-items : center;
+    align-items: center;
 
-    @include global-gap()
-   
+    @include global-gap();
 }

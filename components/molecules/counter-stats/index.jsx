@@ -17,4 +17,4 @@ const CounterStats = () => {
     )
 }
 
-export default CounterStats;
+export default CounterStats
