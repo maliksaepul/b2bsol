@@ -35,8 +35,8 @@ const CardEvent = ({ banner, event, varian, cta }) => {
                 <Image
                     src={banner}
                     className={styles.cardevent_illu}
-                    width={300}
-                    height={150}
+                    width={1200}
+                    height={600}
                 />
             </div>
             <div className={styles.cardevent_event}>
