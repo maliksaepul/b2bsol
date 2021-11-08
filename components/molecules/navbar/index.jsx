@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import styles from './style.module.scss'
 import cx from 'classnames'
-import Humberger from '@/components/molecules/humberger'
 import PropTypes from 'prop-types'
 
 const Navbar = ({ navitem, align, txcolor, bgcolor }) => {
@@ -40,7 +39,7 @@ const Navbar = ({ navitem, align, txcolor, bgcolor }) => {
 
     return (
         <div style={{ color: txcolor, backgroundColor: bgcolor }}>
-            {renderNavItem(navitem)} <Humberger />{' '}
+            {renderNavItem(navitem)}
         </div>
     )
 }

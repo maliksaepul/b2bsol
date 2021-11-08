@@ -2,9 +2,28 @@
 @import 'styles/dstoken';
 .statistic {
     background-color: $primary;
-    height: 274px;
+    min-height: 17.125rem;
     @include global-radius();
     margin-bottom: 1rem;
     color: #fff;
     padding: 2.5rem;
+    display: flex;
+
+    @include media-max-width($mobile-breakpoint) {
+        flex-direction: column;
+    }
+
+    &_container {
+        display: flex;
+        flex-direction: row;
+        @include media-max-width($mobile-breakpoint) {
+            flex-direction: column;
+        }
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

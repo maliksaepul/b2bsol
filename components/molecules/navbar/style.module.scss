@@ -7,6 +7,9 @@
     list-style: none;
     background-color: #dcdcdc;
     font-size: 13px;
+    @include media-max-width($mobile-breakpoint) {
+        display: none;
+    }
     @include global-gap();
 
     &_left {
@@ -46,10 +49,6 @@
         display: flex;
         align-items: center;
         margin: 0 0.5rem;
-
-        @include media-max-width($mobile-breakpoint) {
-            display: none;
-        }
     }
 
     &_item:first-child {

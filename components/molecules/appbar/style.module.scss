@@ -8,4 +8,16 @@
     align-items: center;
 
     @include global-gap();
+
+    @include media-max-width($mobile-breakpoint) {
+        .toolbar {
+            display: none;
+        }
+    }
+
+    @include media-min-width($mobile-breakpoint) {
+        .humberger {
+            display: none;
+        }
+    }
 }

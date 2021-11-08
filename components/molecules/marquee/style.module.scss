@@ -37,6 +37,7 @@ $total-object: 9;
             justify-content: center;
             align-items: center;
             margin: 0 calc(#{$gap-between-object}/ 2);
+            cursor: pointer;
             @include set-cover-size($object-size);
 
             @include media-max-width($tablet-breakpoint) {
