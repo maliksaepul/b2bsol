@@ -106,6 +106,16 @@
     }
 }
 
+@mixin header-gap() {
+    padding: 0.5rem 12rem;
+    @include media-max-width($initial-responsive-breakpoint) {
+        padding: 0.5rem 8vw;
+    }
+    @include media-max-width($mobile-breakpoint) {
+        padding: 0.5rem 8vw;
+    }
+}
+
 @mixin global-radius() {
     border-radius: 1.25rem;
 }

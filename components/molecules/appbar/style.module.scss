@@ -3,11 +3,13 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 1rem 130px;
+    // padding: 1rem 130px;
     background-color: #fff;
     align-items: center;
 
-    @include global-gap();
+    @include header-gap();
+    // padding : 1rem auto;
+    // padding: 1rem 12rem;
 
     @include media-max-width($mobile-breakpoint) {
         .toolbar {

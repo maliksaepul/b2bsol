@@ -10,7 +10,7 @@
     @include media-max-width($mobile-breakpoint) {
         display: none;
     }
-    @include global-gap();
+    @include header-gap();
 
     &_left {
         justify-content: flex-start;
