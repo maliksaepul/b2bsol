@@ -1,6 +1,6 @@
 import Section from '@/components/atoms/section'
 import About from '@/components/templates/about'
-import Layout from '@/hoc/layouts/common'
+import Layout from '@/hoc/layouts/ondemand'
 import React from 'react'
 const LeaderboarPage = () => {
     return (

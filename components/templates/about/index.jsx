@@ -3,7 +3,7 @@ import styles from './style.module.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const About = ({ title, subtitle, description }) => {
+const About = ({ title, subtitle, description, height }) => {
     const renderSubtitle = () => {
         if (subtitle) {
             return (
@@ -17,13 +17,12 @@ const About = ({ title, subtitle, description }) => {
         }
     }
     return (
-        <div className={styles.about}>
+        <div className={styles.about} style={{ height: height || '' }}>
             <h1>
                 <span>{title || 'Company Name'}</span>
                 {renderSubtitle()}
                 <br />
                 <span className="p1">
-                    {' '}
                     <Interweave content={description} />
                 </span>
             </h1>
@@ -35,6 +34,7 @@ About.propTypes = {
     title: PropTypes.string,
     subtitle: PropTypes.string,
     description: PropTypes.string,
+    height: PropTypes.string,
 }
 
 export default About

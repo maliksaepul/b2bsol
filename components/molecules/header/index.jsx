@@ -26,11 +26,6 @@ const Header = () => {
                 />
                 <Appbar />
             </header>
-            <div className={styles.container}>
-                <div className={styles.container_bg}>
-                    <div className={styles.container_fg}></div>
-                </div>
-            </div>
         </>
     )
 }

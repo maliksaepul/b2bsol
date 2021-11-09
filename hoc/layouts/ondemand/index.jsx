@@ -4,17 +4,18 @@ import styles from './style.module.scss'
 import React from 'react'
 import HeaderBackground from '@/components/molecules/header/background'
 
-const common = ({ children }) => {
+const ondemand = ({ children }) => {
     return (
         <>
             <Header />
             <HeaderBackground
                 foreground={
-                    'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/fg_J8_de1kDFkp.png?updatedAt=1636427732547'
+                    'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/ondemand_fg_87vo1LsOhqw.png?updatedAt=1636432770590'
                 }
                 foregroundMobile={
-                    'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/mobile_version_A1N-lWQRMTf.png?updatedAt=1636427723105'
+                    'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/ondemand_mobile_llT-uKq67II.png?updatedAt=1636428541030'
                 }
+                height={'25rem'}
             />
             <main className={styles.main}>{children}</main>
             <Footer />
@@ -22,4 +23,4 @@ const common = ({ children }) => {
     )
 }
 
-export default common
+export default ondemand

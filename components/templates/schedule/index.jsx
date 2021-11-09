@@ -49,6 +49,18 @@ const Schedule = () => {
                     cta={[{ title: 'Gabung', url: 'https://google.com' }]}
                     varian={'column'}
                 />
+                <CardEvent
+                    banner={
+                        'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/event_FlPh15e0-N.png?updatedAt=1635751095365'
+                    }
+                    event={{
+                        title: 'Collaboration A cross Generation',
+                        content:
+                            '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>',
+                    }}
+                    cta={[{ title: 'Gabung', url: 'https://google.com' }]}
+                    varian={'column'}
+                />
             </Carousel>
         </div>
     )

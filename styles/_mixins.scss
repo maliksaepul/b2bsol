@@ -97,7 +97,7 @@
 }
 
 @mixin global-gap() {
-    padding: 2.1rem 12rem;
+    padding: 2.1rem 7.5rem;
     @include media-max-width($initial-responsive-breakpoint) {
         padding: 1.6rem 8vw;
     }
@@ -107,7 +107,7 @@
 }
 
 @mixin header-gap() {
-    padding: 0.5rem 12rem;
+    padding: 0.5rem 7.5rem;
     @include media-max-width($initial-responsive-breakpoint) {
         padding: 0.5rem 8vw;
     }

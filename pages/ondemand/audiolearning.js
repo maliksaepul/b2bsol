@@ -1,7 +1,7 @@
 import Section from '@/components/atoms/section'
 import Banner4x1 from '@/components/templates/banner/4x1'
 import About from '@/components/templates/about'
-import Layout from '@/hoc/layouts/common'
+import Layout from '@/hoc/layouts/ondemand'
 import Contents from '@/components/molecules/contents'
 import React from 'react'
 const audiolearning = () => {
@@ -15,6 +15,7 @@ const audiolearning = () => {
                         description={
                             'lorem ipsum dolor sit amet, consectetur adipiscing'
                         }
+                        height={'10rem'}
                     />
                 </Section>
                 <Section>
