@@ -1,5 +1,5 @@
 import Logo from '@/components/atoms/logo'
-import ProfileBar from '@/components/molecules/profilebar'
+import ProfileBar from '@/components/molecules/profile/bar'
 import styles from './style.module.scss'
 import React from 'react'
 import Humberger from '@/components/molecules/humberger'

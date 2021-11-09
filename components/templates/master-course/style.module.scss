@@ -5,6 +5,9 @@
     @include media-max-width($mobile-breakpoint) {
         flex-direction: column;
     }
+    &_card {
+        padding: 1.25rem;
+    }
     &_item {
         flex: 1 1 0;
     }

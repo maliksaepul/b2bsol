@@ -1,6 +1,7 @@
 @import 'styles/mixins';
 .nav {
-    height: 3.5rem;
+    min-height: 3.5rem;
+    height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,6 +23,15 @@
 
     &_center {
         justify-content: center;
+    }
+
+    &_column {
+        flex-direction: column;
+        padding: 1rem !important;
+        .nav_item {
+            width: 100%;
+            margin: unset !important;
+        }
     }
 
     &_item::before {

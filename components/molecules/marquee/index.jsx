@@ -19,6 +19,7 @@ const Marquee = ({ contents, animationDuration }) => {
             <div className={styles.container} style={{ animationDuration }}>
                 {updatedContents.map((c, i) => (
                     <div key={i} className={styles.object}>
+                        {/* tes */}
                         <img
                             src={c.cover}
                             alt={c.title}

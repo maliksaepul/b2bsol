@@ -4,6 +4,7 @@ import styles from './style.module.scss'
 import cx from 'classnames'
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import Profile from '@/components/molecules/profile'
 
 const ProfileBar = ({ username, usercover }) => {
     const [chevron, setChevron] = useState(false)
@@ -13,6 +14,18 @@ const ProfileBar = ({ username, usercover }) => {
             return styles.chevron_up
         } else {
             return styles.chevron_down
+        }
+    }
+
+    const renderProfile = () => {
+        if (chevron) {
+            return (
+                <div className={styles.profile_sidebar}>
+                    <Profile />
+                </div>
+            )
+        } else {
+            return null
         }
     }
 
@@ -32,6 +45,7 @@ const ProfileBar = ({ username, usercover }) => {
                     height={9}
                 />
             </div>
+            {renderProfile()}
         </div>
     )
 }

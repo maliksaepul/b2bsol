@@ -9,7 +9,11 @@ import cx from 'classnames'
 const MasterCourse = () => {
     return (
         <div className={styles.masterCourse}>
-            <div className={styles.masterCourse_item}>
+            <div
+                className={cx(
+                    styles.masterCourse_item,
+                    styles.masterCourse_card
+                )}>
                 <Label
                     headline={true}
                     title={'Master Course'}

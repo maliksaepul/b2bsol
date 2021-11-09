@@ -68,7 +68,7 @@ const PodcastRecomendation = () => {
                 <Marquee contents={MARQUEE_ARRAY_1} animationDuration={'32s'} />
             </div>
             <div className={styles.cta}>
-                <Button size={'large'} varian={'primary'} label={'Eksplor'} />
+                <Button varian={'primary'} label={'Eksplor'} />
             </div>
         </div>
     )
