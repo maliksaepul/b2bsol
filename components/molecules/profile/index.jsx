@@ -22,7 +22,7 @@ const Profile = props => {
                         url: '/ondemand/audiolearning',
                     },
                     {
-                        label: 'My Statistik',
+                        label: 'My Statistic',
                         url: '/ondemand/videolearning',
                     },
                     {
