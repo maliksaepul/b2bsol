@@ -36,7 +36,7 @@ const Section = props => {
 }
 
 Section.propTypes = {
-    children: PropTypes.arrayOf(PropTypes.element).isRequired,
+    children: PropTypes.element,
     className: PropTypes.string,
     id: PropTypes.string,
     variant: PropTypes.string,

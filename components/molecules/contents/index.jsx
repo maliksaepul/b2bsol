@@ -20,7 +20,7 @@ const Contents = ({ children }) => {
 }
 
 Contents.propTypes = {
-    children: PropTypes.arrayOf(PropTypes.element),
+    children: PropTypes.arrayOf(PropTypes.element).isRequired,
 }
 
 export default Contents

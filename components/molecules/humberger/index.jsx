@@ -22,6 +22,6 @@ const Humberger = ({ hide, open, toggleNav }) => {
 Humberger.propTypes = {
     hide: PropTypes.bool,
     open: PropTypes.bool,
-    toggleNav: PropTypes.bool,
+    toggleNav: PropTypes.func,
 }
 export default Humberger

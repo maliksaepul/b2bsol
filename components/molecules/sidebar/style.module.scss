@@ -1,0 +1,15 @@
+@import 'styles/mixins';
+
+.sidebar {
+    display: none;
+    @include media-max-width($mobile-breakpoint) {
+        width: 100vw;
+        height: 100vh;
+        background-color: #fff;
+        position: fixed;
+        top: 40px;
+        left: 0;
+        display: block;
+        z-index: -1;
+    }
+}

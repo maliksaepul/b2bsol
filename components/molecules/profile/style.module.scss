@@ -1,9 +1,15 @@
+@import 'styles/mixins';
 .profile {
     background-color: #fff;
     height: auto;
     min-width: 18.75rem;
+    width: 100%;
     padding: 1rem;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
+    @include media-max-width($mobile-breakpoint) {
+        min-width: none;
+        width: 100%;
+    }
 
     &_head {
         display: flex;

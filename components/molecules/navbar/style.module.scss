@@ -8,9 +8,6 @@
     list-style: none;
     background-color: #dcdcdc;
     font-size: 13px;
-    @include media-max-width($mobile-breakpoint) {
-        display: none;
-    }
     @include header-gap();
 
     &_left {
