@@ -4,9 +4,9 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 
 const Section = props => {
-    const { children, className, id, varian } = props
+    const { children, className, id, variant } = props
     let bgc = ''
-    switch (varian) {
+    switch (variant) {
         case 'primary':
             bgc = styles.section_primary
             break
@@ -41,7 +41,6 @@ Section.propTypes = {
     id: PropTypes.string,
     variant: PropTypes.string,
     decoration: PropTypes.array,
-    varian: PropTypes.string,
     style: PropTypes.object,
 }
 

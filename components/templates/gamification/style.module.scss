@@ -1,5 +1,5 @@
 @import 'styles/mixins';
-@import 'styles/dstoken';
+@import 'styles/dstoken.module';
 .gamification {
     background-color: $primary;
     min-height: 274px;
@@ -8,7 +8,7 @@
     color: #fff;
     display: flex;
     align-items: center;
-    background-image: url('../../../public/gamification_bg.png');
+    background-image: url('/images/gamification_bg.png');
 
     @include media-max-width($tablet-breakpoint) {
         flex-direction: column;

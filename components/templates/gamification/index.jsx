@@ -1,40 +1,36 @@
-import Button from '@/components/atoms/button'
 import CardBadge from '@/components/molecules/card-badge'
-import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
 import React from 'react'
+import Card from '@/components/molecules/card'
 
 const Gamification = () => {
     return (
         <div className={styles.gamification}>
             <div className={styles.gamification_item}>
                 <div className={styles.gamification_card}>
-                    <Label
-                        title="Gamification"
-                        description={
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac tellus fringilla nunc efficitur dignissim a id nibh. Fusce ac felis erat placerat.'
-                        }
-                        headline={true}
-                    />
-                    <Button
-                        varian={'secondary'}
-                        cta={() => {
-                            console.log('Button')
-                        }}
-                        label={'Explore'}
+                    <Card
+                        title={{ type: 'string', content: 'Gamification' }}
+                        body="<p>Belajar langsung dari para ahli. Master Course hadir dengan pembahasan mendalam hanya untukmu! Telusuri lebih lanjut dan mulai ikuti kursus.</p>"
+                        cta={[
+                            {
+                                variant: 'secondary',
+                                url: 'google.com',
+                                label: 'Explore',
+                            },
+                        ]}
                     />
                 </div>
             </div>
             <div className={styles.gamification_item}>
                 <div className={styles.gamification_badges}>
                     <div className={styles.gamification_badges_1}>
-                        <CardBadge icon={'mindfulness'} />
+                        <CardBadge icon={'BadgeMindfullness'} />
                     </div>
                     <div className={styles.gamification_badges_2}>
-                        <CardBadge icon={'adventure'} />
+                        <CardBadge icon={'BadgeAdventure'} />
                     </div>
                     <div className={styles.gamification_badges_3}>
-                        <CardBadge icon={'kidsnfriend'} />
+                        <CardBadge icon={'BadgeKidsNFriend'} />
                     </div>
                 </div>
             </div>

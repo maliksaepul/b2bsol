@@ -1,11 +1,10 @@
-import Button from '@/components/atoms/button'
 import CardEvent from '@/components/molecules/card-event'
 import Carousel from '@/components/molecules/carousel'
-import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
 import React from 'react'
 import cx from 'classnames'
-
+import * as colors from '@/styles/_dstoken.module.scss'
+import Card from '@/components/molecules/card'
 const MasterCourse = () => {
     return (
         <div className={styles.masterCourse}>
@@ -14,19 +13,16 @@ const MasterCourse = () => {
                     styles.masterCourse_item,
                     styles.masterCourse_card
                 )}>
-                <Label
-                    headline={true}
-                    title={'Master Course'}
-                    description={
-                        '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac tellus fringilla nunc efficitur dignissim a id nibh. Fusce ac felis erat placerat.</p>'
-                    }
-                />
-                <Button
-                    varian={'secondary'}
-                    cta={() => {
-                        console.log('Button')
-                    }}
-                    label={'Explore'}
+                <Card
+                    title={{ type: 'string', content: 'Master Course' }}
+                    body="<p>Belajar langsung dari para ahli. Master Course hadir dengan pembahasan mendalam hanya untukmu! Telusuri lebih lanjut dan mulai ikuti kursus.</p>"
+                    cta={[
+                        {
+                            variant: 'secondary',
+                            url: 'google.com',
+                            label: 'Explore',
+                        },
+                    ]}
                 />
             </div>
             <div
@@ -41,11 +37,18 @@ const MasterCourse = () => {
                         }
                         event={{
                             title: 'Collaboration A cross Generation',
-                            content:
-                                '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>',
+                            content: '<p>Harry Prasetyo</p>',
+                            date: '3 Desember 2021, 15.00 - 17:00',
                         }}
                         cta={[{ title: 'Gabung', url: 'https://google.com' }]}
-                        varian={'column'}
+                        variant={'column'}
+                        label={{
+                            category: 'Webinar',
+                            style: {
+                                backgroundColor: colors.subText,
+                                color: colors.white,
+                            },
+                        }}
                     />
                     <CardEvent
                         banner={
@@ -53,11 +56,18 @@ const MasterCourse = () => {
                         }
                         event={{
                             title: 'Collaboration A cross Generation',
-                            content:
-                                '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>',
+                            content: '<p>Harry Prasetyo</p>',
+                            date: '3 Desember 2021, 15.00 - 17:00',
                         }}
                         cta={[{ title: 'Gabung', url: 'https://google.com' }]}
-                        varian={'column'}
+                        variant={'column'}
+                        label={{
+                            category: 'Webinar',
+                            style: {
+                                backgroundColor: colors.subText,
+                                color: colors.white,
+                            },
+                        }}
                     />
                     <CardEvent
                         banner={
@@ -65,11 +75,18 @@ const MasterCourse = () => {
                         }
                         event={{
                             title: 'Collaboration A cross Generation',
-                            content:
-                                '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>',
+                            content: '<p>Harry Prasetyo</p>',
+                            date: '3 Desember 2021, 15.00 - 17:00',
                         }}
                         cta={[{ title: 'Gabung', url: 'https://google.com' }]}
-                        varian={'column'}
+                        variant={'column'}
+                        label={{
+                            category: 'Webinar',
+                            style: {
+                                backgroundColor: colors.subText,
+                                color: colors.white,
+                            },
+                        }}
                     />
                     <CardEvent
                         banner={
@@ -77,11 +94,18 @@ const MasterCourse = () => {
                         }
                         event={{
                             title: 'Collaboration A cross Generation',
-                            content:
-                                '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>',
+                            content: '<p>Harry Prasetyo</p>',
+                            date: '3 Desember 2021, 15.00 - 17:00',
                         }}
                         cta={[{ title: 'Gabung', url: 'https://google.com' }]}
-                        varian={'column'}
+                        variant={'column'}
+                        label={{
+                            category: 'Webinar',
+                            style: {
+                                backgroundColor: colors.subText,
+                                color: colors.white,
+                            },
+                        }}
                     />
                 </Carousel>
             </div>

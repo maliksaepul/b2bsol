@@ -1,9 +1,11 @@
 @import 'styles/mixins';
 .footer {
-    @include global-gap();
+    @include verticalless-global-gap();
     background-color: #e6e6e6;
     display: flex;
     justify-content: space-between;
+    height: 2.5rem;
+    align-items: center;
 
     .right {
         text-align: right;

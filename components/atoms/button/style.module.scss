@@ -1,9 +1,10 @@
-@import 'styles/dstoken';
+@import 'styles/dstoken.module';
 @import 'styles/mixins';
 .button {
     outline: none;
     border: none;
     @include global-radius();
+    @include button_animation();
     cursor: pointer;
     overflow: hidden;
     font-weight: 400;

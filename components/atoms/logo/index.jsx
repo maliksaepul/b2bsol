@@ -1,16 +1,16 @@
-import Image from 'next/image'
-import Logos from '@/public/inspigo-logo.svg'
 import Link from 'next/link'
 import React from 'react'
+import Icon from '../icon'
+import { inspirationBlue } from '@/styles/_dstoken.module.scss'
+
 const Logo = () => {
     return (
         <Link href={'/'}>
             <a>
-                <Image
-                    src={Logos}
-                    alt="Picture of the author"
-                    width={120}
-                    height={25}
+                <Icon
+                    name="InspigoLogo"
+                    multiplier={1}
+                    fill={inspirationBlue}
                 />
             </a>
         </Link>

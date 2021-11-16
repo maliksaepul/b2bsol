@@ -36,10 +36,10 @@ const HomePage = () => {
                 <Section>
                     <Gamification />
                 </Section>
-                <Section>
-                    <PodcastRecomendation />
-                </Section>
-                <Section varian={'primary'}>
+
+                <PodcastRecomendation />
+
+                <Section variant={'primary'}>
                     <MasterCourse />
                 </Section>
             </Layout>

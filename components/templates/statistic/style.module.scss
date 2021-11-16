@@ -1,5 +1,5 @@
 @import 'styles/mixins';
-@import 'styles/dstoken';
+@import 'styles/dstoken.module';
 .statistic {
     background-color: $primary;
     min-height: 17.125rem;
@@ -8,6 +8,7 @@
     color: #fff;
     padding: 2.5rem;
     display: flex;
+    justify-content: space-between;
 
     @include media-max-width($mobile-breakpoint) {
         flex-direction: column;
@@ -16,6 +17,7 @@
     &_container {
         display: flex;
         flex-direction: row;
+        flex-grow: 1;
         @include media-max-width($mobile-breakpoint) {
             flex-direction: column;
         }

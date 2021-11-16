@@ -8,6 +8,7 @@
     list-style: none;
     background-color: #dcdcdc;
     font-size: 13px;
+    overflow-x: auto;
     @include header-gap();
 
     &_left {

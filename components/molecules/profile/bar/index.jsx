@@ -1,10 +1,9 @@
-import Image from 'next/image'
-import chevronAsset from '@/public/chevron.svg'
 import styles from './style.module.scss'
 import cx from 'classnames'
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Profile from '@/components/molecules/profile'
+import Icon from '@/components/atoms/icon'
 
 const ProfileBar = ({ username, usercover }) => {
     const [chevron, setChevron] = useState(false)
@@ -38,12 +37,7 @@ const ProfileBar = ({ username, usercover }) => {
                     setChevron(!chevron)
                 }}
                 className={chevronCondition()}>
-                <Image
-                    src={chevronAsset}
-                    alt="chevron logo"
-                    width={16}
-                    height={9}
-                />
+                <Icon name={'Chevron'} multiplier={1} />
             </div>
             {renderProfile()}
         </div>

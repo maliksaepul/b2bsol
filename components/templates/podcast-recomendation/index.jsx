@@ -61,14 +61,14 @@ const PodcastRecomendation = () => {
                         'Kembangkan dirimu melalui beragam konten pembelajaran berbasis audio yang dapat kamu dengarkan kapan pun dan di mana pun!'
                     }
                     title={'Recomended Podcast'}
-                    varian="center"
+                    variant="center"
                 />
             </div>
             <div className={styles.marquee}>
                 <Marquee contents={MARQUEE_ARRAY_1} animationDuration={'32s'} />
             </div>
             <div className={styles.cta}>
-                <Button varian={'primary'} label={'Eksplor'} />
+                <Button variant={'primary'} label={'Eksplor'} />
             </div>
         </div>
     )

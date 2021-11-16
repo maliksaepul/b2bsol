@@ -1,0 +1,60 @@
+// Colorr
+$primary: #0055b8;
+$secondary: #fffbf6;
+
+// primary colors
+$wisdom-blue: #001a70;
+$intelligence-blue: #002f87;
+$freedom-blue: #238dc1;
+$intuition-blue: #acdee6;
+$inspiration-blue: #0055b8;
+
+// secondary colors
+$secondary-orange: #ffa400;
+$secondary-peach: #ff8672;
+$secondary-tosca: #6bcbb8;
+$secondary-violet: #410099;
+$secondary-yellow: #fcd672;
+$secondary-cream: #ffeebd;
+$secondary-red: #fd4a5c;
+
+//neutral
+$black: #2d2a26;
+$white: #fffbf6;
+$sub-text: #909090;
+$stroke: #dcdcdc;
+
+// spacing
+$main-container-width: 1200px;
+$smaller-main-container-width: 986px;
+
+$initial-responsive-breakpoint: calc(1200px + 32px);
+$xl-tablet-breakpoint: 1024px;
+$tablet-breakpoint: 912px;
+$s-tablet-breakpoint: 780px;
+$xs-tablet-breakpoint: 750px;
+$mobile-breakpoint: 630px;
+$s-mobile-breakpoint: 380px;
+$xs-mobile-breakpoint: 350px;
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+$font: 'Ambit', sans-serif;
+
+:export {
+    wisdomBlue: $wisdom-blue;
+    intelligenceBlue: $intelligence-blue;
+    freedomBlue: $freedom-blue;
+    intuitionBlue: $intuition-blue;
+    inspirationBlue: $inspiration-blue;
+    secondaryOrange: $secondary-orange;
+    secondaryPeach: $secondary-peach;
+    secondaryTosca: $secondary-tosca;
+    vsecondaryViolet: $secondary-violet;
+    secondaryYellow: $secondary-yellow;
+    secondaryCream: $secondary-cream;
+    black: $black;
+    white: $white;
+    subText: $sub-text;
+    stroke: $stroke;
+}

@@ -1,10 +1,9 @@
 import React, { useRef } from 'react'
 import cx from 'classnames'
 import styles from './style.module.scss'
-import ArrowLeft from '@/public/left.svg'
-import ArrowRight from '@/public/right.svg'
-import Image from 'next/image'
 import PropTypes from 'prop-types'
+import Icon from '@/components/atoms/icon'
+import * as colors from '@/styles/_dstoken.module.scss'
 
 const Carousel = ({ children, className, title }) => {
     const ref = useRef(null)
@@ -31,7 +30,11 @@ const Carousel = ({ children, className, title }) => {
                     <div
                         className={styles.navigation__left}
                         onClick={() => scroll(-200)}>
-                        <Image src={ArrowLeft} width={40} height={40} />
+                        <Icon
+                            name={'ArrowLeft'}
+                            fill={colors.white}
+                            multiplier={1}
+                        />
                     </div>
                 ) : null}
 
@@ -39,7 +42,11 @@ const Carousel = ({ children, className, title }) => {
                     <div
                         className={styles.navigation__right}
                         onClick={() => scroll(200)}>
-                        <Image src={ArrowRight} width={40} height={40} />
+                        <Icon
+                            name={'ArrowRight'}
+                            fill={colors.white}
+                            multiplier={1}
+                        />
                     </div>
                 ) : null}
             </div>

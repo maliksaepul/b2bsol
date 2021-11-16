@@ -3,6 +3,7 @@ import React from 'react'
 import Label from '@/components/molecules/label'
 import Carousel from '@/components/molecules/carousel'
 import CardEvent from '@/components/molecules/card-event'
+import * as colors from '@/styles/_dstoken.module.scss'
 
 const Schedule = () => {
     return (
@@ -19,11 +20,18 @@ const Schedule = () => {
                     }
                     event={{
                         title: 'Collaboration A cross Generation',
-                        content:
-                            '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>',
+                        content: '<p>Harry Prasetyo</p>',
+                        date: '3 Desember 2021, 15.00 - 17:00',
                     }}
                     cta={[{ title: 'Gabung', url: 'https://google.com' }]}
-                    varian={'column'}
+                    variant={'column'}
+                    label={{
+                        category: 'Webinar',
+                        style: {
+                            backgroundColor: colors.subText,
+                            color: colors.white,
+                        },
+                    }}
                 />
                 <CardEvent
                     banner={
@@ -31,11 +39,18 @@ const Schedule = () => {
                     }
                     event={{
                         title: 'Collaboration A cross Generation',
-                        content:
-                            '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>',
+                        content: '<p>Harry Prasetyo</p>',
+                        date: '3 Desember 2021, 15.00 - 17:00',
                     }}
                     cta={[{ title: 'Gabung', url: 'https://google.com' }]}
-                    varian={'column'}
+                    variant={'column'}
+                    label={{
+                        category: 'Webinar',
+                        style: {
+                            backgroundColor: colors.subText,
+                            color: colors.white,
+                        },
+                    }}
                 />
                 <CardEvent
                     banner={
@@ -43,11 +58,18 @@ const Schedule = () => {
                     }
                     event={{
                         title: 'Collaboration A cross Generation',
-                        content:
-                            '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>',
+                        content: '<p>Harry Prasetyo</p>',
+                        date: '3 Desember 2021, 15.00 - 17:00',
                     }}
                     cta={[{ title: 'Gabung', url: 'https://google.com' }]}
-                    varian={'column'}
+                    variant={'column'}
+                    label={{
+                        category: 'Webinar',
+                        style: {
+                            backgroundColor: colors.subText,
+                            color: colors.white,
+                        },
+                    }}
                 />
                 <CardEvent
                     banner={
@@ -55,11 +77,18 @@ const Schedule = () => {
                     }
                     event={{
                         title: 'Collaboration A cross Generation',
-                        content:
-                            '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>',
+                        content: '<p>Harry Prasetyo</p>',
+                        date: '3 Desember 2021, 15.00 - 17:00',
                     }}
                     cta={[{ title: 'Gabung', url: 'https://google.com' }]}
-                    varian={'column'}
+                    variant={'column'}
+                    label={{
+                        category: 'Webinar',
+                        style: {
+                            backgroundColor: colors.subText,
+                            color: colors.white,
+                        },
+                    }}
                 />
             </Carousel>
         </div>

@@ -11,15 +11,15 @@
     // padding : 1rem auto;
     // padding: 1rem 12rem;
 
-    @include media-max-width($mobile-breakpoint) {
-        .toolbar {
-            display: none;
-        }
-    }
+    // @include media-max-width($mobile-breakpoint) {
+    //     .toolbar {
+    //         display: none;
+    //     }
+    // }
 
-    @include media-min-width($mobile-breakpoint) {
-        .humberger {
-            display: none;
-        }
-    }
+    // @include media-min-width($mobile-breakpoint) {
+    //     .humberger {
+    //         display: none;
+    //     }
+    // }
 }

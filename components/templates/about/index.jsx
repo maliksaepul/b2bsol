@@ -1,4 +1,3 @@
-import Interweave from 'interweave'
 import styles from './style.module.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -22,9 +21,9 @@ const About = ({ title, subtitle, description, height }) => {
                 <span>{title || 'Company Name'}</span>
                 {renderSubtitle()}
                 <br />
-                <span className="p1">
-                    <Interweave content={description} />
-                </span>
+                <div
+                    className="p1"
+                    dangerouslySetInnerHTML={{ __html: description }}></div>
             </h1>
         </div>
     )
