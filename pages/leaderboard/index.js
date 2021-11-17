@@ -1,5 +1,6 @@
 import Section from '@/components/atoms/section'
 import About from '@/components/templates/about'
+import Leaderboard from '@/components/templates/leaderboard'
 import Layout from '@/hoc/layouts/ondemand'
 import React from 'react'
 const LeaderboarPage = () => {
@@ -11,14 +12,13 @@ const LeaderboarPage = () => {
                         title={'Leaderboard'}
                         subtitle={''}
                         description={
-                            '<p>Ayo capai peringkat teratas dan menangkan hadiah menarik dengan cara menyelesaikan seluruh konten pembelajaran yang ada!</p>'
+                            '<p>Ayo capai peringkat teratas dan menangkan hadiah menarik dengan cara menyelesaikan seluruh konten pembelajaran yang ada! <br/> *Penjelasan percentile rank untuk user maksimal 150 character </p>'
                         }
                     />
                 </Section>
 
                 <Section>
-                    <div className="">statistik component</div>
-                    <div>leaderboard component</div>
+                    <Leaderboard />
                 </Section>
             </Layout>
         </>
