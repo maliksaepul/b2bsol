@@ -1,0 +1,22 @@
+@import 'styles/dstoken.module';
+.audio {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+    grid-gap: 2rem;
+    // grid-auto-rows: 0;
+    // grid-template-rows: 1fr;
+    // overflow-y: hidden;
+
+    .object {
+        // display : flex;
+        cursor: pointer;
+        max-width: 13rem;
+        max-height: 17rem;
+        & > img {
+            width: 100%;
+            height: auto;
+        }
+
+        color: $intelligence-blue;
+    }
+}

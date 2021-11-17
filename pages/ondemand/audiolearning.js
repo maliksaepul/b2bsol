@@ -1,9 +1,10 @@
 import Section from '@/components/atoms/section'
-import Banner4x1 from '@/components/templates/banner/4x1'
+// import Banner4x1 from '@/components/templates/banner/4x1'
 import About from '@/components/templates/about'
 import Layout from '@/hoc/layouts/ondemand'
 import Contents from '@/components/molecules/contents'
 import React from 'react'
+import AudioGrid from '@/components/templates/audio-grid'
 const audiolearning = () => {
     return (
         <>
@@ -13,22 +14,23 @@ const audiolearning = () => {
                         title={'Audio Learning'}
                         subtitle={''}
                         description={
-                            'lorem ipsum dolor sit amet, consectetur adipiscing'
+                            'Pembelajaran berbasis audio yang fleksibel'
                         }
                         height={'10rem'}
                     />
                 </Section>
-                <Section>
+                {/* <Section>
                     <Banner4x1 />
-                </Section>
+                </Section> */}
                 <Section>
                     <Contents>
-                        <div className="">
+                        <AudioGrid />
+                        {/* <div className="">
                             <div className="">search component</div>
                             <div className="">filter component</div>
                             <div className="">sort component</div>
                         </div>
-                        <div>podcast album grid</div>
+                        <div>podcast album grid</div> */}
                     </Contents>
                 </Section>
             </Layout>

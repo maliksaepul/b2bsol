@@ -1,8 +1,10 @@
+@import 'styles/dstoken.module';
 @import 'styles/mixins';
 .recomended_podcast {
     margin-bottom: 1rem;
     padding: 6.25rem 0;
     .label_container {
+        color: $intelligence-blue;
         padding: 1rem 12.25rem;
         @include media-max-width($mobile-breakpoint) {
             padding: 1rem 5vw;

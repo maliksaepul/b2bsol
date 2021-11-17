@@ -13,7 +13,7 @@ const Contents = ({ children }) => {
                     <div>Urutkan</div>
                 </div>
             </div>
-            <div className={styles.grid}>content grid</div>
+            {/* <div className={styles.grid}>content grid</div> */}
             {children}
         </div>
     )

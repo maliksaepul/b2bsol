@@ -80,7 +80,7 @@ const Leaderboard = props => {
             default:
                 return (
                     <div className={styles.ranking}>
-                        <h2>{params}</h2>
+                        <h4>{params}</h4>
                         <sup>th</sup>
                     </div>
                 )
