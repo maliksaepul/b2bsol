@@ -1,15 +1,13 @@
 import styles from './style.module.scss'
 import cx from 'classnames'
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Profile from '@/components/molecules/profile'
 import Icon from '@/components/atoms/icon'
 
-const ProfileBar = ({ username, usercover }) => {
-    const [chevron, setChevron] = useState(false)
-
+const ProfileBar = ({ username, usercover, activeProfile, active }) => {
     const chevronCondition = () => {
-        if (chevron) {
+        if (active) {
             return styles.chevron_up
         } else {
             return styles.chevron_down
@@ -17,7 +15,7 @@ const ProfileBar = ({ username, usercover }) => {
     }
 
     const renderProfile = () => {
-        if (chevron) {
+        if (active) {
             return (
                 <div className={styles.profile_sidebar}>
                     <Profile />
@@ -34,7 +32,7 @@ const ProfileBar = ({ username, usercover }) => {
             <div className={styles.profile_cover}>{usercover}</div>
             <div
                 onClick={() => {
-                    setChevron(!chevron)
+                    activeProfile(!active)
                 }}
                 className={chevronCondition()}>
                 <Icon name={'Chevron'} multiplier={1} />
@@ -47,6 +45,8 @@ const ProfileBar = ({ username, usercover }) => {
 ProfileBar.propTypes = {
     username: PropTypes.string,
     usercover: PropTypes.string,
+    activeProfile: PropTypes.func,
+    active: PropTypes.bool,
 }
 
 export default ProfileBar

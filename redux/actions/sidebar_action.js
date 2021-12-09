@@ -1,4 +1,4 @@
-import { ACTIVE_SIDEBAR } from '../types/sidebar'
+import { ACTIVE_SIDEBAR } from '../types'
 
 export const activeSidebar = sidebar => {
     return {

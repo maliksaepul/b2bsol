@@ -10,9 +10,20 @@
         width: 100%;
         border-collapse: collapse;
         // border: 1px solid black;
+        // & > tbody > tr > td:nth-child(even) {
+        //     border-right: 1px solid $stroke;
+        //     width: 15%;
+        // }
+
         & > tbody > tr > td:first-child {
             border-right: 1px solid $stroke;
             width: 5%;
+        }
+
+        @include media-min-width($mobile-breakpoint) {
+            & > tbody > tr > td:last-child {
+                width: 15%;
+            }
         }
     }
 

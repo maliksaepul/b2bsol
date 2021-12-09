@@ -8,7 +8,7 @@ import { IS_DEVELOPMENT } from 'utils/constants'
 
 // Styles
 import '@/styles/App.global.scss'
-import wrapper from '@/redux/store'
+import { wrapper } from '@/redux/store'
 
 const App = ({ Component, pageProps }) => {
     const meta = {

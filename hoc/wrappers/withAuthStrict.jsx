@@ -21,7 +21,7 @@ const withAuth = Component => {
                 } else {
                     // If the token was fraud we first remove it from localStorage and then redirect to "/"
                     localStorage.removeItem('accessToken')
-                    Router.replace('/')
+                    Router.replace('/login')
                 }
             }
         }, [])

@@ -1,4 +1,5 @@
 @import 'styles/mixins';
+@import 'styles/dstoken.module';
 .contents {
     content: '';
     min-height: 25rem;
@@ -11,14 +12,29 @@
         justify-content: space-between;
         margin-bottom: 1rem;
 
+        @include media-max-width($mobile-breakpoint) {
+            flex-direction: column;
+            &_item {
+                margin-bottom: 1rem;
+            }
+        }
+
         &_item {
             flex: 1 1 0;
             display: flex;
             border-radius: 8px;
-            background-color: #dcdcdc;
+            // background-color: #dcdcdc;
             height: 2.5rem;
             justify-content: space-around;
             align-items: center;
+        }
+        @include media-min-width($mobile-breakpoint) {
+            &_item:last-child {
+                justify-content: flex-end;
+                & > div:first-of-type {
+                    margin-right: 1rem;
+                }
+            }
         }
     }
 
@@ -30,5 +46,33 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+.sorting {
+    position: absolute;
+    top: 2.25rem;
+    left: 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: $neutral;
+    width: 100%;
+    border: 1px solid $main-stroke;
+}
+
+.filter {
+    position: absolute;
+    top: 2.25rem;
+    right: 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: $neutral;
+    width: 200%;
+    border: 1px solid $main-stroke;
+
+    &_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+        grid-gap: 1rem;
     }
 }

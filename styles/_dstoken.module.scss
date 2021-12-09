@@ -1,6 +1,8 @@
 // Colorr
 $primary: #0055b8;
 $secondary: #fffbf6;
+$neutral: #f7f8f9;
+$main-stroke: #c4cad3;
 
 // primary colors
 $wisdom-blue: #001a70;
@@ -58,4 +60,6 @@ $font: 'Ambit', sans-serif;
     white: $white;
     subText: $sub-text;
     stroke: $stroke;
+    neutral: $neutral;
+    mainStroke: $main-stroke;
 }

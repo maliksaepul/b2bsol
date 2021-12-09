@@ -1,0 +1,30 @@
+@import 'styles/dstoken.module';
+.dropdown {
+    position: relative;
+
+    &_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 10rem;
+        max-width: 13.75rem;
+        height: 1.25rem;
+        border: 1px solid $main-stroke;
+        background-color: $neutral;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        color: $black;
+    }
+}
+
+.chevron {
+    &_up {
+        transform: rotate(180deg);
+        transition: rotate 1s;
+    }
+
+    &_down {
+        transform: rotate(0deg);
+        transition: rotate 1s;
+    }
+}

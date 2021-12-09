@@ -4,6 +4,7 @@ import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
 import Icon from '@/components/atoms/icon'
 import * as colors from '@/styles/_dstoken.module.scss'
+import { mediaMinWidth, MobileBreakpoint } from '@/utils/breakpoint'
 
 const Leaderboard = props => {
     const leaderboardData = [
@@ -187,20 +188,39 @@ const Leaderboard = props => {
 
     const renderLeaderboard = () => {
         return leaderboardData.map((item, key) => {
-            return (
-                <tr key={key}>
-                    <td>{renderRanking(key + 1)}</td>
-                    <td className={styles.percentile}>
-                        {renderPercentileBar(key + 1, item.percentage)}
-                        <div>
-                            <p>
-                                <strong>{item.name}</strong>
-                            </p>
-                            <p className="p3">{item.description}</p>
-                        </div>
-                    </td>
-                </tr>
-            )
+            if (!mediaMinWidth(MobileBreakpoint)) {
+                return (
+                    <tr key={key}>
+                        <td>{renderRanking(key + 1)}</td>
+                        <td className={styles.percentile}>
+                            {renderPercentileBar(key + 1, item.percentage)}
+                            <div>
+                                <p>
+                                    <strong>{item.name}</strong>
+                                </p>
+                                <p className="p3">{item.description}</p>
+                            </div>
+                        </td>
+                    </tr>
+                )
+            } else {
+                return (
+                    <tr key={key}>
+                        <td>{renderRanking(key + 1)}</td>
+                        <td className={styles.percentile}>
+                            {renderPercentileBar(key + 1, item.percentage)}
+                        </td>
+                        <td>
+                            <div>
+                                <p>
+                                    <strong>{item.name}</strong>
+                                </p>
+                                <p className="p3">{item.description}</p>
+                            </div>
+                        </td>
+                    </tr>
+                )
+            }
         })
     }
 

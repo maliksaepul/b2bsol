@@ -1,10 +1,20 @@
-import { applyMiddleware, compose, createStore } from 'redux'
-import thunk from 'redux-thunk'
+import { createStore, applyMiddleware } from 'redux'
 import { createWrapper } from 'next-redux-wrapper'
-import rootReducer from '@/redux/reducers'
-const middleware = [thunk]
-const makeStore = () =>
-    createStore(rootReducer, compose(applyMiddleware(...middleware)))
+import { composeWithDevTools } from 'redux-devtools-extension'
 
-const wrapper = createWrapper(makeStore)
-export default wrapper
+import thunkMiddleware from 'redux-thunk'
+import rootReducer from './reducers'
+
+const bindMiddleware = middleware => {
+    return composeWithDevTools(applyMiddleware(...middleware))
+}
+
+const initStore = (initialState = {}) => {
+    return createStore(
+        rootReducer,
+        initialState,
+        bindMiddleware([thunkMiddleware])
+    )
+}
+
+export const wrapper = createWrapper(initStore, { debug: true })
