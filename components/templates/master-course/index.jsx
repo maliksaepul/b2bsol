@@ -47,8 +47,8 @@ const MasterCourse = ({ fetchCourses, courses }) => {
                                 }}
                                 category={course.category}
                                 type={course.type}
-                                start={course.activedatetime}
-                                end={course.datetime}
+                                start={course.datetime}
+                                end={course.activedatetime}
                                 cta={course.actions}
                                 variant={'column'}
                                 label={{

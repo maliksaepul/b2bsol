@@ -1,0 +1,51 @@
+@import 'styles/dstoken.module';
+.addtocalendar {
+    position: relative;
+    &_button {
+        display: flex;
+        background-color: $primary;
+        border-radius: 2.5rem;
+        min-height: 2.5rem;
+        padding: 0.5rem 1rem;
+        color: #fff;
+    }
+
+    &_dropdown {
+        display: none;
+        &.addtocalendar_dropdown_active {
+            display: block;
+            border-radius: 1.25rem;
+            position: absolute;
+            bottom: 2.7rem;
+            left: 0;
+            background-color: #fff;
+            width: 100%;
+            padding: 1rem;
+        }
+    }
+
+    .chevron {
+        &_up {
+            transform: rotate(180deg);
+            transition: rotate 1s;
+        }
+
+        &_down {
+            transform: rotate(0deg);
+            transition: rotate 1s;
+        }
+    }
+}
+
+.list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &_illu {
+        max-width: 1.875rem;
+        max-height: 1.875rem;
+        width: 100%;
+        height: auto;
+    }
+}

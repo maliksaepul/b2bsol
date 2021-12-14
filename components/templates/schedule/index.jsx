@@ -31,8 +31,8 @@ const Schedule = ({ fetchSchedules, events }) => {
                             }}
                             category={event.category}
                             type={event.type}
-                            start={event.activedatetime}
-                            end={event.datetime}
+                            start={event.datetime}
+                            end={event.activedatetime}
                             cta={event.actions}
                             variant={'column'}
                             label={{

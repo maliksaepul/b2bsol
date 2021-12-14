@@ -4,6 +4,8 @@ import styles from './style.module.scss'
 import React from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
+import { dateDuration } from '@/utils/function'
+import AddToCalendar from '@/components/molecules/addtocalendar'
 
 const CardEvent = ({
     banner,
@@ -38,17 +40,42 @@ const CardEvent = ({
     }
 
     const renderButton = () => {
-        return cta.map((val, key) => (
-            <Button
-                key={key}
-                variant={val.disabled ? 'secondary' : 'primary'}
-                size={'xsmall'}
-                cta={() => handleCta(val.disabled, val.url)}
-                label={val.title}
-                icon={true}
-            />
-        ))
+        const duration = dateDuration(start).asHours()
+        if ((type === 'event') & (duration >= 1)) {
+            return (
+                <AddToCalendar
+                    options={[
+                        { label: 'Google Calender', alias: 'google' },
+                        { label: 'Apple', alias: 'ics' },
+                        { label: 'Yahoo (online)', alias: 'yahoo' },
+                        { label: 'Outlook (online)', alias: 'outlook' },
+                    ]}
+                    events={{
+                        title: event.title,
+                        description: event.content,
+                        start: start,
+                        end: end,
+                    }}
+                    label={'Tambahkan Jadwal'}
+                />
+            )
+        } else {
+            return cta.map((val, key) => (
+                <Button
+                    key={key}
+                    variant={val.disabled ? 'secondary' : 'primary'}
+                    size={'xsmall'}
+                    cta={() => handleCta(val.disabled, val.url)}
+                    label={val.title}
+                    icon={true}
+                />
+            ))
+        }
     }
+
+    // const renderTime = () => {
+
+    // }
 
     const renderCard = () => {
         if (banner !== '') {
