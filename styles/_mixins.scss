@@ -12,6 +12,7 @@
 }
 
 @import './dstoken.module';
+@import './animation';
 
 @mixin main-container-width {
     width: $main-container-width;
@@ -107,6 +108,16 @@
 }
 
 @mixin verticalless-global-gap() {
+    padding: 0 7.5rem;
+    @include media-max-width($initial-responsive-breakpoint) {
+        padding: 0 8vw;
+    }
+    @include media-max-width($mobile-breakpoint) {
+        padding: 0 8vw;
+    }
+}
+
+@mixin verticaless-gap() {
     padding: 0 7.5rem;
     @include media-max-width($initial-responsive-breakpoint) {
         padding: 0 8vw;

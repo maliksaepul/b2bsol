@@ -2,7 +2,7 @@ import About from '@/components/templates/about'
 import Layout from '@/hoc/layouts/ondemand'
 import Section from '@/components/atoms/section'
 // import Banner4x1 from '@/components/templates/banner/4x2'
-import Contents from '@/components/molecules/contents'
+import Contents from '@/components/organisms/contents'
 import React from 'react'
 
 const videolearning = () => {

@@ -10,7 +10,7 @@
     background-color: $neutral;
     font-size: 13px;
     overflow-x: auto;
-    @include header-gap();
+    @include verticaless-gap();
 
     &_left {
         justify-content: flex-start;

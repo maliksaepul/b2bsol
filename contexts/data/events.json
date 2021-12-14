@@ -1,0 +1,70 @@
+[
+    {
+        "activedatetime": "2021-12-08 17:00",
+        "name": "Opening Ceremony: Leader Insider How to Spark A Love to Learn",
+        "code": "TLF",
+        "actions": [
+            {
+                "title": "gabung",
+                "url": "https://us06web.zoom.us/j/88078756963"
+            }
+        ],
+        "datetime": "2021-12-08 13:00",
+        "dateevent": "2021-12-08 13:00 - 17.00 WIB",
+        "description": "<p>Harry Prasetyo</p>",
+        "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
+        "category": "webinar",
+        "type": "event"
+    },
+    {
+        "activedatetime": "2021-12-07 13:00",
+        "name": "Opening Ceremony: Leader Insider How to Spark A Love to Learn",
+        "code": "TLF",
+        "actions": [
+            {
+                "title": "gabung",
+                "url": "https://us06web.zoom.us/j/88078756963"
+            }
+        ],
+        "datetime": "2021-12-08 13:00",
+        "description": "<p>Harry Prasetyo</p>",
+        "dateevent": "2021-12-08 13:00 - 17.00 WIB",
+        "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
+        "category": "webinar",
+        "type": "event"
+    },
+    {
+        "activedatetime": "2021-12-07 13:00",
+        "name": "Opening Ceremony: Leader Insider How to Spark A Love to Learn",
+        "code": "TLF",
+        "actions": [
+            {
+                "title": "gabung",
+                "url": "https://us06web.zoom.us/j/88078756963"
+            }
+        ],
+        "datetime": "2021-12-08 13:00",
+        "description": "<p>Harry Prasetyo</p>",
+        "dateevent": "2021-12-08 13:00 - 17.00 WIB",
+        "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
+        "category": "webinar",
+        "type": "event"
+    },
+    {
+        "activedatetime": "2021-12-07 13:00",
+        "name": "Opening Ceremony: Leader Insider How to Spark A Love to Learn",
+        "code": "TLF",
+        "actions": [
+            {
+                "title": "gabung",
+                "url": "https://us06web.zoom.us/j/88078756963"
+            }
+        ],
+        "datetime": "2021-12-08 13:00",
+        "description": "<p>Harry Prasetyo</p>",
+        "dateevent": "2021-12-08 13:00 - 17.00 WIB",
+        "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
+        "category": "webinar",
+        "type": "event"
+    }
+]

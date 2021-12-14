@@ -1,6 +1,36 @@
+@import 'styles/dstoken.module';
+@import 'styles/mixins';
 .schedule {
     margin-bottom: 1rem;
     min-height: 44.1875rem;
     // padding: 2.5rem;
     margin-bottom: 1rem;
+}
+
+.event_skeleton_placeholder {
+    width: 18.75rem;
+    height: 25rem;
+    background-color: $stroke;
+    border-radius: 1.25rem;
+    margin-left: 1rem;
+    box-shadow: 0 4px 10px 0 rgba($stroke, 0.4);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -9.375rem;
+        top: 0;
+        height: 100%;
+        width: 9.375rem;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            $white 50%,
+            transparent 100%
+        );
+        animation: skeletonpalceholder 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
 }

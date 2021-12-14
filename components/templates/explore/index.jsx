@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './style.module.scss'
-import CardEvent from '@/components/molecules/card-event'
-import Carousel from '@/components/molecules/carousel'
+import CardEvent from '@/components/organisms/card-event'
+import Carousel from '@/components/organisms/carousel'
 import Label from '@/components/molecules/label'
 import PropTypes from 'prop-types'
 import * as colors from '@/styles/_dstoken.module.scss'
 
-const Explore = ({ user }) => {
+const Explore = ({ user, lastlearning, fetchLastLearning }) => {
+    useEffect(() => {
+        fetchLastLearning()
+    }, [])
     return (
         <div className={styles.explore}>
             <Label
@@ -17,63 +20,35 @@ const Explore = ({ user }) => {
             />
 
             <Carousel>
-                <CardEvent
-                    banner={
-                        'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/event_FlPh15e0-N.png?updatedAt=1635751095365'
-                    }
-                    event={{
-                        title: 'Collaboration A cross Generation',
-                        content: '<p>Harry Prasetyo</p>',
-                        date: '3 Desember 2021, 15.00 - 17:00',
-                    }}
-                    cta={[{ title: 'Gabung', url: 'https://google.com' }]}
-                    variant={'column'}
-                    label={{
-                        category: 'Webinar',
-                        style: {
-                            backgroundColor: colors.subText,
-                            color: colors.white,
-                        },
-                    }}
-                />
-                <CardEvent
-                    banner={
-                        'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/event_FlPh15e0-N.png?updatedAt=1635751095365'
-                    }
-                    event={{
-                        title: 'Collaboration A cross Generation',
-                        content: '<p>Harry Prasetyo</p>',
-                        date: '3 Desember 2021, 15.00 - 17:00',
-                    }}
-                    cta={[{ title: 'Gabung', url: 'https://google.com' }]}
-                    variant={'column'}
-                    label={{
-                        category: 'Webinar',
-                        style: {
-                            backgroundColor: colors.subText,
-                            color: colors.white,
-                        },
-                    }}
-                />
-                <CardEvent
-                    banner={
-                        'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/event_FlPh15e0-N.png?updatedAt=1635751095365'
-                    }
-                    event={{
-                        title: 'Collaboration A cross Generation',
-                        content: '<p>Harry Prasetyo</p>',
-                        date: '3 Desember 2021, 15.00 - 17:00',
-                    }}
-                    cta={[{ title: 'Gabung', url: 'https://google.com' }]}
-                    variant={'column'}
-                    label={{
-                        category: 'Webinar',
-                        style: {
-                            backgroundColor: colors.subText,
-                            color: colors.white,
-                        },
-                    }}
-                />
+                {lastlearning.map((course, key) => {
+                    return (
+                        <CardEvent
+                            key={key}
+                            banner={course.cover}
+                            event={{
+                                title: course.name,
+                                content: course.description,
+                                date: course.dateevent,
+                            }}
+                            category={course.category}
+                            type={course.type}
+                            start={course.activedatetime}
+                            end={course.datetime}
+                            cta={course.actions}
+                            variant={'column'}
+                            label={{
+                                category: course.category,
+                                style: {
+                                    backgroundColor:
+                                        course.type === 'event'
+                                            ? colors.subText
+                                            : colors.secondaryPeach,
+                                    color: colors.white,
+                                },
+                            }}
+                        />
+                    )
+                })}
             </Carousel>
         </div>
     )
@@ -82,6 +57,9 @@ Explore.propTypes = {
     user: PropTypes.shape({
         name: PropTypes.string,
     }),
+    lastlearning: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+        .isRequired,
+    fetchLastLearning: PropTypes.func.isRequired,
 }
 
 export default Explore

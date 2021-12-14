@@ -2,7 +2,7 @@ import Layout from '@/hoc/layouts/ondemand'
 import About from '@/components/templates/about'
 import Section from '@/components/atoms/section'
 import Banner4x1 from '@/components/templates/banner/4x1'
-import Contents from '@/components/molecules/contents'
+import Contents from '@/components/organisms/contents'
 import React from 'react'
 
 const audioplaybook = () => {

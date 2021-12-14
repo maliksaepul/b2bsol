@@ -1,7 +1,7 @@
 import CardBadge from '@/components/molecules/card-badge'
 import styles from './style.module.scss'
 import React from 'react'
-import Card from '@/components/molecules/card'
+import Card from '@/components/organisms/card'
 
 const Gamification = () => {
     return (

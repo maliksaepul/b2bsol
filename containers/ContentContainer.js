@@ -1,4 +1,4 @@
-import Contents from '@/components/molecules/contents'
+import Contents from '@/components/organisms/contents'
 
 import { activeFilter, activeSorting } from '@/redux/actions/dropdown_action'
 import { connect } from 'react-redux'

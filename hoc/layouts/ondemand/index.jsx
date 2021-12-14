@@ -1,8 +1,8 @@
-import Footer from '@/components/molecules/footer'
-import Header from '@/components/molecules/header'
+import Footer from '@/components/templates/footer'
+import Header from '@/components/templates/header'
 import styles from './style.module.scss'
 import React from 'react'
-import HeaderBackground from '@/components/molecules/header/background'
+import HeaderBackground from '@/components/templates/header/background'
 
 const ondemand = ({ children }) => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.module.scss'
-import Profile from '@/components/molecules/profile'
+import Profile from '@/components/organisms/profile'
 import Navbar from '@/components/molecules/navbar'
 
 const Sidebar = ({ sidebarState }) => {

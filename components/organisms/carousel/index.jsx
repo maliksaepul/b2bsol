@@ -60,4 +60,8 @@ Carousel.propTypes = {
     title: PropTypes.string,
 }
 
+Carousel.defaultProps = {
+    children: [],
+}
+
 export default Carousel

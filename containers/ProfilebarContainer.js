@@ -1,4 +1,4 @@
-import ProfileBar from '@/components/molecules/profile/bar'
+import ProfileBar from '@/components/organisms/profile/bar'
 import { activeProfile } from '@/redux/actions/dropdown_action'
 import { connect } from 'react-redux'
 const mapStateToProps = ({ dropdownState }) => ({

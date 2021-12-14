@@ -2,7 +2,7 @@ import styles from './style.module.scss'
 import cx from 'classnames'
 import React from 'react'
 import PropTypes from 'prop-types'
-import Profile from '@/components/molecules/profile'
+import Profile from '@/components/organisms/profile'
 import Icon from '@/components/atoms/icon'
 
 const ProfileBar = ({ username, usercover, activeProfile, active }) => {
