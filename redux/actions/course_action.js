@@ -3,7 +3,6 @@ import { GET_COURSES } from '../types'
 import { apiEnd, apiError, apiStart } from './scedule_action'
 
 export const getCourses = payload => {
-    console.log(payload)
     return {
         type: GET_COURSES,
         payload: payload,

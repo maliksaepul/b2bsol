@@ -3,7 +3,6 @@ import { GET_LAST_LEARNING } from '../types'
 import { apiEnd, apiError, apiStart } from './scedule_action'
 
 export const getLastLearning = payload => {
-    console.log(payload)
     return {
         type: GET_LAST_LEARNING,
         payload: payload,

@@ -5,6 +5,7 @@ import LoaderReducer from './loader_reducer'
 import ScheduleReducer from './schedule_reducer'
 import CourseReducer from './course_reducer'
 import LastLearningReducer from './lastlearning_reducer'
+import ModalReducer from './modal_reducer'
 
 const rootReducer = combineReducers({
     sidebarState: SidebarReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
     scheduleReducer: ScheduleReducer,
     courseReducer: CourseReducer,
     lastLearningReducer: LastLearningReducer,
+    closeModal: ModalReducer,
 })
 
 export default rootReducer

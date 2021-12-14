@@ -1,6 +1,6 @@
 // Libraries
 import Section from '@/components/atoms/section'
-import React, { useState } from 'react'
+import React from 'react'
 import Layout from '@/hoc/layouts/common'
 import About from '@/components/templates/about'
 import Explore from '@/containers/ExploreContainer'
@@ -10,14 +10,13 @@ import Gamification from '@/components/templates/gamification'
 import PodcastRecomendation from '@/components/templates/podcast-recomendation'
 import MasterCourse from '@/containers/MasterCourseContainer'
 import Modal from '@/components/molecules/modal'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { modalClose } from '@/redux/actions/modal_action'
 
 // Styles
 
-const Home = () => {
-    const [closeModal, setCloseModal] = useState(false)
-    const modalClose = () => {
-        setCloseModal(!closeModal)
-    }
+const Home = ({ closeModal, modalClose }) => {
     return (
         <>
             <Layout>
@@ -51,7 +50,7 @@ const Home = () => {
                 }
                 ctaLabel="explore"
                 cta={() => {
-                    modalClose()
+                    modalClose(!closeModal)
                 }}
                 close={closeModal}
             />
@@ -59,4 +58,13 @@ const Home = () => {
     )
 }
 
-export default Home
+Home.propTypes = {
+    modalClose: PropTypes.func,
+    closeModal: PropTypes.bool,
+}
+
+const mapStateToProps = ({ closeModal }) => ({
+    closeModal,
+})
+
+export default connect(mapStateToProps, { modalClose })(Home)

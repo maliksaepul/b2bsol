@@ -22,7 +22,6 @@ export const apiError = payload => {
 }
 
 export const getSchedules = payload => {
-    console.log(payload)
     return {
         type: GET_SCHEDULES,
         payload: payload,
