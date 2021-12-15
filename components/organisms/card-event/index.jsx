@@ -4,6 +4,7 @@ import styles from './style.module.scss'
 import React from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
+import Share from '@/components/molecules/share'
 import { dateDuration } from '@/utils/function'
 import AddToCalendar from '@/components/molecules/addtocalendar'
 
@@ -60,16 +61,25 @@ const CardEvent = ({
                 />
             )
         } else {
-            return cta.map((val, key) => (
-                <Button
-                    key={key}
-                    variant={val.disabled ? 'secondary' : 'primary'}
-                    size={'xsmall'}
-                    cta={() => handleCta(val.disabled, val.url)}
-                    label={val.title}
-                    icon={true}
-                />
-            ))
+            return (
+                <>
+                    {cta.map((val, key) => (
+                        <Button
+                            key={key}
+                            variant={val.disabled ? 'secondary' : 'primary'}
+                            size={'xsmall'}
+                            cta={() => handleCta(val.disabled, val.url)}
+                            label={val.title}
+                            icon={true}
+                        />
+                    ))}
+                    <Share
+                        label={'bagikan'}
+                        url={cta[0].url}
+                        description={event.title}
+                    />
+                </>
+            )
         }
     }
 

@@ -21,6 +21,7 @@
             background-color: #fff;
             width: 100%;
             padding: 1rem;
+            filter: drop-shadow(0px 4px 2.5rem rgba(40, 40, 40, 0.1));
         }
     }
 
@@ -47,5 +48,9 @@
         max-height: 1.875rem;
         width: 100%;
         height: auto;
+    }
+
+    &_link {
+        margin-left: 1rem;
     }
 }

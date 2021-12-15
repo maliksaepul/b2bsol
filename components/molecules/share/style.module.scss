@@ -1,0 +1,33 @@
+@import 'styles/dstoken.module';
+.share {
+    position: relative;
+    &_button {
+        min-height: 2.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 1.25rem;
+        display: flex;
+        flex-direction: row;
+        color: $primary;
+        border: 1px solid $primary;
+        align-items: center;
+        cursor: pointer;
+    }
+    &_dropdown {
+        display: none;
+        &.active {
+            border-radius: 1.25rem;
+            width: 10rem;
+            height: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 3.5rem;
+            right: 0;
+            background-color: $primary;
+            filter: drop-shadow(0px 4px 2.5rem rgba(40, 40, 40, 0.1));
+            padding: 1rem;
+            cursor: pointer;
+        }
+    }
+}

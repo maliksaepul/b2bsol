@@ -32,6 +32,7 @@
         "redux-devtools-extension": "^2.13.9",
         "redux-thunk": "^2.4.0",
         "sass": "^1.43.3",
+        "social-media-sharing": "^1.0.2",
         "url-parse": "^1.5.3"
     },
     "devDependencies": {
