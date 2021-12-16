@@ -4,7 +4,7 @@ import About from '@/components/templates/about'
 import Layout from '@/hoc/layouts/ondemand'
 import Contents from '@/containers/ContentContainer'
 import React from 'react'
-import AudioGrid from '@/components/templates/audio-grid'
+import AudioGrid from '@/containers/AudioGridContainer'
 const audiolearning = () => {
     return (
         <>

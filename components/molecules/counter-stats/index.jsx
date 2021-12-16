@@ -28,7 +28,7 @@ const CounterStats = ({ bgcolor, color, description, duration, icon }) => {
 CounterStats.propTypes = {
     color: PropTypes.string,
     description: PropTypes.string,
-    duration: PropTypes.string,
+    duration: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     bgcolor: PropTypes.string,
     icon: PropTypes.shape({
         name: PropTypes.string,

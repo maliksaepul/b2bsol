@@ -3,6 +3,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import DropDown from '@/components/atoms/dropdown'
 import Search from '@/components/molecules/search'
+import Filter from '@/components/molecules/filter'
+import Sorting from '@/components/molecules/sorting'
 const Contents = ({
     children,
     activeFilter,
@@ -21,22 +23,7 @@ const Contents = ({
 
     const renderFilter = () => {
         if (filterActive) {
-            return (
-                <div className={styles.filter}>
-                    <div className={styles.filter_header}>
-                        <p>Category</p>
-                    </div>
-                    <div className={styles.filter_container}>
-                        {categories.map((item, key) => {
-                            return (
-                                <div key={key}>
-                                    <p>{item}</p>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
-            )
+            return <Filter filterList={categories} label="Category" />
         } else {
             return null
         }
@@ -45,11 +32,7 @@ const Contents = ({
     const renderSorting = () => {
         if (sortingActive) {
             return (
-                <div className={styles.sorting}>
-                    <p>Most Popular</p>
-                    <p>Newest</p>
-                    <p>Name A-Z</p>
-                </div>
+                <Sorting sortingList={['Most Popular', 'Newest', 'Name A-Z']} />
             )
         } else {
             return null

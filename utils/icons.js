@@ -669,7 +669,6 @@ export const Calendar = (fill, stroke, multiplier) => {
 }
 
 export const Share = (fill, stroke, multiplier) => {
-    console.log(multiplier)
     return (
         <svg
             width={multiplier * 15}

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import { maxTitlesLength } from '@/utils/function'
 
-const AudioGrid = ({ podcast, fetchPodcast }) => {
+const VideoGrid = ({ vod, fetchVod }) => {
     useEffect(() => {
-        fetchPodcast()
+        fetchVod()
     }, [])
 
     const renderLink = (link = null) => {
@@ -14,28 +14,28 @@ const AudioGrid = ({ podcast, fetchPodcast }) => {
         }
     }
 
-    const renderAudioCard = () => {
-        return podcast.map((c, i) => (
+    const renderVideoCard = () => {
+        return vod.map((c, i) => (
             <div key={i} className={styles.object}>
                 <img
                     src={c.cover}
                     alt={c.title}
-                    onClick={() => renderLink(c.deeplink)}
+                    onClick={() => renderLink(c.alias)}
                 />
                 <div>
                     <h6>{maxTitlesLength(c.title)}</h6>
-                    <p className={'p2'}>{c.author}</p>
+                    <p className={'p2'}>{c.artist}</p>
                 </div>
             </div>
         ))
     }
 
-    return <div className={styles.audio}>{renderAudioCard()}</div>
+    return <div className={styles.video}>{renderVideoCard()}</div>
 }
 
-AudioGrid.propTypes = {
-    podcast: PropTypes.array,
-    fetchPodcast: PropTypes.func,
+VideoGrid.propTypes = {
+    vod: PropTypes.array,
+    fetchVod: PropTypes.func,
 }
 
-export default AudioGrid
+export default VideoGrid

@@ -1,16 +1,17 @@
 import CounterStats from '@/components/molecules/counter-stats'
 import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
-import React, { useRef } from 'react'
+import React, { useEffect } from 'react'
 import * as colors from '@/styles/_dstoken.module.scss'
 import cx from 'classnames'
 import Icon from '@/components/atoms/icon'
+import PropTypes from 'prop-types'
 
-const Statistic = () => {
-    const ref = useRef(null)
-    const scroll = scrollOffset => {
-        ref.current.scrollLeft += scrollOffset
-    }
+const Statistic = ({ myStat, fetchMyStat, id }) => {
+    useEffect(() => {
+        if (id) fetchMyStat(id)
+    }, [myStat.podcast])
+
     return (
         <div className={styles.statistic}>
             <div className={cx(styles.content)}>
@@ -24,21 +25,31 @@ const Statistic = () => {
                         icon={{ name: 'Headset' }}
                         color={colors.inspirationBlue}
                         bgcolor={colors.secondaryCream}
+                        duration={myStat.podcast}
+                        description={'Total Duration Audio Learning'}
                     />
                     <CounterStats
                         icon={{ name: 'ClarityVideo' }}
                         color={colors.inspirationBlue}
                         bgcolor={colors.secondaryPeach}
+                        duration={myStat.vod}
+                        description={'Total Duration Video Learning'}
                     />
                     <CounterStats
                         icon={{ name: 'FluentLearning' }}
                         color={colors.inspirationBlue}
                         bgcolor={colors.secondaryTosca}
+                        duration={myStat.course}
+                        description={'Total Duration Course'}
                     />
                 </div>
             </div>
 
-            <div className={cx(styles.navigation)} onClick={() => scroll(200)}>
+            <div
+                className={cx(styles.navigation)}
+                onClick={() => {
+                    window.open('https://google.com')
+                }}>
                 <Icon
                     name={'ArrowRight'}
                     multiplier={1.5}
@@ -48,6 +59,12 @@ const Statistic = () => {
             </div>
         </div>
     )
+}
+
+Statistic.propTypes = {
+    myStat: PropTypes.object,
+    fetchMyStat: PropTypes.func,
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 }
 
 export default Statistic

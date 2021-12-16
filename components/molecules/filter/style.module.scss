@@ -1,0 +1,17 @@
+@import 'styles/dstoken.module';
+.filter {
+    position: absolute;
+    top: 2.25rem;
+    right: 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: $neutral;
+    max-width: 200%;
+    border: 1px solid $main-stroke;
+
+    &_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+        grid-gap: 1rem;
+    }
+}

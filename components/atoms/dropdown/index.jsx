@@ -6,10 +6,9 @@ import styles from './style.module.scss'
 const DropDown = ({ label, children, action, active }) => {
     return (
         <div className={styles.dropdown}>
-            <div className={styles.dropdown_container}>
+            <div className={styles.dropdown_container} onClick={action}>
                 <p>{label}</p>
                 <div
-                    onClick={action}
                     className={
                         active ? styles.chevron_up : styles.chevron_down
                     }>

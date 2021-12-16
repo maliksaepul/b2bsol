@@ -2,8 +2,9 @@ import About from '@/components/templates/about'
 import Layout from '@/hoc/layouts/ondemand'
 import Section from '@/components/atoms/section'
 // import Banner4x1 from '@/components/templates/banner/4x2'
-import Contents from '@/components/organisms/contents'
+import Contents from '@/containers/ContentContainer'
 import React from 'react'
+import VideoGrid from '@/containers/VideoGridContainer'
 
 const videolearning = () => {
     return (
@@ -24,12 +25,7 @@ const videolearning = () => {
                 </Section> */}
                 <Section>
                     <Contents>
-                        <div className="">
-                            <div className="">search component</div>
-                            <div className="">filter component</div>
-                            <div className="">sort component</div>
-                        </div>
-                        <div>video grid</div>
+                        <VideoGrid />
                     </Contents>
                 </Section>
             </Layout>

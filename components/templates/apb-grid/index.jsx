@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import { maxTitlesLength } from '@/utils/function'
 
-const AudioGrid = ({ podcast, fetchPodcast }) => {
+const ApbGrid = ({ apb, fetchApb }) => {
     useEffect(() => {
-        fetchPodcast()
+        fetchApb()
     }, [])
 
     const renderLink = (link = null) => {
@@ -14,13 +14,13 @@ const AudioGrid = ({ podcast, fetchPodcast }) => {
         }
     }
 
-    const renderAudioCard = () => {
-        return podcast.map((c, i) => (
+    const renderApbCard = () => {
+        return apb.map((c, i) => (
             <div key={i} className={styles.object}>
                 <img
-                    src={c.cover}
+                    src={c.image}
                     alt={c.title}
-                    onClick={() => renderLink(c.deeplink)}
+                    onClick={() => renderLink(c.image)}
                 />
                 <div>
                     <h6>{maxTitlesLength(c.title)}</h6>
@@ -30,12 +30,12 @@ const AudioGrid = ({ podcast, fetchPodcast }) => {
         ))
     }
 
-    return <div className={styles.audio}>{renderAudioCard()}</div>
+    return <div className={styles.apb}>{renderApbCard()}</div>
 }
 
-AudioGrid.propTypes = {
-    podcast: PropTypes.array,
-    fetchPodcast: PropTypes.func,
+ApbGrid.propTypes = {
+    apb: PropTypes.array,
+    fetchApb: PropTypes.func,
 }
 
-export default AudioGrid
+export default ApbGrid

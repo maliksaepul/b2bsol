@@ -6,6 +6,10 @@ import ScheduleReducer from './schedule_reducer'
 import CourseReducer from './course_reducer'
 import LastLearningReducer from './lastlearning_reducer'
 import ModalReducer from './modal_reducer'
+import StatisticReducer from './statistic_reducer'
+import ApbReducer from './apb_reducer'
+import VodReducer from './vod_reducer'
+import PodcastReducer from './podcast_reducer'
 
 const rootReducer = combineReducers({
     sidebarState: SidebarReducer,
@@ -15,6 +19,10 @@ const rootReducer = combineReducers({
     courseReducer: CourseReducer,
     lastLearningReducer: LastLearningReducer,
     closeModal: ModalReducer,
+    myStat: StatisticReducer,
+    apb: ApbReducer,
+    vod: VodReducer,
+    podcast: PodcastReducer,
 })
 
 export default rootReducer

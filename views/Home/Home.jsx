@@ -4,7 +4,7 @@ import React from 'react'
 import Layout from '@/hoc/layouts/common'
 import About from '@/components/templates/about'
 import Explore from '@/containers/ExploreContainer'
-import Statistic from '@/components/templates/statistic'
+import Statistic from '@/containers/StatisticContainer'
 import Schedule from '@/containers/SchedulesContainer'
 import Gamification from '@/components/templates/gamification'
 import PodcastRecomendation from '@/components/templates/podcast-recomendation'
@@ -27,7 +27,7 @@ const Home = ({ closeModal, modalClose }) => {
                     <Explore user={{ name: 'Malik' }} />
                 </Section>
                 <Section>
-                    <Statistic />
+                    <Statistic id={1} />
                 </Section>
                 <Section>
                     <Schedule />
