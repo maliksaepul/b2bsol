@@ -3,8 +3,13 @@ import Header from '@/components/templates/header'
 import styles from './style.module.scss'
 import React from 'react'
 import HeaderBackground from '@/components/templates/header/background'
+import Modal from '@/components/molecules/modal'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
-const ondemand = ({ children }) => {
+import { modalClose } from '@/redux/actions/modal_action'
+
+const ondemand = ({ children, closeModal, modalClose }) => {
     return (
         <>
             <Header />
@@ -19,8 +24,34 @@ const ondemand = ({ children }) => {
             />
             <main className={styles.main}>{children}</main>
             <Footer />
+            <Modal
+                illu={'/images/loginsign_1.png'}
+                title={'Selamat datang di Inspigo Learning Platform !'}
+                description={
+                    'Kembangkan diri bersama dan nikmati ragam fitur pembelajaran menarik dengan berbagai topik.'
+                }
+                ctaLabel="explore"
+                cta={() => {
+                    modalClose(!closeModal)
+                }}
+                close={closeModal}
+            />
         </>
     )
 }
 
-export default ondemand
+ondemand.propTypes = {
+    modalClose: PropTypes.func,
+    closeModal: PropTypes.bool,
+    children: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.array,
+        PropTypes.element,
+    ]),
+}
+
+const mapStateToProps = ({ closeModal }) => ({
+    closeModal,
+})
+
+export default connect(mapStateToProps, { modalClose })(ondemand)

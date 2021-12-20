@@ -1,0 +1,13 @@
+@import 'styles/dstoken.module';
+.object {
+    // display : flex;
+    cursor: pointer;
+    max-width: 13rem;
+    max-height: 17rem;
+    & > img {
+        width: 100%;
+        height: auto;
+    }
+
+    color: $intelligence-blue;
+}

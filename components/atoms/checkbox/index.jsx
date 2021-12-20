@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Checkbox = ({ name, onChange }) => {
     const handleChange = e => {
-        onChange && onChange(e.target.checked)
+        onChange && onChange(e.target.checked, e.target.name)
     }
 
     return (

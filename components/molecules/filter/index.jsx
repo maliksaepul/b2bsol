@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import Checkbox from '@/components/atoms/checkbox'
 
 const Filter = ({ filterList, label }) => {
+    const [filterApi, setFilterApi] = useState([])
+
+    const fetchApi = (val, name) => {
+        const listOf = [...filterApi]
+        if (val) {
+            listOf.push(name)
+            setFilterApi(listOf)
+        } else {
+            const data = listOf.filter(val => val !== name)
+            setFilterApi(data)
+        }
+    }
     return (
         <div className={styles.filter}>
             <div className={styles.filter_header}>
@@ -15,8 +27,8 @@ const Filter = ({ filterList, label }) => {
                         <div key={key}>
                             <Checkbox
                                 name={item}
-                                onChange={e => {
-                                    console.log(e)
+                                onChange={(val, name) => {
+                                    fetchApi(val, name)
                                 }}
                             />
                         </div>

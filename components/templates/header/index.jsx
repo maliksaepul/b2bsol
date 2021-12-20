@@ -11,15 +11,15 @@ const Header = () => {
                         navitem={[
                             {
                                 label: 'Audio Learning',
-                                url: '/ondemand/audiolearning',
+                                url: '/audiolearning',
                             },
                             {
                                 label: 'video learning',
-                                url: '/ondemand/videolearning',
+                                url: '/video-learning',
                             },
                             {
                                 label: 'audio playbook',
-                                url: '/ondemand/audioplaybook',
+                                url: '/audioplaybook',
                             },
                             { label: 'LeaderBoard', url: '/leaderboard' },
                         ]}
