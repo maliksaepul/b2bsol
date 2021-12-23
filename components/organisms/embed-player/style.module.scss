@@ -1,14 +1,13 @@
 @import 'styles/mixins';
 .player {
-    @include global-gap();
     display: flex;
     justify-content: center;
     & > iframe {
         width: 960px;
-        height: 980px;
+        height: 960px;
         @include media-max-width($tablet-breakpoint) {
             width: 100%;
-            height: 1050px;
+            height: 980px;
         }
     }
 }

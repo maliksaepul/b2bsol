@@ -10,6 +10,8 @@ import StatisticReducer from './statistic_reducer'
 import ApbReducer from './apb_reducer'
 import VodReducer from './vod_reducer'
 import PodcastReducer from './podcast_reducer'
+import RelatedPodcast from './realated-podcast_reducer'
+import RelatedAudioPlaybook from './realated-audioplaybook_reducer'
 
 const rootReducer = combineReducers({
     sidebarState: SidebarReducer,
@@ -23,6 +25,8 @@ const rootReducer = combineReducers({
     apb: ApbReducer,
     vod: VodReducer,
     podcast: PodcastReducer,
+    relatedPodcast: RelatedPodcast,
+    relatedAudioPlaybook: RelatedAudioPlaybook,
 })
 
 export default rootReducer

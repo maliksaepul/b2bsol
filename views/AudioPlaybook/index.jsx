@@ -24,7 +24,7 @@ const AudioPlaybook = ({ apb }) => {
             </Section>
             <Section>
                 <Contents>
-                    <Grid>{renderAudioCard()}</Grid>
+                    <Grid variant="small">{renderAudioCard()}</Grid>
                 </Contents>
             </Section>
         </Layout>

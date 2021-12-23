@@ -30,7 +30,7 @@ const VideoLearning = ({ videos }) => {
         </Section> */}
             <Section>
                 <Contents>
-                    <Grid>{renderVideoCard()}</Grid>
+                    <Grid variant={'large'}>{renderVideoCard()}</Grid>
                 </Contents>
             </Section>
         </Layout>

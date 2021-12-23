@@ -2,9 +2,10 @@
 .object {
     // display : flex;
     cursor: pointer;
-    max-width: 17.5rem;
-    max-height: 31.25rem;
+    // max-width: 11.25rem;
+    // max-height: 18.75rem;
     & > img {
+        min-width: 11.25rem;
         width: 100%;
         height: auto;
     }

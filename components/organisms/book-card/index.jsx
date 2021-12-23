@@ -2,15 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import { maxTitlesLength } from '@/utils/function'
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 const BookCard = ({ book }) => {
-    // const router = useRouter();
+    const router = useRouter()
 
     const renderLink = (link = null) => {
         if (link) {
-            // router.push(`audio-learning/${link}`)
-            window.open(link)
+            router.push(`/audioplaybook/${link}`)
+            // window.open(link)
         }
     }
     return (
@@ -18,7 +18,7 @@ const BookCard = ({ book }) => {
             <img
                 src={book.image}
                 alt={book.title}
-                onClick={() => renderLink(book.image)}
+                onClick={() => renderLink(book.alias)}
             />
             <div>
                 <h6>{maxTitlesLength(book.title)}</h6>

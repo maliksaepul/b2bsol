@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.module.scss'
-const Grid = ({ children }) => {
-    return <div className={styles.grid}>{children}</div>
+import cx from 'classnames'
+const Grid = ({ children, variant }) => {
+    return <div className={cx(styles.grid, styles[variant])}>{children}</div>
 }
 
 Grid.propTypes = {
@@ -11,6 +12,7 @@ Grid.propTypes = {
         PropTypes.array,
         PropTypes.element,
     ]),
+    variant: PropTypes.string,
 }
 
 export default Grid

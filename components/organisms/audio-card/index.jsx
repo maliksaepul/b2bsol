@@ -9,7 +9,7 @@ const AudioCard = ({ audio }) => {
 
     const renderLink = (link = null) => {
         if (link) {
-            router.push(`audio-learning/${link}`)
+            router.push(`/audiolearning/${link}`)
         }
     }
     return (

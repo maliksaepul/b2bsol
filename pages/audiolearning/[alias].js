@@ -1,0 +1,25 @@
+import PodcastPlayer from '@/views/PodcastPlayer'
+import React, { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import { fetchRelatedPodcast } from '@/redux/actions/related-content_action'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+
+const PodcastPlayerPage = ({ fetchRelatedPodcast, relatedPodcast }) => {
+    const router = useRouter()
+    const { alias } = router.query
+    useEffect(() => {
+        fetchRelatedPodcast()
+    }, [])
+    return <PodcastPlayer alias={alias} relatedPodcast={relatedPodcast} />
+}
+
+PodcastPlayerPage.propTypes = {
+    fetchRelatedPodcast: PropTypes.func.isRequired,
+    relatedPodcast: PropTypes.array,
+}
+const mapStateToProps = ({ relatedPodcast }) => ({ relatedPodcast })
+
+export default connect(mapStateToProps, { fetchRelatedPodcast })(
+    PodcastPlayerPage
+)

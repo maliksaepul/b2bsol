@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 
-const EmbedPlayer = ({ alias, token }) => {
+const EmbedPlayer = ({ src, token }) => {
     return (
         <div className={styles.player}>
             <iframe
-                title="Podcast Player"
-                src={`https://player.inspigo.id/${alias}?token=${token}`}
+                title="Inspigo Player"
+                src={src}
                 frameBorder="0"
                 allowFullScreen={'allowfullscreen'}></iframe>
         </div>
@@ -15,7 +15,7 @@ const EmbedPlayer = ({ alias, token }) => {
 }
 
 EmbedPlayer.propTypes = {
-    alias: PropTypes.string,
+    src: PropTypes.string,
     token: PropTypes.string,
 }
 

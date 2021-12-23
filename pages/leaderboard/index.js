@@ -12,7 +12,7 @@ const LeaderboarPage = () => {
                         title={'Leaderboard'}
                         subtitle={''}
                         description={
-                            '<p>Ayo capai peringkat teratas dan menangkan hadiah menarik dengan cara menyelesaikan seluruh konten pembelajaran yang ada! <br/> *Penjelasan percentile rank untuk user maksimal 150 character </p>'
+                            '<p>Ayo capai peringkat teratas dan menangkan hadiah menarik dengan cara menyelesaikan seluruh konten pembelajaran yang ada! <br/> Persentase angka menunjukkan seberapa unggul pencapaian belajar kamu di antara anggota organisasimu. </p>'
                         }
                     />
                 </Section>
