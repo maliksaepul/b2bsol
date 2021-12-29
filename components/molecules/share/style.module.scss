@@ -1,42 +1,50 @@
 @import 'styles/dstoken.module';
 .share {
     position: relative;
-    &_button {
-        min-height: 2.5rem;
-        padding: 0.5rem 1rem;
-        border-radius: 1.25rem;
-        display: flex;
-        flex-direction: row;
-        color: $primary;
-        border: 1px solid $primary;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    &.center {
+        justify-content: center;
         align-items: center;
-        cursor: pointer;
     }
-    &_dropdown {
-        display: none;
-        &.active {
-            width: 10rem;
-            height: 2.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: absolute;
-            bottom: 3.5rem;
-            right: 0;
-            background-color: $primary;
-            filter: drop-shadow(0px 4px 2.5rem rgba(40, 40, 40, 0.1));
-            padding: 1rem 1rem 1.5rem 1rem;
-            cursor: pointer;
-            clip-path: polygon(
-                0% 0%,
-                100% 0,
-                100% 75%,
-                59% 75%,
-                49% 100%,
-                40% 75%,
-                0% 75%
-            );
-            border-radius: 0.5rem;
-        }
+    &.left {
+        justify-content: flex-start;
+        align-items: center;
     }
+    &.right {
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 16.78rem;
+    }
+}
+
+.rounded {
+    border-radius: 50%;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.whatsapp {
+    background-color: #33d26b;
+}
+.telegram {
+    background-color: #37aee2;
+}
+
+.facebook {
+    background-color: #1877f2;
+}
+.twitter {
+    background-color: #1da1f2;
 }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import Profile from '@/components/organisms/profile'
 import Navbar from '@/components/molecules/navbar'
+import routes from '@/utils/routes'
 
 const Sidebar = ({ sidebarState }) => {
     const renderBody = () => {
@@ -16,17 +17,17 @@ const Sidebar = ({ sidebarState }) => {
                         navitem={[
                             {
                                 label: 'Audio Learning',
-                                url: '/ondemand/audiolearning',
+                                url: routes.audilearning(),
                             },
                             {
                                 label: 'video learning',
-                                url: '/ondemand/videolearning',
+                                url: routes.videolearning(),
                             },
                             {
                                 label: 'audio playbook',
-                                url: '/ondemand/audioplaybook',
+                                url: routes.audioplaybook(),
                             },
-                            { label: 'LeaderBoard', url: '/leaderboard' },
+                            { label: 'LeaderBoard', url: routes.leaderboard() },
                         ]}
                     />
                     <Profile />

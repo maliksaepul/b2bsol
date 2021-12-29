@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import { maxTitlesLength } from '@/utils/function'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 
 const VideoCard = ({ video }) => {
-    const router = useRouter()
+    // const router = useRouter()
 
     const renderLink = (link = null) => {
         if (link) {
-            router.push(`video-learning/${link}`)
+            window.open(link, '_self')
         }
     }
     return (

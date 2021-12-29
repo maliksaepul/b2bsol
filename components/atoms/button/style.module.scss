@@ -17,7 +17,8 @@
     padding: 1rem 2rem;
     &_secondary {
         background-color: $secondary;
-        color: black;
+        color: $primary;
+        border: 1px solid $primary;
     }
     &_primary {
         background-color: $primary;

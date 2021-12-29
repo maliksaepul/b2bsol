@@ -23,11 +23,15 @@ export const getApb = payload => {
     }
 }
 
-export const fetchPodcast = () => dispatch => {
+export const fetchPodcast = (search, filter) => dispatch => {
+    const params = {
+        search,
+        filter,
+    }
     dispatch(apiStart())
 
     axios
-        .get('http://localhost:3000/api/podcast')
+        .get('http://localhost:3000/api/podcast', { params })
         .then(({ data }) => {
             dispatch(getPodcast(data))
         })

@@ -2,6 +2,8 @@ import Navbar from '@/components/molecules/navbar'
 import styles from './style.module.scss'
 import React from 'react'
 import AppbarContainer from '@/containers/AppbarContainer'
+import routes from '@/utils/routes'
+
 const Header = () => {
     return (
         <>
@@ -11,17 +13,17 @@ const Header = () => {
                         navitem={[
                             {
                                 label: 'Audio Learning',
-                                url: '/audiolearning',
+                                url: routes.audilearning(),
                             },
                             {
                                 label: 'video learning',
-                                url: '/video-learning',
+                                url: routes.videolearning(),
                             },
                             {
                                 label: 'audio playbook',
-                                url: '/audioplaybook',
+                                url: routes.audioplaybook(),
                             },
-                            { label: 'LeaderBoard', url: '/leaderboard' },
+                            { label: 'LeaderBoard', url: routes.leaderboard() },
                         ]}
                         align={'right'}
                     />

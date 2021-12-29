@@ -9,10 +9,11 @@ import Schedule from '@/containers/SchedulesContainer'
 import Gamification from '@/components/templates/gamification'
 import PodcastRecomendation from '@/components/templates/podcast-recomendation'
 import MasterCourse from '@/containers/MasterCourseContainer'
-import Modal from '@/components/molecules/modal'
+import Modal from '@/components/molecules/modals/modal'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { modalClose } from '@/redux/actions/modal_action'
+import GeneralModal from '@/components/molecules/modals/general-modal'
 
 // Styles
 
@@ -42,18 +43,19 @@ const Home = ({ closeModal, modalClose }) => {
                     <MasterCourse />
                 </Section>
             </Layout>
-            <Modal
-                illu={'/images/loginsign_1.png'}
-                title={'Selamat datang di Inspigo Learning Platform !'}
-                description={
-                    'Kembangkan diri bersama dan nikmati ragam fitur pembelajaran menarik dengan berbagai topik.'
-                }
-                ctaLabel="explore"
-                cta={() => {
-                    modalClose(!closeModal)
-                }}
-                close={closeModal}
-            />
+            <Modal close={closeModal}>
+                <GeneralModal
+                    illu={'/images/loginsign_1.png'}
+                    title={'Selamat datang di Inspigo Learning Platform !'}
+                    description={
+                        'Kembangkan diri bersama dan nikmati ragam fitur pembelajaran menarik dengan berbagai topik.'
+                    }
+                    ctaLabel="explore"
+                    cta={() => {
+                        modalClose(!closeModal)
+                    }}
+                />
+            </Modal>
         </>
     )
 }

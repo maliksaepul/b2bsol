@@ -37,17 +37,21 @@ const Button = ({ variant, size, cta, id, label, icon }) => {
     }
 
     const renderIcon = condition => {
-        if (condition !== true) {
+        if (condition === false) {
             return null
         } else {
-            return (
-                <Icon
-                    name={icon.name || 'DoorOpen'}
-                    multiplier={icon.multiplier || 1}
-                    fill={icon.fill}
-                    stroke={icon.stroke}
-                />
-            )
+            if (condition.name) {
+                return (
+                    <Icon
+                        name={condition.name}
+                        multiplier={condition.multiplier || 1}
+                        fill={condition.fill}
+                        stroke={condition.stroke}
+                    />
+                )
+            } else {
+                return <Icon name={'DoorOpen'} multiplier={1} />
+            }
         }
     }
 
@@ -57,7 +61,7 @@ const Button = ({ variant, size, cta, id, label, icon }) => {
             onClick={cta}
             id={id || ''}>
             <div className={styles.text}>
-                {renderIcon(icon)}
+                {renderIcon(icon)}&nbsp;
                 <span>{label}</span>
             </div>
         </div>
@@ -77,6 +81,7 @@ Button.propTypes = {
             multiplier: PropTypes.string,
             stroke: PropTypes.string,
         }),
+        PropTypes.object,
     ]),
     label: PropTypes.string,
 }

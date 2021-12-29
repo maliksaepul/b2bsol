@@ -1,12 +1,15 @@
 import Image from 'next/image'
 import Button from 'components/atoms/button'
 import styles from './style.module.scss'
-import React from 'react'
+import React, { useState } from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import Share from '@/components/molecules/share'
 import { dateDuration } from '@/utils/function'
 import AddToCalendar from '@/components/molecules/addtocalendar'
+import Modal from '@/components/molecules/modals/modal'
+import EventModal from '@/components/molecules/modals/event-modal'
+import Share from '@/components/molecules/share'
+import Copy from '@/components/atoms/copy'
 
 const CardEvent = ({
     banner,
@@ -18,6 +21,8 @@ const CardEvent = ({
     end,
     type,
 }) => {
+    const [modal, setModal] = useState(false)
+
     let contentDirection = ''
     switch (variant) {
         case 'column':
@@ -38,6 +43,10 @@ const CardEvent = ({
         if (!disabled) {
             window.open(url)
         }
+    }
+
+    const handleModal = () => {
+        setModal(!modal)
     }
 
     const renderButton = () => {
@@ -73,19 +82,19 @@ const CardEvent = ({
                             icon={true}
                         />
                     ))}
-                    <Share
-                        label={'bagikan'}
-                        url={cta[0].url}
-                        description={event.title}
+                    <Button
+                        variant={'secondary'}
+                        size={'xsmall'}
+                        cta={() => {
+                            handleModal()
+                        }}
+                        label={'Bagikan'}
+                        icon={{ name: 'Share', multiplier: 1 }}
                     />
                 </>
             )
         }
     }
-
-    // const renderTime = () => {
-
-    // }
 
     const renderCard = () => {
         if (banner !== '') {
@@ -121,6 +130,21 @@ const CardEvent = ({
                         </div>
                     </div>
                     <div className={styles.cardevent_cta}>{renderButton()}</div>
+                    <Modal close={!modal} handleClose={handleModal}>
+                        <EventModal
+                            illu={banner}
+                            title={event.title}
+                            description={event.content}
+                            date={event.date}>
+                            <Share
+                                align={'center'}
+                                url={cta[0].url}
+                                description={event.description}
+                            />
+
+                            <Copy url={cta[0].url} label="Copy" />
+                        </EventModal>
+                    </Modal>
                 </div>
             )
         } else {

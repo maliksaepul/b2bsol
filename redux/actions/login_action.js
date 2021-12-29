@@ -1,20 +1,21 @@
 import axios from 'axios'
-import { GET_LAST_LEARNING } from '../types'
+import { GET_ACCOUNT } from '../types'
 import { apiEnd, apiError, apiStart } from './scedule_action'
 
-export const getLastLearning = payload => {
+export const getAccount = payload => {
     return {
-        type: GET_LAST_LEARNING,
+        type: GET_ACCOUNT,
         payload: payload,
     }
 }
 
-export const fetchLastLearning = () => dispatch => {
+export const fetchCourses = () => dispatch => {
     dispatch(apiStart())
+
     axios
-        .get('http://localhost:3000/api/continue-learning')
+        .get(`${process.env.ACCOUNT}/login`)
         .then(({ data }) => {
-            dispatch(getLastLearning(data))
+            dispatch(getAccount(data))
         })
         .catch(error => {
             dispatch(apiError(error))

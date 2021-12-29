@@ -5,12 +5,16 @@ import DropDown from '@/components/atoms/dropdown'
 import Search from '@/components/molecules/search'
 import Filter from '@/components/molecules/filter'
 import Sorting from '@/components/molecules/sorting'
+import { fetchPodcast } from '@/redux/actions/ondemand_action'
+import { connect } from 'react-redux'
+
 const Contents = ({
     children,
     activeFilter,
     activeSorting,
     sortingActive,
     filterActive,
+    fetchPodcast,
 }) => {
     const categories = [
         'Category 1',
@@ -43,7 +47,7 @@ const Contents = ({
         <div className={styles.contents}>
             <div className={styles.toolbar}>
                 <div className={styles.toolbar_item}>
-                    <Search />
+                    <Search onChange={fetchPodcast} />
                 </div>
                 <div className={styles.toolbar_item}>
                     <DropDown
@@ -75,6 +79,7 @@ Contents.propTypes = {
     activeSorting: PropTypes.func,
     sortingActive: PropTypes.bool,
     filterActive: PropTypes.bool,
+    fetchPodcast: PropTypes.func,
 }
 
-export default Contents
+export default connect(null, { fetchPodcast })(Contents)

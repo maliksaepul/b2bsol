@@ -14,7 +14,7 @@ const AudioBookPlayer = ({ alias, relatedAudioPlaybook }) => {
             <div className={styles.container}>
                 <Section>
                     <EmbedPlayer
-                        src={`https://staging-player.inspigo.id/v2/HBYEYAQZZP?hide-footer=1`}
+                        src={`https://staging-player.inspigo.id/v2/HBYEYAQZZP?hide-header=1&hide-footer=1`}
                     />
                 </Section>
                 <Section>

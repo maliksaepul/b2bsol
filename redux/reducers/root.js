@@ -12,6 +12,7 @@ import VodReducer from './vod_reducer'
 import PodcastReducer from './podcast_reducer'
 import RelatedPodcast from './realated-podcast_reducer'
 import RelatedAudioPlaybook from './realated-audioplaybook_reducer'
+import LoginReducer from './login_reducer'
 
 const rootReducer = combineReducers({
     sidebarState: SidebarReducer,
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
     podcast: PodcastReducer,
     relatedPodcast: RelatedPodcast,
     relatedAudioPlaybook: RelatedAudioPlaybook,
+    account: LoginReducer,
 })
 
 export default rootReducer

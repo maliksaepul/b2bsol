@@ -1,17 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Icon from '@/components/atoms/icon'
 import styles from './style.module.scss'
-import cx from 'classnames'
 import { ShareLink } from 'social-media-sharing'
+import cx from 'classnames'
 
-const Share = ({ label, url, description, tag }) => {
-    const [active, setActive] = useState(false)
-
-    const handleDropDown = () => {
-        setActive(!active)
-    }
-
+const Share = ({ align, url, description, tag }) => {
     const shareTextToWhatsApp = (text, url) => {
         const texts = `description : ${text} link : ${url}`
         const message = texts.trim().replace(/\s/g, '%20').toLowerCase()
@@ -74,30 +68,26 @@ const Share = ({ label, url, description, tag }) => {
     }
 
     return (
-        <div className={styles.share}>
-            <div
-                className={styles.share_button}
-                onClick={() => {
-                    handleDropDown()
-                }}>
-                <Icon name="Share" multiplier={1} />
-                <p>{label}</p>
-            </div>
-            <div
-                className={cx(
-                    styles.share_dropdown,
-                    active ? styles.active : null
-                )}>
-                <div onClick={() => sentMessageToSocial('whatsapp')}>
-                    <Icon name="whatsapp" multiplier={1} />
+        <div className={cx(styles.share, styles[align])}>
+            <div className={styles.share_container}>
+                <div
+                    onClick={() => sentMessageToSocial('whatsapp')}
+                    className={cx(styles.rounded, styles.whatsapp)}>
+                    <Icon name="whatsapp" multiplier={1.5} />
                 </div>
-                <div onClick={() => sentMessageToSocial('facebook')}>
-                    <Icon name="facebook" multiplier={1} />
+                <div
+                    onClick={() => sentMessageToSocial('facebook')}
+                    className={cx(styles.rounded, styles.facebook)}>
+                    <Icon name="facebook" multiplier={1.5} />
                 </div>
-                <div onClick={() => sentMessageToSocial('twitter')}>
+                <div
+                    onClick={() => sentMessageToSocial('twitter')}
+                    className={cx(styles.rounded, styles.twitter)}>
                     <Icon name="twitter" multiplier={1} />
                 </div>
-                <div onClick={() => sentMessageToSocial('telegram')}>
+                <div
+                    onClick={() => sentMessageToSocial('telegram')}
+                    className={cx(styles.rounded, styles.telegram)}>
                     <Icon name="telegram" multiplier={1} />
                 </div>
             </div>
@@ -106,7 +96,7 @@ const Share = ({ label, url, description, tag }) => {
 }
 
 Share.propTypes = {
-    label: PropTypes.string,
+    align: PropTypes.string,
     url: PropTypes.string,
     description: PropTypes.string,
     tag: PropTypes.string,

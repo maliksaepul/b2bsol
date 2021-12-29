@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import { maxTitlesLength } from '@/utils/function'
 import { useRouter } from 'next/router'
+import routes from '@/utils/routes'
 
 const BookCard = ({ book }) => {
     const router = useRouter()
 
     const renderLink = (link = null) => {
         if (link) {
-            router.push(`/audioplaybook/${link}`)
+            router.push(routes.audioplaybook(link))
             // window.open(link)
         }
     }

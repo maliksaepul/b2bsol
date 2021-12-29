@@ -30,10 +30,7 @@ const Card = ({ body, children, title, cta }) => {
                 <Button
                     key={key}
                     label={val.label}
-                    icon={{
-                        disabled: val.icon?.disabled,
-                        name: val.icon?.name,
-                    }}
+                    icon={val.icon}
                     variant={'secondary'}
                 />
             )

@@ -3,11 +3,12 @@ import Header from '@/components/templates/header'
 import styles from './style.module.scss'
 import React from 'react'
 import HeaderBackground from '@/components/templates/header/background'
-import Modal from '@/components/molecules/modal'
+import Modal from '@/components/molecules/modals/modal'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import { modalClose } from '@/redux/actions/modal_action'
+import GeneralModal from '@/components/molecules/modals/general-modal'
 
 const ondemand = ({ children, closeModal, modalClose }) => {
     return (
@@ -24,18 +25,19 @@ const ondemand = ({ children, closeModal, modalClose }) => {
             />
             <main className={styles.main}>{children}</main>
             <Footer />
-            <Modal
-                illu={'/images/loginsign_1.png'}
-                title={'Selamat datang di Inspigo Learning Platform !'}
-                description={
-                    'Kembangkan diri bersama dan nikmati ragam fitur pembelajaran menarik dengan berbagai topik.'
-                }
-                ctaLabel="explore"
-                cta={() => {
-                    modalClose(!closeModal)
-                }}
-                close={closeModal}
-            />
+            <Modal close={closeModal}>
+                <GeneralModal
+                    illu={'/images/loginsign_1.png'}
+                    title={'Selamat datang di Inspigo Learning Platform !'}
+                    description={
+                        'Kembangkan diri bersama dan nikmati ragam fitur pembelajaran menarik dengan berbagai topik.'
+                    }
+                    ctaLabel="explore"
+                    cta={() => {
+                        modalClose(!closeModal)
+                    }}
+                />
+            </Modal>
         </>
     )
 }

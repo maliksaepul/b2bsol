@@ -8,6 +8,9 @@
     justify-content: center;
 
     &_container {
+        width: 100%;
+        padding: 1rem;
         max-width: 960px;
+        background-color: #fff;
     }
 }

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 const AudioLearningPage = ({ podcast, fetchPodcast }) => {
     useEffect(() => {
         fetchPodcast()
-    }, [])
+    }, [podcast.length])
 
     return (
         <>
