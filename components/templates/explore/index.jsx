@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import * as colors from '@/styles/_dstoken.module.scss'
 import Button from '@/components/atoms/button'
 import { useRouter } from 'next/router'
+import routes from '@/utils/routes'
 
 const Explore = ({ user, lastlearning, fetchLastLearning }) => {
     useEffect(() => {
@@ -45,7 +46,7 @@ const Explore = ({ user, lastlearning, fetchLastLearning }) => {
                         label={'Mulai Sekarang'}
                         variant={'primary'}
                         cta={() => {
-                            router.push('/audiolearning')
+                            router.push(routes.audiolearning())
                         }}
                     />
                 </center>

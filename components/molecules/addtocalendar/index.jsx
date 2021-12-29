@@ -36,9 +36,9 @@ const AddToCalendar = ({ options, events, label }) => {
     const listOfIcon = name => {
         switch (name) {
             case 'google':
-                return `https://img.icons8.com/color/48/000000/google-calendar--v2.png`
+                return `https://ik.imagekit.io/saepulmalik/google-calender_LJU20wH6u.png?updatedAt=1640787139492`
             case 'ics':
-                return `https://img.icons8.com/ios-filled/50/000000/mac-os.png`
+                return `https://ik.imagekit.io/saepulmalik/apple-calendar_KDytOdRNnm9.png?updatedAt=1640787100069`
             case 'yahoo':
                 return `https://img.icons8.com/color/48/000000/yahoo.png`
             case 'outlook':

@@ -57,8 +57,6 @@ const CardEvent = ({
                     options={[
                         { label: 'Google Calender', alias: 'google' },
                         { label: 'Apple', alias: 'ics' },
-                        { label: 'Yahoo (online)', alias: 'yahoo' },
-                        { label: 'Outlook (online)', alias: 'outlook' },
                     ]}
                     events={{
                         title: event.title,

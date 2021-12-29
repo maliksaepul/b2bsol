@@ -1,6 +1,7 @@
 @import 'styles/dstoken.module';
 .addtocalendar {
     position: relative;
+    z-index: 14;
     &_button {
         display: flex;
         background-color: $primary;
@@ -13,10 +14,11 @@
     &_dropdown {
         display: none;
         &.addtocalendar_dropdown_active {
+            border: 1px solid $primary;
             display: block;
             border-radius: 1.25rem;
             position: absolute;
-            bottom: 2.7rem;
+            bottom: 3.5rem;
             left: 0;
             background-color: #fff;
             width: 100%;
@@ -35,6 +37,14 @@
             transform: rotate(0deg);
             transition: rotate 1s;
         }
+
+        &_up,
+        &_down {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0.5rem;
+        }
     }
 }
 
@@ -42,6 +52,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding: 0.5rem;
 
     &_illu {
         max-width: 1.875rem;

@@ -13,7 +13,7 @@ const Header = () => {
                         navitem={[
                             {
                                 label: 'Audio Learning',
-                                url: routes.audilearning(),
+                                url: routes.audiolearning(),
                             },
                             {
                                 label: 'video learning',

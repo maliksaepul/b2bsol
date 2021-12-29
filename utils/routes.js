@@ -3,7 +3,7 @@ const routes = {
      * Audio Learning
      * @returns
      */
-    audilearning: alias => {
+    audiolearning: alias => {
         if (alias) return `/audiolearning/${alias}`
         else return `/audiolearning`
     },
