@@ -2,7 +2,7 @@ import axios from 'axios'
 import { GET_RELATED_AUDIOPLAYBOOK, GET_RELATED_PODCAST } from '../types'
 import { apiEnd, apiError, apiStart } from './scedule_action'
 
-export const getPodcast = payload => {
+export const getRelatedPodcast = payload => {
     return {
         type: GET_RELATED_PODCAST,
         payload: payload,
@@ -22,7 +22,7 @@ export const fetchRelatedPodcast = () => dispatch => {
     axios
         .get('http://localhost:3000/api/related-podcast')
         .then(({ data }) => {
-            dispatch(getPodcast(data))
+            dispatch(getRelatedPodcast(data))
         })
         .catch(error => {
             dispatch(apiError(error))

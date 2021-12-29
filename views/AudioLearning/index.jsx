@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import Layout from '@/hoc/layouts/common'
 import Section from '@/components/atoms/section'
 import About from '@/components/templates/about'
-import Contents from '@/containers/ContentContainer'
 import Grid from '@/components/atoms/grid'
 import AudioCard from '@/components/organisms/audio-card'
+import Contents from '@/components/organisms/contents'
+import Toolbar from '@/containers/ToolbarContainer'
+import { API_PODCAST } from '@/utils/apiroutelist'
 
-const AudioLearning = ({ podcast }) => {
+const AudioLearning = ({ podcast, fetchData }) => {
     const renderAudioCard = () => {
         return podcast.map((c, i) => <AudioCard audio={c} key={i} />)
     }
@@ -24,6 +26,7 @@ const AudioLearning = ({ podcast }) => {
             </Section>
             <Section>
                 <Contents>
+                    <Toolbar api={API_PODCAST} />
                     <Grid>{renderAudioCard()}</Grid>
                 </Contents>
             </Section>
@@ -33,6 +36,7 @@ const AudioLearning = ({ podcast }) => {
 
 AudioLearning.propTypes = {
     podcast: PropTypes.array,
+    fetchData: PropTypes.func,
 }
 
 export default AudioLearning

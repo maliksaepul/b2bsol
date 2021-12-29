@@ -29,7 +29,6 @@ export const fetchPodcast = (search, filter) => dispatch => {
         filter,
     }
     dispatch(apiStart())
-
     axios
         .get('http://localhost:3000/api/podcast', { params })
         .then(({ data }) => {

@@ -30,7 +30,6 @@ export const getSchedules = payload => {
 
 export const fetchSchedules = () => dispatch => {
     dispatch(apiStart())
-
     axios
         .get('http://localhost:3000/api/schedules')
         .then(({ data }) => {

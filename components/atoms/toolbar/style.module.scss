@@ -1,0 +1,31 @@
+@import 'styles/mixins';
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    @include media-max-width($mobile-breakpoint) {
+        flex-direction: column;
+        &_item {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &_item {
+        flex: 1 1 0;
+        display: flex;
+        border-radius: 8px;
+        // background-color: #dcdcdc;
+        height: 2.5rem;
+        justify-content: space-around;
+        align-items: center;
+    }
+    @include media-min-width($mobile-breakpoint) {
+        &_item:last-child {
+            justify-content: flex-end;
+            & > div:first-of-type {
+                margin-right: 1rem;
+            }
+        }
+    }
+}

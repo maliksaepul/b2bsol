@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 import Layout from '@/hoc/layouts/common'
 import Section from '@/components/atoms/section'
 import About from '@/components/templates/about'
-import Contents from '@/containers/ContentContainer'
+import Contents from '@/components/organisms/contents'
 import Grid from '@/components/atoms/grid'
-
+import Toolbar from '@/containers/ToolbarContainer'
 import VideoCard from '@/components/organisms/video-card'
+import { API_VIDEO } from '@/utils/apiroutelist'
 
 const VideoLearning = ({ videos }) => {
     const renderVideoCard = () => {
@@ -30,6 +31,7 @@ const VideoLearning = ({ videos }) => {
         </Section> */}
             <Section>
                 <Contents>
+                    <Toolbar api={API_VIDEO} />
                     <Grid variant={'large'}>{renderVideoCard()}</Grid>
                 </Contents>
             </Section>

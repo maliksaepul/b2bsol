@@ -3,17 +3,19 @@ import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import Checkbox from '@/components/atoms/checkbox'
 
-const Filter = ({ filterList, label }) => {
-    const [filterApi, setFilterApi] = useState([])
+const Filter = ({ filterList, label, onChange, filter }) => {
+    const [filterApi, setFilterApi] = useState(filter)
 
     const fetchApi = (val, name) => {
-        const listOf = [...filterApi]
+        const listOf = [...filterApi].filter(val => val !== '')
         if (val) {
             listOf.push(name)
             setFilterApi(listOf)
+            onChange && onChange(listOf.toString())
         } else {
             const data = listOf.filter(val => val !== name)
             setFilterApi(data)
+            onChange && onChange(data.toString())
         }
     }
     return (
@@ -30,6 +32,7 @@ const Filter = ({ filterList, label }) => {
                                 onChange={(val, name) => {
                                     fetchApi(val, name)
                                 }}
+                                checked={filterApi.includes(item)}
                             />
                         </div>
                     )
@@ -42,6 +45,8 @@ const Filter = ({ filterList, label }) => {
 Filter.propTypes = {
     filterList: PropTypes.array,
     label: PropTypes.string,
+    onChange: PropTypes.func,
+    filter: PropTypes.array,
 }
 
 export default Filter

@@ -1,19 +1,14 @@
 import podcast from '@/contexts/data/podcast.json'
+import { queryData } from '@/utils/function'
 
 export default function handler(req, res) {
-    const { search } = req.query
+    const { search, filter, sorting } = req.query
     let response = podcast
 
     switch (req.method) {
         case 'GET':
-            if (search) {
-                response = response.filter((val, i) => {
-                    return (
-                        val.title
-                            .toLowerCase()
-                            .indexOf(search.toLowerCase()) !== -1
-                    )
-                })
+            if (search || filter || sorting) {
+                response = queryData(response, search, filter, sorting)
                 res.status(200).json(response)
             } else {
                 res.status(200).json(response)
