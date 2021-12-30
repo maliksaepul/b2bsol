@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { GET_APB, GET_PODCAST, GET_VOD } from '../types'
-import { apiEnd, apiError, apiStart } from './scedule_action'
+import { apiEnd, apiError, apiStart } from './_scedule'
 
 export const getPodcast = payload => {
     return {

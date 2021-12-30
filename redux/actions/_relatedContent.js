@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { GET_RELATED_AUDIOPLAYBOOK, GET_RELATED_PODCAST } from '../types'
-import { apiEnd, apiError, apiStart } from './scedule_action'
+import { apiEnd, apiError, apiStart } from './_scedule'
 
 export const getRelatedPodcast = payload => {
     return {

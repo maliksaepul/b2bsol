@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import AudioBookPlayer from '@/views/AudioBookPlayer'
-import { fetchRelatedAudioPlaybook } from '@/redux/actions/related-content_action'
+import { fetchRelatedAudioPlaybook } from '@/redux/actions/_relatedContent'
 
 const AudioBookPlayerPage = ({
     fetchRelatedAudioPlaybook,

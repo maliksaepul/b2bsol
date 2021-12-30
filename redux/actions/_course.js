@@ -1,10 +1,10 @@
 import axios from 'axios'
-import { GET_ACCOUNT } from '../types'
-import { apiEnd, apiError, apiStart } from './scedule_action'
+import { GET_COURSES } from '../types'
+import { apiEnd, apiError, apiStart } from './_scedule'
 
-export const getAccount = payload => {
+export const getCourses = payload => {
     return {
-        type: GET_ACCOUNT,
+        type: GET_COURSES,
         payload: payload,
     }
 }
@@ -13,9 +13,9 @@ export const fetchCourses = () => dispatch => {
     dispatch(apiStart())
 
     axios
-        .get(`${process.env.ACCOUNT}/login`)
+        .get('http://localhost:3000/api/master-courses')
         .then(({ data }) => {
-            dispatch(getAccount(data))
+            dispatch(getCourses(data))
         })
         .catch(error => {
             dispatch(apiError(error))

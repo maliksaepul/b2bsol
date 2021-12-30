@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { GET_LAST_LEARNING } from '../types'
-import { apiEnd, apiError, apiStart } from './scedule_action'
+import { apiEnd, apiError, apiStart } from './_scedule'
 
 export const getLastLearning = payload => {
     return {

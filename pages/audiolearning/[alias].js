@@ -1,7 +1,7 @@
 import PodcastPlayer from '@/views/PodcastPlayer'
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { fetchRelatedPodcast } from '@/redux/actions/related-content_action'
+import { fetchRelatedPodcast } from '@/redux/actions/_relatedContent'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 

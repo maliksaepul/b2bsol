@@ -1,37 +1,20 @@
 import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
-import verifyToken from 'services/verifyToken'
+import React, { useEffect } from 'react'
 
 const withAuth = Component => {
-    return function EnchancedComponent(props) {
+    const EnchancedComponent = props => {
         const Router = useRouter()
-        const [verified, setVerified] = useState(false)
-
         useEffect(async () => {
-            const accessToken = localStorage.getItem('accessToken')
+            const refreshToken = localStorage.getItem('refreshToken')
             // if no accessToken was found,then we redirect to "/" page.
-            if (!accessToken) {
+            if (!refreshToken) {
                 Router.replace('/')
-            } else {
-                // we call the api that verifies the token.
-                const data = await verifyToken(accessToken)
-                // if token was verified we set the state.
-                if (data.verified) {
-                    setVerified(data.verified)
-                } else {
-                    // If the token was fraud we first remove it from localStorage and then redirect to "/"
-                    localStorage.removeItem('accessToken')
-                    Router.replace('/login')
-                }
             }
         }, [])
-
-        if (verified) {
-            return <Component {...props} />
-        } else {
-            return null
-        }
+        return <Component {...props} />
     }
+
+    return EnchancedComponent
 }
 
 export default withAuth

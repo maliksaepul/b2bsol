@@ -1,5 +1,5 @@
 import Schedule from '@/components/templates/schedule'
-import { fetchSchedules } from '@/redux/actions/scedule_action'
+import { fetchSchedules } from '@/redux/actions/_scedule'
 import { connect } from 'react-redux'
 const mapStateToProps = ({ scheduleReducer }) => ({
     events: scheduleReducer,

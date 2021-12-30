@@ -12,7 +12,7 @@ import MasterCourse from '@/containers/MasterCourseContainer'
 import Modal from '@/components/molecules/modals/modal'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { modalClose } from '@/redux/actions/modal_action'
+import { modalClose } from '@/redux/actions/_modal'
 import GeneralModal from '@/components/molecules/modals/general-modal'
 
 // Styles
