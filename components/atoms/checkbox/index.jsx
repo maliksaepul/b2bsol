@@ -12,12 +12,11 @@ const Checkbox = ({ name, onChange, checked }) => {
                 type="checkbox"
                 name={name}
                 id={name}
-                defaultChecked={false}
                 placeholder={name}
                 onChange={handleChange}
                 checked={checked}
             />
-            {name}
+            &nbsp; <span dangerouslySetInnerHTML={{ __html: name }}></span>
         </label>
     )
 }

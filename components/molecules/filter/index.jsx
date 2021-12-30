@@ -21,7 +21,9 @@ const Filter = ({ filterList, label, onChange, filter }) => {
     return (
         <div className={styles.filter}>
             <div className={styles.filter_header}>
-                <p>{label}</p>
+                <p className="p2">
+                    <b>{label}</b>{' '}
+                </p>
             </div>
             <div className={styles.filter_container}>
                 {filterList.map((item, key) => {
