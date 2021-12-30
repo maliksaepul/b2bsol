@@ -30,7 +30,7 @@ export const fetchPodcast = (search, filter) => dispatch => {
     }
     dispatch(apiStart())
     axios
-        .get('http://localhost:3000/api/podcast', { params })
+        .get(`${process.env.BASEURL}/api/podcast`, { params })
         .then(({ data }) => {
             dispatch(getPodcast(data))
         })
@@ -46,7 +46,7 @@ export const fetchApb = () => dispatch => {
     dispatch(apiStart())
 
     axios
-        .get('http://localhost:3000/api/apb')
+        .get(`${process.env.BASEURL}/api/apb`)
         .then(({ data }) => {
             dispatch(getApb(data))
         })
@@ -62,7 +62,7 @@ export const fetchVod = () => dispatch => {
     dispatch(apiStart())
 
     axios
-        .get('http://localhost:3000/api/vod')
+        .get(`${process.env.BASEURL}/api/vod`)
         .then(({ data }) => {
             dispatch(getVod(data))
         })

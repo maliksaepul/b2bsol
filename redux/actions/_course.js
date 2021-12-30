@@ -13,7 +13,7 @@ export const fetchCourses = () => dispatch => {
     dispatch(apiStart())
 
     axios
-        .get('http://localhost:3000/api/master-courses')
+        .get(`${process.env.BASEURL}/api/master-courses`)
         .then(({ data }) => {
             dispatch(getCourses(data))
         })

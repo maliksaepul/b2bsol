@@ -12,7 +12,7 @@ export const getLastLearning = payload => {
 export const fetchLastLearning = () => dispatch => {
     dispatch(apiStart())
     axios
-        .get('http://localhost:3000/api/continue-learning')
+        .get(`${process.env.BASEURL}/api/continue-learning`)
         .then(({ data }) => {
             dispatch(getLastLearning(data))
         })

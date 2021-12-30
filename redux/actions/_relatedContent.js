@@ -20,7 +20,7 @@ export const fetchRelatedPodcast = () => dispatch => {
     dispatch(apiStart())
 
     axios
-        .get('http://localhost:3000/api/related-podcast')
+        .get(`${process.env.BASEURL}/api/related-podcast`)
         .then(({ data }) => {
             dispatch(getRelatedPodcast(data))
         })
@@ -36,7 +36,7 @@ export const fetchRelatedAudioPlaybook = () => dispatch => {
     dispatch(apiStart())
 
     axios
-        .get('http://localhost:3000/api/related-audioplaybook')
+        .get(`${process.env.BASEURL}/api/related-audioplaybook`)
         .then(({ data }) => {
             dispatch(getRelatedAudioPlaybook(data))
         })

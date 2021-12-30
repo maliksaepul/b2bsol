@@ -13,7 +13,7 @@ export const fetchMyStat = id => dispatch => {
     dispatch(apiStart())
 
     axios
-        .get(`http://localhost:3000/api/statistic/${id}`)
+        .get(`${process.env.BASEURL}/api/statistic/${id}`)
         .then(({ data }) => {
             dispatch(getMyStat(data))
         })
