@@ -4,7 +4,10 @@ module.exports = {
         PORT: process.env.PORT,
         ENVIRONMENT: process.env.ENVIRONMENT,
         BASEURL: process.env.BASEURL,
-        API_INSPIGO: process.env.API_INSPIGO,
+        SERVICE_API: process.env.SERVICE_API,
+        MEMBER: process.env.MEMBER,
+        ORIGIN: process.env.ORIGIN,
+        SERVICE_ACCOUNT: process.env.SERVICE_ACCOUNT,
     },
     images: {
         domains: ['ik.imagekit.io', 'cdn.inspigo.id'],

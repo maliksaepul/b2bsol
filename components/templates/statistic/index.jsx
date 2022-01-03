@@ -23,22 +23,16 @@ const Statistic = ({ myStat, fetchMyStat, id }) => {
                 <div className={styles.statistic_container}>
                     <CounterStats
                         icon={{ name: 'Headset' }}
-                        color={colors.inspirationBlue}
-                        bgcolor={colors.secondaryCream}
                         duration={myStat.podcast}
                         description={'Total Duration Audio Learning'}
                     />
                     <CounterStats
                         icon={{ name: 'ClarityVideo' }}
-                        color={colors.inspirationBlue}
-                        bgcolor={colors.secondaryPeach}
                         duration={myStat.vod}
                         description={'Total Duration Video Learning'}
                     />
                     <CounterStats
                         icon={{ name: 'FluentLearning' }}
-                        color={colors.inspirationBlue}
-                        bgcolor={colors.secondaryTosca}
                         duration={myStat.course}
                         description={'Total Duration Course'}
                     />

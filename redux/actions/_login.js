@@ -1,6 +1,7 @@
-import axios from 'axios'
+import { SERVICE } from '@/utils/constants'
 import { GET_ACCOUNT } from '../types'
-import { apiEnd, apiError, apiStart } from './_scedule'
+import { apiStart } from './_scedule'
+import Request from '@/redux/request'
 
 export const getAccount = payload => {
     return {
@@ -9,18 +10,20 @@ export const getAccount = payload => {
     }
 }
 
-export const fetchCourses = () => dispatch => {
+export const fetchAccount = token => async dispatch => {
     dispatch(apiStart())
 
-    axios
-        .get(`${process.env.ACCOUNT}/login`)
-        .then(({ data }) => {
-            dispatch(getAccount(data))
-        })
-        .catch(error => {
-            dispatch(apiError(error))
-        })
-        .then(() => {
-            dispatch(apiEnd())
-        })
+    try {
+        const request = new Request(null, null, true)
+        const response = {
+            ...(
+                await request.get(
+                    SERVICE.ACCOUNT + '/accounts/self?ref_subs=true'
+                )
+            ).data.data,
+        }
+        dispatch(getAccount(response))
+    } catch (error) {
+        return error
+    }
 }

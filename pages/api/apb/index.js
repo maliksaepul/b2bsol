@@ -1,5 +1,5 @@
 import apb from '@/contexts/data/apb.json'
-import { queryData } from '@/utils/function'
+import { queryData } from '@/utils/helpers'
 
 export default function handler(req, res) {
     const { search, filter, sorting } = req.query

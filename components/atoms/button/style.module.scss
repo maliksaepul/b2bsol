@@ -4,7 +4,6 @@
     outline: none;
     border: none;
     @include global-radius();
-    @include button_animation();
     cursor: pointer;
     overflow: hidden;
     font-weight: 400;
@@ -42,5 +41,10 @@
         padding: 0.81rem 3.75rem;
         max-width: 1rem;
         font-size: 1rem;
+    }
+    .text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

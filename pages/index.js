@@ -2,6 +2,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Home from '@/views/Home/Home'
+import withAuth from '@/hoc/wrappers/withAuthStrict'
 
 // Views
 
@@ -17,4 +18,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default withAuth(HomePage)

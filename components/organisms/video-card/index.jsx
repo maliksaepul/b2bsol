@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.module.scss'
-import { maxTitlesLength } from '@/utils/function'
+import { maxTitlesLength } from '@/utils/helpers'
 // import { useRouter } from 'next/router'
 
 const VideoCard = ({ video }) => {
