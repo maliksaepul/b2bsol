@@ -46,11 +46,15 @@ class Request {
     async sendRequest(request, regenerateToken) {
         try {
             const response = await request()
-            console.log(response.status)
             const replaceToken = response.status === 200 && this.withAccessToken
-            console.log(response.data.token, replaceToken)
-            if (replaceToken) saveToken(response.data.token)
 
+            if (replaceToken && getQueryParam('refresh')) {
+                const token = {
+                    access: response.data.token.access,
+                    refresh: getQueryParam('refresh'),
+                }
+                saveToken(token)
+            }
             return response
         } catch (error) {
             if (error.response.status === 401 && regenerateToken) {

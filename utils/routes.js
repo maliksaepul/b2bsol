@@ -1,3 +1,5 @@
+import { LOCAL_STORAGE, MEMBER } from './constants'
+
 const routes = {
     /**
      * Audio Learning
@@ -25,6 +27,16 @@ const routes = {
      * @returns
      */
     leaderboard: () => `/leaderboard`,
+
+    /**
+     * My Profile
+     * @returns
+     */
+    myProfile: () =>
+        MEMBER +
+        '/home/profile/overview' +
+        '?refresh=' +
+        localStorage.getItem(LOCAL_STORAGE.REFRESH_TOKEN),
 }
 
 export default routes

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import Navbar from '../../molecules/navbar'
+import routes from '@/utils/routes'
 
 const Profile = props => {
     return (
@@ -19,18 +20,18 @@ const Profile = props => {
                 navitem={[
                     {
                         label: 'My Profile',
-                        url: '/ondemand/audiolearning',
+                        url: routes.myProfile(),
                     },
                     {
                         label: 'My Statistic',
-                        url: '/ondemand/videolearning',
+                        url: routes.myProfile(),
                     },
                     {
                         label: 'My Badge',
-                        url: '/ondemand/audioplaybook',
+                        url: routes.myProfile(),
                     },
-                    { label: 'About', url: '/leaderboard' },
-                    { label: 'Logout', url: '/leaderboard' },
+                    { label: 'About', url: routes.myProfile() },
+                    { label: 'Logout', url: routes.myProfile() },
                 ]}
             />
         </div>
