@@ -18,6 +18,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
     }
 
     &_sidebar {

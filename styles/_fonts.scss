@@ -1,15 +1,3 @@
-// @font-face {
-//     font-family: 'Ambit';
-//     src: url('/assets/fonts/Ambit/Ambit-Black.woff');
-//     font-weight: ;
-//   font-style: normal;
-// }
-// @font-face {
-//     font-family: 'Ambit';
-//     src: url('/assets/fonts/Ambit/Ambit-BlackItalic.woff');
-//     font-weight: normal;
-//     font-style: normal;
-// }
 @font-face {
     font-family: 'Ambit';
     src: url('/assets/fonts/Ambit/Ambit-Bold.woff');
@@ -22,14 +10,7 @@
     font-weight: bold;
     font-style: italic;
 }
-// @font-face {
-//     font-family: 'Ambit';
-//     src: url('/assets/fonts/Ambit/Ambit-ExtraLight.woff');
-// }
-// @font-face {
-//     font-family: 'Ambit';
-//     src: url('/assets/fonts/Ambit/Ambit-ExtraLightItalic.woff');
-// }
+
 @font-face {
     font-family: 'Ambit';
     src: url('/assets/fonts/Ambit/Ambit-Italic.woff');
@@ -48,15 +29,6 @@
     font-weight: normal;
     font-style: normal;
 }
-// @font-face {
-//     font-family: 'Ambit';
-//     src: url('/assets/fonts/Ambit/Ambit-SemiBold.woff');
-// }
-// @font-face {
-//     font-family: 'Ambit';
-//     src: url('/assets/fonts/Ambit/Ambit-Thin.woff');
-// }
-// @font-face {
-//     font-family: 'Ambit';
-//     src: url('/assets/fonts/Ambit/Ambit-ThinItalic.woff');
-// }
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+$font: 'Ambit', sans-serif;

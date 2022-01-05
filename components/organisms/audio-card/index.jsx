@@ -4,6 +4,7 @@ import styles from './style.module.scss'
 import { maxTitlesLength } from '@/utils/helpers'
 import { useRouter } from 'next/router'
 import routes from '@/utils/routes'
+import cx from 'classnames'
 
 const AudioCard = ({ audio }) => {
     const router = useRouter()
@@ -22,7 +23,7 @@ const AudioCard = ({ audio }) => {
             />
             <div>
                 <h6>{maxTitlesLength(audio.title)}</h6>
-                <p className={'p2'}>{audio.author}</p>
+                <p className={cx('p2')}>{audio.author}</p>
             </div>
         </div>
     )

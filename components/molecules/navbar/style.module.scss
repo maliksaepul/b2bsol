@@ -1,5 +1,5 @@
 @import 'styles/mixins';
-@import 'styles/dstoken.module';
+@import 'styles/colors';
 .nav {
     min-height: 3.5rem;
     height: auto;
@@ -7,7 +7,7 @@
     flex-direction: row;
     align-items: center;
     list-style: none;
-    background-color: $neutral;
+    background-color: $stroke;
     font-size: 13px;
     overflow-x: auto;
     @include verticaless-gap();

@@ -1,4 +1,4 @@
-@import 'styles/dstoken.module';
+@import 'styles/colors';
 @import 'styles/mixins';
 .filter {
     position: absolute;
@@ -6,9 +6,9 @@
     right: 0;
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: $gray-2;
+    background-color: $grey-1;
     width: 31.25rem;
-    border: 1px solid $main-stroke;
+    border: 1px solid $secondary-stroke;
 
     &_header {
         padding: 1rem 0;

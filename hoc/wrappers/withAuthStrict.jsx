@@ -9,16 +9,13 @@ const withAuth = Component => {
     const EnchancedComponent = props => {
         const Router = useRouter()
         useEffect(async () => {
-            const refreshToken = localStorage.getItem(
-                LOCAL_STORAGE.REFRESH_TOKEN
-            )
+            const accessToken = localStorage.getItem(LOCAL_STORAGE.ACCESS_TOKEN)
             // if no accessToken was found,then we redirect to "/" page.
             const { refresh } = Router.query
 
             if (!Router.isReady) return
-            if (!refreshToken && Router.isReady) {
+            if (!accessToken && Router.isReady) {
                 if (refresh) {
-                    console.log('hallo')
                     await props.fetchAccount(refresh)
                     Router.push(Router.pathname)
                 } else {
@@ -27,6 +24,9 @@ const withAuth = Component => {
                         '_self'
                     )
                 }
+            } else {
+                await props.fetchAccount(refresh)
+                Router.push(Router.pathname)
             }
         }, [Router.isReady])
         return <Component {...props} />
@@ -34,6 +34,7 @@ const withAuth = Component => {
 
     EnchancedComponent.propTypes = {
         fetchAccount: PropTypes.func,
+        account: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     }
 
     const mapStateToProps = ({ account }) => ({ account })

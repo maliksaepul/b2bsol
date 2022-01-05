@@ -5,7 +5,13 @@ import PropTypes from 'prop-types'
 import Profile from '@/components/organisms/profile'
 import Icon from '@/components/atoms/icon'
 
-const ProfileBar = ({ username, usercover, activeProfile, active }) => {
+const ProfileBar = ({
+    username,
+    usercover,
+    userRole,
+    activeProfile,
+    active,
+}) => {
     const chevronCondition = () => {
         if (active) {
             return styles.chevron_up
@@ -18,7 +24,11 @@ const ProfileBar = ({ username, usercover, activeProfile, active }) => {
         if (active) {
             return (
                 <div className={styles.profile_sidebar}>
-                    <Profile />
+                    <Profile
+                        usercover={usercover}
+                        username={username}
+                        userRole={userRole}
+                    />
                 </div>
             )
         } else {
@@ -29,7 +39,10 @@ const ProfileBar = ({ username, usercover, activeProfile, active }) => {
     return (
         <div className={cx(styles.profile)}>
             <p>Hi {username}</p>
-            <div className={styles.profile_cover}>{usercover}</div>
+            <div className={styles.profile_cover}>
+                {usercover ? <img src={usercover} alt="cover" /> : 'S'}
+            </div>
+
             <div
                 onClick={() => {
                     activeProfile(!active)
@@ -47,6 +60,7 @@ ProfileBar.propTypes = {
     usercover: PropTypes.string,
     activeProfile: PropTypes.func,
     active: PropTypes.bool,
+    userRole: PropTypes.string,
 }
 
 export default ProfileBar

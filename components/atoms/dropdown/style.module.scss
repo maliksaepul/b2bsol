@@ -1,4 +1,4 @@
-@import 'styles/dstoken.module';
+@import 'styles/colors';
 .dropdown {
     position: relative;
 
@@ -9,11 +9,11 @@
         min-width: 10rem;
         max-width: 13.75rem;
         height: 1.25rem;
-        border: 1px solid $main-stroke;
-        background-color: $neutral;
+        border: 1px solid $secondary-stroke;
+        background-color: $stroke;
         padding: 1rem;
         border-radius: 0.5rem;
-        color: $black;
+        color: $black-1;
     }
 }
 

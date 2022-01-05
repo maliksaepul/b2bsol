@@ -1,13 +1,13 @@
-@import 'styles/dstoken.module';
+@import 'styles/colors';
 .sorting {
     position: absolute;
     top: 2.25rem;
     left: 0;
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: $neutral;
+    background-color: $stroke;
     width: 100%;
-    border: 1px solid $main-stroke;
+    border: 1px solid $secondary-stroke;
 
     &_item {
         cursor: pointer;

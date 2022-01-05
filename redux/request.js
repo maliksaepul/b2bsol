@@ -38,7 +38,7 @@ class Request {
     setAuthorizationHeaders() {
         if (this.withAccessToken) {
             this.config.headers.Authorization = `Bearer ${
-                getQueryParam('refresh') || this.accessToken
+                getQueryParam('access') || this.accessToken
             }`
         }
     }

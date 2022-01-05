@@ -1,4 +1,4 @@
-@import 'styles/dstoken.module';
+@import 'styles/colors';
 @import 'styles/mixins';
 .schedule {
     margin-bottom: 1rem;
@@ -28,7 +28,7 @@
         background: linear-gradient(
             to right,
             transparent 0%,
-            $white 50%,
+            #ffffff 50%,
             transparent 100%
         );
         animation: skeletonpalceholder 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;

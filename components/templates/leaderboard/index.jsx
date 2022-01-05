@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
 import Icon from '@/components/atoms/icon'
-import * as colors from '@/styles/_dstoken.module.scss'
+import * as colors from '@/styles/App.module.scss'
 import { mediaMinWidth, MobileBreakpoint } from '@/utils/breakpoint'
 
 const Leaderboard = props => {
@@ -96,7 +96,7 @@ const Leaderboard = props => {
                         className={styles.percentile_bar}
                         style={{
                             width: `${percentage}%`,
-                            backgroundColor: colors.freedomBlue,
+                            backgroundColor: colors.secondary1,
                         }}></div>
                 )
             case 2:
@@ -105,7 +105,7 @@ const Leaderboard = props => {
                         className={styles.percentile_bar}
                         style={{
                             width: `${percentage}%`,
-                            backgroundColor: colors.intuitionBlue,
+                            backgroundColor: colors.secondary2,
                         }}></div>
                 )
             case 3:
@@ -114,7 +114,7 @@ const Leaderboard = props => {
                         className={styles.percentile_bar}
                         style={{
                             width: `${percentage}%`,
-                            backgroundColor: colors.secondaryOrange,
+                            backgroundColor: colors.secondary3,
                         }}></div>
                 )
             case 4:
@@ -123,7 +123,7 @@ const Leaderboard = props => {
                         className={styles.percentile_bar}
                         style={{
                             width: `${percentage}%`,
-                            backgroundColor: colors.secondaryPeach,
+                            backgroundColor: colors.secondary4,
                         }}></div>
                 )
             case 5:
@@ -132,7 +132,7 @@ const Leaderboard = props => {
                         className={styles.percentile_bar}
                         style={{
                             width: `${percentage}%`,
-                            backgroundColor: colors.secondaryYellow,
+                            backgroundColor: colors.secondary5,
                         }}></div>
                 )
             case 6:
@@ -141,7 +141,7 @@ const Leaderboard = props => {
                         className={styles.percentile_bar}
                         style={{
                             width: `${percentage}%`,
-                            backgroundColor: colors.secondaryRed,
+                            backgroundColor: colors.secondary6,
                         }}></div>
                 )
             case 7:
@@ -150,7 +150,7 @@ const Leaderboard = props => {
                         className={styles.percentile_bar}
                         style={{
                             width: `${percentage}%`,
-                            backgroundColor: colors.secondaryViolet,
+                            backgroundColor: colors.secondary7,
                         }}></div>
                 )
             case 8:
@@ -159,7 +159,7 @@ const Leaderboard = props => {
                         className={styles.percentile_bar}
                         style={{
                             width: `${percentage}%`,
-                            backgroundColor: colors.secondaryTosca,
+                            backgroundColor: colors.secondary8,
                         }}></div>
                 )
             case 9:
@@ -168,7 +168,7 @@ const Leaderboard = props => {
                         className={styles.percentile_bar}
                         style={{
                             width: `${percentage}%`,
-                            backgroundColor: colors.secondaryCream,
+                            backgroundColor: colors.secondary9,
                         }}></div>
                 )
             case 10:
@@ -177,7 +177,7 @@ const Leaderboard = props => {
                         className={styles.percentile_bar}
                         style={{
                             width: `${percentage}%`,
-                            backgroundColor: colors.white,
+                            backgroundColor: colors.secondary10,
                         }}></div>
                 )
 

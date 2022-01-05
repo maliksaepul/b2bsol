@@ -1,4 +1,4 @@
-@import 'styles/dstoken.module';
+@import 'styles/colors';
 .object {
     // display : flex;
     cursor: pointer;
@@ -11,5 +11,5 @@
         height: auto;
     }
 
-    color: $intelligence-blue;
+    color: $text-primary;
 }

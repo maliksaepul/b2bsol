@@ -10,7 +10,7 @@ export const getAccount = payload => {
     }
 }
 
-export const fetchAccount = token => async dispatch => {
+export const fetchAccount = () => async dispatch => {
     dispatch(apiStart())
 
     try {

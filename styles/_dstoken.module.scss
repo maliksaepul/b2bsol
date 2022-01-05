@@ -4,12 +4,12 @@ $secondary: #ffffff;
 $neutral: #f7f8f9;
 $main-stroke: #c4cad3;
 $text-secondary: #282828;
-$gray-1: #eaeaea;
+$grey-1: #eaeaea;
 $gray-2: #fafafa;
 
 // primary colors
 $wisdom-blue: #001a70;
-$intelligence-blue: #002f87;
+$text-primary: #002f87;
 $freedom-blue: #238dc1;
 $intuition-blue: #acdee6;
 $inspiration-blue: #0055b8;
@@ -24,23 +24,12 @@ $secondary-cream: #ffeebd;
 $secondary-red: #fd4a5c;
 
 //neutral
-$black: #2d2a26;
+$black-1: #2d2a26;
 $white: #fffbf6;
 $sub-text: #909090;
 $stroke: #dcdcdc;
 
 // spacing
-$main-container-width: 1200px;
-$smaller-main-container-width: 986px;
-
-$initial-responsive-breakpoint: calc(1330px + 32px);
-$xl-tablet-breakpoint: 1024px;
-$tablet-breakpoint: 912px;
-$s-tablet-breakpoint: 780px;
-$xs-tablet-breakpoint: 750px;
-$mobile-breakpoint: 630px;
-$s-mobile-breakpoint: 380px;
-$xs-mobile-breakpoint: 350px;
 
 // fonts
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
@@ -48,7 +37,7 @@ $font: 'Ambit', sans-serif;
 
 :export {
     wisdomBlue: $wisdom-blue;
-    intelligenceBlue: $intelligence-blue;
+    intelligenceBlue: $text-primary;
     freedomBlue: $freedom-blue;
     intuitionBlue: $intuition-blue;
     inspirationBlue: $inspiration-blue;
@@ -59,7 +48,7 @@ $font: 'Ambit', sans-serif;
     secondaryYellow: $secondary-yellow;
     secondaryCream: $secondary-cream;
     secondaryRed: $secondary-red;
-    black: $black;
+    black: $black-1;
     white: $white;
     subText: $sub-text;
     stroke: $stroke;

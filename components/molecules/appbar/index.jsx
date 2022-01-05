@@ -6,12 +6,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SidebarContainer from '@/containers/SidebarContainer'
 
-const Appbar = ({ activeSidebar, sidebarState }) => {
+const Appbar = ({ activeSidebar, sidebarState, account }) => {
     return (
         <div className={styles.appbar}>
             <Logo />
             <div className={styles.toolbar}>
-                <ProfileBar username={'Malik'} usercover={'S'} />
+                <ProfileBar
+                    username={account.name}
+                    usercover={account.cover?.url || 'S'}
+                />
             </div>
             {/* <div className={styles.humberger}>
                 <Humberger
@@ -29,6 +32,7 @@ const Appbar = ({ activeSidebar, sidebarState }) => {
 Appbar.propTypes = {
     activeSidebar: PropTypes.func,
     sidebarState: PropTypes.bool,
+    account: PropTypes.object,
 }
 
 export default Appbar

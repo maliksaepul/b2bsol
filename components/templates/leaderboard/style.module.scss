@@ -1,10 +1,10 @@
-@import 'styles/dstoken.module';
+@import 'styles/colors';
 @import 'styles/mixins';
 .leaderboard {
     background-color: white;
     border-radius: 1.25rem;
     padding: 3.25rem;
-    color: $wisdom-blue;
+    color: $black-1;
 
     .table {
         width: 100%;
