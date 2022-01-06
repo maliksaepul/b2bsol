@@ -26,7 +26,6 @@ class Request {
     }
 
     setToken(token) {
-        console.log(token)
         this.accessToken = token
             ? token.access
             : localStorage.getItem(LOCAL_STORAGE.ACCESS_TOKEN) || null

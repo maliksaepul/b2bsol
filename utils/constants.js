@@ -19,3 +19,12 @@ export const GRANT_TYPE = {
     TOKEN: 'token',
     PASSWORD: 'password',
 }
+
+export const CARD_EVENT_TYPE = {
+    EVENT: 'event',
+    COURSE: 'course',
+    PODCAST: 'podcast',
+    APB: 'audioplaybook',
+    INSPIBOOK: 'inspibook',
+    VOD: 'vod',
+}

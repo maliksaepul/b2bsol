@@ -14,7 +14,7 @@ const GeneralModal = ({ illu, title, description, cta, ctaLabel }) => {
                 <h5>{title}</h5>
             </div>
             <div className={styles.modal_description}>
-                <p className="text-secondary">{description}</p>
+                <p className="text-black-2">{description}</p>
             </div>
             <div className={styles.modal_cta}>
                 {cta ? (

@@ -7,7 +7,6 @@ import Explore from '@/containers/ExploreContainer'
 import Statistic from '@/containers/StatisticContainer'
 import Schedule from '@/containers/SchedulesContainer'
 import Gamification from '@/components/templates/gamification'
-import PodcastRecomendation from '@/components/templates/podcast-recomendation'
 import MasterCourse from '@/containers/MasterCourseContainer'
 import PropTypes from 'prop-types'
 
@@ -36,8 +35,6 @@ const Home = ({ account }) => {
                     <Gamification />
                 </Section>
 
-                <PodcastRecomendation />
-
                 <Section variant={'primary'}>
                     <MasterCourse />
                 </Section>
@@ -47,7 +44,7 @@ const Home = ({ account }) => {
 }
 
 Home.propTypes = {
-    account: PropTypes.object,
+    account: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 }
 
 export default Home

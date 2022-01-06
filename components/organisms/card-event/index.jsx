@@ -10,6 +10,8 @@ import Modal from '@/components/molecules/modals/modal'
 import EventModal from '@/components/molecules/modals/event-modal'
 import Share from '@/components/molecules/share'
 import Copy from '@/components/atoms/copy'
+import { CARD_EVENT_TYPE } from '@/utils/constants'
+import Icon from '@/components/atoms/icon'
 
 const CardEvent = ({
     banner,
@@ -94,6 +96,25 @@ const CardEvent = ({
         }
     }
 
+    const renderLabelTime = type => {
+        switch (type) {
+            case CARD_EVENT_TYPE.COURSE:
+                return (
+                    <>
+                        <div>
+                            <Icon name={'quiz'} multiplier={1} /> Quiz{' '}
+                        </div>
+                        <div>
+                            <Icon name={'sertificate'} multiplier={1} />{' '}
+                            Sertifikasi
+                        </div>
+                    </>
+                )
+            default:
+                return <span>{event.date}</span>
+        }
+    }
+
     const renderCard = () => {
         if (banner !== '') {
             return (
@@ -124,7 +145,7 @@ const CardEvent = ({
                                 __html: event.content,
                             }}></article>
                         <div className={styles.cardevent_event__time}>
-                            {event.date}
+                            {renderLabelTime(event.type)}
                         </div>
                     </div>
                     <div className={styles.cardevent_cta}>{renderButton()}</div>

@@ -32,7 +32,7 @@ const Appbar = ({ activeSidebar, sidebarState, account }) => {
 Appbar.propTypes = {
     activeSidebar: PropTypes.func,
     sidebarState: PropTypes.bool,
-    account: PropTypes.object,
+    account: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 }
 
 export default Appbar
