@@ -4,32 +4,29 @@ import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { getQueryParam } from '@/utils/helpers'
 
 const withAuth = Component => {
     const EnchancedComponent = props => {
         const Router = useRouter()
-        useEffect(async () => {
+        if (typeof window !== 'undefined') {
+            const access = getQueryParam('access')
             const accessToken = localStorage.getItem(LOCAL_STORAGE.ACCESS_TOKEN)
-            // if no accessToken was found,then we redirect to "/" page.
-            const { refresh } = Router.query
-
-            if (!Router.isReady) return
-            if (!accessToken && Router.isReady) {
-                if (refresh) {
-                    await props.fetchAccount(refresh)
+            if ((!accessToken && access) || accessToken) {
+                useEffect(async () => {
+                    await props.fetchAccount(access)
                     Router.push(Router.pathname)
-                } else {
-                    window.open(
-                        MEMBER + '/login?r=' + BASEURL + Router.pathname,
-                        '_self'
-                    )
-                }
-            } else {
-                await props.fetchAccount(refresh)
-                Router.push(Router.pathname)
+                }, [])
+                return <Component {...props} />
+            } else if (!accessToken && !access) {
+                window.open(
+                    MEMBER + '/login?r=' + BASEURL + Router.pathname,
+                    '_self'
+                )
+                return null
             }
-        }, [Router.isReady])
-        return <Component {...props} />
+        }
+        return null
     }
 
     EnchancedComponent.propTypes = {
