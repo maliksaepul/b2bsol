@@ -42,7 +42,6 @@ export const queryData = (data, search, filter, sorting) => {
  * @param {object} token
  */
 export const saveToken = token => {
-    console.log(token)
     localStorage.setItem(LOCAL_STORAGE.ACCESS_TOKEN, token.access)
     token.refresh &&
         localStorage.setItem(LOCAL_STORAGE.REFRESH_TOKEN, token.refresh)

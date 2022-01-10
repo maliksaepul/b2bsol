@@ -9,6 +9,7 @@ import Schedule from '@/containers/SchedulesContainer'
 import Gamification from '@/components/templates/gamification'
 import MasterCourse from '@/containers/MasterCourseContainer'
 import PropTypes from 'prop-types'
+import PodcastRecomended from '@/containers/PodcastRecomendedContainer'
 
 // Styles
 
@@ -34,6 +35,12 @@ const Home = ({ account }) => {
                 <Section>
                     <Gamification />
                 </Section>
+
+                <PodcastRecomended
+                    title={'Podcast Recomendation'}
+                    description={'Dengarkan di Inspigo'}
+                    cta={{ label: 'explore' }}
+                />
 
                 <Section variant={'primary'}>
                     <MasterCourse />

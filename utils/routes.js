@@ -1,4 +1,4 @@
-import { LOCAL_STORAGE, MEMBER } from './constants'
+import { BASEURL, MEMBER } from './constants'
 
 const routes = {
     /**
@@ -32,11 +32,12 @@ const routes = {
      * My Profile
      * @returns
      */
-    myProfile: () =>
-        MEMBER +
-        '/home/profile/overview' +
-        '?refresh=' +
-        localStorage.getItem(LOCAL_STORAGE.REFRESH_TOKEN),
+    myProfile: () => MEMBER + '/home/profile/overview',
+
+    myBadge: () => MEMBER + '/home/profile/badge',
+    myStatistic: () => MEMBER + '/home/profile/statistic',
+    signIn: pathname =>
+        MEMBER + '/signin?r=' + BASEURL + pathname + '&withToken=1',
 }
 
 export default routes

@@ -42,7 +42,6 @@ const Toolbar = ({
                     filterList={categories}
                     label="Category"
                     onChange={val => {
-                        console.log(val)
                         setFilter(val)
                         fetchData(search, val, sorting, api)
                     }}

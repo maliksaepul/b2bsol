@@ -2,8 +2,8 @@
 @import 'styles/colors';
 .humberger {
     display: unset;
-    width: 2.5rem;
-    height: 30px;
+    width: 2rem;
+    height: 2rem;
     position: fixed;
     top: 1rem;
     right: 2.5rem;
@@ -35,7 +35,7 @@
     }
     @include media-max-width($mobile-breakpoint) {
         height: 2rem;
-        width: 3rem;
+        width: 2rem;
         span {
             height: 3px;
         }

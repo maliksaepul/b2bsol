@@ -2,7 +2,7 @@ import Logo from '@/components/atoms/logo'
 import ProfileBar from '@/containers/ProfilebarContainer'
 import styles from './style.module.scss'
 import React from 'react'
-// import Humberger from '@/components/molecules/humberger'
+import Humberger from '@/components/molecules/humberger'
 import PropTypes from 'prop-types'
 import SidebarContainer from '@/containers/SidebarContainer'
 
@@ -16,15 +16,18 @@ const Appbar = ({ activeSidebar, sidebarState, account }) => {
                     usercover={account.cover?.url || 'S'}
                 />
             </div>
-            {/* <div className={styles.humberger}>
+            <div className={styles.humberger}>
                 <Humberger
                     open={sidebarState}
                     toggleNav={() => {
                         activeSidebar(!sidebarState)
                     }}
                 />
-            </div> */}
-            <SidebarContainer />
+            </div>
+            <SidebarContainer
+                username={account.name}
+                usercover={account.cover?.url}
+            />
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import Navbar from '../../molecules/navbar'
-import routes from '@/utils/routes'
+import { PROFILE_ITEM } from '@/utils/constants'
 
 const Profile = props => {
     return (
@@ -22,26 +22,7 @@ const Profile = props => {
                     </p>
                 </div>
             </div>
-            <Navbar
-                bgcolor={'white'}
-                variant="column"
-                navitem={[
-                    {
-                        label: 'My Profile',
-                        url: routes.myProfile(),
-                    },
-                    {
-                        label: 'My Statistic',
-                        url: routes.myProfile(),
-                    },
-                    {
-                        label: 'My Badge',
-                        url: routes.myProfile(),
-                    },
-                    { label: 'About', url: routes.myProfile() },
-                    { label: 'Logout', url: routes.myProfile() },
-                ]}
-            />
+            <Navbar bgcolor={'white'} variant="column" navitem={PROFILE_ITEM} />
         </div>
     )
 }

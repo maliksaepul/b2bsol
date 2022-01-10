@@ -16,7 +16,7 @@ const Recomendation = props => {
                 />
             </div>
             <div className={styles.marquee}>
-                <Marquee animationDuration={'32s'}></Marquee>
+                <Marquee animationDuration={'32s'}>{props.children}</Marquee>
             </div>
             <div className={styles.cta}>
                 <Button

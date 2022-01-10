@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import routes from '@/utils/routes'
 import cx from 'classnames'
 
-const AudioCard = ({ audio }) => {
+const AudioCard = ({ audio, withLabel }) => {
     const router = useRouter()
 
     const renderLink = (link = null) => {
@@ -21,10 +21,12 @@ const AudioCard = ({ audio }) => {
                 alt={audio.title}
                 onClick={() => renderLink(audio.alias)}
             />
-            <div>
-                <h6>{maxTitlesLength(audio.title)}</h6>
-                <p className={cx('p2')}>{audio.author}</p>
-            </div>
+            {withLabel ? (
+                <div>
+                    <h6>{maxTitlesLength(audio.title)}</h6>
+                    <p className={cx('p2')}>{audio.author}</p>
+                </div>
+            ) : null}
         </div>
     )
 }
@@ -37,6 +39,11 @@ AudioCard.propTypes = {
         author: PropTypes.string,
         deeplink: PropTypes.string,
     }).isRequired,
+    withLabel: PropTypes.bool,
+}
+
+AudioCard.defaultProps = {
+    withLabel: true,
 }
 
 export default AudioCard
