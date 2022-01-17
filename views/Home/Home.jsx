@@ -7,9 +7,12 @@ import Explore from '@/containers/ExploreContainer'
 import Statistic from '@/containers/StatisticContainer'
 import Schedule from '@/containers/SchedulesContainer'
 import Gamification from '@/components/templates/gamification'
-import MasterCourse from '@/containers/MasterCourseContainer'
+// import MasterCourse from '@/containers/MasterCourseContainer'
 import PropTypes from 'prop-types'
 import PodcastRecomended from '@/containers/PodcastRecomendedContainer'
+import MasterCourse from '@/containers/MasterCourseContainer'
+import InspiBook from '@/components/templates/InspiBook'
+import Photobooth from '@/components/templates/photobooth'
 
 // Styles
 
@@ -45,6 +48,10 @@ const Home = ({ account }) => {
                 <Section variant={'primary'}>
                     <MasterCourse />
                 </Section>
+                <InspiBook />
+                <Photobooth
+                    title={'Photobooth'}
+                    description={'Give your best smile'}></Photobooth>
             </Layout>
         </>
     )

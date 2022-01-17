@@ -1,0 +1,28 @@
+@import 'styles/mixins';
+.withIllu {
+    display: flex;
+    position: relative;
+    .item {
+        flex: 1 1 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:last-child {
+            justify-content: right;
+        }
+    }
+    @include media-max-width($mobile-breakpoint) {
+        flex-direction: column;
+        .item:last-child {
+            justify-content: center;
+        }
+
+        &_illu {
+            img {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 18.75rem !important;
+            }
+        }
+    }
+}

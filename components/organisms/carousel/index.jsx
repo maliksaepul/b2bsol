@@ -3,7 +3,7 @@ import cx from 'classnames'
 import styles from './style.module.scss'
 import PropTypes from 'prop-types'
 import Icon from '@/components/atoms/icon'
-import * as colors from '@/styles/_dstoken.module.scss'
+import * as colors from '@/styles/App.module.scss'
 
 const Carousel = ({ children, className, title }) => {
     const ref = useRef(null)

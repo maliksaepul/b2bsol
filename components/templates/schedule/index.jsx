@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import Label from '@/components/molecules/label'
 import Carousel from '@/components/organisms/carousel'
 import CardEvent from '@/components/organisms/card-event'
-import * as colors from '@/styles/_dstoken.module.scss'
+import * as colors from '@/styles/App.module.scss'
 import PropTypes from 'prop-types'
 
 const Schedule = ({ fetchSchedules, events }) => {

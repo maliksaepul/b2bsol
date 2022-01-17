@@ -3,7 +3,7 @@ import Carousel from '@/components/organisms/carousel'
 import styles from './style.module.scss'
 import React, { useEffect } from 'react'
 import cx from 'classnames'
-import * as colors from '@/styles/_dstoken.module.scss'
+import * as colors from '@/styles/App.module.scss'
 import Card from '@/components/organisms/card'
 import PropTypes from 'prop-types'
 const MasterCourse = ({ fetchCourses, courses }) => {

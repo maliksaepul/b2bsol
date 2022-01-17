@@ -1,28 +1,36 @@
-// React & Libraries
-
-// Styles
 import styles from './style.module.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Marquee = ({ children, animationDuration }) => {
-    // const updatedContents = contents.concat(contents)
+const Marquee = ({ contents, animationDuration }) => {
+    const updatedContents = contents.concat(contents)
+
+    const renderLink = (link = null) => {
+        if (link) {
+            window.open(link, '_blank')
+        }
+    }
 
     return (
         <div className={styles.marquee}>
             <div className={styles.container} style={{ animationDuration }}>
-                {children}
+                {updatedContents.map((c, i) => (
+                    <div key={i} className={styles.object}>
+                        {/* tes */}
+                        <img
+                            src={c.cover}
+                            alt={c.title}
+                            onClick={() => renderLink(c.deeplink)}
+                        />
+                    </div>
+                ))}
             </div>
         </div>
     )
 }
 
 Marquee.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.object,
-        PropTypes.array,
-        PropTypes.string,
-    ]),
+    contents: PropTypes.array,
     animationDuration: PropTypes.string,
 }
 

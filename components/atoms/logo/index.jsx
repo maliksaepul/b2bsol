@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Icon from '../icon'
-import { inspirationBlue } from '@/styles/_dstoken.module.scss'
+import { inspirationBlue } from '@/styles/App.module.scss'
 
 const Logo = () => {
     return (

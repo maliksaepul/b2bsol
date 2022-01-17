@@ -19,15 +19,6 @@ const Section = props => {
             className={cx(styles.section, bgc)}
             id={id}
             style={props.style || {}}>
-            {props.decoration && props.decoration.length > 0
-                ? props.decoration.map((val, key) => {
-                      return (
-                          <div style={val.style} key={key}>
-                              <img src={val.url} alt="decoration" />
-                          </div>
-                      )
-                  })
-                : null}
             <div className={cx(styles.section_container, className)}>
                 {children}
             </div>

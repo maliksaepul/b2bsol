@@ -21,10 +21,10 @@ export const fetchAccount = () => async dispatch => {
                 SERVICE.ACCOUNT + '/accounts/self?ref_subs=true'
             )),
         }
-        if (response.status === 401) {
-            window.open(routes.signIn('/'), '_self')
-        } else {
+        if (response.status === 200) {
             dispatch(getAccount(response.data.data))
+        } else {
+            window.open(routes.signIn('/'), '_self')
         }
     } catch (e) {
         return e

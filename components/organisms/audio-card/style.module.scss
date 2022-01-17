@@ -1,4 +1,5 @@
 @import 'styles/colors';
+@import 'styles/mixins';
 .object {
     // display : flex;
     cursor: pointer;
@@ -6,9 +7,17 @@
     // max-height: 17rem;
 
     & > img {
-        min-width: 13rem;
+        min-width: 10rem;
         width: 100%;
         height: auto;
+
+        @include media-max-width($tablet-breakpoint) {
+            width: 7.5rem;
+        }
+
+        @include media-max-width($mobile-breakpoint) {
+            width: 5.97rem;
+        }
     }
 
     color: $text-primary;

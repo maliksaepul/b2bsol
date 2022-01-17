@@ -1,5 +1,5 @@
 import React from 'react'
-import * as colors from '@/styles/_dstoken.module.scss'
+import * as colors from '@/styles/App.module.scss'
 export const InspigoLogo = (fill, stroke, multiplier) => {
     return (
         <svg

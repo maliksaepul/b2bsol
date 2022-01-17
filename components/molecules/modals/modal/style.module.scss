@@ -39,8 +39,8 @@
     &_container {
         border-radius: 1.25rem;
         background-color: #fff;
-        max-width: 31.25rem;
-        max-height: 31.25rem;
+        min-width: 31.25rem;
+        min-height: 31.25rem;
         position: absolute;
         top: 50%;
         left: 50%;

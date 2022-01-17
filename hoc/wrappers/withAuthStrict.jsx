@@ -18,8 +18,15 @@ const withAuth = Component => {
             if ((!accessToken && access) || accessToken) {
                 useEffect(async () => {
                     await props.fetchAccount(access)
-                    Router.push(Router.pathname)
-                }, [])
+                    console.log(Router.query)
+                    if (Router.isReady) {
+                        if (Router.query.organization) {
+                            Router.push(Router.query.organization)
+                        } else {
+                            Router.push(Router.pathname)
+                        }
+                    }
+                }, [Router.isReady])
                 if (
                     Object.values(props.account).length <= 0 ||
                     props.account.length <= 0

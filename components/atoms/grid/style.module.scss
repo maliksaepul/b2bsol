@@ -1,11 +1,21 @@
+@import 'styles/mixins';
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    grid-gap: 1.4rem;
     grid-auto-rows: 1;
     grid-template-rows: 1fr;
     overflow-y: auto;
 
+    @include media-max-width($tablet-breakpoint) {
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+        grid-gap: 1rem;
+    }
+
+    @include media-max-width($mobile-breakpoint) {
+        grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+        grid-gap: 0.83rem;
+    }
     &.small {
         grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
     }

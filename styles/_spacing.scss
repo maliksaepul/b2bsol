@@ -1,3 +1,74 @@
+@import 'styles/mixins';
 .p-x-1 {
     padding: 0 1rem;
+}
+
+.global-gap {
+    padding: 2.1rem 7.5rem;
+    @include media-max-width($initial-responsive-breakpoint) {
+        padding: 1.6rem 8vw;
+    }
+    @include media-max-width($mobile-breakpoint) {
+        padding: 1.2rem 8vw;
+    }
+}
+
+.p-x-g {
+    padding: 0 7.5rem;
+    @include media-max-width($initial-responsive-breakpoint) {
+        padding: 0 8vw;
+    }
+    @include media-max-width($mobile-breakpoint) {
+        padding: 0 8vw;
+    }
+}
+
+.p-y-g {
+    padding: 2.1rem 0;
+    @include media-max-width($initial-responsive-breakpoint) {
+        padding: 1.6rem 0;
+    }
+    @include media-max-width($mobile-breakpoint) {
+        padding: 1.2rem 0;
+    }
+}
+
+.p-t-g {
+    padding-top: 2.1rem 0;
+    @include media-max-width($initial-responsive-breakpoint) {
+        padding-top: 1.6rem 0;
+    }
+    @include media-max-width($mobile-breakpoint) {
+        padding-top: 1.2rem 0;
+    }
+}
+
+.p-b-g {
+    padding-bottom: 2.1rem 0;
+    @include media-max-width($initial-responsive-breakpoint) {
+        padding-bottom: 1.6rem 0;
+    }
+    @include media-max-width($mobile-breakpoint) {
+        padding-bottom: 1.2rem 0;
+    }
+}
+
+.p-l-g {
+    padding-left: 7.5rem;
+    @include media-max-width($initial-responsive-breakpoint) {
+        padding-left: 8vw;
+    }
+    @include media-max-width($mobile-breakpoint) {
+        padding-left: 8vw;
+    }
+}
+
+.p-r-g {
+    padding-right: 7.5rem;
+    @include media-max-width($initial-responsive-breakpoint) {
+        padding-right: 8vw;
+    }
+    @include media-max-width($mobile-breakpoint) {
+        padding-right: 8vw;
+    }
 }

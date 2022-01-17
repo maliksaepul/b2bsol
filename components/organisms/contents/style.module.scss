@@ -7,6 +7,14 @@
     background-color: #fff;
     padding: 2.5rem;
 
+    @include media-max-width($tablet-breakpoint) {
+        padding: 2rem;
+    }
+
+    @include media-max-width($mobile-breakpoint) {
+        padding: 1.875rem;
+    }
+
     .grid {
         border-radius: 8px;
         content: '';
