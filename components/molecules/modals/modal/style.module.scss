@@ -39,18 +39,19 @@
     &_container {
         border-radius: 1.25rem;
         background-color: #fff;
-        min-width: 31.25rem;
-        min-height: 31.25rem;
+        max-width: 31.25rem;
+        max-height: 31.25rem;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        aspect-ratio: 1/1;
+        // aspect-ratio: 1/1;
         padding: 2.5rem;
 
         @include media-max-width($mobile-breakpoint) {
             width: 90%;
-            height: 80%;
+            height: auto;
+            max-height: unset;
         }
     }
 }
