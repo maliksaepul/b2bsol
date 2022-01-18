@@ -9,11 +9,20 @@ const routes = {
         if (alias) return `/audiolearning/${alias}`
         else return `/audiolearning`
     },
+
+    /**
+     * Audio Learning
+     * @returns
+     */
+    inspibook: alias => {
+        if (alias) return `/inspibook/${alias}`
+        else return `/inspibook`
+    },
     /**
      * Video Learning
      * @returns
      */
-    videolearning: () => `/video-learning`,
+    videolearning: () => `/videolearning`,
     /**
      * Audio Playbook
      * @returns

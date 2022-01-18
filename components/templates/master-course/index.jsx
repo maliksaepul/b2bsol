@@ -6,6 +6,7 @@ import cx from 'classnames'
 import * as colors from '@/styles/App.module.scss'
 import Card from '@/components/organisms/card'
 import PropTypes from 'prop-types'
+import Images from 'next/image'
 const MasterCourse = ({ fetchCourses, courses }) => {
     useEffect(() => {
         fetchCourses()
@@ -17,6 +18,20 @@ const MasterCourse = ({ fetchCourses, courses }) => {
                     styles.masterCourse_item,
                     styles.masterCourse_card
                 )}>
+                <div className={styles.masterCourse_card_dec1}>
+                    <Images
+                        src={'/images/sticker/icon-04.png'}
+                        width={'221'}
+                        height={'221'}
+                    />
+                </div>
+                <div className={styles.masterCourse_card_dec2}>
+                    <Images
+                        src={'/images/sticker/fold-04.png'}
+                        width="100"
+                        height="100"
+                    />
+                </div>
                 <Card
                     title={{ type: 'string', content: 'Master Course' }}
                     body="<p>Belajar langsung dari para ahli. Master Course hadir dengan pembahasan mendalam hanya untukmu! Telusuri lebih lanjut dan mulai ikuti kursus.</p>"

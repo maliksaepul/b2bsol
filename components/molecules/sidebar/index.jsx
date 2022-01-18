@@ -39,6 +39,10 @@ const Sidebar = ({ sidebarState, usercover, username, userRole }) => {
                                         url: routes.audiolearning(),
                                     },
                                     {
+                                        label: 'Inspi Book',
+                                        url: routes.inspibook(),
+                                    },
+                                    {
                                         label: 'video learning',
                                         url: routes.videolearning(),
                                     },

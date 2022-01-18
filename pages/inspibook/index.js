@@ -1,29 +1,28 @@
 import React, { useEffect } from 'react'
 import { fetchPodcast } from '@/redux/actions/_ondemand'
 import { connect } from 'react-redux'
-import AudioLearning from '@/views/AudioLearning'
 import PropTypes from 'prop-types'
+import InspiBook from '@/views/InspiBook'
 import withAuth from '@/hoc/wrappers/withAuthStrict'
 
-const AudioLearningPage = ({ account, podcast, fetchPodcast }) => {
+const InspiBookPage = ({ podcast, fetchPodcast }) => {
     useEffect(() => {
         fetchPodcast()
     }, [])
 
     return (
         <>
-            <AudioLearning podcast={podcast} />
+            <InspiBook podcast={podcast} />
         </>
     )
 }
 
-AudioLearningPage.propTypes = {
+InspiBookPage.propTypes = {
     fetchPodcast: PropTypes.func,
     podcast: PropTypes.array,
-    account: PropTypes.any,
 }
 const mapStateToProps = ({ podcast }) => ({ podcast })
 
 export default connect(mapStateToProps, { fetchPodcast })(
-    withAuth(AudioLearningPage)
+    withAuth(InspiBookPage)
 )

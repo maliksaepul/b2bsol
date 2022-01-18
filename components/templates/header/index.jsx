@@ -16,11 +16,15 @@ const Header = () => {
                                 url: routes.audiolearning(),
                             },
                             {
-                                label: 'video learning',
+                                label: 'Inspi Book',
+                                url: routes.inspibook(),
+                            },
+                            {
+                                label: 'Video Learning',
                                 url: routes.videolearning(),
                             },
                             {
-                                label: 'audio playbook',
+                                label: 'Audio Playbook',
                                 url: routes.audioplaybook(),
                             },
                             { label: 'LeaderBoard', url: routes.leaderboard() },

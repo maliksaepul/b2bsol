@@ -48,10 +48,10 @@ const Home = ({ account }) => {
                 <Section variant={'primary'}>
                     <MasterCourse />
                 </Section>
-                <InspiBook />
                 <Photobooth
                     title={'Photobooth'}
                     description={'Give your best smile'}></Photobooth>
+                <InspiBook />
             </Layout>
         </>
     )

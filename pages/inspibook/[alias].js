@@ -3,11 +3,11 @@ import { useRouter } from 'next/router'
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import AudioBookPlayer from '@/views/AudioBookPlayer'
 import { fetchRelatedAudioPlaybook } from '@/redux/actions/_relatedContent'
+import InspiBookPlayer from '@/views/InspiBookPlayer'
 import withAuth from '@/hoc/wrappers/withAuthStrict'
 
-const AudioBookPlayerPage = ({
+const InspiBookPlayerPage = ({
     fetchRelatedAudioPlaybook,
     relatedAudioPlaybook,
 }) => {
@@ -17,19 +17,19 @@ const AudioBookPlayerPage = ({
         fetchRelatedAudioPlaybook()
     }, [])
     return (
-        <AudioBookPlayer
+        <InspiBookPlayer
             alias={alias}
             relatedAudioPlaybook={relatedAudioPlaybook}
         />
     )
 }
 
-AudioBookPlayerPage.propTypes = {
+InspiBookPlayerPage.propTypes = {
     fetchRelatedAudioPlaybook: PropTypes.func.isRequired,
     relatedAudioPlaybook: PropTypes.array,
 }
 const mapStateToProps = ({ relatedAudioPlaybook }) => ({ relatedAudioPlaybook })
 
 export default connect(mapStateToProps, { fetchRelatedAudioPlaybook })(
-    withAuth(AudioBookPlayerPage)
+    withAuth(InspiBookPlayerPage)
 )
