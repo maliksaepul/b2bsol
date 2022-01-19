@@ -2,8 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import Button from '@/components/atoms/button'
+import Image from 'next/image'
+import cx from 'classnames'
 
-const Card = ({ body, children, title, cta }) => {
+const Card = ({ body, children, title, cta, align }) => {
     const renderTitle = () => {
         switch (title.type) {
             case 'string':
@@ -14,7 +16,15 @@ const Card = ({ body, children, title, cta }) => {
                     </div>
                 )
             case 'image':
-                return <div className={styles.card_illu}>{title.content}</div>
+                return (
+                    <div className={styles.card_title}>
+                        <Image
+                            src={title.content}
+                            width={title.width || '452.86'}
+                            height={title.height || '197.74'}
+                        />
+                    </div>
+                )
             default:
                 return (
                     <div className={styles.card_title}>
@@ -38,7 +48,7 @@ const Card = ({ body, children, title, cta }) => {
     }
 
     return (
-        <div className={styles.card}>
+        <div className={cx(styles.card, styles[align])}>
             <div className={styles.card_header}>{renderTitle()}</div>
             <div className={styles.card_body}>
                 <article dangerouslySetInnerHTML={{ __html: body }}></article>
@@ -59,8 +69,15 @@ Card.propTypes = {
     title: PropTypes.shape({
         type: PropTypes.string,
         content: PropTypes.string,
+        width: PropTypes.any,
+        height: PropTypes.any,
     }),
     cta: PropTypes.array,
+    align: PropTypes.string,
+}
+
+Card.defaultProps = {
+    align: 'left',
 }
 
 export default Card

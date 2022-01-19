@@ -44,5 +44,10 @@
     &_courses {
         width: 50%;
         max-width: 31.25rem;
+
+        @include media-max-width($mobile-breakpoint) {
+            width: 100%;
+            height: auto;
+        }
     }
 }

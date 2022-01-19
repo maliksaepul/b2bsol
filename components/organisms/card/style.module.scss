@@ -1,6 +1,9 @@
 .card {
     position: relative;
     width: 100%;
+    &.center {
+        text-align: center;
+    }
     &_header {
         .card_title {
             padding: 1rem;

@@ -1,3 +1,5 @@
+import { LOCAL_STORAGE } from '@/utils/constants'
+import { saveToken } from '@/utils/helpers'
 import axios from 'axios'
 import { GET_APB, GET_PODCAST, GET_VOD } from '../types'
 import { apiEnd, apiError, apiStart } from './_scedule'
@@ -26,9 +28,22 @@ export const getApb = payload => {
 export const fetchPodcast = params => dispatch => {
     dispatch(apiStart())
     axios
-        .get(`${process.env.BASEURL}/api/podcast`, params)
+        .get(
+            `${process.env.SERVICE_CONTENT}/organization/${
+                (params && params.path) || 'inspigo'
+            }/albums?limit=10&skip=0`,
+            {
+                params,
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem(
+                        LOCAL_STORAGE.ACCESS_TOKEN
+                    )}`,
+                },
+            }
+        )
         .then(({ data }) => {
-            dispatch(getPodcast(data))
+            saveToken(data.token)
+            dispatch(getPodcast(data.data.results))
         })
         .catch(error => {
             dispatch(apiError(error))

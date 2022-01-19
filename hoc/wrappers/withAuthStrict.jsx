@@ -10,6 +10,20 @@ import routes from '@/utils/routes'
 const withAuth = Component => {
     const EnchancedComponent = props => {
         const Router = useRouter()
+
+        const navigateByQuery = () => {
+            if (Router.query.path) {
+                Router.push(Router.query.path)
+            } else if (Router.query.alias) {
+                Router.push(Router.query.alias)
+            } else {
+                Router.push(Router.pathname)
+            }
+        }
+
+        // const pageByResponse = () => {
+
+        // }
         if (typeof window !== 'undefined') {
             const access = getQueryParam('access')
 
@@ -18,15 +32,8 @@ const withAuth = Component => {
             if ((!accessToken && access) || accessToken) {
                 useEffect(async () => {
                     await props.fetchAccount(access)
-                    console.log(Router.query)
                     if (Router.isReady) {
-                        if (Router.query.path) {
-                            Router.push(Router.query.path)
-                        } else if (Router.query.alias) {
-                            Router.push(Router.query.alias)
-                        } else {
-                            Router.push(Router.pathname)
-                        }
+                        navigateByQuery()
                     }
                 }, [Router.isReady])
                 if (
