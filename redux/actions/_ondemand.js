@@ -23,14 +23,10 @@ export const getApb = payload => {
     }
 }
 
-export const fetchPodcast = (search, filter) => dispatch => {
-    const params = {
-        search,
-        filter,
-    }
+export const fetchPodcast = params => dispatch => {
     dispatch(apiStart())
     axios
-        .get(`${process.env.BASEURL}/api/podcast`, { params })
+        .get(`${process.env.BASEURL}/api/podcast`, params)
         .then(({ data }) => {
             dispatch(getPodcast(data))
         })

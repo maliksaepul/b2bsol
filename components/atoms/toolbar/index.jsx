@@ -43,7 +43,7 @@ const Toolbar = ({
                     label="Category"
                     onChange={val => {
                         setFilter(val)
-                        fetchData(search, val, sorting, api)
+                        fetchData({ search, filter: val, sorting }, api)
                     }}
                     filter={filter.trim().split(',')}
                 />
@@ -58,7 +58,7 @@ const Toolbar = ({
             <Search
                 onChange={val => {
                     setSearch(val)
-                    fetchData(val, filter, sorting, api)
+                    fetchData({ search: val, filter, sorting }, api)
                 }}
             />
         )
@@ -70,7 +70,7 @@ const Toolbar = ({
                 <Sorting
                     onChange={val => {
                         setSorting(val)
-                        fetchData(search, filter, val, api)
+                        fetchData({ search, filter, sorting: val }, api)
                     }}
                     sortingList={[
                         { label: 'Most Popular', key: 'Most Popular' },

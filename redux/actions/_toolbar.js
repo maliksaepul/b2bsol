@@ -3,12 +3,7 @@ import axios from 'axios'
 import { getApb, getPodcast, getVod } from './_ondemand'
 import { apiEnd, apiError, apiStart } from './_scedule'
 
-export const fetchDataToolbar = (search, filter, sorting, api) => dispatch => {
-    const params = {
-        search,
-        filter,
-        sorting,
-    }
+export const fetchDataToolbar = (params, api) => dispatch => {
     dispatch(apiStart())
     axios
         .get(api, { params })

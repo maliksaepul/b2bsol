@@ -20,8 +20,10 @@ const withAuth = Component => {
                     await props.fetchAccount(access)
                     console.log(Router.query)
                     if (Router.isReady) {
-                        if (Router.query.organization) {
-                            Router.push(Router.query.organization)
+                        if (Router.query.path) {
+                            Router.push(Router.query.path)
+                        } else if (Router.query.alias) {
+                            Router.push(Router.query.alias)
                         } else {
                             Router.push(Router.pathname)
                         }

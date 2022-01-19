@@ -8,6 +8,7 @@ module.exports = {
         MEMBER: process.env.MEMBER,
         ORIGIN: process.env.ORIGIN,
         SERVICE_ACCOUNT: process.env.SERVICE_ACCOUNT,
+        SERVICE_CONTENT: process.env.SERVICE_CONTENT,
     },
     images: {
         domains: ['ik.imagekit.io', 'cdn.inspigo.id'],

@@ -23,6 +23,7 @@ const Profile = props => {
                 </div>
             </div>
             <Navbar bgcolor={'white'} variant="column" navitem={PROFILE_ITEM} />
+            <div className="text-danger cursor-pointer">Logout</div>
         </div>
     )
 }

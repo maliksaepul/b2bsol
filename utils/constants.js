@@ -45,5 +45,4 @@ export const PROFILE_ITEM = [
         url: routes.myProfile(),
     },
     { label: 'About', url: routes.myProfile() },
-    { label: 'Logout', url: routes.myProfile() },
 ]
