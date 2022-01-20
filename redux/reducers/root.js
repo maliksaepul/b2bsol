@@ -1,18 +1,19 @@
 import { combineReducers } from 'redux'
 import SidebarReducer from '@/redux/reducers/_sidebar'
 import DropdownReducer from '@/redux/reducers/_dropdown'
-import LoaderReducer from './_loader'
-import ScheduleReducer from './_schedule'
-import CourseReducer from './_course'
-import LastLearningReducer from './_lastlearning'
-import ModalReducer from './_modal'
-import StatisticReducer from './_statistic'
-import ApbReducer from './_apb'
-import VodReducer from './_vod'
-import PodcastReducer from './_podcast'
-import RelatedPodcast from './_relatedPodcast'
-import RelatedAudioPlaybook from './_relatedAudioplaybook'
-import LoginReducer from './_login'
+import LoaderReducer from '@/redux/reducers/_loader'
+import ScheduleReducer from '@/redux/reducers/_schedule'
+import CourseReducer from '@/redux/reducers/_course'
+import LastLearningReducer from '@/redux/reducers/_lastlearning'
+import ModalReducer from '@/redux/reducers/_modal'
+import StatisticReducer from '@/redux/reducers/_statistic'
+import ApbReducer from '@/redux/reducers/_apb'
+import VodReducer from '@/redux/reducers/_vod'
+import PodcastReducer from '@/redux/reducers/_podcast'
+import RelatedPodcast from '@/redux/reducers/_relatedPodcast'
+import RelatedAudioPlaybook from '@/redux/reducers/_relatedAudioplaybook'
+import LoginReducer from '@/redux/reducers/_login'
+import PathReducer from '@/redux/reducers/_path'
 
 const rootReducer = combineReducers({
     sidebarState: SidebarReducer,
@@ -29,6 +30,7 @@ const rootReducer = combineReducers({
     relatedPodcast: RelatedPodcast,
     relatedAudioPlaybook: RelatedAudioPlaybook,
     account: LoginReducer,
+    path: PathReducer,
 })
 
 export default rootReducer

@@ -1,6 +1,6 @@
 import { SERVICE } from '@/utils/constants'
 import { GET_ACCOUNT } from '../types'
-import { apiStart } from './_scedule'
+import { apiEnd, apiStart } from './_scedule'
 import Request from '@/redux/request'
 import routes from '@/utils/routes'
 
@@ -26,6 +26,7 @@ export const fetchAccount = () => async dispatch => {
         } else {
             window.open(routes.signIn('/'), '_self')
         }
+        dispatch(apiEnd())
     } catch (e) {
         return e
     }

@@ -1,7 +1,7 @@
 import NotFound from '@/views/NotFound'
 import React from 'react'
 
-const NotFoundPage = () => {
+const Custom404 = () => {
     return (
         <div>
             <NotFound />
@@ -9,4 +9,4 @@ const NotFoundPage = () => {
     )
 }
 
-export default NotFoundPage
+export default Custom404

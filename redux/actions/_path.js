@@ -1,5 +1,8 @@
-import { GET_PATH } from '../types'
-import { apiStart } from './_scedule'
+// import { SERVICE } from '@/utils/constants'
+import { SERVICE } from '@/utils/constants'
+import Request from '@/redux/request'
+import { GET_PATH } from '@/redux/types'
+import { apiEnd, apiStart } from '@/redux/actions/_scedule'
 
 export const getPath = payload => {
     return {
@@ -8,6 +11,22 @@ export const getPath = payload => {
     }
 }
 
-export const fetchPodcast = params => dispatch => {
-    dispatch(apiStart())
-}
+export const fetchPath =
+    (path = '') =>
+    async dispatch => {
+        dispatch(apiStart())
+        try {
+            const request = new Request(null, null, true)
+            const response = {
+                ...(await request.get(
+                    `${SERVICE.CONTENT}/organization/${path}`
+                )),
+            }
+            dispatch(getPath(response))
+            dispatch(apiEnd())
+            return response
+        } catch (e) {
+            dispatch(getPath(e.response))
+            return e.response || e
+        }
+    }

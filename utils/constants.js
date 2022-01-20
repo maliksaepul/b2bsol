@@ -10,6 +10,7 @@ export const ORIGIN = process.env.ORIGIN
 export const SERVICE = {
     ACCOUNT: process.env.SERVICE_ACCOUNT,
     API: process.env.SERVICE_API,
+    CONTENT: process.env.SERVICE_CONTENT,
 }
 
 export const LOCAL_STORAGE = {

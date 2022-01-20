@@ -5,16 +5,16 @@ const routes = {
      * Audio Learning
      * @returns
      */
-    audiolearning: alias => {
-        if (alias) return `/audiolearning/${alias}`
-        else return `/audiolearning`
+    audiolearning: (path, alias) => {
+        if (alias) return `${path}/audiolearning/${alias}`
+        else return `${path}/audiolearning/`
     },
 
     /**
      * Audio Learning
      * @returns
      */
-    inspibook: alias => {
+    inspibook: (path, alias) => {
         if (alias) return `/inspibook/${alias}`
         else return `/inspibook`
     },
