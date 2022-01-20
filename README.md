@@ -1,1 +1,1 @@
-# inspigo-fe-boilerplate
+# inspigo-b2b-dashboard
