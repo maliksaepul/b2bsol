@@ -16,15 +16,12 @@ import Photobooth from '@/components/templates/photobooth'
 
 // Styles
 
-const Home = ({ account }) => {
+const Home = ({ account, path }) => {
     return (
         <>
             <Layout>
                 <Section>
-                    <About
-                        title={account.orgizationName}
-                        subtitle={'Learning Platform'}
-                    />
+                    <About title={path.name} subtitle={'Learning Platform'} />
                 </Section>
                 <Section>
                     <Explore user={{ name: account.name }} />
@@ -59,6 +56,7 @@ const Home = ({ account }) => {
 
 Home.propTypes = {
     account: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+    path: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 }
 
 export default Home

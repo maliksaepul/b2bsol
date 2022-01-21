@@ -16,26 +16,29 @@ const routes = {
      */
     inspibook: (path, alias) => {
         if (alias) return `/inspibook/${alias}`
-        else return `/inspibook`
+        else return `${path}/inspibook`
     },
     /**
      * Video Learning
      * @returns
      */
-    videolearning: () => `/videolearning`,
-    /**
-     * Audio Playbook
-     * @returns
-     */
-    audioplaybook: alias => {
-        if (alias) return `/audioplaybook/${alias}`
-        else return `/audioplaybook`
+    videolearning: (path, alias) => {
+        if (alias) return `/videolearning/${alias}`
+        else return `${path}/videolearning`
     },
     /**
      * Audio Playbook
      * @returns
      */
-    leaderboard: () => `/leaderboard`,
+    audioplaybook: (path, alias) => {
+        if (alias) return `/audioplaybook/${alias}`
+        else return `${path}/audioplaybook`
+    },
+    /**
+     * Audio Playbook
+     * @returns
+     */
+    leaderboard: path => `${path}/leaderboard`,
 
     /**
      * My Profile

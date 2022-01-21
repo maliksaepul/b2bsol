@@ -26,7 +26,6 @@ export const fetchPath =
             dispatch(apiEnd())
             return response
         } catch (e) {
-            dispatch(getPath(e.response))
             return e.response || e
         }
     }

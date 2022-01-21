@@ -18,12 +18,12 @@ const HomePage = props => {
                 <title>Beranda</title>
             </Head>
 
-            <Home account={props.account} />
+            <Home account={props.account} path={props.path} />
             <Modal close={props.closeModal}>
                 <GeneralModal
                     illu={'/images/loginsign_1.png'}
                     title={`Selamat datang di ${
-                        props.account.organizationName || 'Inspigo'
+                        props.path.name || 'Inspigo'
                     } Learning Platform !`}
                     description={
                         'Kembangkan diri bersama dan nikmati ragam fitur pembelajaran menarik dengan berbagai topik.'
@@ -42,6 +42,7 @@ HomePage.propTypes = {
     modalClose: PropTypes.func,
     closeModal: PropTypes.bool,
     account: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+    path: PropTypes.any,
 }
 
 const mapStateToProps = ({ closeModal }) => ({

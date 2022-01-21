@@ -28,7 +28,7 @@ const ondemand = ({ children, closeModal, modalClose }) => {
             <Modal close={closeModal}>
                 <GeneralModal
                     illu={'/images/loginsign_1.png'}
-                    title={'Selamat datang di Inspigo Learning Platform !'}
+                    title={'Selamat datang di Learning Platform !'}
                     description={
                         'Kembangkan diri bersama dan nikmati ragam fitur pembelajaran menarik dengan berbagai topik.'
                     }

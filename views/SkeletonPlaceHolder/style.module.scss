@@ -1,0 +1,15 @@
+@import 'styles/mixins';
+
+._header {
+    @include global-gap();
+}
+._main {
+    @include global-gap();
+}
+._footer {
+    @include global-gap();
+}
+
+._content {
+    margin: 1rem 0;
+}

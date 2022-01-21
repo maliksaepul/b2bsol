@@ -1,17 +1,12 @@
 import { GET_PATH } from '../types'
 const initialState = {
-    data: {},
-    message: '',
+    path: '',
 }
 
 const PathReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_PATH:
-            if (action.payload.isAxiosError) {
-                return action.payload.response
-            } else {
-                return action.payload
-            }
+            return { initialState, ...action.payload?.data?.data?.organization }
         default:
             return state
     }
