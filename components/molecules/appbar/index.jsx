@@ -6,10 +6,10 @@ import Humberger from '@/components/molecules/humberger'
 import PropTypes from 'prop-types'
 import SidebarContainer from '@/containers/SidebarContainer'
 
-const Appbar = ({ activeSidebar, sidebarState, account }) => {
+const Appbar = ({ activeSidebar, sidebarState, account, path }) => {
     return (
         <div className={styles.appbar}>
-            <Logo />
+            <Logo link={path.path} />
             <div className={styles.toolbar}>
                 <ProfileBar
                     username={account.name}
@@ -36,6 +36,7 @@ Appbar.propTypes = {
     activeSidebar: PropTypes.func,
     sidebarState: PropTypes.bool,
     account: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+    path: PropTypes.any,
 }
 
 export default Appbar

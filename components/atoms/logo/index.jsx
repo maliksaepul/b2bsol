@@ -2,12 +2,12 @@ import Link from 'next/link'
 import React from 'react'
 import Icon from '../icon'
 import { inspirationBlue } from '@/styles/App.module.scss'
-import { useRouter } from 'next/router'
+import PropTypes from 'prop-types'
+import { BASEURL } from '@/utils/constants'
 
-const Logo = () => {
-    const Router = useRouter()
+const Logo = ({ link }) => {
     return (
-        <Link href={`${Router.query.path || '/'}`}>
+        <Link href={`${BASEURL}/${link}`}>
             <a>
                 <Icon
                     name="InspigoLogo"
@@ -17,6 +17,10 @@ const Logo = () => {
             </a>
         </Link>
     )
+}
+
+Logo.propTypes = {
+    link: PropTypes.string,
 }
 
 export default Logo
