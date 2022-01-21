@@ -6,8 +6,8 @@ const routes = {
      * @returns
      */
     audiolearning: (path, alias) => {
-        if (alias) return `${path}/audiolearning/${alias}`
-        else return `${path}/audiolearning/`
+        if (alias) return `${BASEURL}/${path}/audiolearning/${alias}`
+        else return `${BASEURL}/${path}/audiolearning/`
     },
 
     /**
@@ -15,30 +15,30 @@ const routes = {
      * @returns
      */
     inspibook: (path, alias) => {
-        if (alias) return `/inspibook/${alias}`
-        else return `${path}/inspibook`
+        if (alias) return `${BASEURL}/${path}/inspibook/${alias}`
+        else return `${BASEURL}/${path}/inspibook`
     },
     /**
      * Video Learning
      * @returns
      */
     videolearning: (path, alias) => {
-        if (alias) return `/videolearning/${alias}`
-        else return `${path}/videolearning`
+        if (alias) return `${BASEURL}/${path}/videolearning/${alias}`
+        else return `${BASEURL}/${path}/videolearning`
     },
     /**
      * Audio Playbook
      * @returns
      */
     audioplaybook: (path, alias) => {
-        if (alias) return `/audioplaybook/${alias}`
-        else return `${path}/audioplaybook`
+        if (alias) return `${BASEURL}/${path}//audioplaybook/${alias}`
+        else return `${BASEURL}/${path}/audioplaybook`
     },
     /**
      * Audio Playbook
      * @returns
      */
-    leaderboard: path => `${path}/leaderboard`,
+    leaderboard: path => `${BASEURL}/${path}/leaderboard`,
 
     /**
      * My Profile

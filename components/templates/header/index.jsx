@@ -3,8 +3,9 @@ import styles from './style.module.scss'
 import React from 'react'
 import AppbarContainer from '@/containers/AppbarContainer'
 import routes from '@/utils/routes'
+import PropTypes from 'prop-types'
 
-const Header = () => {
+const Header = ({ path }) => {
     return (
         <>
             <header className={styles.header}>
@@ -13,21 +14,24 @@ const Header = () => {
                         navitem={[
                             {
                                 label: 'Audio Learning',
-                                url: routes.audiolearning(),
+                                url: routes.audiolearning(path.path),
                             },
                             {
                                 label: 'Inspi Book',
-                                url: routes.inspibook(),
+                                url: routes.inspibook(path.path),
                             },
                             {
                                 label: 'Video Learning',
-                                url: routes.videolearning(),
+                                url: routes.videolearning(path.path),
                             },
                             {
                                 label: 'Audio Playbook',
-                                url: routes.audioplaybook(),
+                                url: routes.audioplaybook(path.path),
                             },
-                            { label: 'LeaderBoard', url: routes.leaderboard() },
+                            {
+                                label: 'LeaderBoard',
+                                url: routes.leaderboard(path.path),
+                            },
                         ]}
                         align={'right'}
                     />
@@ -36,6 +40,10 @@ const Header = () => {
             </header>
         </>
     )
+}
+
+Header.propTypes = {
+    path: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 }
 
 export default Header

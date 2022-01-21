@@ -5,12 +5,12 @@ import { maxTitlesLength } from '@/utils/helpers'
 import { useRouter } from 'next/router'
 import routes from '@/utils/routes'
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book, path }) => {
     const router = useRouter()
-
+    console.log(path)
     const renderLink = (link = null) => {
         if (link) {
-            router.push(routes.audioplaybook(link))
+            router.push(routes.audioplaybook(path.path, link))
             // window.open(link)
         }
     }
@@ -38,6 +38,7 @@ BookCard.propTypes = {
         deeplink: PropTypes.string,
         image: PropTypes.string,
     }).isRequired,
+    path: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 }
 
 export default BookCard

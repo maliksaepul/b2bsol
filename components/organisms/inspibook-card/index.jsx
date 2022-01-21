@@ -6,12 +6,12 @@ import { useRouter } from 'next/router'
 import routes from '@/utils/routes'
 import cx from 'classnames'
 
-const InspiBookCard = ({ audio, withLabel }) => {
+const InspiBookCard = ({ audio, withLabel, path }) => {
     const router = useRouter()
 
     const renderLink = (link = null) => {
         if (link) {
-            router.push(routes.inspibook(link))
+            router.push(routes.inspibook(path, link))
         }
     }
     return (
@@ -40,6 +40,7 @@ InspiBookCard.propTypes = {
         deeplink: PropTypes.string,
     }).isRequired,
     withLabel: PropTypes.bool,
+    path: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 }
 
 InspiBookCard.defaultProps = {

@@ -6,12 +6,12 @@ import { useRouter } from 'next/router'
 import routes from '@/utils/routes'
 import cx from 'classnames'
 
-const AudioCard = ({ audio, withLabel }) => {
+const AudioCard = ({ audio, withLabel, path }) => {
     const router = useRouter()
 
     const renderLink = (link = null) => {
         if (link) {
-            router.push(routes.audiolearning(link))
+            router.push(routes.audiolearning(path.path, link))
         }
     }
     return (
@@ -40,6 +40,7 @@ AudioCard.propTypes = {
         deeplink: PropTypes.string,
     }).isRequired,
     withLabel: PropTypes.bool,
+    path: PropTypes.oneOfType([PropTypes.object, PropTypes.object]),
 }
 
 AudioCard.defaultProps = {

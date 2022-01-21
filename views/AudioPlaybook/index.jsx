@@ -6,7 +6,7 @@ import About from '@/components/templates/about'
 import Contents from '@/components/organisms/contents'
 import Toolbar from '@/containers/ToolbarContainer'
 import Grid from '@/components/atoms/grid'
-import BookCard from '@/components/organisms/book-card'
+import BookCard from '@/containers/BookCardContainer'
 import { API_APB } from '@/utils/apiroutelist'
 
 const AudioPlaybook = ({ apb }) => {
