@@ -24,7 +24,7 @@ const Home = ({ account, path }) => {
                     <About title={path.name} subtitle={'Learning Platform'} />
                 </Section>
                 <Section>
-                    <Explore user={{ name: account.name }} />
+                    <Explore user={{ name: account.name }} path={path.path} />
                 </Section>
                 <Section>
                     <Statistic id={1} />

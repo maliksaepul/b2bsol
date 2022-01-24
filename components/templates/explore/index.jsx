@@ -9,7 +9,7 @@ import Button from '@/components/atoms/button'
 import { useRouter } from 'next/router'
 import routes from '@/utils/routes'
 
-const Explore = ({ user, lastlearning, fetchLastLearning }) => {
+const Explore = ({ user, lastlearning, fetchLastLearning, path }) => {
     useEffect(() => {
         fetchLastLearning()
     }, [])
@@ -46,9 +46,7 @@ const Explore = ({ user, lastlearning, fetchLastLearning }) => {
                         label={'Mulai Sekarang'}
                         variant={'primary'}
                         cta={() => {
-                            router.push(
-                                routes.audiolearning(window.location.pathname)
-                            )
+                            router.push(routes.audiolearning(path))
                         }}
                     />
                 </center>
@@ -103,6 +101,7 @@ Explore.propTypes = {
     lastlearning: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
         .isRequired,
     fetchLastLearning: PropTypes.func.isRequired,
+    path: PropTypes.string,
 }
 
 export default Explore
