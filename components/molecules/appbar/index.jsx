@@ -4,7 +4,7 @@ import styles from './style.module.scss'
 import React from 'react'
 import Humberger from '@/components/molecules/humberger'
 import PropTypes from 'prop-types'
-import SidebarContainer from '@/containers/SidebarContainer'
+import Sidebar from '@/containers/Sidebar'
 
 const Appbar = ({ activeSidebar, sidebarState, account, path }) => {
     return (
@@ -24,10 +24,7 @@ const Appbar = ({ activeSidebar, sidebarState, account, path }) => {
                     }}
                 />
             </div>
-            <SidebarContainer
-                username={account.name}
-                usercover={account.cover?.url}
-            />
+            <Sidebar username={account.name} usercover={account.cover?.url} />
         </div>
     )
 }

@@ -37,17 +37,17 @@ const ProfileBar = ({
     }
 
     return (
-        <div className={cx(styles.profile)}>
+        <div
+            className={cx(styles.profile)}
+            onClick={() => {
+                activeProfile(!active)
+            }}>
             <p>Hi {username}</p>
             <div className={styles.profile_cover}>
                 {usercover ? <img src={usercover} alt="cover" /> : 'S'}
             </div>
 
-            <div
-                onClick={() => {
-                    activeProfile(!active)
-                }}
-                className={chevronCondition()}>
+            <div className={chevronCondition()}>
                 <Icon name={'Chevron'} multiplier={1} />
             </div>
             {renderProfile()}

@@ -7,7 +7,14 @@ import { PROFILE_ITEM } from '@/utils/constants'
 import Logout from '@/containers/Logout'
 import { disableScroll } from '@/utils/helpers'
 
-const Sidebar = ({ sidebarState, usercover, username, userRole }) => {
+const Sidebar = ({
+    sidebarState,
+    usercover,
+    username,
+    userRole,
+    activeSidebar,
+    path,
+}) => {
     const renderBody = () => {
         if (sidebarState) {
             disableScroll.on()
@@ -29,7 +36,11 @@ const Sidebar = ({ sidebarState, usercover, username, userRole }) => {
                         </div>
                     </div>
 
-                    <div className={styles.sidebar_container}>
+                    <div
+                        className={styles.sidebar_container}
+                        onClick={() => {
+                            activeSidebar(!sidebarState)
+                        }}>
                         <div>
                             <h5 className="p-x-1">Learning</h5>
                             <Navbar
@@ -39,23 +50,23 @@ const Sidebar = ({ sidebarState, usercover, username, userRole }) => {
                                 navitem={[
                                     {
                                         label: 'Audio Learning',
-                                        url: routes.audiolearning(),
+                                        url: routes.audiolearning(path),
                                     },
                                     {
                                         label: 'Inspi Book',
-                                        url: routes.inspibook(),
+                                        url: routes.inspibook(path),
                                     },
                                     {
                                         label: 'video learning',
-                                        url: routes.videolearning(),
+                                        url: routes.videolearning(path),
                                     },
                                     {
                                         label: 'audio playbook',
-                                        url: routes.audioplaybook(),
+                                        url: routes.audioplaybook(path),
                                     },
                                     {
                                         label: 'LeaderBoard',
-                                        url: routes.leaderboard(),
+                                        url: routes.leaderboard(path),
                                     },
                                 ]}
                             />
@@ -83,6 +94,7 @@ const Sidebar = ({ sidebarState, usercover, username, userRole }) => {
 
 Sidebar.propTypes = {
     sidebarState: PropTypes.bool,
+    activeSidebar: PropTypes.func,
 }
 
 export default Sidebar
