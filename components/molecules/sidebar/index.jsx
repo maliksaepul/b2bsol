@@ -4,6 +4,7 @@ import styles from './style.module.scss'
 import Navbar from '@/components/molecules/navbar'
 import routes from '@/utils/routes'
 import { PROFILE_ITEM } from '@/utils/constants'
+import Logout from '@/containers/Logout'
 
 const Sidebar = ({ sidebarState, usercover, username, userRole }) => {
     const renderBody = () => {
@@ -66,6 +67,7 @@ const Sidebar = ({ sidebarState, usercover, username, userRole }) => {
                                 navitem={PROFILE_ITEM}
                             />
                         </div>
+                        <Logout />
                     </div>
                 </sidebar>
             )

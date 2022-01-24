@@ -68,7 +68,7 @@ const withAuth = Component => {
 
                 return renderComponent()
             } else {
-                window.open(routes.signIn(Router.pathname), '_self')
+                window.open(routes.signIn(Router.asPath), '_self')
                 return <SkeletonPlaceHolder />
             }
         }

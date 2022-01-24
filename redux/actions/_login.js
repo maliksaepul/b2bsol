@@ -1,8 +1,8 @@
-import { SERVICE } from '@/utils/constants'
 import { GET_ACCOUNT } from '../types'
 import { apiEnd, apiStart } from './_scedule'
 import Request from '@/redux/request'
 import routes from '@/utils/routes'
+import { account } from '@/utils/apiroutelist'
 
 export const getAccount = payload => {
     return {
@@ -17,9 +17,7 @@ export const fetchAccount = () => async dispatch => {
     try {
         const request = new Request(null, null, true)
         const response = {
-            ...(await request.get(
-                SERVICE.ACCOUNT + '/accounts/self?ref_subs=true'
-            )),
+            ...(await request.get(account.self())),
         }
         if (response.status === 200) {
             dispatch(getAccount(response.data.data))

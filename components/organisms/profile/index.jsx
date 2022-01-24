@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import Navbar from '../../molecules/navbar'
 import { PROFILE_ITEM } from '@/utils/constants'
+import Logout from '@/containers/Logout'
 
 const Profile = props => {
     return (
@@ -23,7 +24,7 @@ const Profile = props => {
                 </div>
             </div>
             <Navbar bgcolor={'white'} variant="column" navitem={PROFILE_ITEM} />
-            <div className="text-danger cursor-pointer">Logout</div>
+            <Logout />
         </div>
     )
 }
