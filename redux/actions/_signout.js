@@ -27,7 +27,7 @@ export const fetchRevokeUser = () => async dispatch => {
         const response = await request.post(account.revokeUser(), values)
         removeToken()
         dispatch(apiEnd())
-        window.open(routes.signIn('/'), '_self')
+        window.open(routes.signIn(window.location.pathname), '_self')
         return response
     } catch (e) {
         return e.response || e

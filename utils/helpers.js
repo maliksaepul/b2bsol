@@ -85,3 +85,16 @@ export const getQueryParam = param => {
     const urlParams = new URLSearchParams(window.location.search)
     return urlParams.get(param)
 }
+
+export class disableScroll {
+    static on() {
+        document.body.style.overflow = 'hidden'
+        document.body.style.top = `-${window.scrollY}px`
+    }
+
+    static off() {
+        document.body.style.overflow = 'auto'
+        const scrollY = document.body.style.top
+        window.scrollTo(0, parseInt(scrollY || '0') * -1)
+    }
+}
