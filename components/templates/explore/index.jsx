@@ -46,7 +46,9 @@ const Explore = ({ user, lastlearning, fetchLastLearning }) => {
                         label={'Mulai Sekarang'}
                         variant={'primary'}
                         cta={() => {
-                            router.push(routes.audiolearning())
+                            router.push(
+                                routes.audiolearning(window.location.pathname)
+                            )
                         }}
                     />
                 </center>
