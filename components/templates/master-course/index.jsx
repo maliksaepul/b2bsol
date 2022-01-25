@@ -39,7 +39,7 @@ const MasterCourse = ({ fetchCourses, courses }) => {
                         {
                             variant: 'secondary',
                             url: 'google.com',
-                            label: 'Explore',
+                            label: 'Eksplor',
                             icon: false,
                         },
                     ]}

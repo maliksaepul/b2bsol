@@ -4,6 +4,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Profile from '@/components/organisms/profile'
 import Icon from '@/components/atoms/icon'
+import ClickOutside from '@/components/atoms/clickoutside'
 
 const ProfileBar = ({
     username,
@@ -24,11 +25,13 @@ const ProfileBar = ({
         if (active) {
             return (
                 <div className={styles.profile_sidebar}>
-                    <Profile
-                        usercover={usercover}
-                        username={username}
-                        userRole={userRole}
-                    />
+                    <ClickOutside behaviorfunc={() => activeProfile(!active)}>
+                        <Profile
+                            usercover={usercover}
+                            username={username}
+                            userRole={userRole}
+                        />
+                    </ClickOutside>
                 </div>
             )
         } else {
@@ -42,7 +45,7 @@ const ProfileBar = ({
             onClick={() => {
                 activeProfile(!active)
             }}>
-            <p>Hi {username}</p>
+            <p>Hi, {username} !</p>
             <div className={styles.profile_cover}>
                 {usercover ? <img src={usercover} alt="cover" /> : 'S'}
             </div>

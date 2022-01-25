@@ -25,7 +25,7 @@ const InspiBook = ({ inspibook, fetchData, path }) => {
                 <About
                     title={'Inspi Book'}
                     subtitle={''}
-                    description={'Pembelajaran berbasis audio yang fleksibel'}
+                    description={'Dengarkan dan baca ringkasan buku terbaik'}
                     height={'10rem'}
                 />
             </Section>

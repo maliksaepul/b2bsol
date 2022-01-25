@@ -17,7 +17,7 @@ const Header = ({ path }) => {
                                 url: routes.audiolearning(path.path),
                             },
                             {
-                                label: 'Inspi Book',
+                                label: 'InspiBook',
                                 url: routes.inspibook(path.path),
                             },
                             // {

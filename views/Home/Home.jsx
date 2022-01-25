@@ -41,7 +41,7 @@ const Home = ({ account, path }) => {
                         'Kembangkan dirimu melalui beragam konten pembelajaran berbasis audio yang dapat kamu dengarkan kapan pun dan di mana pun!'
                     }
                     cta={{
-                        label: 'explore',
+                        label: 'Eksplor',
                         url: routes.audiolearning(path.path),
                     }}
                 />

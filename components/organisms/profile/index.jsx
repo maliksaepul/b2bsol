@@ -24,7 +24,9 @@ const Profile = props => {
                 </div>
             </div>
             <Navbar bgcolor={'white'} variant="column" navitem={PROFILE_ITEM} />
-            <Logout />
+            <div className={styles.cta}>
+                <Logout />
+            </div>
         </div>
     )
 }

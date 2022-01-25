@@ -33,7 +33,7 @@ const AudioCard = ({ audio, withLabel, path }) => {
 
 AudioCard.propTypes = {
     audio: PropTypes.shape({
-        cover: PropTypes.object,
+        cover: PropTypes.any,
         title: PropTypes.string,
         alias: PropTypes.string,
         author: PropTypes.string,

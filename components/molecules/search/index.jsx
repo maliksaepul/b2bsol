@@ -25,7 +25,7 @@ const Search = ({ onChange }) => {
             <input
                 className={styles.search_input}
                 type="text"
-                placeholder="Search Here"
+                placeholder="Cari judul  atau nama speaker"
                 onChange={debouncedChangeHandler}
             />
         </div>

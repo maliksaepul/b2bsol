@@ -19,6 +19,10 @@
         height: 2.5rem;
         justify-content: space-around;
         align-items: center;
+
+        @include media-max-width($mobile-breakpoint) {
+            justify-content: space-between;
+        }
     }
     @include media-min-width($mobile-breakpoint) {
         &_item:last-child {

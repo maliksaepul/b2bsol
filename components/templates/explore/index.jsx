@@ -20,7 +20,7 @@ const Explore = ({ user, lastlearning, fetchLastLearning, path }) => {
         if (lastlearning.length > 0) {
             return (
                 <Label
-                    title={`Halo ${user.name}`}
+                    title={`Halo, ${user.name}`}
                     description={
                         '<p>Lanjutkan materi yang telah kamu mulai sebelumnya</p>'
                     }
@@ -29,7 +29,7 @@ const Explore = ({ user, lastlearning, fetchLastLearning, path }) => {
         } else {
             return (
                 <Label
-                    title={`Halo ${user.name}`}
+                    title={`Halo, ${user.name}`}
                     description={
                         '<p>Belum ada konten yang dipelajari, yuk belajar bersama!</p>'
                     }

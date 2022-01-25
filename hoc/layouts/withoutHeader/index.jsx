@@ -22,7 +22,7 @@ const withoutHeader = ({ children, closeModal, modalClose }) => {
                     description={
                         'Kembangkan diri bersama dan nikmati ragam fitur pembelajaran menarik dengan berbagai topik.'
                     }
-                    ctaLabel="explore"
+                    ctaLabel="Eksplor"
                     cta={() => {
                         modalClose(!closeModal)
                     }}

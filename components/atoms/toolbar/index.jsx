@@ -5,6 +5,7 @@ import DropDown from '@/components/atoms/dropdown'
 import Search from '@/components/molecules/search'
 import Filter from '@/components/molecules/filter'
 import Sorting from '@/components/molecules/sorting'
+import ClickOutside from '../clickoutside'
 
 const Toolbar = ({
     activeFilter,
@@ -38,15 +39,23 @@ const Toolbar = ({
     const renderFilter = () => {
         if (filterActive) {
             return (
-                <Filter
-                    filterList={categories}
-                    label="Category"
-                    onChange={val => {
-                        setFilter(val)
-                        fetchData({ search, filter: val, sort: sorting }, api)
-                    }}
-                    filter={filter.trim().split(',')}
-                />
+                <ClickOutside
+                    behaviorfunc={() => {
+                        activeFilter(!filterActive)
+                    }}>
+                    <Filter
+                        filterList={categories}
+                        label="Category"
+                        onChange={val => {
+                            setFilter(val)
+                            fetchData(
+                                { search, filter: val, sort: sorting },
+                                api
+                            )
+                        }}
+                        filter={filter.trim().split(',')}
+                    />
+                </ClickOutside>
             )
         } else {
             return null
@@ -67,16 +76,21 @@ const Toolbar = ({
     const renderSorting = () => {
         if (sortingActive) {
             return (
-                <Sorting
-                    onChange={val => {
-                        setSorting(val)
-                        fetchData({ search, filter, sort: val }, api)
-                    }}
-                    sortingList={[
-                        { label: 'Newest', key: 'date' },
-                        { label: 'Name A-Z', key: 'title' },
-                    ]}
-                />
+                <ClickOutside
+                    behaviorfunc={() => {
+                        activeSorting(!sortingActive)
+                    }}>
+                    <Sorting
+                        onChange={val => {
+                            setSorting(val)
+                            fetchData({ search, filter, sort: val }, api)
+                        }}
+                        sortingList={[
+                            { label: 'Newest', key: 'date' },
+                            { label: 'Name A-Z', key: 'title' },
+                        ]}
+                    />
+                </ClickOutside>
             )
         } else {
             return null

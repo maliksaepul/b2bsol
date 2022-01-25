@@ -15,8 +15,8 @@ const InspiBook = props => {
         <WithIllu
             className={cx('bg-primary', 'text-white', styles.inspibook)}
             illu={{
-                src: '/images/agenda/inspibook-section.png',
-                width: '600',
+                src: '/images/inspibook.png',
+                width: '665',
                 height: '600',
             }}>
             <div className={styles.inspibook_desc}>
@@ -35,14 +35,14 @@ const InspiBook = props => {
                     />
                 </div>
                 <Card
-                    title={{ type: 'text', content: 'Inspibook' }}
+                    title={{ type: 'text', content: 'InspiBook' }}
                     body={
                         'Belajar langsung dari para ahli. Master Course hadir dengan pembahasan mendalam hanya untukmu! Telusuri lebih lanjut dan mulai ikuti kursus.'
                     }
                     cta={[]}>
                     <div className={styles.cta}>
                         <Button
-                            label={'explore'}
+                            label={'Eksplor'}
                             variant={'secondary'}
                             cta={() =>
                                 router.push(routes.inspibook(props.path))

@@ -10,4 +10,8 @@
     .right {
         text-align: right;
     }
+
+    @include media-max-width($mobile-breakpoint) {
+        font-size: 0.75rem;
+    }
 }
