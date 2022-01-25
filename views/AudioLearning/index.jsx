@@ -7,9 +7,10 @@ import Grid from '@/components/atoms/grid'
 import AudioCard from '@/containers/AudioCardContainer'
 import Contents from '@/components/organisms/contents'
 import Toolbar from '@/containers/ToolbarContainer'
-import { API_PODCAST } from '@/utils/apiroutelist'
+import { TOOLBAR_PODCAST } from '@/redux/types'
+import { content } from '@/utils/apiroutelist'
 
-const AudioLearning = ({ podcast, fetchData }) => {
+const AudioLearning = ({ podcast, fetchData, path }) => {
     const renderAudioCard = () => {
         return podcast.map((c, i) => <AudioCard audio={c} key={i} />)
     }
@@ -26,7 +27,12 @@ const AudioLearning = ({ podcast, fetchData }) => {
             </Section>
             <Section>
                 <Contents>
-                    <Toolbar api={API_PODCAST} />
+                    <Toolbar
+                        api={{
+                            url: content.podcast(path),
+                            type: TOOLBAR_PODCAST,
+                        }}
+                    />
                     <Grid>{renderAudioCard()}</Grid>
                 </Contents>
             </Section>
@@ -37,6 +43,7 @@ const AudioLearning = ({ podcast, fetchData }) => {
 AudioLearning.propTypes = {
     podcast: PropTypes.array,
     fetchData: PropTypes.func,
+    path: PropTypes.any,
 }
 
 export default AudioLearning

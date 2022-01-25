@@ -8,6 +8,7 @@ import Grid from '@/components/atoms/grid'
 import Toolbar from '@/containers/ToolbarContainer'
 import VideoCard from '@/components/organisms/video-card'
 import { API_VIDEO } from '@/utils/apiroutelist'
+import { TOOLBAR_VOD } from '@/redux/types'
 
 const VideoLearning = ({ videos }) => {
     const renderVideoCard = () => {
@@ -31,7 +32,7 @@ const VideoLearning = ({ videos }) => {
         </Section> */}
             <Section>
                 <Contents>
-                    <Toolbar api={API_VIDEO} />
+                    <Toolbar api={{ url: API_VIDEO, type: TOOLBAR_VOD }} />
                     <Grid variant={'large'}>{renderVideoCard()}</Grid>
                 </Contents>
             </Section>

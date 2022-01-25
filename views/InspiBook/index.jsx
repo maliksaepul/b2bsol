@@ -6,8 +6,9 @@ import About from '@/components/templates/about'
 import Grid from '@/components/atoms/grid'
 import Contents from '@/components/organisms/contents'
 import Toolbar from '@/containers/ToolbarContainer'
-import { API_PODCAST } from '@/utils/apiroutelist'
+import { content } from '@/utils/apiroutelist'
 import InspiBookCard from '@/components/organisms/inspibook-card'
+import { TOOLBAR_INSPIBOOK } from '@/redux/types'
 
 const InspiBook = ({ inspibook, fetchData, path }) => {
     const renderAudioCard = () => {
@@ -30,7 +31,12 @@ const InspiBook = ({ inspibook, fetchData, path }) => {
             </Section>
             <Section>
                 <Contents>
-                    <Toolbar api={API_PODCAST} />
+                    <Toolbar
+                        api={{
+                            url: content.inspibook(path),
+                            type: TOOLBAR_INSPIBOOK,
+                        }}
+                    />
                     <Grid>{renderAudioCard()}</Grid>
                 </Contents>
             </Section>

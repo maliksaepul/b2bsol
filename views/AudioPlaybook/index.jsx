@@ -8,6 +8,7 @@ import Toolbar from '@/containers/ToolbarContainer'
 import Grid from '@/components/atoms/grid'
 import BookCard from '@/containers/BookCardContainer'
 import { API_APB } from '@/utils/apiroutelist'
+import { TOOLBAR_APB } from '@/redux/types'
 
 const AudioPlaybook = ({ apb }) => {
     const renderAudioCard = () => {
@@ -26,7 +27,7 @@ const AudioPlaybook = ({ apb }) => {
             </Section>
             <Section>
                 <Contents>
-                    <Toolbar api={API_APB} />
+                    <Toolbar api={{ url: API_APB, type: TOOLBAR_APB }} />
                     <Grid>{renderAudioCard()}</Grid>
                 </Contents>
             </Section>

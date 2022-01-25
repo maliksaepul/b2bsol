@@ -12,7 +12,7 @@ const AudioLearningPage = ({ account, podcast, fetchPodcast, path }) => {
 
     return (
         <>
-            <AudioLearning podcast={podcast} />
+            <AudioLearning podcast={podcast} path={path.path} />
         </>
     )
 }

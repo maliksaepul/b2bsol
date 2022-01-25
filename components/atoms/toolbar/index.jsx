@@ -19,20 +19,20 @@ const Toolbar = ({
     const [sorting, setSorting] = useState('')
 
     const categories = [
-        'Happiness &amp; Mindfulness',
+        'Happiness & Mindfulness',
         'Work Life Balance',
         'Career Growth',
         'Leadership',
         'Communication',
-        'Creativity &amp; Problem Solving',
+        'Creativity & Problem Solving',
         'Entrepreneurship',
         'Intrapreneurship',
-        'Technology &amp; Innovation',
-        'Sales &amp; Marketing',
+        'Technology & Innovation',
+        'Sales & Marketing',
         'Personal Finance',
-        'Love &amp; Relationship',
-        'Family &amp; Kids',
-        'Lifestyle &amp; Culture',
+        'Love & Relationship',
+        'Family & Kids',
+        'Lifestyle & Culture',
     ]
 
     const renderFilter = () => {
@@ -43,7 +43,7 @@ const Toolbar = ({
                     label="Category"
                     onChange={val => {
                         setFilter(val)
-                        fetchData({ search, filter: val, sorting }, api)
+                        fetchData({ search, filter: val, sort: sorting }, api)
                     }}
                     filter={filter.trim().split(',')}
                 />
@@ -58,7 +58,7 @@ const Toolbar = ({
             <Search
                 onChange={val => {
                     setSearch(val)
-                    fetchData({ search: val, filter, sorting }, api)
+                    fetchData({ search: val, filter, sort: sorting }, api)
                 }}
             />
         )
@@ -70,11 +70,10 @@ const Toolbar = ({
                 <Sorting
                     onChange={val => {
                         setSorting(val)
-                        fetchData({ search, filter, sorting: val }, api)
+                        fetchData({ search, filter, sort: val }, api)
                     }}
                     sortingList={[
-                        { label: 'Most Popular', key: 'Most Popular' },
-                        { label: 'Newest', key: 'created_at' },
+                        { label: 'Newest', key: 'date' },
                         { label: 'Name A-Z', key: 'title' },
                     ]}
                 />
@@ -111,7 +110,7 @@ Toolbar.propTypes = {
     sortingActive: PropTypes.bool,
     filterActive: PropTypes.bool,
     fetchData: PropTypes.func,
-    api: PropTypes.string,
+    api: PropTypes.any,
 }
 
 export default Toolbar

@@ -17,13 +17,16 @@ const withAuth = Component => {
         const [pagePath, setPagePath] = useState({})
         const navigateByQuery = () => {
             if (Router.query.access || Router.query.refresh) {
-                if (Router.query.path) {
-                    Router.push(Router.query.path)
-                } else if (Router.query.alias) {
-                    Router.push(Router.query.alias)
-                } else {
-                    Router.push(Router.pathname)
-                }
+                // console.log("hallo", Router.query.path);
+                // console.log(window.location.pathname);
+                // if (Router.query.path) {
+                //     Router.push(Router.query.path)
+                // } else if (Router.query.alias) {
+                //     Router.push(Router.query.alias)
+                // } else {
+                //     Router.push(Router.pathname)
+                // }
+                Router.push(Router.basePath + window.location.pathname)
             } else {
                 Router.push(Router.asPath)
             }
@@ -58,11 +61,10 @@ const withAuth = Component => {
                         const response = await props.fetchPath(
                             Router.query.path
                         )
-
+                        navigateByQuery()
                         setPagePath(
                             response.isAxiosError ? response.response : response
                         )
-                        navigateByQuery()
                     }
                 }, [Router.isReady])
 
