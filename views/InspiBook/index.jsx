@@ -9,9 +9,13 @@ import Toolbar from '@/containers/ToolbarContainer'
 import { API_PODCAST } from '@/utils/apiroutelist'
 import InspiBookCard from '@/components/organisms/inspibook-card'
 
-const InspiBook = ({ podcast, fetchData }) => {
+const InspiBook = ({ inspibook, fetchData, path }) => {
     const renderAudioCard = () => {
-        return podcast.map((c, i) => <InspiBookCard audio={c} key={i} />)
+        // console.log(inspibook);
+        // return null
+        return inspibook.map((c, i) => (
+            <InspiBookCard audio={c} key={i} path={path} />
+        ))
     }
 
     return (
@@ -35,8 +39,9 @@ const InspiBook = ({ podcast, fetchData }) => {
 }
 
 InspiBook.propTypes = {
-    podcast: PropTypes.array,
+    inspibook: PropTypes.array,
     fetchData: PropTypes.func,
+    path: PropTypes.any,
 }
 
 export default InspiBook

@@ -8,7 +8,7 @@ import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
 import InspiBookCard from '@/containers/InspiBookCardContainer'
 
-const InspiBookPlayer = ({ alias, relatedAudioPlaybook }) => {
+const InspiBookPlayer = ({ alias, relatedInspibook, path }) => {
     return (
         <WithoutHeader>
             <div className={styles.container}>
@@ -22,11 +22,11 @@ const InspiBookPlayer = ({ alias, relatedAudioPlaybook }) => {
                         <div className={styles.content_container}>
                             <Label title="Similar Audio PlayBook" />
                             <Carousel>
-                                {relatedAudioPlaybook.map((c, i) => (
+                                {relatedInspibook.map((c, i) => (
                                     <div
                                         style={{ paddingRight: '1rem' }}
                                         key={i}>
-                                        <InspiBookCard book={c} />
+                                        <InspiBookCard audio={c} path={path} />
                                     </div>
                                 ))}
                             </Carousel>
@@ -40,7 +40,8 @@ const InspiBookPlayer = ({ alias, relatedAudioPlaybook }) => {
 
 InspiBookPlayer.propTypes = {
     alias: PropTypes.string,
-    relatedAudioPlaybook: PropTypes.array,
+    relatedInspibook: PropTypes.array,
+    path: PropTypes.any,
 }
 
 export default InspiBookPlayer

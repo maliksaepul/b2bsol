@@ -15,6 +15,8 @@ import RelatedAudioPlaybook from '@/redux/reducers/_relatedAudioplaybook'
 import LoginReducer from '@/redux/reducers/_login'
 import PathReducer from '@/redux/reducers/_path'
 import OrganizationReducer from '@/redux/reducers/_organization'
+import InspibookReducer from '@/redux/reducers/_inspibook'
+import RelatedInspibook from '@/redux/reducers/_relatedInspibook'
 
 const rootReducer = combineReducers({
     sidebarState: SidebarReducer,
@@ -28,6 +30,8 @@ const rootReducer = combineReducers({
     apb: ApbReducer,
     vod: VodReducer,
     podcast: PodcastReducer,
+    inspibook: InspibookReducer,
+    relatedInspibook: RelatedInspibook,
     relatedPodcast: RelatedPodcast,
     relatedAudioPlaybook: RelatedAudioPlaybook,
     account: LoginReducer,

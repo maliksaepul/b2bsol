@@ -1,35 +1,37 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
-
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { fetchRelatedAudioPlaybook } from '@/redux/actions/_relatedContent'
 import InspiBookPlayer from '@/views/InspiBookPlayer'
 import withAuth from '@/hoc/wrappers/withAuthStrict'
+import { fetchRelatedInspibook } from '@/redux/actions/_relatedContent'
 
 const InspiBookPlayerPage = ({
-    fetchRelatedAudioPlaybook,
-    relatedAudioPlaybook,
+    fetchRelatedInspibook,
+    relatedInspibook,
+    path,
 }) => {
     const router = useRouter()
     const { alias } = router.query
     useEffect(() => {
-        fetchRelatedAudioPlaybook()
+        fetchRelatedInspibook(path.path)
     }, [])
     return (
         <InspiBookPlayer
             alias={alias}
-            relatedAudioPlaybook={relatedAudioPlaybook}
+            relatedInspibook={relatedInspibook}
+            path={path.path}
         />
     )
 }
 
 InspiBookPlayerPage.propTypes = {
-    fetchRelatedAudioPlaybook: PropTypes.func.isRequired,
-    relatedAudioPlaybook: PropTypes.array,
+    fetchRelatedInspibook: PropTypes.func.isRequired,
+    relatedInspibook: PropTypes.array,
+    path: PropTypes.any,
 }
-const mapStateToProps = ({ relatedAudioPlaybook }) => ({ relatedAudioPlaybook })
+const mapStateToProps = ({ relatedInspibook }) => ({ relatedInspibook })
 
-export default connect(mapStateToProps, { fetchRelatedAudioPlaybook })(
+export default connect(mapStateToProps, { fetchRelatedInspibook })(
     withAuth(InspiBookPlayerPage)
 )

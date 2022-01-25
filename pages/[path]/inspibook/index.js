@@ -1,28 +1,29 @@
 import React, { useEffect } from 'react'
-import { fetchPodcast } from '@/redux/actions/_ondemand'
+import { fetchInspibook } from '@/redux/actions/_ondemand'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import InspiBook from '@/views/InspiBook'
 import withAuth from '@/hoc/wrappers/withAuthStrict'
+import InspiBook from '@/views/InspiBook'
 
-const InspiBookPage = ({ podcast, fetchPodcast }) => {
+const InspiBookPage = ({ inspibook, fetchInspibook, path }) => {
     useEffect(() => {
-        fetchPodcast()
+        fetchInspibook(path.path)
     }, [])
 
     return (
         <>
-            <InspiBook podcast={podcast} />
+            <InspiBook inspibook={inspibook} path={path.path} />
         </>
     )
 }
 
 InspiBookPage.propTypes = {
-    fetchPodcast: PropTypes.func,
-    podcast: PropTypes.array,
+    fetchInspibook: PropTypes.func,
+    inspibook: PropTypes.array,
+    path: PropTypes.any,
 }
-const mapStateToProps = ({ podcast }) => ({ podcast })
+const mapStateToProps = ({ inspibook }) => ({ inspibook })
 
-export default connect(mapStateToProps, { fetchPodcast })(
+export default connect(mapStateToProps, { fetchInspibook })(
     withAuth(InspiBookPage)
 )

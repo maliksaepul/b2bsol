@@ -17,7 +17,7 @@ const InspiBookCard = ({ audio, withLabel, path }) => {
     return (
         <div className={styles.object}>
             <img
-                src={audio.cover}
+                src={audio.cover.url}
                 alt={audio.title}
                 onClick={() => renderLink(audio.alias)}
             />
@@ -33,14 +33,14 @@ const InspiBookCard = ({ audio, withLabel, path }) => {
 
 InspiBookCard.propTypes = {
     audio: PropTypes.shape({
-        cover: PropTypes.string,
+        cover: PropTypes.any,
         title: PropTypes.string,
         alias: PropTypes.string,
         author: PropTypes.string,
         deeplink: PropTypes.string,
     }).isRequired,
     withLabel: PropTypes.bool,
-    path: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    path: PropTypes.any,
 }
 
 InspiBookCard.defaultProps = {
