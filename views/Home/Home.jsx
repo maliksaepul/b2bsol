@@ -37,6 +37,7 @@ const Home = ({ account, path }) => {
                 </Section>
 
                 <PodcastRecomended
+                    path={path.path}
                     title={'Podcast Recomendation'}
                     description={'Dengarkan di Inspigo'}
                     cta={{ label: 'explore' }}

@@ -1,15 +1,24 @@
 @import 'styles/mixins';
+@import 'styles/colors';
 
 ._header {
+    background-color: $stroke;
     @include global-gap();
 }
 ._main {
     @include global-gap();
 }
 ._footer {
+    background-color: $stroke;
     @include global-gap();
 }
 
 ._content {
     margin: 1rem 0;
+}
+
+._about {
+    background-color: $intuition-blue;
+    background-image: linear-gradient($intuition-blue 80%, $secondary 20%);
+    @include global-gap();
 }

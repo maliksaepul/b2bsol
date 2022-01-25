@@ -1,3 +1,4 @@
+import { content } from '@/utils/apiroutelist'
 import { LOCAL_STORAGE } from '@/utils/constants'
 import { saveToken } from '@/utils/helpers'
 import axios from 'axios'
@@ -25,33 +26,31 @@ export const getApb = payload => {
     }
 }
 
-export const fetchPodcast = params => dispatch => {
-    dispatch(apiStart())
-    axios
-        .get(
-            `${process.env.SERVICE_CONTENT}/organization/${
-                (params && params.path) || 'inspigo'
-            }/albums?limit=10&skip=0`,
-            {
+export const fetchPodcast =
+    (path = '', params) =>
+    dispatch => {
+        dispatch(apiStart())
+        axios
+            .get(content.podcast(path), {
                 params,
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem(
                         LOCAL_STORAGE.ACCESS_TOKEN
                     )}`,
                 },
-            }
-        )
-        .then(({ data }) => {
-            saveToken(data.token)
-            dispatch(getPodcast(data.data.results))
-        })
-        .catch(error => {
-            dispatch(apiError(error))
-        })
-        .then(() => {
-            dispatch(apiEnd())
-        })
-}
+            })
+            .then(({ data }) => {
+                saveToken(data.token)
+                dispatch(getPodcast(data?.data?.results))
+            })
+            .catch(error => {
+                console.log(error)
+                dispatch(apiError(error))
+            })
+            .then(() => {
+                dispatch(apiEnd())
+            })
+    }
 
 export const fetchApb = () => dispatch => {
     dispatch(apiStart())

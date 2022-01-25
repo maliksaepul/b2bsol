@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '@/hoc/layouts/common'
+import Layout from '@/hoc/layouts/ondemand'
 import Section from '@/components/atoms/section'
 import About from '@/components/templates/about'
 import Contents from '@/components/organisms/contents'

@@ -5,7 +5,7 @@ import Marquee from '@/components/molecules/marquee'
 
 const PodcastRecomended = props => {
     useEffect(() => {
-        props.fetchRelatedPodcast()
+        props.fetchRelatedPodcast(props.path)
     }, [])
 
     const renderPodcast = () => (
@@ -28,6 +28,7 @@ PodcastRecomended.propTypes = {
     description: PropTypes.string,
     cta: PropTypes.object,
     fetchRelatedPodcast: PropTypes.func,
+    path: PropTypes.any,
 }
 
 export default PodcastRecomended

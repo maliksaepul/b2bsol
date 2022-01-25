@@ -6,11 +6,11 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import withAuth from '@/hoc/wrappers/withAuthStrict'
 
-const PodcastPlayerPage = ({ fetchRelatedPodcast, relatedPodcast }) => {
+const PodcastPlayerPage = ({ fetchRelatedPodcast, relatedPodcast, path }) => {
     const router = useRouter()
     const { alias } = router.query
     useEffect(() => {
-        fetchRelatedPodcast()
+        fetchRelatedPodcast(path.path)
     }, [])
     return <PodcastPlayer alias={alias} relatedPodcast={relatedPodcast} />
 }
@@ -18,6 +18,7 @@ const PodcastPlayerPage = ({ fetchRelatedPodcast, relatedPodcast }) => {
 PodcastPlayerPage.propTypes = {
     fetchRelatedPodcast: PropTypes.func.isRequired,
     relatedPodcast: PropTypes.array,
+    path: PropTypes.any,
 }
 const mapStateToProps = ({ relatedPodcast }) => ({ relatedPodcast })
 

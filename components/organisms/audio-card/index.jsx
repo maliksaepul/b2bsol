@@ -17,7 +17,7 @@ const AudioCard = ({ audio, withLabel, path }) => {
     return (
         <div className={styles.object}>
             <img
-                src={audio.cover}
+                src={audio.cover.url}
                 alt={audio.title}
                 onClick={() => renderLink(audio.alias)}
             />
@@ -33,7 +33,7 @@ const AudioCard = ({ audio, withLabel, path }) => {
 
 AudioCard.propTypes = {
     audio: PropTypes.shape({
-        cover: PropTypes.string,
+        cover: PropTypes.object,
         title: PropTypes.string,
         alias: PropTypes.string,
         author: PropTypes.string,

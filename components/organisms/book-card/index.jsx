@@ -7,7 +7,6 @@ import routes from '@/utils/routes'
 
 const BookCard = ({ book, path }) => {
     const router = useRouter()
-    console.log(path)
     const renderLink = (link = null) => {
         if (link) {
             router.push(routes.audioplaybook(path.path, link))

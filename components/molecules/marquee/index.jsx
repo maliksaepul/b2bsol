@@ -18,7 +18,7 @@ const Marquee = ({ contents, animationDuration }) => {
                     <div key={i} className={styles.object}>
                         {/* tes */}
                         <img
-                            src={c.cover}
+                            src={c.cover.url}
                             alt={c.title}
                             onClick={() => renderLink(c.deeplink)}
                         />

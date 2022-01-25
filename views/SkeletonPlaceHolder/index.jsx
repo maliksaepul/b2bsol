@@ -6,12 +6,12 @@ const SkeletonPlaceHolder = () => {
     return (
         <div>
             <div role="header" className={styles._header}>
-                <Skeleton height={40} />
+                <Skeleton height={80} />
+            </div>
+            <div role="content" className={styles._about}>
+                <Skeleton height={300} />
             </div>
             <div role="main" className={styles._main}>
-                <div role="content" className={styles._content}>
-                    <Skeleton height={300} />
-                </div>
                 <div role="content" className={styles._content}>
                     <Skeleton height={300} />
                 </div>

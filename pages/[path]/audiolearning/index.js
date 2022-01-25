@@ -5,9 +5,9 @@ import AudioLearning from '@/views/AudioLearning'
 import PropTypes from 'prop-types'
 import withAuth from '@/hoc/wrappers/withAuthStrict'
 
-const AudioLearningPage = ({ account, podcast, fetchPodcast }) => {
+const AudioLearningPage = ({ account, podcast, fetchPodcast, path }) => {
     useEffect(() => {
-        fetchPodcast()
+        fetchPodcast(path.path)
     }, [])
 
     return (
@@ -21,6 +21,7 @@ AudioLearningPage.propTypes = {
     fetchPodcast: PropTypes.func,
     podcast: PropTypes.array,
     account: PropTypes.any,
+    path: PropTypes.any,
 }
 const mapStateToProps = ({ podcast }) => ({ podcast })
 
