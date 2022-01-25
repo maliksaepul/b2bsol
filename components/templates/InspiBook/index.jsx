@@ -1,12 +1,16 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import WithIllu from '../with-illu'
 import Card from '@/components/organisms/card'
 import cx from 'classnames'
 import styles from './style.module.scss'
 import Images from 'next/image'
+import routes from '@/utils/routes'
+import Button from '@/components/atoms/button'
+import { useRouter } from 'next/router'
 
 const InspiBook = props => {
+    const router = useRouter()
     return (
         <WithIllu
             className={cx('bg-primary', 'text-white', styles.inspibook)}
@@ -35,15 +39,25 @@ const InspiBook = props => {
                     body={
                         'Belajar langsung dari para ahli. Master Course hadir dengan pembahasan mendalam hanya untukmu! Telusuri lebih lanjut dan mulai ikuti kursus.'
                     }
-                    cta={[{ label: 'explore', variant: 'secondary' }]}
-                />
+                    cta={[]}>
+                    <div className={styles.cta}>
+                        <Button
+                            label={'explore'}
+                            variant={'secondary'}
+                            cta={() =>
+                                router.push(routes.inspibook(props.path))
+                            }
+                            size="small"
+                        />
+                    </div>
+                </Card>
             </div>
         </WithIllu>
     )
 }
 
-// InspiBook.propTypes = {
-
-// }
+InspiBook.propTypes = {
+    path: PropTypes.any,
+}
 
 export default InspiBook

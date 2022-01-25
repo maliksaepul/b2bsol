@@ -3,8 +3,10 @@ import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
 
 const Recomendation = props => {
+    const router = useRouter()
     return (
         <div className={styles.recomendation}>
             <div className={styles.label_container}>
@@ -19,6 +21,7 @@ const Recomendation = props => {
                 <Button
                     variant={props.cta.variant || 'primary'}
                     label={props.cta.label}
+                    cta={() => router.push(props.cta.url)}
                 />
             </div>
         </div>

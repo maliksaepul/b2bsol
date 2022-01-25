@@ -4,17 +4,15 @@ import React from 'react'
 import Layout from '@/hoc/layouts/common'
 import About from '@/components/templates/about'
 import Explore from '@/containers/ExploreContainer'
-import Statistic from '@/containers/StatisticContainer'
+// import Statistic from '@/containers/StatisticContainer'
 import Schedule from '@/containers/SchedulesContainer'
 import Gamification from '@/components/templates/gamification'
 // import MasterCourse from '@/containers/MasterCourseContainer'
 import PropTypes from 'prop-types'
 import PodcastRecomended from '@/containers/PodcastRecomendedContainer'
-import MasterCourse from '@/containers/MasterCourseContainer'
+// import MasterCourse from '@/containers/MasterCourseContainer'
 import InspiBook from '@/components/templates/InspiBook'
-import Photobooth from '@/components/templates/photobooth'
-
-// Styles
+import routes from '@/utils/routes'
 
 const Home = ({ account, path }) => {
     return (
@@ -26,9 +24,9 @@ const Home = ({ account, path }) => {
                 <Section>
                     <Explore user={{ name: account.name }} path={path.path} />
                 </Section>
-                <Section>
+                {/* <Section>
                     <Statistic id={1} />
-                </Section>
+                </Section> */}
                 <Section>
                     <Schedule />
                 </Section>
@@ -38,18 +36,24 @@ const Home = ({ account, path }) => {
 
                 <PodcastRecomended
                     path={path.path}
-                    title={'Podcast Recomendation'}
-                    description={'Dengarkan di Inspigo'}
-                    cta={{ label: 'explore' }}
+                    title={'Recommended Podcast'}
+                    description={
+                        'Kembangkan dirimu melalui beragam konten pembelajaran berbasis audio yang dapat kamu dengarkan kapan pun dan di mana pun!'
+                    }
+                    cta={{
+                        label: 'explore',
+                        url: routes.audiolearning(path.path),
+                    }}
                 />
 
-                <Section variant={'primary'}>
+                {/* <Section variant={'primary'}>
                     <MasterCourse />
-                </Section>
-                <Photobooth
+                </Section> */}
+                {/* <Photobooth
                     title={'Photobooth'}
                     description={'Give your best smile'}></Photobooth>
-                <InspiBook />
+                 */}
+                <InspiBook path={path.path} />
             </Layout>
         </>
     )

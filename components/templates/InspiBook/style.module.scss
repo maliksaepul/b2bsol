@@ -14,6 +14,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        .cta {
+            padding: 1rem 0;
+        }
         @include media-max-width($mobile-breakpoint) {
             min-height: 18.75rem;
         }

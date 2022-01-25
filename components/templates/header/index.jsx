@@ -20,18 +20,18 @@ const Header = ({ path }) => {
                                 label: 'Inspi Book',
                                 url: routes.inspibook(path.path),
                             },
-                            {
-                                label: 'Video Learning',
-                                url: routes.videolearning(path.path),
-                            },
-                            {
-                                label: 'Audio Playbook',
-                                url: routes.audioplaybook(path.path),
-                            },
-                            {
-                                label: 'LeaderBoard',
-                                url: routes.leaderboard(path.path),
-                            },
+                            // {
+                            //     label: 'Video Learning',
+                            //     url: routes.videolearning(path.path),
+                            // },
+                            // {
+                            //     label: 'Audio Playbook',
+                            //     url: routes.audioplaybook(path.path),
+                            // },
+                            // {
+                            //     label: 'LeaderBoard',
+                            //     url: routes.leaderboard(path.path),
+                            // },
                         ]}
                         align={'right'}
                     />

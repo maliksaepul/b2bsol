@@ -56,18 +56,18 @@ const Sidebar = ({
                                         label: 'Inspi Book',
                                         url: routes.inspibook(path),
                                     },
-                                    {
-                                        label: 'video learning',
-                                        url: routes.videolearning(path),
-                                    },
-                                    {
-                                        label: 'audio playbook',
-                                        url: routes.audioplaybook(path),
-                                    },
-                                    {
-                                        label: 'LeaderBoard',
-                                        url: routes.leaderboard(path),
-                                    },
+                                    // {
+                                    //     label: 'video learning',
+                                    //     url: routes.videolearning(path),
+                                    // },
+                                    // {
+                                    //     label: 'audio playbook',
+                                    //     url: routes.audioplaybook(path),
+                                    // },
+                                    // {
+                                    //     label: 'LeaderBoard',
+                                    //     url: routes.leaderboard(path),
+                                    // },
                                 ]}
                             />
                         </div>

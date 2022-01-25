@@ -42,6 +42,7 @@ const Card = ({ body, children, title, cta, align }) => {
                     label={val.label}
                     icon={val.icon}
                     variant={'secondary'}
+                    cta={() => window.open(val.url, '_self')}
                 />
             )
         })
