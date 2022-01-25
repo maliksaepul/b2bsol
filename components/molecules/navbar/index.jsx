@@ -35,7 +35,7 @@ const Navbar = ({ navitem, align, txcolor, bgcolor, variant }) => {
                 className={cx(styles.nav, aligned, direction)}
                 style={{ color: txcolor, backgroundColor: bgcolor }}>
                 {val.map((item, key) => (
-                    <li className={cx(styles.nav_item)} key={key}>
+                    <li className={cx(styles.nav_item, aligned)} key={key}>
                         <Link href={item.url}>
                             <a
                                 className={styles.nav_link}

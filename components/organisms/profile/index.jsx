@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import Navbar from '../../molecules/navbar'
 import { PROFILE_ITEM } from '@/utils/constants'
-import Logout from '@/containers/Logout'
+import Logout from '@/components/atoms/logout'
 
 const Profile = props => {
     return (

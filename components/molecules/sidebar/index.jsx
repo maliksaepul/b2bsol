@@ -42,10 +42,13 @@ const Sidebar = ({
                             activeSidebar(!sidebarState)
                         }}>
                         <div>
-                            <h5 className="p-x-1">Learning</h5>
+                            <center>
+                                <h5 className="p-x-1">Learning</h5>
+                            </center>
+
                             <Navbar
                                 bgcolor="white"
-                                align="left"
+                                align="center"
                                 variant="column"
                                 navitem={[
                                     {
@@ -72,15 +75,20 @@ const Sidebar = ({
                             />
                         </div>
                         <div>
-                            <h5 className="p-x-1">Profile</h5>
+                            <center>
+                                <h5 className="p-x-1">Profile</h5>
+                            </center>
+
                             <Navbar
                                 bgcolor="white"
-                                align="left"
+                                align="center"
                                 variant="column"
                                 navitem={PROFILE_ITEM}
                             />
                         </div>
-                        <Logout />
+                        <center>
+                            <Logout />
+                        </center>
                     </div>
                 </aside>
             )

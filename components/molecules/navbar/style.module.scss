@@ -57,6 +57,18 @@
         text-transform: capitalize;
         display: flex;
         align-items: center;
+        &.center {
+            align-items: center;
+            justify-content: center;
+        }
+        &.left {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        &.right {
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
         margin: 0 0.5rem;
     }
 

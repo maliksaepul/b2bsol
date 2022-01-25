@@ -5,6 +5,7 @@
     min-width: 18.75rem;
     width: 100%;
     padding: 1rem;
+
     // border-radius: 0.5rem;
     @include media-max-width($mobile-breakpoint) {
         min-width: none;
