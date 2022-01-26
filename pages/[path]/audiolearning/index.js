@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { fetchPodcast } from '@/redux/actions/_ondemand'
+import { fetchPodcast } from '@/redux/actions/content/_ondemand'
 import { connect } from 'react-redux'
 import AudioLearning from '@/views/AudioLearning'
 import PropTypes from 'prop-types'

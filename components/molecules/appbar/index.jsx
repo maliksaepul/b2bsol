@@ -1,10 +1,10 @@
 import Logo from '@/components/atoms/logo'
-import ProfileBar from '@/containers/ProfilebarContainer'
+import ProfileBar from '@/containers/components/bars/Profilebar'
 import styles from './style.module.scss'
 import React from 'react'
 import Humberger from '@/components/molecules/humberger'
 import PropTypes from 'prop-types'
-import Sidebar from '@/containers/Sidebar'
+import Sidebar from '@/containers/components/bars/Sidebar'
 
 const Appbar = ({ activeSidebar, sidebarState, account, path }) => {
     return (

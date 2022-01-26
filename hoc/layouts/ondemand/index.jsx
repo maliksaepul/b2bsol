@@ -1,5 +1,5 @@
 import Footer from '@/components/templates/footer'
-import Header from '@/containers/HeaderContainer'
+import Header from '@/containers/components/Header'
 import styles from './style.module.scss'
 import React from 'react'
 import HeaderBackground from '@/components/templates/header/background'

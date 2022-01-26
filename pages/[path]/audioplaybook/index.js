@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import AudioPlayBook from '@/views/AudioPlaybook'
-import { fetchApb } from '@/redux/actions/_ondemand'
+import { fetchApb } from '@/redux/actions/content/_ondemand'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import withAuth from '@/hoc/wrappers/withAuthStrict'

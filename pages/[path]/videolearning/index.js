@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import VideoLearning from '@/views/VideoLearning'
-import { fetchVod } from '@/redux/actions/_ondemand'
+import { fetchVod } from '@/redux/actions/content/_ondemand'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import withAuth from '@/hoc/wrappers/withAuthStrict'

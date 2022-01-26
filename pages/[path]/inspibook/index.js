@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { fetchInspibook } from '@/redux/actions/_ondemand'
+import { fetchInspibook } from '@/redux/actions/content/_ondemand'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import withAuth from '@/hoc/wrappers/withAuthStrict'

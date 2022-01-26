@@ -6,7 +6,7 @@ import Carousel from '@/components/organisms/carousel'
 import Section from '@/components/atoms/section'
 import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
-import InspiBookCard from '@/containers/InspiBookCardContainer'
+import InspiBookCard from '@/containers/components/cards/InspiBookCard'
 
 const InspiBookPlayer = ({ alias, relatedInspibook, path }) => {
     return (

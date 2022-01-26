@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import withAuth from '@/hoc/wrappers/withAuthStrict'
 import PropTypes from 'prop-types'
-import { fetchOrganization } from '@/redux/actions/_organization'
+import { fetchOrganization } from '@/redux/actions/account/_organization'
 import { connect } from 'react-redux'
 import NotFound from '@/views/NotFound'
 import Forbidden from '@/views/Forbidden'

@@ -4,7 +4,7 @@ import styles from './style.module.scss'
 import Navbar from '@/components/molecules/navbar'
 import routes from '@/utils/routes'
 import { PROFILE_ITEM } from '@/utils/constants'
-import Logout from '@/containers/Logout'
+import Logout from '@/containers/components/Logout'
 import { disableScroll } from '@/utils/helpers'
 
 const Sidebar = ({

@@ -7,8 +7,8 @@ import {
     TOOLBAR_PODCAST,
     TOOLBAR_VOD,
 } from '../types'
-import { getApb, getPodcast, getVod } from './_ondemand'
-import { apiEnd, apiError, apiStart } from './_scedule'
+import { getApb, getInspibook, getPodcast, getVod } from './content/_ondemand'
+import { apiEnd, apiError, apiStart } from './section/_scedule'
 
 export const fetchDataToolbar = (params, api) => dispatch => {
     dispatch(apiStart())
@@ -41,7 +41,7 @@ export const fetchDataToolbar = (params, api) => dispatch => {
                     break
                 case TOOLBAR_INSPIBOOK:
                     saveToken(data.token)
-                    dispatch(getApb(data.data.results))
+                    dispatch(getInspibook(data.data.results))
                     break
                 default:
                     dispatch(getPodcast(data))
