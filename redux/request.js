@@ -58,7 +58,6 @@ class Request {
             }
             return response
         } catch (error) {
-            console.log('error')
             if (error.response.status === 401 && regenerateToken) {
                 this.pendingRequest.push(() => this.sendRequest(request))
                 return this.regenerateAccessToken()
@@ -79,14 +78,11 @@ class Request {
         try {
             const request = () => axios.post(url, values, this.config)
             const response = await request()
-
-            console.log('gagal login')
             this.setToken(response.data.data.token)
             this.setAuthorizationHeaders()
 
             return await this.pendingRequest[0]()
         } catch (error) {
-            console.log('gagal generate token')
             return error
         }
     }
