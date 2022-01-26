@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import InspiBookPlayer from '@/views/InspiBookPlayer'
-import withAuth from '@/hoc/wrappers/withAuthStrict'
 import { fetchRelatedInspibook } from '@/redux/actions/content/_relatedContent'
 
 const InspiBookPlayerPage = ({
@@ -33,5 +32,5 @@ InspiBookPlayerPage.propTypes = {
 const mapStateToProps = ({ relatedInspibook }) => ({ relatedInspibook })
 
 export default connect(mapStateToProps, { fetchRelatedInspibook })(
-    withAuth(InspiBookPlayerPage)
+    InspiBookPlayerPage
 )

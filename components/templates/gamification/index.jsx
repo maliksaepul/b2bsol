@@ -48,7 +48,7 @@ const Gamification = () => {
                         />
                     </div>
                 </div> */}
-                <Image src={'/images/gamif.png'} width={600} height={526} />
+                <Image src={'/images/gamif.png'} width={446} height={391} />
             </div>
         </div>
     )

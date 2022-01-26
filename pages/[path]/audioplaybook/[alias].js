@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import AudioBookPlayer from '@/views/AudioBookPlayer'
 import { fetchRelatedAudioPlaybook } from '@/redux/actions/content/_relatedContent'
-import withAuth from '@/hoc/wrappers/withAuthStrict'
 
 const AudioBookPlayerPage = ({
     fetchRelatedAudioPlaybook,
@@ -31,5 +30,5 @@ AudioBookPlayerPage.propTypes = {
 const mapStateToProps = ({ relatedAudioPlaybook }) => ({ relatedAudioPlaybook })
 
 export default connect(mapStateToProps, { fetchRelatedAudioPlaybook })(
-    withAuth(AudioBookPlayerPage)
+    AudioBookPlayerPage
 )

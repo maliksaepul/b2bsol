@@ -9,6 +9,8 @@ import { IS_DEVELOPMENT } from 'utils/constants'
 // Styles
 import '@/styles/App.global.scss'
 import { wrapper } from '@/redux/store'
+import NextProgress from '@/components/atoms/next-progress'
+import Dashboard from '@/hoc/layouts/dashboard'
 
 const App = ({ Component, pageProps }) => {
     const meta = {
@@ -42,7 +44,15 @@ const App = ({ Component, pageProps }) => {
 
                 {IS_DEVELOPMENT && <meta name="robots" content="noindex" />}
             </Head>
-            <Component {...pageProps} />
+            <Dashboard>
+                <NextProgress
+                    startPosition={0.3}
+                    stopDelayMs={200}
+                    height={2}
+                    showOnShallow={false}
+                />
+                <Component {...pageProps} />
+            </Dashboard>
         </React.Fragment>
     )
 }

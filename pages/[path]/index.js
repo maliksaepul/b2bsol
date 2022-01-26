@@ -2,7 +2,6 @@
 import React from 'react'
 import Head from 'next/head'
 import Home from '@/views/Home/Home'
-import withAuth from '@/hoc/wrappers/withAuthStrict'
 import { modalClose } from '@/redux/actions/_modal'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -49,4 +48,4 @@ const mapStateToProps = ({ closeModal }) => ({
     closeModal,
 })
 
-export default connect(mapStateToProps, { modalClose })(withAuth(HomePage))
+export default connect(mapStateToProps, { modalClose })(HomePage)

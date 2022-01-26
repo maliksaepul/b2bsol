@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import { modalClose } from '@/redux/actions/_modal'
 import GeneralModal from '@/components/molecules/modals/general-modal'
 
-const ondemand = ({ children, closeModal, modalClose }) => {
+const ondemand = ({ children, closeModal, modalClose, account, path }) => {
     return (
         <>
             <Header />

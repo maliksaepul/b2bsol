@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { fetchInspibook } from '@/redux/actions/content/_ondemand'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import withAuth from '@/hoc/wrappers/withAuthStrict'
 import InspiBook from '@/views/InspiBook'
 
 const InspiBookPage = ({ inspibook, fetchInspibook, path }) => {
@@ -24,6 +23,4 @@ InspiBookPage.propTypes = {
 }
 const mapStateToProps = ({ inspibook }) => ({ inspibook })
 
-export default connect(mapStateToProps, { fetchInspibook })(
-    withAuth(InspiBookPage)
-)
+export default connect(mapStateToProps, { fetchInspibook })(InspiBookPage)

@@ -17,15 +17,6 @@ const withAuth = Component => {
         const [pagePath, setPagePath] = useState({})
         const navigateByQuery = () => {
             if (Router.query.access || Router.query.refresh) {
-                // console.log("hallo", Router.query.path);
-                // console.log(window.location.pathname);
-                // if (Router.query.path) {
-                //     Router.push(Router.query.path)
-                // } else if (Router.query.alias) {
-                //     Router.push(Router.query.alias)
-                // } else {
-                //     Router.push(Router.pathname)
-                // }
                 Router.push(Router.basePath + window.location.pathname)
             } else {
                 Router.push(Router.asPath)
@@ -67,7 +58,6 @@ const withAuth = Component => {
                         )
                     }
                 }, [Router.isReady])
-
                 return renderComponent()
             } else {
                 window.open(routes.signIn(window.location.pathname), '_self')

@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import { fetchRelatedPodcast } from '@/redux/actions/content/_relatedContent'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import withAuth from '@/hoc/wrappers/withAuthStrict'
 
 const PodcastPlayerPage = ({ fetchRelatedPodcast, relatedPodcast, path }) => {
     const router = useRouter()
@@ -23,5 +22,5 @@ PodcastPlayerPage.propTypes = {
 const mapStateToProps = ({ relatedPodcast }) => ({ relatedPodcast })
 
 export default connect(mapStateToProps, { fetchRelatedPodcast })(
-    withAuth(PodcastPlayerPage)
+    PodcastPlayerPage
 )

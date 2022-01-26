@@ -3,7 +3,6 @@ import { fetchPodcast } from '@/redux/actions/content/_ondemand'
 import { connect } from 'react-redux'
 import AudioLearning from '@/views/AudioLearning'
 import PropTypes from 'prop-types'
-import withAuth from '@/hoc/wrappers/withAuthStrict'
 
 const AudioLearningPage = ({ account, podcast, fetchPodcast, path }) => {
     useEffect(() => {
@@ -25,6 +24,4 @@ AudioLearningPage.propTypes = {
 }
 const mapStateToProps = ({ podcast }) => ({ podcast })
 
-export default connect(mapStateToProps, { fetchPodcast })(
-    withAuth(AudioLearningPage)
-)
+export default connect(mapStateToProps, { fetchPodcast })(AudioLearningPage)

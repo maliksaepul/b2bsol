@@ -3,7 +3,6 @@ import VideoLearning from '@/views/VideoLearning'
 import { fetchVod } from '@/redux/actions/content/_ondemand'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import withAuth from '@/hoc/wrappers/withAuthStrict'
 
 const VideoLearningPage = ({ vod, fetchVod }) => {
     useEffect(() => {
@@ -24,6 +23,4 @@ VideoLearningPage.propTypes = {
     fetchVod: PropTypes.func,
 }
 
-export default connect(mapStateToProps, { fetchVod })(
-    withAuth(VideoLearningPage)
-)
+export default connect(mapStateToProps, { fetchVod })(VideoLearningPage)

@@ -3,7 +3,6 @@ import About from '@/components/templates/about'
 import Leaderboard from '@/components/templates/leaderboard'
 import Layout from '@/hoc/layouts/ondemand'
 import React from 'react'
-import withAuth from '@/hoc/wrappers/withAuthStrict'
 const LeaderboarPage = () => {
     return (
         <>
@@ -26,4 +25,4 @@ const LeaderboarPage = () => {
     )
 }
 
-export default withAuth(LeaderboarPage)
+export default LeaderboarPage

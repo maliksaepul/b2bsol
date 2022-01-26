@@ -3,7 +3,6 @@ import AudioPlayBook from '@/views/AudioPlaybook'
 import { fetchApb } from '@/redux/actions/content/_ondemand'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import withAuth from '@/hoc/wrappers/withAuthStrict'
 
 const AudioPlayBookPage = ({ apb, fetchApb }) => {
     useEffect(() => {
@@ -24,6 +23,4 @@ AudioPlayBookPage.propTypes = {
 
 const mapStateToProps = ({ apb }) => ({ apb })
 
-export default connect(mapStateToProps, { fetchApb })(
-    withAuth(AudioPlayBookPage)
-)
+export default connect(mapStateToProps, { fetchApb })(AudioPlayBookPage)
