@@ -14,7 +14,7 @@
     @include media-max-width($mobile-breakpoint) {
         flex-direction: column;
         .item:last-child {
-            justify-content: center;
+            justify-content: flex-end;
         }
 
         &_illu {
