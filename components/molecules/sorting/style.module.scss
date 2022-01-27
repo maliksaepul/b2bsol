@@ -8,6 +8,7 @@
     background-color: $stroke;
     width: 100%;
     border: 1px solid $secondary-stroke;
+    z-index: 5;
 
     &_item {
         cursor: pointer;

@@ -16,13 +16,13 @@ const HomePage = props => {
     const [org, setOrg] = useState({})
     useEffect(async () => {
         const api = { ...(await props.fetchOrganization()) }
+        await props.fetchPath(api.data.data.path)
         setOrg(api)
     }, [])
     const Router = useRouter()
 
     switch (org && org.status) {
         case 200:
-            props.fetchPath(org.data.data.path)
             Router.push(org.data.data.path)
             return null
         case 403:

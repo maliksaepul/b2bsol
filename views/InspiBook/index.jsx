@@ -9,14 +9,17 @@ import Toolbar from '@/containers/components/bars/Toolbar'
 import { content } from '@/utils/apiroutelist'
 import InspiBookCard from '@/components/organisms/inspibook-card'
 import { TOOLBAR_INSPIBOOK } from '@/redux/types'
+import SkeletonContent from '@/components/templates/skeletoncontent'
 
-const InspiBook = ({ inspibook, fetchData, path }) => {
+const InspiBook = ({ inspibook, fetchData, path, loading }) => {
     const renderAudioCard = () => {
-        // console.log(inspibook);
-        // return null
-        return inspibook.map((c, i) => (
-            <InspiBookCard audio={c} key={i} path={path} />
-        ))
+        if (loading) {
+            return <SkeletonContent />
+        } else {
+            return inspibook.map((c, i) => (
+                <InspiBookCard audio={c} key={i} path={path} />
+            ))
+        }
     }
 
     return (
@@ -48,6 +51,7 @@ InspiBook.propTypes = {
     inspibook: PropTypes.array,
     fetchData: PropTypes.func,
     path: PropTypes.any,
+    loading: PropTypes.bool,
 }
 
 export default InspiBook

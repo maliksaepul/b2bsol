@@ -9,10 +9,15 @@ import Contents from '@/components/organisms/contents'
 import Toolbar from '@/containers/components/bars/Toolbar'
 import { TOOLBAR_PODCAST } from '@/redux/types'
 import { content } from '@/utils/apiroutelist'
+import SkeletonContent from '@/components/templates/skeletoncontent'
 
-const AudioLearning = ({ podcast, fetchData, path }) => {
+const AudioLearning = ({ podcast, fetchData, path, loading }) => {
     const renderAudioCard = () => {
-        return podcast.map((c, i) => <AudioCard audio={c} key={i} />)
+        if (loading) {
+            return <SkeletonContent />
+        } else {
+            return podcast.map((c, i) => <AudioCard audio={c} key={i} />)
+        }
     }
 
     return (
@@ -44,6 +49,7 @@ AudioLearning.propTypes = {
     podcast: PropTypes.array,
     fetchData: PropTypes.func,
     path: PropTypes.any,
+    loading: PropTypes.bool,
 }
 
 export default AudioLearning

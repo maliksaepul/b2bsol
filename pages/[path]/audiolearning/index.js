@@ -4,14 +4,24 @@ import { connect } from 'react-redux'
 import AudioLearning from '@/views/AudioLearning'
 import PropTypes from 'prop-types'
 
-const AudioLearningPage = ({ account, podcast, fetchPodcast, path }) => {
+const AudioLearningPage = ({
+    account,
+    podcast,
+    fetchPodcast,
+    path,
+    loading,
+}) => {
     useEffect(() => {
         fetchPodcast(path.path)
     }, [])
 
     return (
         <>
-            <AudioLearning podcast={podcast} path={path.path} />
+            <AudioLearning
+                podcast={podcast}
+                path={path.path}
+                loading={loading}
+            />
         </>
     )
 }
@@ -21,6 +31,7 @@ AudioLearningPage.propTypes = {
     podcast: PropTypes.array,
     account: PropTypes.any,
     path: PropTypes.any,
+    loading: PropTypes.bool,
 }
 const mapStateToProps = ({ podcast }) => ({ podcast })
 

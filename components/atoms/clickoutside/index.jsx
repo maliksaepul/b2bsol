@@ -6,7 +6,6 @@ const clickOutsideMethod = (ref, behaviorfunc) => {
         const handleClickOutside = event => {
             if (ref.current && !ref.current.contains(event.target)) {
                 behaviorfunc()
-                console.log('hallo')
             }
         }
 

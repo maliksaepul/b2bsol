@@ -1,9 +1,28 @@
 @import 'styles/mixins';
 @import 'styles/colors';
+@import 'styles/animation';
 
 ._header {
     background-color: $stroke;
     @include global-gap();
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -9.375rem;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            $white 50%,
+            transparent 100%
+        );
+        animation: skeletonpalceholder 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
 }
 ._main {
     @include global-gap();
@@ -11,6 +30,22 @@
 ._footer {
     background-color: $stroke;
     @include global-gap();
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -9.375rem;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            $white 50%,
+            transparent 100%
+        );
+        animation: skeletonpalceholder 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
 }
 
 ._content {
@@ -21,4 +56,20 @@
     background-color: $intuition-blue;
     background-image: linear-gradient($intuition-blue 80%, $secondary 20%);
     @include global-gap();
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -9.375rem;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            $white 50%,
+            transparent 100%
+        );
+        animation: skeletonpalceholder 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
 }

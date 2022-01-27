@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import routes from '@/utils/routes'
 import cx from 'classnames'
 
-const InspiBookCard = ({ audio, withLabel, path }) => {
+const InspiBookCard = ({ audio, withLabel, path, loading }) => {
     const router = useRouter()
 
     const renderLink = (link = null) => {
@@ -14,6 +14,7 @@ const InspiBookCard = ({ audio, withLabel, path }) => {
             router.push(routes.inspibook(path, link))
         }
     }
+
     return (
         <div className={styles.object}>
             <img
@@ -41,6 +42,7 @@ InspiBookCard.propTypes = {
     }).isRequired,
     withLabel: PropTypes.bool,
     path: PropTypes.any,
+    loading: PropTypes.bool,
 }
 
 InspiBookCard.defaultProps = {

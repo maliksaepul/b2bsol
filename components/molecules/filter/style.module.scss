@@ -9,6 +9,7 @@
     background-color: $stroke;
     width: 31.25rem;
     border: 1px solid $secondary-stroke;
+    z-index: 5;
 
     &_header {
         padding: 1rem 0;
