@@ -1,8 +1,14 @@
-import Footer from '@/components/templates/footer'
-import Header from '@/containers/components/Header'
+import dynamic from 'next/dynamic'
+// import Header from '@/containers/components/Header'
+// import Footer from '@/components/templates/footer'
 import styles from './style.module.scss'
 import React from 'react'
-import HeaderBackground from '@/components/templates/header/background'
+// import HeaderBackground from '@/components/templates/header/background'
+const Header = dynamic(() => import('@/containers/components/Header'))
+const Footer = dynamic(() => import('@/components/templates/footer'))
+const HeaderBackground = dynamic(() =>
+    import('@/components/templates/header/background')
+)
 
 const common = ({ children }) => {
     return (

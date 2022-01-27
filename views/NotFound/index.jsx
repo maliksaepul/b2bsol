@@ -1,6 +1,9 @@
-import Card from '@/components/organisms/card'
+// import Card from '@/components/organisms/card'
 import React from 'react'
 import styles from './style.module.scss'
+import dynamic from 'next/dynamic'
+
+const Card = dynamic(() => import('@/components/organisms/card'))
 
 const NotFound = props => {
     return (

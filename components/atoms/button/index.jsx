@@ -2,9 +2,8 @@ import React from 'react'
 import styles from './style.module.scss'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import Icon from '../icon'
 
-const Button = ({ variant, size, cta, id, label, icon }) => {
+const Button = ({ variant, size, cta, id, label, children }) => {
     let typeOfButton, sizeOfButton
     switch (variant) {
         case 'primary':
@@ -36,32 +35,13 @@ const Button = ({ variant, size, cta, id, label, icon }) => {
             break
     }
 
-    const renderIcon = condition => {
-        if (condition === false) {
-            return null
-        } else {
-            if (condition.name) {
-                return (
-                    <Icon
-                        name={condition.name}
-                        multiplier={condition.multiplier || 1}
-                        fill={condition.fill}
-                        stroke={condition.stroke}
-                    />
-                )
-            } else {
-                return <Icon name={'DoorOpen'} multiplier={1} />
-            }
-        }
-    }
-
     return (
         <div
             className={cx(styles.button, typeOfButton, sizeOfButton)}
             onClick={cta}
             id={id || ''}>
             <div className={styles.text}>
-                {renderIcon(icon)}&nbsp;
+                {children}
                 <span>{label}</span>
             </div>
         </div>
@@ -84,6 +64,7 @@ Button.propTypes = {
         PropTypes.object,
     ]),
     label: PropTypes.string,
+    children: PropTypes.any,
 }
 
 Button.defaultProps = {

@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Icon from '@/components/atoms/icon'
 import styles from './style.module.scss'
 import { ShareLink } from 'social-media-sharing'
 import cx from 'classnames'
+import { whatsapp } from '@/utils/icons'
 
 const Share = ({ align, url, description, tag }) => {
     const shareTextToWhatsApp = (text, url) => {
@@ -73,22 +73,22 @@ const Share = ({ align, url, description, tag }) => {
                 <div
                     onClick={() => sentMessageToSocial('whatsapp')}
                     className={cx(styles.rounded, styles.whatsapp)}>
-                    <Icon name="whatsapp" multiplier={1.5} />
+                    {whatsapp(null, null, 1.5)}
                 </div>
                 <div
                     onClick={() => sentMessageToSocial('facebook')}
                     className={cx(styles.rounded, styles.facebook)}>
-                    <Icon name="facebook" multiplier={1.5} />
+                    {whatsapp(null, null, 1.5)}
                 </div>
                 <div
                     onClick={() => sentMessageToSocial('twitter')}
                     className={cx(styles.rounded, styles.twitter)}>
-                    <Icon name="twitter" multiplier={1} />
+                    {whatsapp(null, null, 1)}
                 </div>
                 <div
                     onClick={() => sentMessageToSocial('telegram')}
                     className={cx(styles.rounded, styles.telegram)}>
-                    <Icon name="telegram" multiplier={1} />
+                    {whatsapp(null, null, 1)}
                 </div>
             </div>
         </div>

@@ -3,8 +3,8 @@ import cx from 'classnames'
 import React from 'react'
 import PropTypes from 'prop-types'
 import Profile from '@/components/organisms/profile'
-import Icon from '@/components/atoms/icon'
 import ClickOutside from '@/components/atoms/clickoutside'
+import { Chevron } from '@/utils/icons'
 
 const ProfileBar = ({
     username,
@@ -50,9 +50,7 @@ const ProfileBar = ({
                 {usercover ? <img src={usercover} alt="cover" /> : 'S'}
             </div>
 
-            <div className={chevronCondition()}>
-                <Icon name={'Chevron'} multiplier={1} />
-            </div>
+            <div className={chevronCondition()}>{Chevron(null, null, 1)}</div>
             {renderProfile()}
         </div>
     )

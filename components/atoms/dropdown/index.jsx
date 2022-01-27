@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Icon from '../icon'
 import styles from './style.module.scss'
+import { Chevron } from '@/utils/icons'
 
 const DropDown = ({ label, children, action, active }) => {
     return (
@@ -12,7 +12,7 @@ const DropDown = ({ label, children, action, active }) => {
                     className={
                         active ? styles.chevron_up : styles.chevron_down
                     }>
-                    <Icon name="Chevron" multiplier={1} fill={'black'} />
+                    {Chevron('black', null, 1)}
                 </div>
             </div>
             <div>{children}</div>

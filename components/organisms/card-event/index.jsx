@@ -11,7 +11,7 @@ import EventModal from '@/components/molecules/modals/event-modal'
 import Share from '@/components/molecules/share'
 import Copy from '@/components/atoms/copy'
 import { CARD_EVENT_TYPE } from '@/utils/constants'
-import Icon from '@/components/atoms/icon'
+import { DoorOpen, quiz, sertificate, share } from '@/utils/icons'
 
 const CardEvent = ({
     banner,
@@ -78,9 +78,10 @@ const CardEvent = ({
                             variant={val.disabled ? 'secondary' : 'primary'}
                             size={'xsmall'}
                             cta={() => handleCta(val.disabled, val.url)}
-                            label={val.title}
-                            icon={true}
-                        />
+                            label={val.title}>
+                            {' '}
+                            {DoorOpen(null, null, 1)}{' '}
+                        </Button>
                     ))}
                     <Button
                         variant={'secondary'}
@@ -89,8 +90,10 @@ const CardEvent = ({
                             handleModal()
                         }}
                         label={'Bagikan'}
-                        icon={{ name: 'Share', multiplier: 1 }}
-                    />
+                        icon={{ name: 'Share', multiplier: 1 }}>
+                        {' '}
+                        {share(null, null, 1)}{' '}
+                    </Button>
                 </>
             )
         }
@@ -101,11 +104,9 @@ const CardEvent = ({
             case CARD_EVENT_TYPE.COURSE:
                 return (
                     <>
+                        <div>{quiz(null, null, 1)} Quiz</div>
                         <div>
-                            <Icon name={'quiz'} multiplier={1} /> Quiz{' '}
-                        </div>
-                        <div>
-                            <Icon name={'sertificate'} multiplier={1} />{' '}
+                            {sertificate(null, null, 1)}
                             Sertifikasi
                         </div>
                     </>

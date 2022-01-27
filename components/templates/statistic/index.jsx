@@ -4,8 +4,8 @@ import styles from './style.module.scss'
 import React, { useEffect } from 'react'
 import * as colors from '@/styles/App.module.scss'
 import cx from 'classnames'
-import Icon from '@/components/atoms/icon'
 import PropTypes from 'prop-types'
+import { ArrowRight } from '@/utils/icons'
 
 const Statistic = ({ myStat, fetchMyStat, id }) => {
     useEffect(() => {
@@ -44,12 +44,7 @@ const Statistic = ({ myStat, fetchMyStat, id }) => {
                 onClick={() => {
                     window.open('https://google.com')
                 }}>
-                <Icon
-                    name={'ArrowRight'}
-                    multiplier={1.5}
-                    fill={colors.white}
-                    stroke={colors.inspirationBlue}
-                />
+                {ArrowRight(colors.white, colors.inspirationBlue, 1.5)}
             </div>
         </div>
     )

@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { fetchPodcast } from '@/redux/actions/content/_ondemand'
 import { connect } from 'react-redux'
-import AudioLearning from '@/views/AudioLearning'
+// import AudioLearning from '@/views/AudioLearning'
 import PropTypes from 'prop-types'
-
+import dynamic from 'next/dynamic'
+const AudioLearning = dynamic(() => import('@/views/AudioLearning'))
 const AudioLearningPage = ({
     account,
     podcast,

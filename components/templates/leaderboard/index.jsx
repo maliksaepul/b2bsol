@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
-import Icon from '@/components/atoms/icon'
 import * as colors from '@/styles/App.module.scss'
 import { mediaMinWidth, MobileBreakpoint } from '@/utils/breakpoint'
+import { BronzeMedal, GoldMedal, SilverMedal } from '@/utils/icons'
 
 const Leaderboard = props => {
     const leaderboardData = [
@@ -73,11 +73,12 @@ const Leaderboard = props => {
     const renderRanking = params => {
         switch (params) {
             case 1:
-                return <Icon name={'GoldMedal'} multiplier={1} />
+                return GoldMedal(null, null, 1)
+
             case 2:
-                return <Icon name={'SilverMedal'} multiplier={1} />
+                return SilverMedal(null, null, 1)
             case 3:
-                return <Icon name={'BronzeMedal'} multiplier={1} />
+                return BronzeMedal(null, null, 1)
             default:
                 return (
                     <div className={styles.ranking}>

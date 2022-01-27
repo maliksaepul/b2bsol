@@ -1,4 +1,4 @@
-import * as icons from '@/utils/icons'
+import icons from '@/utils/icons'
 import React from 'react'
 import PropTypes from 'prop-types'
 

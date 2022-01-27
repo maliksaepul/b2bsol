@@ -2,12 +2,11 @@ import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
-import Icon from '@/components/atoms/icon'
 
-const CardBadge = ({ icon, description }) => {
+const CardBadge = ({ children, description }) => {
     return (
         <div className={styles.cardBadge}>
-            <Icon name={icon} multiplier={1} />
+            {children}
             <Label
                 title={'Adventurer'}
                 description={
@@ -21,8 +20,8 @@ const CardBadge = ({ icon, description }) => {
 }
 
 CardBadge.propTypes = {
-    icon: PropTypes.string,
     description: PropTypes.string,
+    children: PropTypes.any,
 }
 
 export default CardBadge

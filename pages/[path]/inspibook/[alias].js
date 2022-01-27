@@ -2,8 +2,10 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import InspiBookPlayer from '@/views/InspiBookPlayer'
+// import InspiBookPlayer from '@/views/InspiBookPlayer'
 import { fetchRelatedInspibook } from '@/redux/actions/content/_relatedContent'
+import dynamic from 'next/dynamic'
+const InspiBookPlayer = dynamic(() => import('@/views/InspiBookPlayer'))
 
 const InspiBookPlayerPage = ({
     fetchRelatedInspibook,

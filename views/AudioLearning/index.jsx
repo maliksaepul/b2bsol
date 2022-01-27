@@ -1,15 +1,29 @@
 import React from 'react'
+import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
-import Layout from '@/hoc/layouts/ondemand'
-import Section from '@/components/atoms/section'
-import About from '@/components/templates/about'
-import Grid from '@/components/atoms/grid'
-import AudioCard from '@/containers/components/cards/AudioCard'
-import Contents from '@/components/organisms/contents'
-import Toolbar from '@/containers/components/bars/Toolbar'
+// import Layout from '@/hoc/layouts/ondemand'
+// import Section from '@/components/atoms/section'
+// import About from '@/components/templates/about'
+// import Grid from '@/components/atoms/grid'
+// import AudioCard from '@/containers/components/cards/AudioCard'
+// import Contents from '@/components/organisms/contents'
+// import Toolbar from '@/containers/components/bars/Toolbar'
 import { TOOLBAR_PODCAST } from '@/redux/types'
 import { content } from '@/utils/apiroutelist'
-import SkeletonContent from '@/components/templates/skeletoncontent'
+// import SkeletonContent from '@/components/templates/skeletoncontent'
+
+const Layout = dynamic(() => import('@/hoc/layouts/ondemand'))
+const Section = dynamic(() => import('@/components/atoms/section'))
+const About = dynamic(() => import('@/components/templates/about'))
+const Grid = dynamic(() => import('@/components/atoms/grid'))
+const AudioCard = dynamic(() =>
+    import('@/containers/components/cards/AudioCard')
+)
+const Contents = dynamic(() => import('@/components/organisms/contents'))
+const Toolbar = dynamic(() => import('@/containers/components/bars/Toolbar'))
+const SkeletonContent = dynamic(() =>
+    import('@/components/templates/skeletoncontent')
+)
 
 const AudioLearning = ({ podcast, fetchData, path, loading }) => {
     const renderAudioCard = () => {

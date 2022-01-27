@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
-import VideoLearning from '@/views/VideoLearning'
+// import VideoLearning from '@/views/VideoLearning'
 import { fetchVod } from '@/redux/actions/content/_ondemand'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import dynamic from 'next/dynamic'
+const VideoLearning = dynamic(() => import('@/views/VideoLearning'))
 
 const VideoLearningPage = ({ vod, fetchVod }) => {
     useEffect(() => {

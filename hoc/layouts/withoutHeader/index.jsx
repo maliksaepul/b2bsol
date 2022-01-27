@@ -1,13 +1,22 @@
-import Footer from '@/components/templates/footer'
-import Header from '@/containers/components/Header'
-import styles from './style.module.scss'
+import dynamic from 'next/dynamic'
+
+// import Footer from '@/components/templates/footer'
+// import Header from '@/containers/components/Header'
 import React from 'react'
-import Modal from '@/components/molecules/modals/modal'
+// import Modal from '@/components/molecules/modals/modal'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import styles from './style.module.scss'
 
 import { modalClose } from '@/redux/actions/_modal'
-import GeneralModal from '@/components/molecules/modals/general-modal'
+// import GeneralModal from '@/components/molecules/modals/general-modal'
+
+const Header = dynamic(() => import('@/containers/components/Header'))
+const Footer = dynamic(() => import('@/components/templates/footer'))
+const Modal = dynamic(() => import('@/components/molecules/modals/modal'))
+const GeneralModal = dynamic(() =>
+    import('@/components/molecules/modals/general-modal')
+)
 
 const withoutHeader = ({ children, closeModal, modalClose }) => {
     return (

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { google, outlook, office365, yahoo, ics } from 'calendar-link'
-import Icon from '@/components/atoms/icon'
 import styles from './style.module.scss'
 import cx from 'classnames'
+import { calendar, Chevron } from '@/utils/icons'
 
 const AddToCalendar = ({ options, events, label }) => {
     const [active, setActive] = useState(false)
@@ -79,13 +79,13 @@ const AddToCalendar = ({ options, events, label }) => {
                 onClick={() => {
                     handleDropDown()
                 }}>
-                <Icon name="calendar" multiplier={1} />
+                {calendar(null, null, 1)}
                 <p>{label}</p>
                 <div
                     className={
                         active ? styles.chevron_up : styles.chevron_down
                     }>
-                    <Icon name={'Chevron'} multiplier={1} />
+                    {Chevron(null, null, 1)}
                 </div>
             </div>
             <div

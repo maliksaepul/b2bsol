@@ -1,5 +1,4 @@
 import moment from 'moment'
-import _ from 'lodash'
 import { LOCAL_STORAGE } from 'utils/constants'
 
 export const maxTitlesLength = string => {
@@ -31,9 +30,9 @@ export const queryData = (data, search, filter, sorting) => {
             return filterlist.includes(val.category.toLowerCase())
         })
     }
-    if (sorting) {
-        response = _.sortBy(response, [sorting])
-    }
+    // if (sorting) {
+    //     response = respons
+    // }
     return response
 }
 
@@ -56,27 +55,6 @@ export const removeToken = () => {
 }
 
 /**
- * Date converter
- */
-//  export class dateConverter {
-//     static check = (date, result) => {
-//         if (date === null || date === undefined) {
-//             return 'Unknown'
-//         } else {
-//             return result
-//         }
-//     }
-
-//     static unix(unixString) {
-//         return this.check(unixString, moment.unix(unixString).format('lll'))
-//     }
-
-//     static iso(ISOString) {
-//         return this.check(ISOString, moment(ISOString).format('lll'))
-//     }
-// }
-
-/**
  * Get query param
  * @param {string} param
  * @returns
@@ -96,5 +74,18 @@ export class disableScroll {
         document.body.style.overflow = 'auto'
         const scrollY = document.body.style.top
         window.scrollTo(0, parseInt(scrollY || '0') * -1)
+    }
+}
+
+export const debounce = (func, timeout = 300, cancel) => {
+    let timer
+    if (cancel) {
+        return clearTimeout(timer)
+    }
+    return (...args) => {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            func.apply(this, args)
+        }, timeout)
     }
 }

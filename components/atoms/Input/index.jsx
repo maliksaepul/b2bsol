@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styles from './style.module.scss'
 import cx from 'classnames'
-import Icon from '../icon'
 import PropTypes from 'prop-types'
 
 class Input extends Component {
@@ -15,11 +14,11 @@ class Input extends Component {
     }
 
     render() {
-        const { type, value, label, icon, disabled } = this.props
+        const { type, value, label, disabled } = this.props
         return (
             <div className={cx(styles.inputgroup)}>
                 <div className={styles.inputgroup_illu}>
-                    <Icon name={icon} multiplier={1} />
+                    {this.props.children}
                 </div>
                 <input
                     type={type}
@@ -41,6 +40,7 @@ Input.propTypes = {
     value: PropTypes.string,
     icon: PropTypes.string,
     disabled: PropTypes.bool,
+    children: PropTypes.any,
 }
 
 export default Input

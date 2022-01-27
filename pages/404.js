@@ -1,5 +1,7 @@
-import NotFound from '@/views/NotFound'
+import dynamic from 'next/dynamic'
 import React from 'react'
+// import NotFound from '@/views/NotFound'
+const NotFound = dynamic(() => import('@/views/NotFound'))
 
 const Custom404 = () => {
     return (
