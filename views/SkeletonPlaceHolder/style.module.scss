@@ -3,8 +3,7 @@
 @import 'styles/animation';
 
 ._header {
-    background-color: $stroke;
-    @include global-gap();
+    background-color: #fff;
     position: relative;
 
     &::before {
@@ -24,6 +23,31 @@
         animation: skeletonpalceholder 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 }
+
+._navbar {
+    background-color: $stroke;
+    padding: 0.5rem 8vw;
+    display: flex;
+    justify-content: flex-end;
+
+    &_item {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+._appbar {
+    padding: 0.5rem 8vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+._profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 ._main {
     @include global-gap();
 }
@@ -50,11 +74,12 @@
 
 ._content {
     margin: 1rem 0;
+    border-radius: 2.25rem;
 }
 
 ._about {
-    background-color: $intuition-blue;
-    background-image: linear-gradient($intuition-blue 80%, $secondary 20%);
+    background-color: $inspiration-blue;
+    background-image: linear-gradient($inspiration-blue 80%, $secondary 20%);
     @include global-gap();
     &::before {
         content: '';
@@ -71,5 +96,17 @@
             transparent 100%
         );
         animation: skeletonpalceholder 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    &_head {
+        padding-top: 8rem;
+    }
+
+    &_card {
+        background-color: #fff;
+        padding: 2.25rem;
+        border-radius: 1.25rem;
+        margin-top: 5rem;
+        filter: drop-shadow(0px 4px 2.5rem rgba(40, 40, 40, 0.1));
     }
 }

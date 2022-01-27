@@ -6,10 +6,60 @@ const SkeletonPlaceHolder = () => {
     return (
         <div>
             <div role="header" className={styles._header}>
-                <Skeleton height={80} />
+                <div className={styles._navbar}>
+                    <div className={styles._navbar_item}>
+                        <p>
+                            <Skeleton height={'1rem'} width={'7rem'} />
+                        </p>
+                        &nbsp;&nbsp;&nbsp;
+                        <p>
+                            <Skeleton height={'1rem'} width={'7rem'} />
+                        </p>
+                    </div>
+                </div>
+                <div className={styles._appbar}>
+                    <div>
+                        <Skeleton height={'2.5rem'} width={'7.5rem'} />
+                    </div>
+                    <div className={styles._profile}>
+                        <div>
+                            <Skeleton height={'1rem'} width={'7.5rem'} />
+                        </div>{' '}
+                        &nbsp;
+                        <div>
+                            <Skeleton
+                                height={'2.5rem'}
+                                width={'2.5rem'}
+                                circle={true}
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div role="content" className={styles._about}>
-                <Skeleton height={300} />
+                <div className={styles._about_head}>
+                    <p>
+                        <Skeleton height={'2rem'} width={'20rem'} />
+                    </p>
+                    <br />
+                    <p>
+                        <Skeleton height={'2rem'} width={'30rem'} />
+                    </p>
+                </div>
+
+                <div className={styles._about_card}>
+                    <p>
+                        <Skeleton height={'1.25rem'} width={'10rem'} />
+                    </p>
+                    <p>
+                        <Skeleton height={'1rem'} />
+                    </p>
+
+                    <div>
+                        <Skeleton height={200} />
+                    </div>
+                </div>
             </div>
             <div role="main" className={styles._main}>
                 <div role="content" className={styles._content}>
