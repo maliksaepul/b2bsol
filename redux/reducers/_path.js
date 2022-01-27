@@ -9,6 +9,7 @@ const PathReducer = (state = initialState, action) => {
             return {
                 ...initialState,
                 ...action.payload?.data?.data?.organization,
+                status: action.payload.status,
             }
         default:
             return state

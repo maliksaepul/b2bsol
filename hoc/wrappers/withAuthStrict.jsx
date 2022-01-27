@@ -10,12 +10,13 @@ import { fetchPath } from '@/redux/actions/account/_path'
 import NotFound from '@/views/NotFound'
 import Forbidden from '@/views/Forbidden'
 import SkeletonPlaceHolder from '@/views/SkeletonPlaceHolder'
+import { fetchOrganization } from '@/redux/actions/account/_organization'
 
 const withAuth = Component => {
     const EnchancedComponent = props => {
         const Router = useRouter()
         const [pagePath, setPagePath] = useState({})
-        const navigateByQuery = () => {
+        const navigateByQuery = data => {
             if (Router.query.access || Router.query.refresh) {
                 Router.push(Router.basePath + window.location.pathname)
             } else {
@@ -47,15 +48,31 @@ const withAuth = Component => {
 
             if ((!accessToken && access) || accessToken) {
                 useEffect(async () => {
-                    await props.fetchAccount(access)
                     if (Router.isReady) {
-                        const response = await props.fetchPath(
-                            Router.query.path
-                        )
-                        navigateByQuery()
-                        setPagePath(
-                            response.isAxiosError ? response.response : response
-                        )
+                        await props.fetchAccount(access)
+                        const org = {
+                            ...(await props.fetchOrganization(access)),
+                        }
+                        if (Router.query.path) {
+                            const response = await props.fetchPath(
+                                Router.query.path
+                            )
+                            navigateByQuery()
+                            setPagePath(
+                                response.isAxiosError
+                                    ? response.response
+                                    : response
+                            )
+                        } else if (org) {
+                            const response = await props.fetchPath(
+                                org.data.data.path
+                            )
+                            setPagePath(
+                                response.isAxiosError
+                                    ? response.response
+                                    : response
+                            )
+                        }
                     }
                 }, [Router.isReady])
                 return renderComponent()
@@ -72,13 +89,16 @@ const withAuth = Component => {
         fetchPath: PropTypes.func,
         account: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
         path: PropTypes.object,
+        fetchOrganization: PropTypes.func,
     }
 
     const mapStateToProps = ({ account, path }) => ({ account, path })
 
-    return connect(mapStateToProps, { fetchAccount, fetchPath })(
-        EnchancedComponent
-    )
+    return connect(mapStateToProps, {
+        fetchAccount,
+        fetchPath,
+        fetchOrganization,
+    })(EnchancedComponent)
 }
 
 export default withAuth
