@@ -15,7 +15,7 @@ const InspiBook = props => {
         <WithIllu
             className={cx('bg-primary', 'text-white', styles.inspibook)}
             illu={{
-                src: '/images/inspibook.png',
+                src: '/images/inspibook-section.png',
                 width: '665',
                 height: '600',
             }}>
