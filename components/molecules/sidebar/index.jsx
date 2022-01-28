@@ -56,7 +56,7 @@ const Sidebar = ({
                                         url: routes.audiolearning(path),
                                     },
                                     {
-                                        label: 'Inspi Book',
+                                        label: 'InspiBook',
                                         url: routes.inspibook(path),
                                     },
                                     // {

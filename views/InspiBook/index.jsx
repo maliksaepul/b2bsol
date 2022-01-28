@@ -26,7 +26,7 @@ const InspiBook = ({ inspibook, fetchData, path, loading }) => {
         <Layout>
             <Section>
                 <About
-                    title={'Inspi Book'}
+                    title={'InspiBook'}
                     subtitle={''}
                     description={'Dengarkan dan baca ringkasan buku terbaik'}
                     height={'10rem'}

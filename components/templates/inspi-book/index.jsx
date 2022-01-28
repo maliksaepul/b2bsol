@@ -36,9 +36,7 @@ const InspiBook = props => {
                 </div>
                 <Card
                     title={{ type: 'text', content: 'InspiBook' }}
-                    body={
-                        'Belajar langsung dari para ahli. Master Course hadir dengan pembahasan mendalam hanya untukmu! Telusuri lebih lanjut dan mulai ikuti kursus.'
-                    }
+                    body={'Dengarkan dan baca ringkasan buku terbaik'}
                     cta={[]}>
                     <div className={styles.cta}>
                         <Button
