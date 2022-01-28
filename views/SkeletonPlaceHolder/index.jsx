@@ -24,7 +24,7 @@ const SkeletonPlaceHolder = () => {
                     <div className={styles._profile}>
                         <div>
                             <Skeleton height={'1rem'} width={'7.5rem'} />
-                        </div>{' '}
+                        </div>
                         &nbsp;
                         <div>
                             <Skeleton

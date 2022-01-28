@@ -6,16 +6,66 @@ import 'react-loading-skeleton/dist/skeleton.css'
 const SkeletonContent = props => {
     return (
         <>
-            <Skeleton width="11rem" height={'11rem'} />
-            <Skeleton width="11rem" height={'11rem'} />
-            <Skeleton width="11rem" height={'11rem'} />
-            <Skeleton width="11rem" height={'11rem'} />
-            <Skeleton width="11rem" height={'11rem'} />
-            <Skeleton width="11rem" height={'11rem'} />
-            <Skeleton width="11rem" height={'11rem'} />
-            <Skeleton width="11rem" height={'11rem'} />
-            <Skeleton width="11rem" height={'11rem'} />
-            <Skeleton width="11rem" height={'11rem'} />
+            <div>
+                <Skeleton width="11rem" height={'11rem'} />
+                <p>
+                    <Skeleton width="11rem" />
+                </p>
+            </div>
+            <div>
+                <Skeleton width="11rem" height={'11rem'} />
+                <p>
+                    <Skeleton width="11rem" />
+                </p>
+            </div>
+            <div>
+                <Skeleton width="11rem" height={'11rem'} />
+                <p>
+                    <Skeleton width="11rem" />
+                </p>
+            </div>
+            <div>
+                <Skeleton width="11rem" height={'11rem'} />
+                <p>
+                    <Skeleton width="11rem" />
+                </p>
+            </div>
+            <div>
+                <Skeleton width="11rem" height={'11rem'} />
+                <p>
+                    <Skeleton width="11rem" />
+                </p>
+            </div>
+            <div>
+                <Skeleton width="11rem" height={'11rem'} />
+                <p>
+                    <Skeleton width="11rem" />
+                </p>
+            </div>
+            <div>
+                <Skeleton width="11rem" height={'11rem'} />
+                <p>
+                    <Skeleton width="11rem" />
+                </p>
+            </div>
+            <div>
+                <Skeleton width="11rem" height={'11rem'} />
+                <p>
+                    <Skeleton width="11rem" />
+                </p>
+            </div>
+            <div>
+                <Skeleton width="11rem" height={'11rem'} />
+                <p>
+                    <Skeleton width="11rem" />
+                </p>
+            </div>
+            <div>
+                <Skeleton width="11rem" height={'11rem'} />
+                <p>
+                    <Skeleton width="11rem" />
+                </p>
+            </div>
         </>
     )
 }

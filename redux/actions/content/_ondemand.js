@@ -1,10 +1,8 @@
 import { content } from '@/utils/apiroutelist'
-import { LOCAL_STORAGE } from '@/utils/constants'
-import { saveToken } from '@/utils/helpers'
 import axios from 'axios'
 import { GET_APB, GET_INSPIBOOK, GET_PODCAST, GET_VOD } from '../../types'
 import { apiEnd, apiError, apiStart } from '../section/_scedule'
-
+import Request from '@/redux/request'
 export const getPodcast = payload => {
     return {
         type: GET_PODCAST,
@@ -35,54 +33,32 @@ export const getInspibook = payload => {
 
 export const fetchPodcast =
     (path = '', params) =>
-    dispatch => {
+    async dispatch => {
         dispatch(apiStart())
-        axios
-            .get(content.podcast(path), {
-                params,
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem(
-                        LOCAL_STORAGE.ACCESS_TOKEN
-                    )}`,
-                },
-            })
-            .then(({ data }) => {
-                saveToken(data.token)
-                dispatch(getPodcast(data?.data?.results))
-            })
-            .catch(error => {
-                console.log(error)
-                dispatch(apiError(error))
-            })
-            .then(() => {
-                dispatch(apiEnd())
-            })
+        try {
+            const request = new Request(params, null, true)
+            const response = await request.get(content.podcast(path))
+            dispatch(getPodcast(response.data.data.results))
+        } catch (e) {
+            return e
+        } finally {
+            dispatch(apiEnd())
+        }
     }
 
 export const fetchInspibook =
     (path = '', params) =>
-    dispatch => {
+    async dispatch => {
         dispatch(apiStart())
-        axios
-            .get(content.inspibook(path), {
-                params,
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem(
-                        LOCAL_STORAGE.ACCESS_TOKEN
-                    )}`,
-                },
-            })
-            .then(({ data }) => {
-                saveToken(data.token)
-                dispatch(getInspibook(data?.data?.results))
-            })
-            .catch(error => {
-                console.log(error)
-                dispatch(apiError(error))
-            })
-            .then(() => {
-                dispatch(apiEnd())
-            })
+        try {
+            const request = new Request(params, null, true)
+            const response = await request.get(content.inspibook(path))
+            dispatch(getInspibook(response.data.data.results))
+        } catch (e) {
+            return e
+        } finally {
+            dispatch(apiEnd())
+        }
     }
 
 export const fetchApb = () => dispatch => {

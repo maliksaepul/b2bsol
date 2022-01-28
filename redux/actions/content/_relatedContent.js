@@ -1,6 +1,4 @@
 import { content } from '@/utils/apiroutelist'
-import { LOCAL_STORAGE } from '@/utils/constants'
-import { saveToken } from '@/utils/helpers'
 import axios from 'axios'
 import {
     GET_RELATED_AUDIOPLAYBOOK,
@@ -8,6 +6,7 @@ import {
     GET_RELATED_PODCAST,
 } from '../../types'
 import { apiEnd, apiError, apiStart } from '../section/_scedule'
+import Request from '@/redux/request'
 
 export const getRelatedPodcast = payload => {
     return {
@@ -30,60 +29,40 @@ export const getRelatedAudioPlaybook = payload => {
     }
 }
 
-export const fetchRelatedPodcast = (path, params) => dispatch => {
+export const fetchRelatedPodcast = (path, params) => async dispatch => {
     params = {
         ...params,
         limit: 10,
         skip: 0,
     }
-    axios
-        .get(content.podcast(path), {
-            params,
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem(
-                    LOCAL_STORAGE.ACCESS_TOKEN
-                )}`,
-            },
-        })
-        .then(({ data }) => {
-            saveToken(data.token)
-            dispatch(getRelatedPodcast(data?.data?.results))
-        })
-        .catch(error => {
-            console.log(error)
-            dispatch(apiError(error))
-        })
-        .then(() => {
-            dispatch(apiEnd())
-        })
+    dispatch(apiStart())
+    try {
+        const request = new Request(params, null, true)
+        const response = await request.get(content.podcast(path))
+        dispatch(getRelatedPodcast(response.data.data.results))
+    } catch (e) {
+        return e
+    } finally {
+        dispatch(apiEnd())
+    }
 }
 
-export const fetchRelatedInspibook = (path, params) => dispatch => {
+export const fetchRelatedInspibook = (path, params) => async dispatch => {
     params = {
         ...params,
         limit: 10,
         skip: 0,
     }
-    axios
-        .get(content.inspibook(path), {
-            params,
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem(
-                    LOCAL_STORAGE.ACCESS_TOKEN
-                )}`,
-            },
-        })
-        .then(({ data }) => {
-            saveToken(data.token)
-            dispatch(getRelatedInspibook(data?.data?.results))
-        })
-        .catch(error => {
-            console.log(error)
-            dispatch(apiError(error))
-        })
-        .then(() => {
-            dispatch(apiEnd())
-        })
+    dispatch(apiStart())
+    try {
+        const request = new Request(params, null, true)
+        const response = await request.get(content.inspibook(path))
+        dispatch(getRelatedInspibook(response.data.data.results))
+    } catch (e) {
+        return e
+    } finally {
+        dispatch(apiEnd())
+    }
 }
 
 export const fetchRelatedAudioPlaybook = () => dispatch => {
