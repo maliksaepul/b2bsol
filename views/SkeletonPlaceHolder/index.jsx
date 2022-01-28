@@ -4,7 +4,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import styles from './style.module.scss'
 const SkeletonPlaceHolder = () => {
     return (
-        <div>
+        <div className={styles.container}>
             <div role="header" className={styles._header}>
                 <div className={styles._navbar}>
                     <div className={styles._navbar_item}>
