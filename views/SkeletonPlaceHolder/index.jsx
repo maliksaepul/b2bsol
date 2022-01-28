@@ -53,7 +53,7 @@ const SkeletonPlaceHolder = () => {
                         <Skeleton height={'1.25rem'} width={'10rem'} />
                     </p>
                     <p>
-                        <Skeleton height={'1rem'} />
+                        <Skeleton height={'1rem'} width={'15rem'} />
                     </p>
 
                     <div>
