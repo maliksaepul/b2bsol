@@ -6,8 +6,8 @@ const routes = {
      * @returns
      */
     audiolearning: (path, alias) => {
-        if (alias) return `${BASEURL}/${path}/audiolearning/${alias}`
-        else return `${BASEURL}/${path}/audiolearning/`
+        if (alias) return `/${path}/audiolearning/${alias}`
+        else return `/${path}/audiolearning/`
     },
 
     /**
@@ -15,24 +15,24 @@ const routes = {
      * @returns
      */
     inspibook: (path, alias) => {
-        if (alias) return `${BASEURL}/${path}/inspibook/${alias}`
-        else return `${BASEURL}/${path}/inspibook`
+        if (alias) return `/${path}/inspibook/${alias}`
+        else return `/${path}/inspibook`
     },
     /**
      * Video Learning
      * @returns
      */
     videolearning: (path, alias) => {
-        if (alias) return `${BASEURL}/${path}/videolearning/${alias}`
-        else return `${BASEURL}/${path}/videolearning`
+        if (alias) return `/${path}/videolearning/${alias}`
+        else return `/${path}/videolearning`
     },
     /**
      * Audio Playbook
      * @returns
      */
     audioplaybook: (path, alias) => {
-        if (alias) return `${BASEURL}/${path}//audioplaybook/${alias}`
-        else return `${BASEURL}/${path}/audioplaybook`
+        if (alias) return `/${path}//audioplaybook/${alias}`
+        else return `/${path}/audioplaybook`
     },
     /**
      * Audio Playbook

@@ -34,7 +34,7 @@ const withAuth = Component => {
                     case 403:
                         return <Forbidden />
                     default:
-                        return <SkeletonPlaceHolder />
+                        return null
                 }
             } else {
                 return <SkeletonPlaceHolder />
@@ -78,10 +78,10 @@ const withAuth = Component => {
                 return renderComponent()
             } else {
                 window.open(routes.signIn(window.location.pathname), '_self')
-                return <SkeletonPlaceHolder />
+                return null
             }
         }
-        return <SkeletonPlaceHolder />
+        return null
     }
 
     EnchancedComponent.propTypes = {
