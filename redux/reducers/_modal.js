@@ -1,9 +1,20 @@
-import { CLOSE_MODAL } from '../types'
+import { CLOSE_MODAL, MODAL_EVENT } from '../types'
 
-const ModalReducer = (state = false, action) => {
+const initialState = {
+    close: true,
+    event: {
+        title: '',
+        description: '',
+    },
+}
+
+const ModalReducer = (state = initialState, action) => {
+    const newState = { ...state, ...action.payload }
     switch (action.type) {
         case CLOSE_MODAL:
-            return (state = action.payload)
+            return newState
+        case MODAL_EVENT:
+            return newState
         default:
             return state
     }

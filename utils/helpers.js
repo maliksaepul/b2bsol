@@ -1,5 +1,5 @@
 import moment from 'moment'
-import { LOCAL_STORAGE } from 'utils/constants'
+import { LOCAL_STORAGE, MODAL } from 'utils/constants'
 
 export const maxTitlesLength = string => {
     if (string.length < 17) {
@@ -87,5 +87,17 @@ export const debounce = (func, timeout = 300, cancel) => {
         timer = setTimeout(() => {
             func.apply(this, args)
         }, timeout)
+    }
+}
+
+export const saveModal = modal => {
+    localStorage.setItem(MODAL, modal)
+}
+export const getModal = () => {
+    const modal = localStorage.getItem(MODAL)
+    if (modal) {
+        return true
+    } else {
+        return false
     }
 }

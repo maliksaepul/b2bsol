@@ -1,30 +1,18 @@
 import Image from 'next/image'
 import Button from 'components/atoms/button'
 import styles from './style.module.scss'
-import React, { useState } from 'react'
+import React from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import { dateDuration } from '@/utils/helpers'
 import AddToCalendar from '@/components/molecules/addtocalendar'
-import Modal from '@/components/molecules/modals/modal'
-import EventModal from '@/components/molecules/modals/event-modal'
-import Share from '@/components/molecules/share'
-import Copy from '@/components/atoms/copy'
 import { CARD_EVENT_TYPE } from '@/utils/constants'
 import { DoorOpen, quiz, sertificate, share } from '@/utils/icons'
+import { connect } from 'react-redux'
+import { modalEvent, modalClose } from '@/redux/actions/_modal'
 
-const CardEvent = ({
-    banner,
-    event,
-    variant,
-    cta,
-    label,
-    start,
-    end,
-    type,
-}) => {
-    const [modal, setModal] = useState(false)
-
+const CardEvent = props => {
+    const { banner, event, variant, cta, label, start, end, type } = props
     let contentDirection = ''
     switch (variant) {
         case 'column':
@@ -48,7 +36,8 @@ const CardEvent = ({
     }
 
     const handleModal = () => {
-        setModal(!modal)
+        props.modalEvent({ ...event, url: cta[0].url, banner })
+        props.modalClose(!props.modal.close)
     }
 
     const renderButton = () => {
@@ -150,21 +139,6 @@ const CardEvent = ({
                         </div>
                     </div>
                     <div className={styles.cardevent_cta}>{renderButton()}</div>
-                    <Modal close={!modal} handleClose={handleModal}>
-                        <EventModal
-                            illu={banner}
-                            title={event.title}
-                            description={event.content}
-                            date={event.date}>
-                            <Share
-                                align={'center'}
-                                url={cta[0].url}
-                                description={event.description}
-                            />
-
-                            <Copy url={cta[0].url} label="Copy" />
-                        </EventModal>
-                    </Modal>
                 </div>
             )
         } else {
@@ -207,4 +181,7 @@ CardEvent.defaultProps = {
         style: null,
     },
 }
-export default CardEvent
+
+const mapStateToProps = ({ modal }) => ({ modal })
+
+export default connect(mapStateToProps, { modalClose, modalEvent })(CardEvent)

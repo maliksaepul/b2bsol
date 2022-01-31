@@ -21,7 +21,7 @@ import routes from '@/utils/routes'
 const Section = dynamic(() => import('@/components/atoms/section'))
 const Layout = dynamic(() => import('@/hoc/layouts/common'))
 const About = dynamic(() => import('@/components/templates/about'))
-const Explore = dynamic(() => import('@/containers/sections/Explore'))
+// const Explore = dynamic(() => import('@/containers/sections/Explore'))
 const Gamification = dynamic(() =>
     import('@/components/templates/gamification')
 )
@@ -38,9 +38,9 @@ const Home = ({ account, path }) => {
                 <Section>
                     <About title={path.name} subtitle={'Learning Platform'} />
                 </Section>
-                <Section>
+                {/* <Section>
                     <Explore user={{ name: account.name }} path={path.path} />
-                </Section>
+                </Section> */}
                 {/* <Section>
                     <Statistic id={1} />
                 </Section> */}

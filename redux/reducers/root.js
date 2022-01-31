@@ -25,7 +25,7 @@ const rootReducer = combineReducers({
     scheduleReducer: ScheduleReducer,
     courseReducer: CourseReducer,
     lastLearningReducer: LastLearningReducer,
-    closeModal: ModalReducer,
+    modal: ModalReducer,
     myStat: StatisticReducer,
     apb: ApbReducer,
     vod: VodReducer,

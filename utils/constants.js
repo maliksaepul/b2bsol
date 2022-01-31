@@ -18,6 +18,8 @@ export const LOCAL_STORAGE = {
     REFRESH_TOKEN: 'refreshToken',
 }
 
+export const MODAL = 'showModal'
+
 export const GRANT_TYPE = {
     TOKEN: 'token',
     PASSWORD: 'password',
@@ -37,13 +39,13 @@ export const PROFILE_ITEM = [
         label: 'My Profile',
         url: routes.myProfile(),
     },
-    {
-        label: 'My Statistic',
-        url: routes.myProfile(),
-    },
+    // {
+    //     label: 'My Statistic',
+    //     url: routes.myStatistic(),
+    // },
     {
         label: 'My Badge',
-        url: routes.myProfile(),
+        url: routes.myBadge(),
     },
-    { label: 'About', url: routes.myProfile() },
+    // { label: 'About', url: routes.myProfile() },
 ]

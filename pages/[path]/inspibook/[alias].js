@@ -11,6 +11,7 @@ const InspiBookPlayerPage = ({
     fetchRelatedInspibook,
     relatedInspibook,
     path,
+    loading,
 }) => {
     const router = useRouter()
     const { alias } = router.query
@@ -22,6 +23,7 @@ const InspiBookPlayerPage = ({
             alias={alias}
             relatedInspibook={relatedInspibook}
             path={path.path}
+            loading={loading}
         />
     )
 }
@@ -30,8 +32,12 @@ InspiBookPlayerPage.propTypes = {
     fetchRelatedInspibook: PropTypes.func.isRequired,
     relatedInspibook: PropTypes.array,
     path: PropTypes.any,
+    loading: PropTypes.bool,
 }
-const mapStateToProps = ({ relatedInspibook }) => ({ relatedInspibook })
+const mapStateToProps = ({ relatedInspibook, loading }) => ({
+    relatedInspibook,
+    loading,
+})
 
 export default connect(mapStateToProps, { fetchRelatedInspibook })(
     InspiBookPlayerPage

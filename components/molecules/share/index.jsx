@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import { ShareLink } from 'social-media-sharing'
 import cx from 'classnames'
-import { whatsapp } from '@/utils/icons'
+import { facebook, telegram, twitter, whatsapp } from '@/utils/icons'
 
 const Share = ({ align, url, description, tag }) => {
     const shareTextToWhatsApp = (text, url) => {
@@ -78,17 +78,17 @@ const Share = ({ align, url, description, tag }) => {
                 <div
                     onClick={() => sentMessageToSocial('facebook')}
                     className={cx(styles.rounded, styles.facebook)}>
-                    {whatsapp(null, null, 1.5)}
+                    {facebook(null, null, 1.5)}
                 </div>
                 <div
                     onClick={() => sentMessageToSocial('twitter')}
                     className={cx(styles.rounded, styles.twitter)}>
-                    {whatsapp(null, null, 1)}
+                    {twitter(null, null, 1)}
                 </div>
                 <div
                     onClick={() => sentMessageToSocial('telegram')}
                     className={cx(styles.rounded, styles.telegram)}>
-                    {whatsapp(null, null, 1)}
+                    {telegram(null, null, 1)}
                 </div>
             </div>
         </div>

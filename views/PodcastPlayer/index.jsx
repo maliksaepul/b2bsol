@@ -7,28 +7,32 @@ import AudioCard from '@/containers/components/cards/AudioCard'
 import Section from '@/components/atoms/section'
 import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
+import SkeletonContent from '@/components/templates/skeletoncontent'
+import { PLAYER } from '@/utils/constants'
 
-const PodcastPlayer = ({ alias, relatedPodcast }) => {
+const PodcastPlayer = ({ alias, relatedPodcast, loading }) => {
     return (
         <WithoutHeader>
             <div className={styles.container}>
                 <Section>
-                    <EmbedPlayer
-                        src={`https://player.inspigo.id/${alias}?token=`}
-                    />
+                    <EmbedPlayer src={`${PLAYER}/${alias}?token=`} />
                 </Section>
                 <Section>
                     <div className={styles.content}>
                         <div className={styles.content_container}>
                             <Label title="Related Podcast" />
                             <Carousel>
-                                {relatedPodcast.map((c, i) => (
-                                    <div
-                                        style={{ paddingRight: '1rem' }}
-                                        key={i}>
-                                        <AudioCard audio={c} />
-                                    </div>
-                                ))}
+                                {loading ? (
+                                    <SkeletonContent />
+                                ) : (
+                                    relatedPodcast.map((c, i) => (
+                                        <div
+                                            style={{ paddingRight: '1rem' }}
+                                            key={i}>
+                                            <AudioCard audio={c} />
+                                        </div>
+                                    ))
+                                )}
                             </Carousel>
                         </div>
                     </div>
@@ -41,6 +45,7 @@ const PodcastPlayer = ({ alias, relatedPodcast }) => {
 PodcastPlayer.propTypes = {
     alias: PropTypes.string,
     relatedPodcast: PropTypes.array,
+    loading: PropTypes.bool,
 }
 
 export default PodcastPlayer
