@@ -52,6 +52,8 @@ const Toolbar = ({
                                 { search, filter: val, sort: sorting },
                                 api
                             )
+                            console.log('hallo')
+                            activeFilter(false)
                         }}
                         filter={filter.trim().split(',')}
                     />
@@ -84,6 +86,7 @@ const Toolbar = ({
                         onChange={val => {
                             setSorting(val)
                             fetchData({ search, filter, sort: val }, api)
+                            activeSorting(false)
                         }}
                         sortingList={[
                             { label: 'Newest', key: 'date' },
