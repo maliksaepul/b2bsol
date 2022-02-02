@@ -2,7 +2,7 @@
 import { SERVICE } from '@/utils/constants'
 import Request from '@/redux/request'
 import { GET_PATH } from '@/redux/types'
-import { apiEnd, apiStart } from '@/redux/actions/section/_scedule'
+import { apiEnd, apiStart } from '@/redux/actions/section/_schedule'
 
 export const getPath = payload => {
     return {

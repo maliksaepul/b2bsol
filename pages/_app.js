@@ -44,13 +44,13 @@ const App = ({ Component, pageProps }) => {
 
                 {IS_DEVELOPMENT && <meta name="robots" content="noindex" />}
             </Head>
+            <NextProgress
+                startPosition={0.3}
+                stopDelayMs={200}
+                height={2}
+                showOnShallow={false}
+            />
             <Dashboard>
-                <NextProgress
-                    startPosition={0.3}
-                    stopDelayMs={200}
-                    height={2}
-                    showOnShallow={false}
-                />
                 <Component {...pageProps} />
             </Dashboard>
         </React.Fragment>

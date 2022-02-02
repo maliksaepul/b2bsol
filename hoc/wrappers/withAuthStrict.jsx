@@ -34,7 +34,7 @@ const withAuth = Component => {
                     case 403:
                         return <Forbidden />
                     default:
-                        return null
+                        return <div></div>
                 }
             } else {
                 return <SkeletonPlaceHolder />

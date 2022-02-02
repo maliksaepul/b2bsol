@@ -1,6 +1,6 @@
 import { LOCAL_STORAGE, ORIGIN } from '@/utils/constants'
 import { GET_REVOKE_USER } from '../../types'
-import { apiEnd, apiStart } from '../section/_scedule'
+import { apiEnd, apiStart } from '../section/_schedule'
 import Request from '@/redux/request'
 import { account } from '@/utils/apiroutelist'
 import { removeToken } from '@/utils/helpers'

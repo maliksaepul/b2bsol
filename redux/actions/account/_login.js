@@ -1,5 +1,5 @@
 import { GET_ACCOUNT } from '../../types'
-import { apiEnd, apiStart } from '../section/_scedule'
+import { apiEnd, apiStart } from '../section/_schedule'
 import Request from '@/redux/request'
 import routes from '@/utils/routes'
 import { account } from '@/utils/apiroutelist'

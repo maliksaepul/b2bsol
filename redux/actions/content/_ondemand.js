@@ -1,7 +1,7 @@
 import { content } from '@/utils/apiroutelist'
 import axios from 'axios'
 import { GET_APB, GET_INSPIBOOK, GET_PODCAST, GET_VOD } from '../../types'
-import { apiEnd, apiError, apiStart } from '../section/_scedule'
+import { apiEnd, apiError, apiStart } from '../section/_schedule'
 import Request from '@/redux/request'
 export const getPodcast = payload => {
     return {

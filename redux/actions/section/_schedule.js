@@ -28,10 +28,12 @@ export const getSchedules = payload => {
     }
 }
 
-export const fetchSchedules = () => dispatch => {
+export const fetchSchedules = id => dispatch => {
     dispatch(apiStart())
     axios
-        .get(`${process.env.BASEURL}/api/schedules`)
+        .get(`${process.env.BASEURL}/api/schedules`, {
+            params: { organization: id },
+        })
         .then(({ data }) => {
             dispatch(getSchedules(data))
         })

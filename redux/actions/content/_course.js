@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { GET_COURSES } from '../../types'
-import { apiEnd, apiError, apiStart } from '../section/_scedule'
+import { apiEnd, apiError, apiStart } from '../section/_schedule'
 
 export const getCourses = payload => {
     return {

@@ -1,6 +1,6 @@
 [
     {
-        "activedatetime": "2021-12-08 17:00",
+        "activedatetime": "2022-02-08 10:00",
         "name": "Opening Ceremony: Leader Insider How to Spark A Love to Learn",
         "code": "TLF",
         "actions": [
@@ -9,12 +9,13 @@
                 "url": "https://us06web.zoom.us/j/88078756963"
             }
         ],
-        "datetime": "2021-12-30 13:00",
-        "dateevent": "2021-12-08 13:00 - 17.00 WIB",
+        "datetime": "2022-02-08 13:00",
+        "dateevent": "2022-02-08 13:00 - 17.00 WIB",
         "description": "<p>Harry Prasetyo</p>",
         "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
-        "category": "webinar",
-        "type": "event"
+        "category": "InspiTalk",
+        "type": "event",
+        "organization": [1]
     },
     {
         "activedatetime": "2021-12-07 13:00",
@@ -30,8 +31,9 @@
         "description": "<p>Harry Prasetyo</p>",
         "dateevent": "2021-12-08 13:00 - 17.00 WIB",
         "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
-        "category": "webinar",
-        "type": "event"
+        "category": "Webinar",
+        "type": "event",
+        "organization": [1]
     },
     {
         "activedatetime": "2021-12-07 13:00",
@@ -47,11 +49,12 @@
         "description": "<p>Harry Prasetyo</p>",
         "dateevent": "2021-12-08 13:00 - 17.00 WIB",
         "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
-        "category": "webinar",
-        "type": "event"
+        "category": "InspiLive",
+        "type": "event",
+        "organization": []
     },
     {
-        "activedatetime": "2021-12-07 13:00",
+        "activedatetime": "2022-02-02 13:00",
         "name": "Opening Ceremony: Leader Insider How to Spark A Love to Learn",
         "code": "TLF",
         "actions": [
@@ -60,11 +63,12 @@
                 "url": "https://us06web.zoom.us/j/88078756963"
             }
         ],
-        "datetime": "2021-12-08 13:00",
+        "datetime": "2022-02-02 12:00",
         "description": "<p>Harry Prasetyo</p>",
         "dateevent": "2021-12-08 13:00 - 17.00 WIB",
         "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
-        "category": "webinar",
-        "type": "event"
+        "category": "Mentoring",
+        "type": "event",
+        "organization": []
     }
 ]

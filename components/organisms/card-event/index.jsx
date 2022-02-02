@@ -10,24 +10,12 @@ import { CARD_EVENT_TYPE } from '@/utils/constants'
 import { DoorOpen, quiz, sertificate, share } from '@/utils/icons'
 import { connect } from 'react-redux'
 import { modalEvent, modalClose } from '@/redux/actions/_modal'
+import Skeleton from 'react-loading-skeleton'
+import moment from 'moment'
 
 const CardEvent = props => {
-    const { banner, event, variant, cta, label, start, end, type } = props
-    let contentDirection = ''
-    switch (variant) {
-        case 'column':
-            contentDirection = styles.column
-            break
-        case 'column-reverse':
-            contentDirection = styles.column_reverse
-            break
-        case 'row-reverse':
-            contentDirection = styles.row_reverse
-            break
-        default:
-            contentDirection = ''
-            break
-    }
+    const { banner, event, variant, cta, start, end, type, category } = props
+    const duration = dateDuration(start)
 
     const handleCta = (disabled, url) => {
         if (!disabled) {
@@ -41,8 +29,7 @@ const CardEvent = props => {
     }
 
     const renderButton = () => {
-        const duration = dateDuration(start).asHours()
-        if ((type === 'event') & (duration >= 1)) {
+        if ((type === CARD_EVENT_TYPE.EVENT) & (duration.asHours() >= 1)) {
             return (
                 <AddToCalendar
                     options={[
@@ -81,7 +68,7 @@ const CardEvent = props => {
                         label={'Bagikan'}
                         icon={{ name: 'Share', multiplier: 1 }}>
                         {' '}
-                        {share(null, null, 1)}{' '}
+                        {share(null, null, 1)}
                     </Button>
                 </>
             )
@@ -101,59 +88,67 @@ const CardEvent = props => {
                     </>
                 )
             default:
-                return <span>{event.date}</span>
+                return duration.asMinutes() >= 0 ? (
+                    <span>{event.date}</span>
+                ) : (
+                    <>
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="7" cy="7" r="7" fill="#FF0101" />
+                        </svg>
+                        &nbsp;
+                        <span>
+                            Sedang berlangsung sampai &nbsp;
+                            {moment(end).format('hh : mm')}
+                        </span>
+                    </>
+                )
         }
     }
 
-    const renderCard = () => {
-        if (banner !== '') {
-            return (
-                <div className={cx(styles.cardevent, contentDirection)}>
-                    <div className="card_event__illu">
-                        <Image
-                            src={banner}
-                            className={styles.cardevent_illu}
-                            width={1200}
-                            height={600}
-                        />
+    return (
+        <div className={cx(styles.cardevent, styles[variant])}>
+            <div className="card_event__illu">
+                {banner ? (
+                    <Image
+                        src={banner}
+                        className={styles.cardevent_illu}
+                        width={1200}
+                        height={600}
+                    />
+                ) : (
+                    <div>
+                        <Skeleton width={300} height={150} />
                     </div>
-                    <div className={styles.cardevent_event}>
-                        <div>
-                            <div className={styles.cardevent_event_label}>
-                                {' '}
-                                <span style={label.style}>
-                                    {label.category}
-                                </span>{' '}
-                            </div>
-                            <div className={styles.cardevent_event__title}>
-                                <h6>{event.title}</h6>
-                            </div>
-                        </div>
-                        <article
-                            className={styles.cardevent_event__description}
-                            dangerouslySetInnerHTML={{
-                                __html: event.content,
-                            }}></article>
-                        <div className={styles.cardevent_event__time}>
-                            {renderLabelTime(event.type)}
-                        </div>
+                )}
+            </div>
+            <div className={styles.cardevent_event}>
+                <div>
+                    <div className={styles.cardevent_event_label}>
+                        <span className={styles[category?.toLowerCase()]}>
+                            {category}
+                        </span>
                     </div>
-                    <div className={styles.cardevent_cta}>{renderButton()}</div>
+                    <div className={styles.cardevent_event__title}>
+                        <h6>{event.title}</h6>
+                    </div>
                 </div>
-            )
-        } else {
-            return (
-                <>
-                    <div className={'card_skeleton'}></div>
-                    <div className={'card_skeleton'}></div>
-                    <div className={'card_skeleton'}></div>
-                    <div className={'card_skeleton'}></div>
-                </>
-            )
-        }
-    }
-
-    return renderCard()
+                <article
+                    className={styles.cardevent_event__description}
+                    dangerouslySetInnerHTML={{
+                        __html: event.content,
+                    }}></article>
+                <div className={styles.cardevent_event__time}>
+                    {renderLabelTime(type)}
+                </div>
+            </div>
+            <div className={styles.cardevent_cta}>{renderButton()}</div>
+        </div>
+    )
 }
 
 CardEvent.propTypes = {
@@ -173,6 +168,9 @@ CardEvent.propTypes = {
     end: PropTypes.string,
     type: PropTypes.string,
     category: PropTypes.string,
+    modalClose: PropTypes.func,
+    modalEvent: PropTypes.func,
+    modal: PropTypes.object,
 }
 
 CardEvent.defaultProps = {

@@ -64,6 +64,7 @@
             & > span {
                 padding: 0 1rem 0 1rem;
             }
+            color: white;
         }
         &__title {
             font-size: 1.4rem;
@@ -109,4 +110,17 @@
             }
         }
     }
+}
+
+.webinar {
+    background-color: #acdee6;
+}
+.inspitalk {
+    background-color: #fcd672;
+}
+.inspilive {
+    background-color: #fd4a5c;
+}
+.mentoring {
+    background-color: #002f87;
 }

@@ -8,7 +8,7 @@ import {
     TOOLBAR_VOD,
 } from '../types'
 import { getApb, getInspibook, getPodcast, getVod } from './content/_ondemand'
-import { apiEnd, apiError, apiStart } from './section/_scedule'
+import { apiEnd, apiError, apiStart } from './section/_schedule'
 
 export const fetchDataToolbar = (params, api) => dispatch => {
     dispatch(apiStart())

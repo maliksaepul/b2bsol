@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { GET_STAT } from '../../types'
-import { apiEnd, apiError, apiStart } from './_scedule'
+import { apiEnd, apiError, apiStart } from './_schedule'
 
 export const getMyStat = payload => {
     return {

@@ -13,14 +13,6 @@ const ProfileBar = ({
     activeProfile,
     active,
 }) => {
-    const chevronCondition = () => {
-        if (active) {
-            return styles.chevron_up
-        } else {
-            return styles.chevron_down
-        }
-    }
-
     const renderProfile = () => {
         if (active) {
             return (
@@ -50,7 +42,9 @@ const ProfileBar = ({
                 {usercover ? <img src={usercover} alt="cover" /> : 'S'}
             </div>
 
-            <div className={chevronCondition()}>{Chevron(null, null, 1)}</div>
+            <div className={active ? styles.chevron_up : styles.chevron_down}>
+                {Chevron(null, null, 1)}
+            </div>
             {renderProfile()}
         </div>
     )

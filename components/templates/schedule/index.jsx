@@ -3,12 +3,11 @@ import React, { useEffect } from 'react'
 import Label from '@/components/molecules/label'
 import Carousel from '@/components/organisms/carousel'
 import CardEvent from '@/components/organisms/card-event'
-import * as colors from '@/styles/App.module.scss'
 import PropTypes from 'prop-types'
 
-const Schedule = ({ fetchSchedules, events }) => {
+const Schedule = ({ fetchSchedules, events, organization }) => {
     useEffect(() => {
-        fetchSchedules()
+        fetchSchedules(organization.id)
     }, [])
 
     return (
@@ -35,13 +34,6 @@ const Schedule = ({ fetchSchedules, events }) => {
                             end={event.activedatetime}
                             cta={event.actions}
                             variant={'column'}
-                            label={{
-                                category: 'Webinar',
-                                style: {
-                                    backgroundColor: colors.subText,
-                                    color: colors.white,
-                                },
-                            }}
                         />
                     )
                 })}
@@ -53,6 +45,7 @@ const Schedule = ({ fetchSchedules, events }) => {
 Schedule.propTypes = {
     events: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
     fetchSchedules: PropTypes.func.isRequired,
+    organization: PropTypes.object,
 }
 
 export default Schedule

@@ -5,7 +5,7 @@ import {
     GET_RELATED_INSPIBOOK,
     GET_RELATED_PODCAST,
 } from '../../types'
-import { apiEnd, apiError, apiStart } from '../section/_scedule'
+import { apiEnd, apiError, apiStart } from '../section/_schedule'
 import Request from '@/redux/request'
 
 export const getRelatedPodcast = payload => {
