@@ -42,16 +42,18 @@ const withAuth = Component => {
         }
 
         if (typeof window !== 'undefined') {
-            const access = getQueryParam('access')
+            const paramAccess = getQueryParam('access')
 
             const accessToken = localStorage.getItem(LOCAL_STORAGE.ACCESS_TOKEN)
 
-            if ((!accessToken && access) || accessToken) {
+            if ((!accessToken && paramAccess) || accessToken) {
                 useEffect(async () => {
                     if (Router.isReady) {
-                        await props.fetchAccount(access)
+                        await props.fetchAccount(paramAccess || accessToken)
                         const org = {
-                            ...(await props.fetchOrganization(access)),
+                            ...(await props.fetchOrganization(
+                                paramAccess || accessToken
+                            )),
                         }
                         if (Router.query.path) {
                             const response = await props.fetchPath(

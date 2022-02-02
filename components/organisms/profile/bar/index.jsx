@@ -43,7 +43,7 @@ const ProfileBar = ({
             </div>
 
             <div className={active ? styles.chevron_up : styles.chevron_down}>
-                {Chevron(null, null, 1)}
+                {Chevron('black', 'black', 1)}
             </div>
             {renderProfile()}
         </div>
