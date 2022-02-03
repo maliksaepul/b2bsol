@@ -31,6 +31,7 @@ const Pagination = ({ limit, pages, skip, toPage }) => {
                 previousClassName={cx(styles.page_button, styles.primary)}
                 activeClassName={cx(styles.page_button, styles.primary)}
                 disabledClassName={cx(styles.page_button, styles.disabled)}
+                initialPage={0}
             />
         </>
     )
