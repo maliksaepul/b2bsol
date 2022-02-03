@@ -38,7 +38,7 @@ export const fetchPodcast =
         try {
             const request = new Request(params, null, true)
             const response = await request.get(content.podcast(path))
-            dispatch(getPodcast(response.data.data.results))
+            dispatch(getPodcast(response.data.data))
         } catch (e) {
             return e
         } finally {
@@ -53,7 +53,7 @@ export const fetchInspibook =
         try {
             const request = new Request(params, null, true)
             const response = await request.get(content.inspibook(path))
-            dispatch(getInspibook(response.data.data.results))
+            dispatch(getInspibook(response.data.data))
         } catch (e) {
             return e
         } finally {

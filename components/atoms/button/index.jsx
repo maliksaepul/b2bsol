@@ -63,7 +63,7 @@ Button.propTypes = {
         }),
         PropTypes.object,
     ]),
-    label: PropTypes.string,
+    label: PropTypes.any,
     children: PropTypes.any,
 }
 

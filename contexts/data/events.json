@@ -15,7 +15,7 @@
         "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
         "category": "InspiTalk",
         "type": "event",
-        "organization": [1]
+        "organization": [5]
     },
     {
         "activedatetime": "2021-12-07 13:00",
@@ -33,7 +33,7 @@
         "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
         "category": "Webinar",
         "type": "event",
-        "organization": [1]
+        "organization": [5]
     },
     {
         "activedatetime": "2021-12-07 13:00",
@@ -51,7 +51,7 @@
         "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
         "category": "InspiLive",
         "type": "event",
-        "organization": []
+        "organization": [5]
     },
     {
         "activedatetime": "2022-02-02 13:00",
@@ -69,6 +69,6 @@
         "cover": "https://ik.imagekit.io/145agqxu54x/tiket_com/Image_YwnXLk6PtOh.png?updatedAt=1639375487536",
         "category": "Mentoring",
         "type": "event",
-        "organization": []
+        "organization": [5]
     }
 ]

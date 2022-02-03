@@ -2,7 +2,6 @@ import events from '@/contexts/data/events.json'
 
 export default function handler(req, res) {
     const { organization } = req.query
-    console.log(req.query)
     const response = events.filter(
         val =>
             val.organization.length === 0 ||

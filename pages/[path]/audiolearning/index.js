@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 // import AudioLearning from '@/views/AudioLearning'
 import PropTypes from 'prop-types'
 import dynamic from 'next/dynamic'
+import { defaultContentLimit } from '@/utils/constants'
 const AudioLearning = dynamic(() => import('@/views/AudioLearning'))
 const AudioLearningPage = ({
     account,
@@ -13,8 +14,12 @@ const AudioLearningPage = ({
     loading,
 }) => {
     useEffect(() => {
-        fetchPodcast(path.path)
+        fetchPodcast(path.path, { limit: defaultContentLimit, skip: 0 })
     }, [])
+
+    const handleFetchPodcast = skip => {
+        fetchPodcast(path.path, { limit: defaultContentLimit, skip: skip })
+    }
 
     return (
         <>
@@ -22,6 +27,7 @@ const AudioLearningPage = ({
                 podcast={podcast}
                 path={path.path}
                 loading={loading}
+                onFetchData={handleFetchPodcast}
             />
         </>
     )
@@ -29,7 +35,7 @@ const AudioLearningPage = ({
 
 AudioLearningPage.propTypes = {
     fetchPodcast: PropTypes.func,
-    podcast: PropTypes.array,
+    podcast: PropTypes.any,
     account: PropTypes.any,
     path: PropTypes.any,
     loading: PropTypes.bool,

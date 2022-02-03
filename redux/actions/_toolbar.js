@@ -31,7 +31,7 @@ export const fetchDataToolbar = (params, api) => dispatch => {
             switch (api.type) {
                 case TOOLBAR_PODCAST:
                     saveToken(data.token)
-                    dispatch(getPodcast(data.data.results))
+                    dispatch(getPodcast(data.data))
                     break
                 case TOOLBAR_VOD:
                     dispatch(getVod(data.data))
@@ -41,7 +41,7 @@ export const fetchDataToolbar = (params, api) => dispatch => {
                     break
                 case TOOLBAR_INSPIBOOK:
                     saveToken(data.token)
-                    dispatch(getInspibook(data.data.results))
+                    dispatch(getInspibook(data.data))
                     break
                 default:
                     dispatch(getPodcast(data))

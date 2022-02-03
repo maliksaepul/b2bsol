@@ -49,3 +49,5 @@ export const PROFILE_ITEM = [
     },
     // { label: 'About', url: routes.myProfile() },
 ]
+
+export const defaultContentLimit = 10
