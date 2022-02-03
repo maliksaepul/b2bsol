@@ -8,7 +8,7 @@ import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
 import InspiBookCard from '@/containers/components/cards/InspiBookCard'
 import SkeletonContent from '@/components/templates/skeletoncontent'
-import { PLAYER } from '@/utils/constants'
+import { LOCAL_STORAGE, PLAYER } from '@/utils/constants'
 
 const InspiBookPlayer = ({ alias, relatedInspibook, path, loading }) => {
     return (
@@ -16,7 +16,9 @@ const InspiBookPlayer = ({ alias, relatedInspibook, path, loading }) => {
             <div className={styles.container}>
                 <Section>
                     <EmbedPlayer
-                        src={`${PLAYER}/HBYEYAQZZP?hide-header=1&hide-footer=1`}
+                        src={`${PLAYER}/HBYEYAQZZP?hide-header=1&hide-footer=1&token=${localStorage.getItem(
+                            LOCAL_STORAGE.REFRESH_TOKEN
+                        )}`}
                     />
                 </Section>
                 <Section>

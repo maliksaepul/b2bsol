@@ -17,13 +17,11 @@ const ProfileBar = ({
         if (active) {
             return (
                 <div className={styles.profile_sidebar}>
-                    <ClickOutside behaviorfunc={() => activeProfile(!active)}>
-                        <Profile
-                            usercover={usercover}
-                            username={username}
-                            userRole={userRole}
-                        />
-                    </ClickOutside>
+                    <Profile
+                        usercover={usercover}
+                        username={username}
+                        userRole={userRole}
+                    />
                 </div>
             )
         } else {
@@ -32,21 +30,26 @@ const ProfileBar = ({
     }
 
     return (
-        <div
-            className={cx(styles.profile)}
-            onClick={() => {
-                activeProfile(!active)
-            }}>
-            <p>Hi, {username} !</p>
-            <div className={styles.profile_cover}>
-                {usercover ? <img src={usercover} alt="cover" /> : 'S'}
-            </div>
+        <ClickOutside behaviorfunc={() => activeProfile(false)}>
+            <div
+                className={cx(styles.profile)}
+                onClick={() => {
+                    activeProfile(!active)
+                }}>
+                <p>Hi, {username} !</p>
+                <div className={styles.profile_cover}>
+                    {usercover ? <img src={usercover} alt="cover" /> : 'S'}
+                </div>
 
-            <div className={active ? styles.chevron_up : styles.chevron_down}>
-                {Chevron('black', 'black', 1)}
+                <div
+                    className={
+                        active ? styles.chevron_up : styles.chevron_down
+                    }>
+                    {Chevron('black', 'black', 1)}
+                </div>
+                {renderProfile()}
             </div>
-            {renderProfile()}
-        </div>
+        </ClickOutside>
     )
 }
 

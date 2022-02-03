@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import ReactPaginate from 'react-paginate'
 import cx from 'classnames'
+import { mediaMaxWidth, MobileBreakpoint } from '@/utils/breakpoint'
 const Pagination = ({ limit, pages, skip, toPage }) => {
     const getSkip = page => {
         return page * limit
@@ -14,21 +15,23 @@ const Pagination = ({ limit, pages, skip, toPage }) => {
         toPage(getSkip(event.selected))
     }
 
+    const isMobile = mediaMaxWidth(MobileBreakpoint)
+
     return (
         <>
             <ReactPaginate
                 breakLabel="..."
-                nextLabel="Next >"
+                nextLabel={isMobile ? '>' : 'Next >'}
                 onPageChange={toCurrentPage}
                 pageRangeDisplayed={2}
                 marginPagesDisplayed={1}
                 pageCount={Math.ceil(pages)}
-                previousLabel="< Previous"
+                previousLabel={isMobile ? '<' : '< Previous'}
                 renderOnZeroPageCount={null}
                 className={styles.page}
                 pageClassName={cx(styles.page_button)}
-                nextClassName={cx(styles.page_button, styles.primary)}
-                previousClassName={cx(styles.page_button, styles.primary)}
+                nextClassName={cx(styles.page_button, styles.nav)}
+                previousClassName={cx(styles.page_button, styles.nav)}
                 activeClassName={cx(styles.page_button, styles.primary)}
                 disabledClassName={cx(styles.page_button, styles.disabled)}
                 initialPage={0}

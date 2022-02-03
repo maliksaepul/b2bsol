@@ -8,14 +8,18 @@ import Section from '@/components/atoms/section'
 import Label from '@/components/molecules/label'
 import styles from './style.module.scss'
 import SkeletonContent from '@/components/templates/skeletoncontent'
-import { PLAYER } from '@/utils/constants'
+import { LOCAL_STORAGE, PLAYER } from '@/utils/constants'
 
 const PodcastPlayer = ({ alias, relatedPodcast, loading }) => {
     return (
         <WithoutHeader>
             <div className={styles.container}>
                 <Section>
-                    <EmbedPlayer src={`${PLAYER}/${alias}?token=`} />
+                    <EmbedPlayer
+                        src={`${PLAYER}/${alias}?token=${localStorage.getItem(
+                            LOCAL_STORAGE.REFRESH_TOKEN
+                        )}`}
+                    />
                 </Section>
                 <Section>
                     <div className={styles.content}>

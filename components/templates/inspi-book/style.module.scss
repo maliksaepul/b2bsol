@@ -4,7 +4,7 @@
     overflow: hidden;
 
     @include media-max-width($mobile-breakpoint) {
-        padding: 0 8vw;
+        padding: 0;
     }
 
     &_desc {
@@ -14,6 +14,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include media-max-width($mobile-breakpoint) {
+            padding: 0 8vw;
+        }
 
         .cta {
             padding: 1rem 0;
@@ -45,7 +48,7 @@
             @include media-max-width($mobile-breakpoint) {
                 width: 6.5rem;
                 height: 6.5rem;
-                left: -19vw;
+                left: -8vw;
             }
         }
     }

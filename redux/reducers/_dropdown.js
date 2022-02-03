@@ -8,15 +8,15 @@ const initialState = {
 const dropdownReducers = (state = initialState, action) => {
     switch (action.type) {
         case ACTIVE_FILTER:
-            return {
-                active_filter: action.payload,
-            }
+            return { ...state, active_filter: action.payload }
         case ACTIVE_SORTING:
             return {
+                ...state,
                 active_sorting: action.payload,
             }
         case ACTIVE_PROFILE:
             return {
+                ...state,
                 active_profile: action.payload,
             }
         default:

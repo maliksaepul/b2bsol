@@ -20,7 +20,7 @@ import RelatedInspibook from '@/redux/reducers/content/_relatedInspibook'
 
 const rootReducer = combineReducers({
     sidebarState: SidebarReducer,
-    dropdownState: DropdownReducer,
+    dropdown: DropdownReducer,
     loading: LoaderReducer,
     scheduleReducer: ScheduleReducer,
     courseReducer: CourseReducer,

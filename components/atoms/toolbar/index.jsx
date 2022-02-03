@@ -39,25 +39,17 @@ const Toolbar = ({
     const renderFilter = () => {
         if (filterActive) {
             return (
-                <ClickOutside
-                    behaviorfunc={() => {
-                        activeFilter(!filterActive)
-                    }}>
-                    <Filter
-                        filterList={categories}
-                        label="Category"
-                        onChange={val => {
-                            setFilter(val)
-                            fetchData(
-                                { search, filter: val, sort: sorting },
-                                api
-                            )
-                            console.log('hallo')
-                            activeFilter(false)
-                        }}
-                        filter={filter.trim().split(',')}
-                    />
-                </ClickOutside>
+                <Filter
+                    filterList={categories}
+                    label="Category"
+                    onChange={val => {
+                        setFilter(val)
+                        fetchData({ search, filter: val, sort: sorting }, api)
+                        console.log('hallo')
+                        activeFilter(false)
+                    }}
+                    filter={filter.trim().split(',')}
+                />
             )
         } else {
             return null
@@ -78,22 +70,17 @@ const Toolbar = ({
     const renderSorting = () => {
         if (sortingActive) {
             return (
-                <ClickOutside
-                    behaviorfunc={() => {
-                        activeSorting(!sortingActive)
-                    }}>
-                    <Sorting
-                        onChange={val => {
-                            setSorting(val)
-                            fetchData({ search, filter, sort: val }, api)
-                            activeSorting(false)
-                        }}
-                        sortingList={[
-                            { label: 'Newest', key: 'date' },
-                            { label: 'Name A-Z', key: 'title' },
-                        ]}
-                    />
-                </ClickOutside>
+                <Sorting
+                    onChange={val => {
+                        setSorting(val)
+                        fetchData({ search, filter, sort: val }, api)
+                        activeSorting(false)
+                    }}
+                    sortingList={[
+                        { label: 'Newest', key: 'date' },
+                        { label: 'Name A-Z', key: 'title' },
+                    ]}
+                />
             )
         } else {
             return null
@@ -104,18 +91,28 @@ const Toolbar = ({
         <div className={styles.toolbar}>
             <div className={styles.toolbar_item}>{renderSearch()}</div>
             <div className={styles.toolbar_item}>
-                <DropDown
-                    label={'Filter'}
-                    action={() => activeFilter(!filterActive)}
-                    active={filterActive}>
-                    {renderFilter()}
-                </DropDown>
-                <DropDown
-                    label="Urutkan"
-                    action={() => activeSorting(!sortingActive)}
-                    active={sortingActive}>
-                    {renderSorting()}
-                </DropDown>
+                <ClickOutside
+                    behaviorfunc={() => {
+                        activeFilter(false)
+                    }}>
+                    <DropDown
+                        label={'Filter'}
+                        action={() => activeFilter(!filterActive)}
+                        active={filterActive}>
+                        {renderFilter()}
+                    </DropDown>
+                </ClickOutside>
+                <ClickOutside
+                    behaviorfunc={() => {
+                        activeSorting(false)
+                    }}>
+                    <DropDown
+                        label="Urutkan"
+                        action={() => activeSorting(!sortingActive)}
+                        active={sortingActive}>
+                        {renderSorting()}
+                    </DropDown>
+                </ClickOutside>
             </div>
         </div>
     )

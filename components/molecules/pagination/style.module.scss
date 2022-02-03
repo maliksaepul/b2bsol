@@ -20,10 +20,17 @@
             color: #fff;
         }
 
+        &.nav {
+            background-color: $primary;
+            font-weight: bold;
+            color: #fff;
+        }
+
         &.disabled {
             background-color: $stroke;
             border: 1px solid $stroke;
             color: $grey-1;
+            font-weight: bold;
         }
     }
 }
