@@ -14,13 +14,13 @@ import Dashboard from '@/hoc/layouts/dashboard'
 
 const App = ({ Component, pageProps }) => {
     const meta = {
-        title: 'Inspigo',
-        image: 'https://cdn.inspigo.id/public/cover/meta-image.png',
+        title: '#JadiLebihSiap bersama Inspigo',
+        image: '/meta.png',
         description:
-            'Dapatkan inspirasi & skill baru lewat berbagai topik menarik, kapan, dan di mana saja',
+            'Kembangkan dirimu bersama Inspigo lewat konten pengembangan diri dan karier agar #JadiLebihSiap hadapi masa depan.',
         keywords:
-            'inspigo, podcast, audio playbook, video on demand, jadi lebih siap',
-        url: 'https://inspigo.id',
+            '#jadilebihsiap, inspigo, podcast, audio learning, live learning, inspibook',
+        url: 'https://member.inspigo.id',
     }
 
     return (
