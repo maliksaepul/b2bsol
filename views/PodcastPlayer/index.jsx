@@ -18,7 +18,7 @@ const PodcastPlayer = ({ alias, relatedPodcast, loading }) => {
                     <EmbedPlayer
                         src={`${PLAYER}/${alias}?token=${localStorage.getItem(
                             LOCAL_STORAGE.REFRESH_TOKEN
-                        )}`}
+                        )}&hide-header=1&hide-footer=1`}
                     />
                 </Section>
                 <Section>

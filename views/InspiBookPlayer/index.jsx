@@ -18,7 +18,7 @@ const InspiBookPlayer = ({ alias, relatedInspibook, path, loading }) => {
                     <EmbedPlayer
                         src={`${PLAYER}/HBYEYAQZZP?hide-header=1&hide-footer=1&token=${localStorage.getItem(
                             LOCAL_STORAGE.REFRESH_TOKEN
-                        )}`}
+                        )}&hide-header=1&hide-footer=1`}
                     />
                 </Section>
                 <Section>
