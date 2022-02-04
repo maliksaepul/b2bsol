@@ -1,0 +1,87 @@
+@import './colors';
+@import './typo';
+@import './animation';
+@import './text';
+@import './spacing';
+@import './background';
+@import './fonts';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    font-family: $font;
+    background-color: $secondary;
+    position: relative;
+    min-height: 100vh;
+}
+
+main {
+    padding-bottom: 50px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card_skeleton {
+    min-width: 18rem;
+    height: 25rem;
+    background-color: $stroke;
+    border-radius: 1.25rem;
+    margin-left: 1rem;
+    box-shadow: 0 4px 10px 0 rgba($stroke, 0.4);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -9.375rem;
+        top: 0;
+        height: 100%;
+        width: 9.375rem;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            $white 50%,
+            transparent 100%
+        );
+        animation: skeletonpalceholder 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    // box-shadow: inset 0 0 5px grey;
+    border-radius: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
+
+:root {
+    color-scheme: #fff;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

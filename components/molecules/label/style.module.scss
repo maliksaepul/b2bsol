@@ -1,0 +1,24 @@
+@import 'styles/mixins';
+.label {
+    margin-bottom: 2rem;
+    @include media-max-width($mobile-breakpoint) {
+        margin-bottom: 1rem;
+    }
+
+    &_headline {
+        margin-bottom: 1rem;
+    }
+
+    &_lg {
+        font-size: 1.25rem;
+    }
+    &_sm {
+        font-size: 0.6875;
+    }
+    &_right {
+        text-align: right;
+    }
+    &_center {
+        text-align: center;
+    }
+}

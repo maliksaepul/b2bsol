@@ -1,0 +1,36 @@
+@import 'styles/colors';
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-top: 1rem;
+    li:not(:first-child) {
+        margin-left: 0.5rem;
+    }
+    &_button {
+        border: 1px solid $primary;
+        background-color: #fff;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.8rem;
+        cursor: pointer;
+
+        &.primary {
+            background-color: $primary;
+            color: #fff;
+        }
+
+        &.nav {
+            background-color: $primary;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        &.disabled {
+            background-color: $stroke;
+            border: 1px solid $stroke;
+            color: $grey-1;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@import 'styles/colors';
+@import 'styles/mixins';
+.inputgroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-height: 1.25rem;
+    background: #ffffff;
+    border: 1px solid $stroke;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    &_illu {
+        width: 24px;
+        height: 24px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    input {
+        border: none;
+        border-radius: unset;
+        outline: none;
+        padding: 0 1.8rem;
+        flex-grow: 1;
+
+        @include media-max-width($mobile-breakpoint) {
+            padding: 0.5rem;
+        }
+    }
+}

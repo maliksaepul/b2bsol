@@ -1,0 +1,23 @@
+.modal {
+    &_illu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_title {
+        text-align: center;
+        padding: 0 0 1.25rem 0;
+    }
+
+    &_description {
+        text-align: center;
+        padding: 0 0 1.25rem 0;
+    }
+
+    &_cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,1 +1,3 @@
-# inspigo-b2b-dashboard
+# Inspigo Business
+
+lorem ipsum

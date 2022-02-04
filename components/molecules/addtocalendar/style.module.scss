@@ -1,0 +1,67 @@
+@import 'styles/colors';
+.addtocalendar {
+    position: relative;
+    z-index: 14;
+    &_button {
+        display: flex;
+        background-color: $primary;
+        border-radius: 2.5rem;
+        min-height: 2.5rem;
+        padding: 0.5rem 1rem;
+        color: #fff;
+    }
+
+    &_dropdown {
+        display: none;
+        &.addtocalendar_dropdown_active {
+            border: 1px solid $primary;
+            display: block;
+            border-radius: 1.25rem;
+            position: absolute;
+            bottom: 3.5rem;
+            left: 0;
+            background-color: #fff;
+            width: 100%;
+            padding: 1rem;
+            filter: drop-shadow(0px 4px 2.5rem rgba(40, 40, 40, 0.1));
+        }
+    }
+
+    .chevron {
+        &_up {
+            transform: rotate(180deg);
+            transition: rotate 1s;
+        }
+
+        &_down {
+            transform: rotate(0deg);
+            transition: rotate 1s;
+        }
+
+        &_up,
+        &_down {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0.5rem;
+        }
+    }
+}
+
+.list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem;
+
+    &_illu {
+        max-width: 1.875rem;
+        max-height: 1.875rem;
+        width: 100%;
+        height: auto;
+    }
+
+    &_link {
+        margin-left: 1rem;
+    }
+}

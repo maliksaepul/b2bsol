@@ -1,0 +1,12 @@
+@import 'styles/mixins';
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    &_nav {
+        @include media-max-width($mobile-breakpoint) {
+            display: none;
+        }
+    }
+}

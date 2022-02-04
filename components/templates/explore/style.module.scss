@@ -1,0 +1,13 @@
+@import 'styles/mixins';
+.explore {
+    padding: 2.5rem;
+    background-color: #fff;
+    border-radius: 1.25rem;
+    margin-bottom: 1rem;
+    @include global-radius();
+    filter: drop-shadow(0px 4px 2.5rem rgba(40, 40, 40, 0.1));
+}
+
+.cta {
+    padding-bottom: 2rem;
+}

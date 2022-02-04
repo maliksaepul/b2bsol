@@ -1,0 +1,53 @@
+@import 'styles/mixins';
+.masterCourse {
+    display: flex;
+    align-items: center;
+    @include media-max-width($mobile-breakpoint) {
+        flex-direction: column;
+    }
+    &_card {
+        padding: 1.25rem;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 31.25rem;
+
+        &_dec1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            @include media-max-width($mobile-breakpoint) {
+                width: 9.5rem;
+                height: 9.5rem;
+                right: -8vw;
+            }
+        }
+
+        &_dec2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            @include media-max-width($mobile-breakpoint) {
+                width: 6.5rem;
+                height: 6.5rem;
+                left: -19vw;
+            }
+        }
+    }
+    &_item {
+        flex: 1 1 50%;
+    }
+    &_courses {
+        width: 50%;
+        max-width: 31.25rem;
+
+        @include media-max-width($mobile-breakpoint) {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

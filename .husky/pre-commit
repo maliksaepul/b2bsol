@@ -1,0 +1,24 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo 'Checking your code before committing...'
+
+# Check prettier
+npm run check-format || (
+    echo "Prettier check failed. Please $(tput bold)npm run format$(tput sgr0) and try to commit again";
+    false;
+)
+
+# Check code standards
+npm run lint || (
+    echo 'ESLint check failed. Fix your code by making the required changes listed above and try to commit again';
+    false;
+)
+
+echo 'Trying to build...'
+npm run build || (
+    echo 'next build failed. Check the errors above';
+    false;
+)
+
+echo 'Committing...'

@@ -1,0 +1,28 @@
+@import 'styles/colors';
+@import 'styles/mixins';
+.filter {
+    position: absolute;
+    top: 2.25rem;
+    right: 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: $stroke;
+    width: 31.25rem;
+    border: 1px solid $secondary-stroke;
+    z-index: 5;
+
+    &_header {
+        padding: 1rem 0;
+    }
+
+    @include media-max-width($mobile-breakpoint) {
+        width: 100%;
+    }
+
+    &_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(7rem, 13rem));
+        grid-gap: 1rem;
+        justify-content: center;
+    }
+}

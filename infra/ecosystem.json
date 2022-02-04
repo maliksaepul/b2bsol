@@ -1,0 +1,20 @@
+{
+    "deploy": {
+        "staging": {
+            "user": "ubuntu",
+            "host": "inspigo-staging",
+            "ref": "origin/develop",
+            "repo": "git@github.com:inspigo/inspigo-new-cms.git",
+            "path": "/home/ubuntu/inspigo-new-cms",
+            "post-deploy": "nvm use 14 && npm install && npm run build && nvm use 6 && pm2 startOrGracefulReload staging.json --env staging"
+        },
+        "production": {
+            "user": "ubuntu",
+            "host": "inspigo-frontend",
+            "ref": "origin/master",
+            "repo": "git@github.com:inspigo/inspigo-new-cms.git",
+            "path": "/home/ubuntu/inspigo-new-cms",
+            "post-deploy": "nvm use 14 && npm install && npm run build && nvm use 6 && pm2 startOrGracefulReload production.json --env production"
+        }
+    }
+}

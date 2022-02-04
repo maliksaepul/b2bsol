@@ -1,0 +1,13 @@
+@import 'styles/mixins';
+.player {
+    display: flex;
+    justify-content: center;
+    & > iframe {
+        width: 960px;
+        height: 860px;
+        @include media-max-width($tablet-breakpoint) {
+            width: 100%;
+            height: 980px;
+        }
+    }
+}

@@ -1,0 +1,181 @@
+// Mixins
+@import 'styles/mixins';
+
+$object-size: 10rem;
+$tablet-object-size: 7.5rem;
+$mobile-object-size: 5.97rem;
+
+$gap-between-object: 1.4rem;
+$tablet-gap-between-object: 1rem;
+$mobile-gap-between-object: 0.83rem;
+$onload-cover: #ffffff;
+
+$total-object: 9;
+
+.marquee {
+    width: 100%;
+    overflow-x: hidden;
+
+    .container {
+        display: flex;
+        animation-name: scrolling;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        @include media-max-width($tablet-breakpoint) {
+            animation-name: tablet-scrolling;
+        }
+
+        @include media-max-width($mobile-breakpoint) {
+            animation-name: mobile-scrolling;
+        }
+
+        .object {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 calc(#{$gap-between-object}/ 2);
+            cursor: pointer;
+            @include set-cover-size($object-size);
+
+            @include media-max-width($tablet-breakpoint) {
+                margin: 0 calc(#{$tablet-gap-between-object}/ 2);
+                @include set-cover-size($tablet-object-size);
+            }
+
+            @include media-max-width($mobile-breakpoint) {
+                margin: 0 calc(#{$mobile-gap-between-object}/ 2);
+                @include set-cover-size($mobile-object-size);
+            }
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@function calculate-marquee-width(
+    $object-size,
+    $gap-between-object,
+    $total-object
+) {
+    @return calc(
+        -1 * ((#{$object-size} + #{$gap-between-object}) * #{$total-object})
+    );
+}
+
+@function tablet-calculate-marquee-width(
+    $tablet-object-size,
+    $tablet-gap-between-object,
+    $total-object
+) {
+    @return calc(
+        -1 * ((#{$tablet-object-size} + #{$tablet-gap-between-object}) * #{$total-object})
+    );
+}
+
+@function mobile-calculate-marquee-width(
+    $mobile-object-size,
+    $mobile-gap-between-object,
+    $total-object
+) {
+    @return calc(
+        -1 * ((#{$mobile-object-size} + #{$mobile-gap-between-object}) * #{$total-object})
+    );
+}
+
+@keyframes scrolling {
+    0% {
+        -moz-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -moz-transform: translateX(
+            calculate-marquee-width(
+                $object-size,
+                $gap-between-object,
+                $total-object
+            )
+        );
+        -webkit-transform: translateX(
+            calculate-marquee-width(
+                $object-size,
+                $gap-between-object,
+                $total-object
+            )
+        );
+        transform: translateX(
+            calculate-marquee-width(
+                $object-size,
+                $gap-between-object,
+                $total-object
+            )
+        );
+    }
+}
+
+@keyframes tablet-scrolling {
+    0% {
+        -moz-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -moz-transform: translateX(
+            tablet-calculate-marquee-width(
+                $tablet-object-size,
+                $tablet-gap-between-object,
+                $total-object
+            )
+        );
+        -webkit-transform: translateX(
+            tablet-calculate-marquee-width(
+                $tablet-object-size,
+                $tablet-gap-between-object,
+                $total-object
+            )
+        );
+        transform: translateX(
+            tablet-calculate-marquee-width(
+                $tablet-object-size,
+                $tablet-gap-between-object,
+                $total-object
+            )
+        );
+    }
+}
+
+@keyframes mobile-scrolling {
+    0% {
+        -moz-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -moz-transform: translateX(
+            mobile-calculate-marquee-width(
+                $mobile-object-size,
+                $mobile-gap-between-object,
+                $total-object
+            )
+        );
+        -webkit-transform: translateX(
+            mobile-calculate-marquee-width(
+                $mobile-object-size,
+                $mobile-gap-between-object,
+                $total-object
+            )
+        );
+        transform: translateX(
+            mobile-calculate-marquee-width(
+                $mobile-object-size,
+                $mobile-gap-between-object,
+                $total-object
+            )
+        );
+    }
+}

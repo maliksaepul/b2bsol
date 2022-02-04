@@ -1,0 +1,50 @@
+@import 'styles/colors';
+.share {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    &.center {
+        justify-content: center;
+        align-items: center;
+    }
+    &.left {
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &.right {
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 16.78rem;
+    }
+}
+
+.rounded {
+    border-radius: 50%;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.whatsapp {
+    background-color: #33d26b;
+}
+.telegram {
+    background-color: #37aee2;
+}
+
+.facebook {
+    background-color: #1877f2;
+}
+.twitter {
+    background-color: #1da1f2;
+}

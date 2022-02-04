@@ -1,0 +1,29 @@
+@import 'styles/colors';
+
+.text-primary {
+    color: $primary;
+}
+
+.text-secondary {
+    color: $stroke;
+}
+
+.text-disabled {
+    color: $text-stroke;
+}
+
+.text-black-1 {
+    color: $black-1;
+}
+
+.text-black-2 {
+    color: $black-2;
+}
+
+.text-white {
+    color: $white;
+}
+
+.text-danger {
+    color: $secondary-red;
+}

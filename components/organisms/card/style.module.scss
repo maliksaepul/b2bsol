@@ -1,0 +1,22 @@
+.card {
+    position: relative;
+    width: 100%;
+    &.center {
+        text-align: center;
+    }
+    &_header {
+        .card_title {
+            padding: 1rem;
+        }
+        .card_illu {
+            padding: 1rem;
+        }
+    }
+    &_body {
+        padding: 1rem;
+        .cta {
+            padding: 1rem 0;
+            display: flex;
+        }
+    }
+}

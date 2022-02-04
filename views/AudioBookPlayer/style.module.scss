@@ -1,0 +1,16 @@
+@import 'styles/colors';
+.container {
+    background-color: $stroke;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+
+    &_container {
+        width: 100%;
+        padding: 1rem;
+        max-width: 960px;
+        background-color: #fff;
+    }
+}

@@ -1,0 +1,71 @@
+@import 'styles/mixins';
+@import 'styles/colors';
+.nav {
+    min-height: 3.5rem;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    background-color: $stroke;
+    font-size: 13px;
+    overflow-x: auto;
+    @include verticaless-gap();
+
+    &_left {
+        justify-content: flex-start;
+    }
+
+    &_right {
+        justify-content: flex-end;
+    }
+
+    &_center {
+        justify-content: center;
+    }
+
+    &_column {
+        flex-direction: column;
+        padding: 1rem !important;
+        .nav_item {
+            width: 100%;
+            margin: unset !important;
+        }
+    }
+
+    &_item {
+        height: inherit;
+        position: relative;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        &.center {
+            align-items: center;
+            justify-content: center;
+        }
+        &.left {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        &.right {
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+        margin: 0 0.5rem;
+    }
+
+    &_item:first-child {
+        margin-left: unset;
+    }
+    &_item:last-child {
+        margin-right: unset;
+    }
+    &_link {
+        padding: 0.75rem 0;
+        position: relative;
+        z-index: 10;
+    }
+    &_link:hover::before {
+        color: white;
+    }
+}
