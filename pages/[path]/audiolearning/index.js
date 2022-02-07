@@ -15,9 +15,11 @@ const AudioLearningPage = ({
 }) => {
     useEffect(() => {
         fetchPodcast(path.path, { limit: defaultContentLimit, skip: 0 })
+        console.log('haii')
     }, [])
 
     const handleFetchPodcast = skip => {
+        console.log('hallo')
         fetchPodcast(path.path, { limit: defaultContentLimit, skip: skip })
     }
 
