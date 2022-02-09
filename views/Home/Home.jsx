@@ -36,7 +36,7 @@ const Home = ({ account, path }) => {
         <>
             <Layout>
                 <Section>
-                    <About title={path.name} subtitle={'Learning Platform'} />
+                    <About title={path.name} />
                 </Section>
                 {/* <Section>
                     <Explore user={{ name: account.name }} path={path.path} />
@@ -53,7 +53,7 @@ const Home = ({ account, path }) => {
 
                 <PodcastRecomended
                     path={path.path}
-                    title={'Recommended Podcast'}
+                    title={'Recommended Podcasts'}
                     description={
                         'Kembangkan dirimu melalui beragam konten pembelajaran berbasis audio yang dapat kamu dengarkan kapan pun dan di mana pun!'
                     }

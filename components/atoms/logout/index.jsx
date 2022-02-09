@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import styles from './style.module.scss'
 const Logout = ({ fetchRevokeUser }) => {
     return (
         <div
-            className="text-danger cursor-pointer"
+            className="text-danger cursor-pointer "
             onClick={() => fetchRevokeUser()}>
-            Logout
+            <span className={styles.logout}>Logout</span>
         </div>
     )
 }

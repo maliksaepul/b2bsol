@@ -40,7 +40,7 @@ const Schedule = ({ fetchSchedules, events, organization, path }) => {
     return (
         <div className={styles.schedule}>
             <Label
-                title={'Schedule'}
+                title={'Event Schedule'}
                 description={
                     'Lihat jadwal dan detail webinar di sini! Kelas akan dibuka setengah jam sebelum acara dimulai.'
                 }></Label>
