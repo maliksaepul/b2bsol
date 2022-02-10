@@ -3,6 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import routes from '@/utils/routes'
+import Fade from 'react-reveal/Fade'
 
 /**
  * Components
@@ -39,26 +40,35 @@ const Home = ({ account, path }) => {
                     <Hero title={path.name} />
                 </div>
                 <div className="p-x-g">
-                    <Schedule />
+                    <Fade>
+                        <Schedule />
+                    </Fade>
                 </div>
 
                 <Section>
-                    <Achievment />
+                    <Fade>
+                        <Achievment />
+                    </Fade>
                 </Section>
 
-                <PodcastRecomended
-                    path={path.path}
-                    title={'Recommended Podcasts'}
-                    description={
-                        'Kembangkan dirimu melalui beragam konten pembelajaran berbasis audio yang dapat kamu dengarkan kapan pun dan di mana pun!'
-                    }
-                    cta={{
-                        label: 'Eksplor',
-                        url: routes.audiolearning(path.path),
-                    }}
-                />
+                <Fade>
+                    <PodcastRecomended
+                        path={path.path}
+                        title={'Recommended Podcasts'}
+                        description={
+                            'Kembangkan dirimu melalui beragam konten pembelajaran berbasis audio yang dapat kamu dengarkan kapan pun dan di mana pun!'
+                        }
+                        cta={{
+                            label: 'Eksplor',
+                            url: routes.audiolearning(path.path),
+                        }}
+                    />
+                </Fade>
+
                 <Section>
-                    <InspiBook path={path.path} />
+                    <Fade>
+                        <InspiBook path={path.path} />
+                    </Fade>
                 </Section>
             </Layout>
         </>

@@ -29,7 +29,7 @@ const SkeletonContent = dynamic(() =>
 
 const Meditasi = ({ podcast, onFetchData, path, loading }) => {
     const renderAudioCard = () => {
-        if (loading) {
+        if (loading.state) {
             return <SkeletonContent />
         } else {
             return podcast.results.map((c, i) => (
@@ -56,7 +56,7 @@ const Meditasi = ({ podcast, onFetchData, path, loading }) => {
                             type: TOOLBAR_PODCAST,
                         }}
                     />
-                    {podcast?.results?.length === 0 && !loading ? (
+                    {podcast?.results?.length === 0 && !loading.state ? (
                         <NoContent />
                     ) : (
                         <>
@@ -83,7 +83,7 @@ Meditasi.propTypes = {
     podcast: PropTypes.any,
     onFetchData: PropTypes.func,
     path: PropTypes.any,
-    loading: PropTypes.bool,
+    loading: PropTypes.object,
 }
 
 export default Meditasi

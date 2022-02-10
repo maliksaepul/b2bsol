@@ -26,7 +26,7 @@ const InspiBookPlayer = ({ alias, relatedInspibook, path, loading }) => {
                         <div className={styles.content_container}>
                             <Label title="Similar Audio PlayBook" />
                             <Carousel>
-                                {loading ? (
+                                {loading.state ? (
                                     <SkeletonContent />
                                 ) : (
                                     relatedInspibook.map((c, i) => (
@@ -53,7 +53,7 @@ InspiBookPlayer.propTypes = {
     alias: PropTypes.string,
     relatedInspibook: PropTypes.array,
     path: PropTypes.any,
-    loading: PropTypes.bool,
+    loading: PropTypes.object,
 }
 
 export default InspiBookPlayer

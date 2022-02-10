@@ -12,7 +12,7 @@ export const getAccount = payload => {
 }
 
 export const fetchAccount = () => async dispatch => {
-    dispatch(apiStart())
+    dispatch(apiStart({ message: 'Mendapatkan Akun' }))
 
     try {
         const request = new Request(null, null, true)
@@ -24,8 +24,9 @@ export const fetchAccount = () => async dispatch => {
         } else {
             window.open(routes.signIn('/'), '_self')
         }
-        dispatch(apiEnd())
     } catch (e) {
         return e
+    } finally {
+        dispatch(apiEnd())
     }
 }

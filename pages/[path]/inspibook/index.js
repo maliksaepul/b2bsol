@@ -35,7 +35,7 @@ InspiBookPage.propTypes = {
     fetchInspibook: PropTypes.func,
     inspibook: PropTypes.any,
     path: PropTypes.any,
-    loading: PropTypes.bool,
+    loading: PropTypes.object,
 }
 const mapStateToProps = ({ inspibook }) => ({ inspibook })
 

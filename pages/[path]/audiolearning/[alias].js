@@ -31,7 +31,7 @@ PodcastPlayerPage.propTypes = {
     fetchRelatedPodcast: PropTypes.func.isRequired,
     relatedPodcast: PropTypes.array,
     path: PropTypes.any,
-    loading: PropTypes.bool,
+    loading: PropTypes.object,
 }
 const mapStateToProps = ({ relatedPodcast, loading }) => ({
     relatedPodcast,

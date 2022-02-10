@@ -32,7 +32,7 @@ InspiBookPlayerPage.propTypes = {
     fetchRelatedInspibook: PropTypes.func.isRequired,
     relatedInspibook: PropTypes.array,
     path: PropTypes.any,
-    loading: PropTypes.bool,
+    loading: PropTypes.object,
 }
 const mapStateToProps = ({ relatedInspibook, loading }) => ({
     relatedInspibook,

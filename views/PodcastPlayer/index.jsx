@@ -26,7 +26,7 @@ const PodcastPlayer = ({ alias, relatedPodcast, loading }) => {
                         <div className={styles.content_container}>
                             <Label title="Related Podcast" />
                             <Carousel>
-                                {loading ? (
+                                {loading.state ? (
                                     <SkeletonContent />
                                 ) : (
                                     relatedPodcast.map((c, i) => (
@@ -49,7 +49,7 @@ const PodcastPlayer = ({ alias, relatedPodcast, loading }) => {
 PodcastPlayer.propTypes = {
     alias: PropTypes.string,
     relatedPodcast: PropTypes.array,
-    loading: PropTypes.bool,
+    loading: PropTypes.object,
 }
 
 export default PodcastPlayer

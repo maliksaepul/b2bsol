@@ -40,7 +40,7 @@ MeditasiPage.propTypes = {
     podcast: PropTypes.any,
     account: PropTypes.any,
     path: PropTypes.any,
-    loading: PropTypes.bool,
+    loading: PropTypes.object,
 }
 const mapStateToProps = ({ podcast }) => ({ podcast })
 

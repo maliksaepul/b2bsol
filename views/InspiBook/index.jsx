@@ -16,7 +16,7 @@ import NoContent from '@/components/templates/nocontent'
 
 const InspiBook = ({ inspibook, onFetchData, path, loading }) => {
     const renderAudioCard = () => {
-        if (loading) {
+        if (loading.state) {
             return <SkeletonContent />
         } else {
             return inspibook.results.map((c, i) => (
@@ -43,7 +43,7 @@ const InspiBook = ({ inspibook, onFetchData, path, loading }) => {
                             type: TOOLBAR_INSPIBOOK,
                         }}
                     />
-                    {inspibook?.results?.length === 0 && !loading ? (
+                    {inspibook?.results?.length === 0 && !loading.state ? (
                         <NoContent />
                     ) : (
                         <>
@@ -68,7 +68,7 @@ InspiBook.propTypes = {
     inspibook: PropTypes.any,
     onFetchData: PropTypes.func,
     path: PropTypes.any,
-    loading: PropTypes.bool,
+    loading: PropTypes.object,
 }
 
 export default InspiBook

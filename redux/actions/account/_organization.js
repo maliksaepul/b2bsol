@@ -12,7 +12,7 @@ export const getOrganization = payload => {
 }
 
 export const fetchOrganization = () => async dispatch => {
-    dispatch(apiStart())
+    dispatch(apiStart({ message: 'Mendapatkan Akses' }))
     try {
         const request = new Request(null, null, true)
         const response = {

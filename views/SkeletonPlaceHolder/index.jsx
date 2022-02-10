@@ -1,3 +1,4 @@
+import Loader from '@/containers/components/Loader'
 import React from 'react'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -5,6 +6,7 @@ import styles from './style.module.scss'
 const SkeletonPlaceHolder = () => {
     return (
         <div className={styles.container}>
+            <Loader />
             <div className={styles._header}>
                 <div className={styles._navbar}>
                     <div className={styles._navbar_item}>

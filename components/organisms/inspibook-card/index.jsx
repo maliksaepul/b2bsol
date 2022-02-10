@@ -42,7 +42,7 @@ InspiBookCard.propTypes = {
     }).isRequired,
     withLabel: PropTypes.bool,
     path: PropTypes.any,
-    loading: PropTypes.bool,
+    loading: PropTypes.object,
 }
 
 InspiBookCard.defaultProps = {

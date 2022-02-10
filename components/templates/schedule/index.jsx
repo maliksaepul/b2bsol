@@ -44,29 +44,31 @@ const Schedule = ({ fetchSchedules, events, organization, path }) => {
                 description={
                     'Lihat jadwal dan detail webinar di sini! Kelas akan dibuka setengah jam sebelum acara dimulai.'
                 }></Label>
-            <Carousel>
-                {events.length === 0
-                    ? NoContent(path.path)
-                    : events.map((event, key) => {
-                          return (
-                              <CardEvent
-                                  key={key}
-                                  banner={event.cover}
-                                  event={{
-                                      title: event.name,
-                                      content: event.description,
-                                      date: event.dateevent,
-                                  }}
-                                  category={event.category}
-                                  type={event.type}
-                                  start={event.datetime}
-                                  end={event.activedatetime}
-                                  cta={event.actions}
-                                  variant={'column'}
-                              />
-                          )
-                      })}
-            </Carousel>
+            {events.length === 0 ? (
+                NoContent(path.path)
+            ) : (
+                <Carousel>
+                    {events.map((event, key) => {
+                        return (
+                            <CardEvent
+                                key={key}
+                                banner={event.cover}
+                                event={{
+                                    title: event.name,
+                                    content: event.description,
+                                    date: event.dateevent,
+                                }}
+                                category={event.category}
+                                type={event.type}
+                                start={event.datetime}
+                                end={event.activedatetime}
+                                cta={event.actions}
+                                variant={'column'}
+                            />
+                        )
+                    })}
+                </Carousel>
+            )}
         </div>
     )
 }

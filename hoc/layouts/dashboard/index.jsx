@@ -21,7 +21,7 @@ Dashboard.propTypes = {
     children: PropTypes.any,
     account: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     path: PropTypes.any,
-    loading: PropTypes.bool,
+    loading: PropTypes.object,
 }
 
 const mapStateToProps = ({ loading }) => ({ loading })

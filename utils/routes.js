@@ -63,7 +63,7 @@ const routes = {
         BASEURL +
         pathname +
         '&withToken=1' +
-        '&origin=business',
+        '&origin=ifb_login_desktop',
 }
 
 export default routes

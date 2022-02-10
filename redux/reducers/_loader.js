@@ -1,11 +1,17 @@
 import { API_START, API_STOP } from '../types'
 
-const LoaderReducer = (state = false, action) => {
+const initialState = {
+    state: false,
+    message: 'Mempersiapkan Platform',
+}
+
+const LoaderReducer = (state = initialState, action) => {
     switch (action.type) {
         case API_START:
-            return (state = true)
+            return { ...initialState, state: true, ...action.payload }
         case API_STOP:
-            return (state = false)
+            return { ...initialState, state: false, ...action.payload }
+
         default:
             return state
     }
