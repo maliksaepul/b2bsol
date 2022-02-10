@@ -10,8 +10,6 @@
     width: 31.25rem;
     border: 1px solid $secondary-stroke;
     z-index: 5;
-    max-height: 18.75rem;
-    overflow: auto;
 
     &_header {
         padding: 1rem 0;
@@ -22,6 +20,8 @@
         min-width: 200px;
         left: 0;
         right: unset;
+        max-height: 22.5rem;
+        overflow: auto;
     }
 
     &_container {
