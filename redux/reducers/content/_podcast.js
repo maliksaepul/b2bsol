@@ -1,12 +1,7 @@
 import { GET_PODCAST } from '../../types'
-const initialState = [
-    {
-        title: '',
-        deeplink: '',
-        cover: '',
-        author: '',
-    },
-]
+const initialState = {
+    results: [],
+}
 
 const PodcastReducer = (state = initialState, action) => {
     switch (action.type) {

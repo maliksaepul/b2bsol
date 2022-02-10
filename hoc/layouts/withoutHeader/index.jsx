@@ -29,11 +29,9 @@ const withoutHeader = ({ children, closeModal, modalClose, path }) => {
             <Modal close={showModal}>
                 <GeneralModal
                     illu={'/images/loginsign_1.png'}
-                    title={`Selamat datang di ${
-                        path.name || 'Inspigo'
-                    } Learning Platform !`}
+                    title={`Selamat datang di Inspigo For Business!`}
                     description={
-                        'Kembangkan diri bersama dan nikmati ragam fitur pembelajaran menarik dengan berbagai topik.'
+                        'Dapatkan inspirasi, pengetahuan dan pengalaman belajar yang lengkap melalui satu platform.'
                     }
                     ctaLabel="Eksplor"
                     cta={() => {

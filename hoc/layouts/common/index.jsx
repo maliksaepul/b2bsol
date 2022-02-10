@@ -24,23 +24,17 @@ const common = props => {
         <>
             <Header />
             <HeaderBackground
-                foreground={
-                    'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/fg_J8_de1kDFkp.png?updatedAt=1636427732547'
-                }
-                foregroundMobile={
-                    'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/mobile_version_A1N-lWQRMTf.png?updatedAt=1636427723105'
-                }
+                foreground={'/images/header/home/bg_ds.png'}
+                foregroundMobile={'/images/header/home/bg_res.png'}
             />
             <main className={styles.main}>{props.children}</main>
             <Footer />
             <Modal close={showModal}>
                 <GeneralModal
                     illu={'/images/loginsign_1.png'}
-                    title={`Selamat datang di ${
-                        props.path.name || 'Inspigo'
-                    } Learning Platform !`}
+                    title={`Selamat datang di Inspigo For Business!`}
                     description={
-                        'Kembangkan diri bersama dan nikmati ragam fitur pembelajaran menarik dengan berbagai topik.'
+                        'Dapatkan inspirasi, pengetahuan dan pengalaman belajar yang lengkap melalui satu platform.'
                     }
                     ctaLabel="Eksplor"
                     cta={() => {

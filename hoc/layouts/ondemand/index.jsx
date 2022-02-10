@@ -23,12 +23,8 @@ const ondemand = ({ children, closeModal, modalClose, account, path }) => {
         <>
             <Header />
             <HeaderBackground
-                foreground={
-                    'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/ondemand_fg_87vo1LsOhqw.png?updatedAt=1636432770590'
-                }
-                foregroundMobile={
-                    'https://ik.imagekit.io/145agqxu54x/b2bsol-tes/ondemand_mobile_llT-uKq67II.png?updatedAt=1636428541030'
-                }
+                foreground={'/images/header/ondemand/bg_ds.png'}
+                foregroundMobile={'/images/header/ondemand/bg_res.png'}
                 height={'25rem'}
             />
             <main className={styles.main}>{children}</main>
@@ -36,11 +32,9 @@ const ondemand = ({ children, closeModal, modalClose, account, path }) => {
             <Modal close={showModal}>
                 <GeneralModal
                     illu={'/images/loginsign_1.png'}
-                    title={`Selamat datang di ${
-                        path.name || 'Inspigo'
-                    } Learning Platform !`}
+                    title={`Selamat datang di Inspigo For Business!`}
                     description={
-                        'Kembangkan diri bersama dan nikmati ragam fitur pembelajaran menarik dengan berbagai topik.'
+                        'Dapatkan inspirasi, pengetahuan dan pengalaman belajar yang lengkap melalui satu platform.'
                     }
                     ctaLabel="Eksplor"
                     cta={() => {

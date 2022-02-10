@@ -22,11 +22,13 @@ const Sidebar = ({
                 <aside className={styles.sidebar}>
                     <div className={styles.sidebar_head}>
                         <div className={styles.sidebar_cover}>
-                            {usercover ? (
-                                <img src={usercover} alt="cover" />
-                            ) : (
-                                'S'
-                            )}
+                            <img
+                                src={
+                                    usercover ||
+                                    'https://cdn.inspigo.id/public/cover/default-profile/avatar1.png'
+                                }
+                                alt="cover"
+                            />
                         </div>
                         <div>
                             <h5>{username || 'John Due'}</h5>
@@ -59,18 +61,10 @@ const Sidebar = ({
                                         label: 'InspiBook',
                                         url: routes.inspibook(path),
                                     },
-                                    // {
-                                    //     label: 'video learning',
-                                    //     url: routes.videolearning(path),
-                                    // },
-                                    // {
-                                    //     label: 'audio playbook',
-                                    //     url: routes.audioplaybook(path),
-                                    // },
-                                    // {
-                                    //     label: 'LeaderBoard',
-                                    //     url: routes.leaderboard(path),
-                                    // },
+                                    {
+                                        label: 'Meditasi',
+                                        url: routes.meditasi(path.path),
+                                    },
                                 ]}
                             />
                         </div>

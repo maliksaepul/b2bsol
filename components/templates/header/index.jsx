@@ -26,18 +26,10 @@ const Header = ({ path }) => {
                                 label: 'InspiBook',
                                 url: routes.inspibook(path.path),
                             },
-                            // {
-                            //     label: 'Video Learning',
-                            //     url: routes.videolearning(path.path),
-                            // },
-                            // {
-                            //     label: 'Audio Playbook',
-                            //     url: routes.audioplaybook(path.path),
-                            // },
-                            // {
-                            //     label: 'LeaderBoard',
-                            //     url: routes.leaderboard(path.path),
-                            // },
+                            {
+                                label: 'Meditasi',
+                                url: routes.meditasi(path.path),
+                            },
                         ]}
                         align={'right'}
                     />

@@ -5,7 +5,7 @@ import styles from './style.module.scss'
 const SkeletonPlaceHolder = () => {
     return (
         <div className={styles.container}>
-            <div role="header" className={styles._header}>
+            <div className={styles._header}>
                 <div className={styles._navbar}>
                     <div className={styles._navbar_item}>
                         <p>
@@ -37,7 +37,7 @@ const SkeletonPlaceHolder = () => {
                 </div>
             </div>
 
-            <div role="content" className={styles._about}>
+            <div className={styles._about}>
                 <div className={styles._about_head}>
                     <p>
                         <Skeleton height={'2rem'} width={'20rem'} />
@@ -61,18 +61,18 @@ const SkeletonPlaceHolder = () => {
                     </div>
                 </div>
             </div>
-            <div role="main" className={styles._main}>
-                <div role="content" className={styles._content}>
+            <div className={styles._main}>
+                <div className={styles._content}>
                     <Skeleton height={300} />
                 </div>
-                <div role="content" className={styles._content}>
+                <div className={styles._content}>
                     <Skeleton height={300} />
                 </div>
-                <div role="content" className={styles._content}>
+                <div className={styles._content}>
                     <Skeleton height={300} />
                 </div>
             </div>
-            <div role="footer" className={styles._footer}>
+            <div className={styles._footer}>
                 <Skeleton height={40} />
             </div>
         </div>

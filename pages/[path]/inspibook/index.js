@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 // import InspiBook from '@/views/InspiBook'
 import dynamic from 'next/dynamic'
 import { defaultContentLimit } from '@/utils/constants'
+import Head from 'next/head'
 const InspiBook = dynamic(() => import('@/views/InspiBook'))
 
 const InspiBookPage = ({ inspibook, fetchInspibook, path, loading }) => {
@@ -17,6 +18,9 @@ const InspiBookPage = ({ inspibook, fetchInspibook, path, loading }) => {
     }
     return (
         <>
+            <Head>
+                <title>Inspibook</title>
+            </Head>
             <InspiBook
                 inspibook={inspibook}
                 path={path.path}

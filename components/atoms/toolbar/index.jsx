@@ -45,7 +45,6 @@ const Toolbar = ({
                     onChange={val => {
                         setFilter(val)
                         fetchData({ search, filter: val, sort: sorting }, api)
-                        console.log('hallo')
                         activeFilter(false)
                     }}
                     filter={filter.trim().split(',')}

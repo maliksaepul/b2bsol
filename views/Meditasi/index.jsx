@@ -27,7 +27,7 @@ const SkeletonContent = dynamic(() =>
     import('@/components/templates/skeletoncontent')
 )
 
-const AudioLearning = ({ podcast, onFetchData, path, loading }) => {
+const Meditasi = ({ podcast, onFetchData, path, loading }) => {
     const renderAudioCard = () => {
         if (loading) {
             return <SkeletonContent />
@@ -42,9 +42,9 @@ const AudioLearning = ({ podcast, onFetchData, path, loading }) => {
         <Layout>
             <Section>
                 <About
-                    title={'Audio Learning'}
+                    title={'Ruang Meditasi Inspigo'}
                     subtitle={''}
-                    description={'Pembelajaran berbasis audio yang fleksibel'}
+                    description={'Jadi lebih tenang menjalani hari'}
                     height={'10rem'}
                 />
             </Section>
@@ -79,11 +79,11 @@ const AudioLearning = ({ podcast, onFetchData, path, loading }) => {
     )
 }
 
-AudioLearning.propTypes = {
+Meditasi.propTypes = {
     podcast: PropTypes.any,
     onFetchData: PropTypes.func,
     path: PropTypes.any,
     loading: PropTypes.bool,
 }
 
-export default AudioLearning
+export default Meditasi

@@ -1,0 +1,26 @@
+@import 'styles/mixins';
+.hero {
+    color: #fff;
+    height: 21.5rem;
+    display: flex;
+
+    @include media-max-width($mobile-breakpoint) {
+        flex-direction: column;
+        height: 30rem;
+    }
+
+    &_card,
+    &_illu {
+        flex: 1 1 0;
+    }
+
+    &_card {
+        display: flex;
+        align-items: center;
+    }
+
+    &_illu {
+        display: flex;
+        align-items: flex-end;
+    }
+}

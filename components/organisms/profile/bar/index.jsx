@@ -38,7 +38,13 @@ const ProfileBar = ({
                 }}>
                 <p>Hi, {username} !</p>
                 <div className={styles.profile_cover}>
-                    {usercover ? <img src={usercover} alt="cover" /> : 'S'}
+                    <img
+                        src={
+                            usercover ||
+                            'https://cdn.inspigo.id/public/cover/default-profile/avatar1.png'
+                        }
+                        alt="cover"
+                    />
                 </div>
 
                 <div

@@ -5,17 +5,18 @@ import Card from '@/components/organisms/card'
 import routes from '@/utils/routes'
 import Image from 'next/image'
 import cx from 'classnames'
-const InspiBook = () => {
+const Achievment = () => {
     return (
-        <div className={styles.inspibook}>
-            <div className={styles.inspibook_item}>
-                <div className={styles.inspibook_card}>
+        <div className={styles.achievment}>
+            <div className={styles.achievment_item}>
+                <div className={styles.achievment_card}>
                     <Card
                         title={{
                             type: 'string',
-                            content: 'InspiBook',
+                            content: 'Challenge Yourself',
                         }}
-                        body="<p>Dengarkan dan baca ringkasan buku terbaik</p>"
+                        body="<p>Pengalaman belajarmu semakin seru!
+                        Kumpulkan badge dan selesaikan misi berhadiah.</p>"
                         cta={[
                             {
                                 variant: 'secondary',
@@ -26,9 +27,9 @@ const InspiBook = () => {
                     />
                 </div>
             </div>
-            <div className={cx(styles.inspibook_item, styles.illu)}>
+            <div className={cx(styles.achievment_item, styles.illu)}>
                 <Image
-                    src={'/images/section/inspibook/asset.png'}
+                    src={'/images/section/achievment/asset.png'}
                     width={477}
                     height={362}
                 />
@@ -37,4 +38,4 @@ const InspiBook = () => {
     )
 }
 
-export default InspiBook
+export default Achievment

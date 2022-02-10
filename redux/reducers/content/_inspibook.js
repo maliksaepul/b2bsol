@@ -1,12 +1,7 @@
 import { GET_INSPIBOOK } from '../../types'
-const initialState = [
-    {
-        title: '',
-        deeplink: '',
-        cover: '',
-        author: '',
-    },
-]
+const initialState = {
+    results: [],
+}
 
 const InspibookReducer = (state = initialState, action) => {
     switch (action.type) {

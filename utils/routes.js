@@ -11,6 +11,15 @@ const routes = {
     },
 
     /**
+     * Meditasi Learning
+     * @returns
+     */
+    meditasi: (path, alias) => {
+        if (alias) return `/${path}/meditasi/${alias}`
+        else return `/${path}/meditasi/`
+    },
+
+    /**
      * Audio Learning
      * @returns
      */
@@ -49,7 +58,12 @@ const routes = {
     myBadge: () => MEMBER + '/home/profile/badge',
     myStatistic: () => MEMBER + '/home/profile/statistic',
     signIn: pathname =>
-        MEMBER + '/signin?r=' + BASEURL + pathname + '&withToken=1',
+        MEMBER +
+        '/signin?r=' +
+        BASEURL +
+        pathname +
+        '&withToken=1' +
+        '&origin=business',
 }
 
 export default routes

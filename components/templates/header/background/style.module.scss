@@ -13,6 +13,10 @@
         height: 35rem;
         width: 100%;
         z-index: -2;
+
+        @include media-max-width($mobile-breakpoint) {
+            height: 49rem;
+        }
     }
     &_fg {
         position: relative;

@@ -12,6 +12,7 @@ import { TOOLBAR_INSPIBOOK } from '@/redux/types'
 import SkeletonContent from '@/components/templates/skeletoncontent'
 import Pagination from '@/components/molecules/pagination'
 import { defaultContentLimit } from '@/utils/constants'
+import NoContent from '@/components/templates/nocontent'
 
 const InspiBook = ({ inspibook, onFetchData, path, loading }) => {
     const renderAudioCard = () => {
@@ -42,13 +43,22 @@ const InspiBook = ({ inspibook, onFetchData, path, loading }) => {
                             type: TOOLBAR_INSPIBOOK,
                         }}
                     />
-                    <Grid>{renderAudioCard()}</Grid>
+                    {inspibook?.results?.length === 0 && !loading ? (
+                        <NoContent />
+                    ) : (
+                        <>
+                            <Grid>{renderAudioCard()}</Grid>
+                            <Pagination
+                                pages={
+                                    Number(inspibook.total) /
+                                        defaultContentLimit || 0
+                                }
+                                limit={defaultContentLimit}
+                                toPage={onFetchData}
+                            />
+                        </>
+                    )}
                 </Contents>
-                <Pagination
-                    pages={Number(inspibook.total) / defaultContentLimit || 0}
-                    limit={defaultContentLimit}
-                    toPage={onFetchData}
-                />
             </Section>
         </Layout>
     )
