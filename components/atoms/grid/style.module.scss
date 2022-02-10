@@ -6,6 +6,7 @@
     grid-auto-rows: 1;
     grid-template-rows: 1fr;
     overflow-y: auto;
+    justify-items: center;
 
     @include media-max-width($tablet-breakpoint) {
         grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
