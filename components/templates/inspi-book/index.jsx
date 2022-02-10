@@ -5,7 +5,10 @@ import Card from '@/components/organisms/card'
 import routes from '@/utils/routes'
 import Image from 'next/image'
 import cx from 'classnames'
-const InspiBook = () => {
+import PropTypes from 'prop-types'
+import Button from '@/components/atoms/button'
+import router from 'next/router'
+const InspiBook = ({ path }) => {
     return (
         <div className={styles.inspibook}>
             <div className={styles.inspibook_item}>
@@ -16,14 +19,15 @@ const InspiBook = () => {
                             content: 'InspiBook',
                         }}
                         body="<p>Dengarkan dan baca ringkasan buku terbaik</p>"
-                        cta={[
-                            {
-                                variant: 'secondary',
-                                url: routes.myBadge(),
-                                label: 'Eksplor',
-                            },
-                        ]}
-                    />
+                        cta={[]}>
+                        <div className={styles.cta}>
+                            <Button
+                                variant="secondary"
+                                label="explore"
+                                cta={() => router.push(routes.inspibook(path))}
+                            />
+                        </div>
+                    </Card>
                 </div>
             </div>
             <div className={cx(styles.inspibook_item, styles.illu)}>
@@ -35,6 +39,10 @@ const InspiBook = () => {
             </div>
         </div>
     )
+}
+
+InspiBook.propTypes = {
+    path: PropTypes.string,
 }
 
 export default InspiBook
