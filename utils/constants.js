@@ -6,6 +6,7 @@ export const MEMBER = process.env.MEMBER
 export const PLAYER = process.env.PLAYER
 export const IS_DEVELOPMENT = ENVIRONMENT !== 'production'
 export const ORIGIN = process.env.ORIGIN
+export const GTM = process.env.GTM
 
 export const SERVICE = {
     ACCOUNT: process.env.SERVICE_ACCOUNT,

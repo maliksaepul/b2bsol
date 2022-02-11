@@ -14,6 +14,7 @@ module.exports = withBundleAnalyzer({
         SERVICE_ACCOUNT: process.env.SERVICE_ACCOUNT,
         SERVICE_CONTENT: process.env.SERVICE_CONTENT,
         PLAYER: process.env.PLAYER,
+        GTM: process.env.GTM,
     },
     images: {
         domains: ['ik.imagekit.io', 'cdn.inspigo.id'],

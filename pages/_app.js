@@ -1,16 +1,17 @@
 // Libraries
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 
 // Utils
-import { IS_DEVELOPMENT } from 'utils/constants'
+import { GTM, IS_DEVELOPMENT } from 'utils/constants'
 
 // Styles
 import '@/styles/App.global.scss'
 import { wrapper } from '@/redux/store'
 import NextProgress from '@/components/atoms/next-progress'
 import Dashboard from '@/hoc/layouts/dashboard'
+import TagManager from 'react-gtm-module'
 
 const App = ({ Component, pageProps }) => {
     const meta = {
@@ -22,6 +23,10 @@ const App = ({ Component, pageProps }) => {
             '#jadilebihsiap, inspigo, podcast, audio learning, live learning, inspibook',
         url: 'https://member.inspigo.id',
     }
+
+    useEffect(() => {
+        TagManager.initialize({ gtmId: GTM })
+    }, [])
 
     return (
         <React.Fragment>
