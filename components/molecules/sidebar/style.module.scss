@@ -24,6 +24,9 @@
         background: $primary;
         background-image: url('/images/background_sidebar.png'); /* fallback */
         background-image: url('/images/background_sidebar.png'), $primary;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
     &_cover {
         background-color: #dcdcdc;
