@@ -9,7 +9,8 @@ const NoContent = props => {
             <div className={styles.nocontent_container}>
                 <Image src={'/images/notfound.png'} width={313} height={320} />
                 <p className={'text-disabled'}>
-                    {props.title || 'content tidak tersedia'}
+                    {props.title ||
+                        'Belum ada konten yang tersedia untuk topik ini. Silakan coba topik menarik lainnya!'}
                 </p>
             </div>
         </div>

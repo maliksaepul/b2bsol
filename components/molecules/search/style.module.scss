@@ -1,3 +1,5 @@
+@import 'styles/colors';
+@import 'styles/mixins';
 .search {
     width: 100%;
     padding: 0.5rem 1rem;
@@ -5,9 +7,28 @@
     align-items: center;
     border: solid 1px #c4cad3;
     border-radius: calc(1rem / 2);
+    position: relative;
     &_input {
         flex-grow: 1;
         outline: none;
         border: none;
+    }
+
+    &_btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: $primary;
+        outline: none;
+        border: none;
+        color: white;
+        padding: 0.5rem 2rem;
+        border-radius: 0 calc(1rem / 2) calc(1rem / 2) 0;
+        cursor: pointer;
+
+        @include media-max-width($mobile-breakpoint) {
+            padding: 0.5rem 1rem;
+        }
     }
 }
