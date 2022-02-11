@@ -1,4 +1,5 @@
 @import 'styles/colors';
+@import 'styles/mixins';
 .dropdown {
     position: relative;
 
@@ -14,6 +15,10 @@
         padding: 1rem;
         border-radius: 0.5rem;
         color: $black-1;
+
+        @include media-max-width($mobile-breakpoint) {
+            max-width: unset;
+        }
     }
 }
 

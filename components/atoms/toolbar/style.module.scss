@@ -22,6 +22,15 @@
 
         @include media-max-width($mobile-breakpoint) {
             justify-content: space-between;
+            flex-direction: column;
+
+            & > div {
+                width: 100%;
+            }
+
+            & > div:first-of-type {
+                margin-bottom: 0.5rem;
+            }
         }
     }
     @include media-min-width($mobile-breakpoint) {

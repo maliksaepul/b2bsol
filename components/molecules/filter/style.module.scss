@@ -17,7 +17,6 @@
 
     @include media-max-width($mobile-breakpoint) {
         width: 100%;
-        min-width: 200px;
         left: 0;
         right: unset;
     }
