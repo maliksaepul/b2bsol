@@ -4,17 +4,20 @@ import styles from './style.module.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
+import Fade from 'react-reveal/Fade'
 
 const Recomendation = props => {
     const router = useRouter()
     return (
         <div className={styles.recomendation}>
             <div className={styles.label_container}>
-                <Label
-                    description={props.description}
-                    title={props.title}
-                    variant="center"
-                />
+                <Fade>
+                    <Label
+                        description={props.description}
+                        title={props.title}
+                        variant="center"
+                    />
+                </Fade>
             </div>
             <div className={styles.marquee}>{props.children}</div>
             <div className={styles.cta}>

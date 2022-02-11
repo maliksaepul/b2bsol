@@ -51,19 +51,17 @@ const Home = ({ account, path }) => {
                     </Fade>
                 </Section>
 
-                <Fade>
-                    <PodcastRecomended
-                        path={path.path}
-                        title={'Recommended Podcasts'}
-                        description={
-                            'Kembangkan dirimu melalui beragam konten pembelajaran berbasis audio yang dapat kamu dengarkan kapan pun dan di mana pun!'
-                        }
-                        cta={{
-                            label: 'Eksplor',
-                            url: routes.audiolearning(path.path),
-                        }}
-                    />
-                </Fade>
+                <PodcastRecomended
+                    path={path.path}
+                    title={'Recommended Podcasts'}
+                    description={
+                        'Kembangkan dirimu melalui beragam konten pembelajaran berbasis audio yang dapat kamu dengarkan kapan pun dan di mana pun!'
+                    }
+                    cta={{
+                        label: 'Eksplor',
+                        url: routes.audiolearning(path.path),
+                    }}
+                />
 
                 <Section>
                     <Fade>
