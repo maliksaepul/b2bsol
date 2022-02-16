@@ -1,12 +1,11 @@
 import { GET_NAVBAR } from '../types'
 
-const initialState = { data: [] }
+const initialState = []
 
 const NavbarReducer = (state = initialState, action) => {
-    const newState = { ...state, ...action.payload }
     switch (action.type) {
         case GET_NAVBAR:
-            return newState
+            return action.payload
         default:
             return state
     }

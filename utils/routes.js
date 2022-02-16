@@ -11,6 +11,14 @@ const routes = {
     },
 
     /**
+     * Audio Learning
+     * @returns
+     */
+    dynamicpath: (path, link) => {
+        return `/${path}/${link}`
+    },
+
+    /**
      * Meditasi Learning
      * @returns
      */

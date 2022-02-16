@@ -11,28 +11,22 @@ const AppbarContainer = dynamic(() =>
     import('@/containers/components/bars/Appbar')
 )
 
-const Header = ({ path }) => {
+const Header = ({ path, navbar }) => {
+    const navitem = navbar => {
+        console.log(navbar)
+        return (
+            navbar &&
+            navbar.map(val => ({
+                label: val.title,
+                url: routes.dynamicpath(path.path, val.path),
+            }))
+        )
+    }
     return (
         <>
             <header className={styles.header}>
                 <div className={styles.header_nav}>
-                    <Navbar
-                        navitem={[
-                            {
-                                label: 'Audio Learning',
-                                url: routes.audiolearning(path.path),
-                            },
-                            {
-                                label: 'InspiBook',
-                                url: routes.inspibook(path.path),
-                            },
-                            {
-                                label: 'Meditasi',
-                                url: routes.meditasi(path.path),
-                            },
-                        ]}
-                        align={'right'}
-                    />
+                    <Navbar navitem={navitem(navbar)} align={'right'} />
                 </div>
                 <AppbarContainer />
             </header>
@@ -42,6 +36,7 @@ const Header = ({ path }) => {
 
 Header.propTypes = {
     path: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    navbar: PropTypes.array,
 }
 
 export default Header
