@@ -17,6 +17,7 @@ import PathReducer from '@/redux/reducers/_path'
 import OrganizationReducer from '@/redux/reducers/account/_organization'
 import InspibookReducer from '@/redux/reducers/content/_inspibook'
 import RelatedInspibook from '@/redux/reducers/content/_relatedInspibook'
+import NavbarReducer from '@/redux/reducers/_navbar'
 
 const rootReducer = combineReducers({
     sidebarState: SidebarReducer,
@@ -37,6 +38,7 @@ const rootReducer = combineReducers({
     account: LoginReducer,
     path: PathReducer,
     organization: OrganizationReducer,
+    navbar: NavbarReducer,
 })
 
 export default rootReducer

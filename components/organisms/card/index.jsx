@@ -79,6 +79,7 @@ Card.propTypes = {
 
 Card.defaultProps = {
     align: 'left',
+    cta: [],
 }
 
 export default Card

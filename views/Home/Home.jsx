@@ -37,7 +37,7 @@ const Home = ({ account, path }) => {
         <>
             <Layout>
                 <div className="p-x-g">
-                    <Hero title={path.name} />
+                    <Hero title={path?.name || ''} />
                 </div>
                 <div className="p-x-g">
                     <Fade>
@@ -52,20 +52,20 @@ const Home = ({ account, path }) => {
                 </Section>
 
                 <PodcastRecomended
-                    path={path.path}
+                    path={path?.path}
                     title={'Recommended Podcasts'}
                     description={
                         'Kembangkan dirimu melalui beragam konten pembelajaran berbasis audio yang dapat kamu dengarkan kapan pun dan di mana pun!'
                     }
                     cta={{
                         label: 'Eksplor',
-                        url: routes.audiolearning(path.path),
+                        url: routes.audiolearning(path?.path),
                     }}
                 />
 
                 <Section>
                     <Fade>
-                        <InspiBook path={path.path} />
+                        <InspiBook path={path?.path} />
                     </Fade>
                 </Section>
             </Layout>

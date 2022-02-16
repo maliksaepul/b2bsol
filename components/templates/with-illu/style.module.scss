@@ -2,6 +2,11 @@
 .withIllu {
     display: flex;
     position: relative;
+
+    &.row-reverse {
+        flex-direction: row-reverse;
+    }
+
     .item {
         flex: 1 1 50%;
         display: flex;
@@ -18,6 +23,9 @@
         }
 
         &_illu {
+            width: calc(500px / 16) rem;
+            height: calc(500px / 16) ren;
+
             img {
                 width: 100% !important;
                 height: auto !important;
