@@ -10,11 +10,13 @@ const Profile = props => {
         <div className={styles.profile}>
             <div className={styles.profile_head}>
                 <div className={styles.profile_cover}>
-                    {props.usercover ? (
-                        <img src={props.usercover} alt="cover" />
-                    ) : (
-                        'S'
-                    )}
+                    <img
+                        src={
+                            props.usercover ||
+                            'https://cdn.inspigo.id/public/cover/default-profile/avatar1.png'
+                        }
+                        alt="cover"
+                    />
                 </div>
                 <div>
                     <h5>{props.username}</h5>

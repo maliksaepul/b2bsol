@@ -63,7 +63,7 @@ const Sidebar = ({
                                     },
                                     {
                                         label: 'Meditasi',
-                                        url: routes.meditasi(path.path),
+                                        url: routes.meditasi(path),
                                     },
                                 ]}
                             />
