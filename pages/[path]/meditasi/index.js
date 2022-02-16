@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { fetchPodcast } from '@/redux/actions/content/_ondemand'
+import { fetchPodcastMeditation } from '@/redux/actions/content/_ondemand'
 import { connect } from 'react-redux'
 import Head from 'next/head'
 // import AudioLearning from '@/views/AudioLearning'
@@ -7,17 +7,25 @@ import PropTypes from 'prop-types'
 import dynamic from 'next/dynamic'
 import { defaultContentLimit } from '@/utils/constants'
 const Meditasi = dynamic(() => import('@/views/Meditasi'))
-const MeditasiPage = ({ account, podcast, fetchPodcast, path, loading }) => {
+const MeditasiPage = ({
+    account,
+    podcast,
+    fetchPodcastMeditation,
+    path,
+    loading,
+}) => {
     useEffect(() => {
-        fetchPodcast(path.path, {
+        fetchPodcastMeditation(path.path, {
             limit: defaultContentLimit,
             skip: 0,
-            filter: 'Meditasi',
         })
     }, [])
 
     const handleFetchPodcast = skip => {
-        fetchPodcast(path.path, { limit: defaultContentLimit, skip: skip })
+        fetchPodcastMeditation(path.path, {
+            limit: defaultContentLimit,
+            skip: skip,
+        })
     }
 
     return (
@@ -36,12 +44,14 @@ const MeditasiPage = ({ account, podcast, fetchPodcast, path, loading }) => {
 }
 
 MeditasiPage.propTypes = {
-    fetchPodcast: PropTypes.func,
+    fetchPodcastMeditation: PropTypes.func,
     podcast: PropTypes.any,
     account: PropTypes.any,
     path: PropTypes.any,
     loading: PropTypes.object,
 }
-const mapStateToProps = ({ podcast }) => ({ podcast })
+const mapStateToProps = ({ meditation }) => ({ podcast: meditation })
 
-export default connect(mapStateToProps, { fetchPodcast })(MeditasiPage)
+export default connect(mapStateToProps, { fetchPodcastMeditation })(
+    MeditasiPage
+)

@@ -1,11 +1,24 @@
 import { content } from '@/utils/apiroutelist'
 import axios from 'axios'
-import { GET_APB, GET_INSPIBOOK, GET_PODCAST, GET_VOD } from '../../types'
+import {
+    GET_APB,
+    GET_INSPIBOOK,
+    GET_PODCAST,
+    GET_PODCAST_MEDITATION,
+    GET_VOD,
+} from '../../types'
 import { apiEnd, apiError, apiStart } from '../section/_schedule'
 import Request from '@/redux/request'
 export const getPodcast = payload => {
     return {
         type: GET_PODCAST,
+        payload: payload,
+    }
+}
+
+export const getPodcastMeditation = payload => {
+    return {
+        type: GET_PODCAST_MEDITATION,
         payload: payload,
     }
 }
@@ -40,6 +53,22 @@ export const fetchPodcast =
             const response = await request.get(content.podcast(path))
             dispatch(getPodcast(response.data.data))
         } catch (e) {
+            return e
+        } finally {
+            dispatch(apiEnd())
+        }
+    }
+
+export const fetchPodcastMeditation =
+    (path = '', params) =>
+    async dispatch => {
+        dispatch(apiStart())
+        try {
+            const request = new Request(params, null, true)
+            const response = await request.get(content.meditation(path))
+            dispatch(getPodcastMeditation(response.data.data))
+        } catch (e) {
+            dispatch(getPodcastMeditation(e.response))
             return e
         } finally {
             dispatch(apiEnd())

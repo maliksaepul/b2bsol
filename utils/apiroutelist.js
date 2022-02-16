@@ -7,10 +7,13 @@ export const API_APB = `${process.env.BASEURL}/api/apb`
 
 export const content = {
     podcast: path => {
-        return `${process.env.SERVICE_CONTENT}/organization/${path}/albums`
+        return `${process.env.SERVICE_CONTENT}/organization/${path}/podcasts/learning`
     },
     inspibook: path => {
-        return `${process.env.SERVICE_CONTENT}/organization/${path}/books`
+        return `${process.env.SERVICE_CONTENT}/organization/${path}/podcasts/inspibook`
+    },
+    meditation: path => {
+        return `${process.env.SERVICE_CONTENT}/organization/${path}/podcasts/meditation`
     },
 }
 

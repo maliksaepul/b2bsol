@@ -1,14 +1,8 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
-// import Layout from '@/hoc/layouts/ondemand'
-// import Section from '@/components/atoms/section'
-// import About from '@/components/templates/about'
-// import Grid from '@/components/atoms/grid'
-// import AudioCard from '@/containers/components/cards/AudioCard'
-// import Contents from '@/components/organisms/contents'
-// import Toolbar from '@/containers/components/bars/Toolbar'
-import { TOOLBAR_PODCAST } from '@/redux/types'
+
+import { TOOLBAR_PODCAST_MEDITATION } from '@/redux/types'
 import { content } from '@/utils/apiroutelist'
 import Pagination from '@/components/molecules/pagination'
 import { defaultContentLimit } from '@/utils/constants'
@@ -52,8 +46,8 @@ const Meditasi = ({ podcast, onFetchData, path, loading }) => {
                 <Contents>
                     <Toolbar
                         api={{
-                            url: content.podcast(path),
-                            type: TOOLBAR_PODCAST,
+                            url: content.meditation(path),
+                            type: TOOLBAR_PODCAST_MEDITATION,
                         }}
                     />
                     {podcast?.results?.length === 0 && !loading.state ? (
