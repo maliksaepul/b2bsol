@@ -10,27 +10,11 @@ import Fade from 'react-reveal/Fade'
  */
 import Section from '@/components/atoms/section'
 import Layout from '@/hoc/layouts/common'
-// import Explore from '@/containers/sections/Explore'
-// import Statistic from '@/containers/sections/Statistic'
 import Schedule from '@/containers/sections/Schedules'
 import Achievment from '@/components/templates/achievment'
-// import MasterCourse from '@/containers/sections/MasterCourse'
 import PodcastRecomended from '@/containers/sections/PodcastRecomended'
-// import MasterCourse from '@/containers/sections/MasterCourse'
 import InspiBook from '@/components/templates/inspi-book'
 import Hero from '@/components/templates/hero'
-// const Section = dynamic(() => import('@/components/atoms/section'))
-// const Layout = dynamic(() => import('@/hoc/layouts/common'))
-// const About = dynamic(() => import('@/components/templates/about'))
-// // const Explore = dynamic(() => import('@/containers/sections/Explore'))
-// const Gamification = dynamic(() =>
-//     import('@/components/templates/gamification')
-// )
-// const Schedule = dynamic(() => import('@/containers/sections/Schedules'))
-// const PodcastRecomended = dynamic(() =>
-//     import('@/containers/sections/PodcastRecomended')
-// )
-// const InspiBook = dynamic(() => import('@/components/templates/inspi-book'))
 
 const Home = ({ account, path }) => {
     return (

@@ -7,13 +7,15 @@ import { connect } from 'react-redux'
 import { fetchDynamicContent } from '@/redux/actions/content/_ondemand'
 import { defaultContentLimit } from '@/utils/constants'
 const InspiBook = dynamic(() => import('@/views/InspiBook'))
-const AudioLearning = dynamic(() => import('@/views/AudioLearning'))
+const Podcast = dynamic(() => import('@/views/Podcast'))
 
 const PodcastCategoriesPage = props => {
     const router = useRouter()
     const { categories } = router.query
     const [dataContent, setDataContent] = useState({ results: [] })
     const [dynamicLink, setDynamicLink] = useState(router.asPath)
+    const [titlePage, setTitlePage] = useState('')
+    const [descriptionPage, setDescriptionPage] = useState('')
 
     useEffect(() => {
         handleFetchPodcast(0)
@@ -26,6 +28,10 @@ const PodcastCategoriesPage = props => {
         }
     }, [router.events])
 
+    useEffect(() => {
+        getPageData()
+    }, [props.navbar.length])
+
     const handleFetchPodcast = async (params, url) => {
         const response = await props.fetchDynamicContent(url || dynamicLink, {
             limit: defaultContentLimit,
@@ -37,9 +43,17 @@ const PodcastCategoriesPage = props => {
         }
     }
 
+    const getPageData = (url = router.asPath) => {
+        const path = url.replace(`/${props.path.path}`, '')
+        const page = props.navbar.find(val => val.path === path)
+        setTitlePage(page?.title)
+        setDescriptionPage(page?.secondaryTitle)
+    }
+
     const handleRouteChange = (url, { shallow }) => {
         setDynamicLink(url)
         handleFetchPodcast(0, url)
+        getPageData(url)
     }
 
     switch (categories) {
@@ -54,6 +68,8 @@ const PodcastCategoriesPage = props => {
                         path={props.path.path}
                         loading={props.loading}
                         onFetchData={handleFetchPodcast}
+                        title={titlePage}
+                        description={descriptionPage}
                     />
                 </>
             )
@@ -63,11 +79,13 @@ const PodcastCategoriesPage = props => {
                     <Head>
                         <title>{categories}</title>
                     </Head>
-                    <AudioLearning
+                    <Podcast
                         podcast={dataContent}
                         path={props.path.path}
                         loading={props.loading}
                         onFetchData={handleFetchPodcast}
+                        title={titlePage}
+                        description={descriptionPage}
                     />
                 </>
             )
@@ -78,9 +96,14 @@ PodcastCategoriesPage.propTypes = {
     path: PropTypes.any,
     fetchDynamicContent: PropTypes.func,
     loading: PropTypes.any,
+    navbar: PropTypes.array,
 }
 
-const mapStateToProps = ({ path, loading }) => ({ path, loading })
+const mapStateToProps = ({ path, loading, navbar }) => ({
+    path,
+    loading,
+    navbar,
+})
 
 export default connect(mapStateToProps, { fetchDynamicContent })(
     PodcastCategoriesPage
