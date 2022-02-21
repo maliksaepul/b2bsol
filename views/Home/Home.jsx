@@ -47,13 +47,13 @@ const Home = ({ account, path }) => {
 
                 <Section>
                     <Fade>
-                        <Achievment />
+                        <InspiBook path={path?.path} />
                     </Fade>
                 </Section>
 
                 <PodcastRecomended
                     path={path?.path}
-                    title={'Recommended Podcasts'}
+                    title={'Audio Learning'}
                     description={
                         'Kembangkan dirimu melalui beragam konten pembelajaran berbasis audio yang dapat kamu dengarkan kapan pun dan di mana pun!'
                     }
@@ -65,7 +65,7 @@ const Home = ({ account, path }) => {
 
                 <Section>
                     <Fade>
-                        <InspiBook path={path?.path} />
+                        <Achievment />
                     </Fade>
                 </Section>
             </Layout>

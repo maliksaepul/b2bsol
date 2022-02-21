@@ -1,4 +1,4 @@
-import { ACTIVE_SIDEBAR } from '../types'
+import { ACTIVE_SIDEBAR } from '@/redux/types'
 
 export const activeSidebar = sidebar => {
     return {

@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import Modal from '@/components/molecules/modals/modal'
 import GeneralModal from '@/components/molecules/modals/general-modal'
-import { modalClose } from '@/redux/actions/_modal'
+import { modalClose } from '@/redux/actions/widgets/_modal'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import styles from './style.module.scss'

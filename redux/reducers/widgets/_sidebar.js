@@ -1,4 +1,4 @@
-import { ACTIVE_SIDEBAR } from '../types'
+import { ACTIVE_SIDEBAR } from '../../types'
 
 const ActiveSidebarReducer = (state = false, action) => {
     switch (action.type) {

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import withAuth from '@/hoc/wrappers/withAuthStrict'
 import { connect } from 'react-redux'
-import { fetchDataNavbar } from '@/redux/actions/_navbar'
+import { fetchDataNavbar } from '@/redux/actions/widgets/_navbar'
 
 const Dashboard = ({ children, account, path, loading, fetchDataNavbar }) => {
     useEffect(() => {

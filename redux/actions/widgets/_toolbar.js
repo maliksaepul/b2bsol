@@ -6,9 +6,14 @@ import {
     TOOLBAR_INSPIBOOK,
     TOOLBAR_PODCAST,
     TOOLBAR_VOD,
-} from '../types'
-import { getApb, getInspibook, getPodcast, getVod } from './content/_ondemand'
-import { apiEnd, apiError, apiStart } from './section/_schedule'
+} from '@/redux/types'
+import {
+    getApb,
+    getInspibook,
+    getPodcast,
+    getVod,
+} from '@/redux/actions/content/_ondemand'
+import { apiEnd, apiError, apiStart } from '@/redux/actions/section/_schedule'
 
 export const fetchDataToolbar = (params, api) => dispatch => {
     dispatch(apiStart())

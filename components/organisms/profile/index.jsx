@@ -10,21 +10,16 @@ const Profile = props => {
         <div className={styles.profile}>
             <div className={styles.profile_head}>
                 <div className={styles.profile_cover}>
-                    {
-                        <img
-                            src={
-                                props.usercover ||
-                                'https://cdn.inspigo.id/public/cover/default-profile/avatar1.png'
-                            }
-                            alt="cover"
-                        />
-                    }
+                    <img
+                        src={
+                            props.usercover ||
+                            'https://cdn.inspigo.id/public/cover/default-profile/avatar1.png'
+                        }
+                        alt="cover"
+                    />
                 </div>
                 <div>
                     <h5>{props.username}</h5>
-                    {/* <p className="p2">
-                        {props.userRole || 'Frontend Engineer'}
-                    </p> */}
                 </div>
             </div>
             <Navbar bgcolor={'white'} variant="column" navitem={PROFILE_ITEM} />

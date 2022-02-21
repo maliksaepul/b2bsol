@@ -1,6 +1,5 @@
 import Toolbar from '@/components/atoms/toolbar'
-import { activeFilter, activeSorting } from '@/redux/actions/_dropdown'
-import { fetchDataToolbar } from '@/redux/actions/_toolbar'
+import { activeFilter, activeSorting } from '@/redux/actions/widgets/_dropdown'
 import { connect } from 'react-redux'
 
 const mapStateToProps = ({ dropdown }) => ({
@@ -11,5 +10,4 @@ const mapStateToProps = ({ dropdown }) => ({
 export default connect(mapStateToProps, {
     activeFilter,
     activeSorting,
-    fetchData: fetchDataToolbar,
 })(Toolbar)

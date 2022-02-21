@@ -1,5 +1,5 @@
 import ProfileBar from '@/components/organisms/profile/bar'
-import { activeProfile } from '@/redux/actions/_dropdown'
+import { activeProfile } from '@/redux/actions/widgets/_dropdown'
 import { connect } from 'react-redux'
 const mapStateToProps = ({ dropdown }) => ({
     active: dropdown.active_profile,

@@ -46,6 +46,21 @@ export const fetchPodcast =
         }
     }
 
+export const fetchDynamicContent =
+    (path = '', params) =>
+    async dispatch => {
+        dispatch(apiStart())
+        try {
+            const request = new Request(params, null, true)
+            const response = await request.get(content.dynamic(path))
+            return response
+        } catch (e) {
+            return e || e.response
+        } finally {
+            dispatch(apiEnd())
+        }
+    }
+
 export const fetchInspibook =
     (path = '', params) =>
     async dispatch => {

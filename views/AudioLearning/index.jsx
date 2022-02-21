@@ -1,15 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
-// import Layout from '@/hoc/layouts/ondemand'
-// import Section from '@/components/atoms/section'
-// import About from '@/components/templates/about'
-// import Grid from '@/components/atoms/grid'
-// import AudioCard from '@/containers/components/cards/AudioCard'
-// import Contents from '@/components/organisms/contents'
-// import Toolbar from '@/containers/components/bars/Toolbar'
-import { TOOLBAR_PODCAST } from '@/redux/types'
-import { content } from '@/utils/apiroutelist'
 import Pagination from '@/components/molecules/pagination'
 import { defaultContentLimit } from '@/utils/constants'
 import NoContent from '@/components/templates/nocontent'
@@ -50,12 +41,7 @@ const AudioLearning = ({ podcast, onFetchData, path, loading }) => {
             </Section>
             <Section>
                 <Contents>
-                    <Toolbar
-                        api={{
-                            url: content.podcast(path),
-                            type: TOOLBAR_PODCAST,
-                        }}
-                    />
+                    <Toolbar fetchData={onFetchData} />
                     {podcast?.results?.length === 0 && !loading.state ? (
                         <NoContent />
                     ) : (

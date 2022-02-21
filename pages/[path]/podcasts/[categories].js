@@ -1,43 +1,87 @@
-import React, { useEffect } from 'react'
-import { fetchInspibook } from '@/redux/actions/content/_ondemand'
-import { connect } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-// import InspiBook from '@/views/InspiBook'
+import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
-import { defaultContentLimit } from '@/utils/constants'
 import Head from 'next/head'
+import { connect } from 'react-redux'
+import { fetchDynamicContent } from '@/redux/actions/content/_ondemand'
+import { defaultContentLimit } from '@/utils/constants'
 const InspiBook = dynamic(() => import('@/views/InspiBook'))
+const AudioLearning = dynamic(() => import('@/views/AudioLearning'))
 
-const DynamicPage = ({ inspibook, fetchInspibook, path, loading }) => {
+const PodcastCategoriesPage = props => {
+    const router = useRouter()
+    const { categories } = router.query
+    const [dataContent, setDataContent] = useState({ results: [] })
+    const [dynamicLink, setDynamicLink] = useState(router.asPath)
+
     useEffect(() => {
-        fetchInspibook(path.path, { limit: defaultContentLimit, skip: 0 })
-    }, [])
+        handleFetchPodcast(0)
+    }, [router.isReady])
 
-    const handleFetchInspibook = skip => {
-        fetchInspibook(path.path, { limit: defaultContentLimit, skip: skip })
+    useEffect(() => {
+        router.events.on('routeChangeComplete', handleRouteChange)
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChange)
+        }
+    }, [router.events])
+
+    const handleFetchPodcast = async (params, url) => {
+        const response = await props.fetchDynamicContent(url || dynamicLink, {
+            limit: defaultContentLimit,
+            skip: params.skip || 0,
+            ...params,
+        })
+        if (response.status === 200) {
+            setDataContent(response.data.data)
+        }
     }
-    return (
-        <>
-            <Head>
-                <title></title>
-            </Head>
-            <InspiBook
-                inspibook={inspibook}
-                path={path.path}
-                loading={loading}
-                onFetchData={handleFetchInspibook}
-            />
-        </>
-    )
+
+    const handleRouteChange = (url, { shallow }) => {
+        setDynamicLink(url)
+        handleFetchPodcast(0, url)
+    }
+
+    switch (categories) {
+        case 'inspibook':
+            return (
+                <>
+                    <Head>
+                        <title>{categories}</title>
+                    </Head>
+                    <InspiBook
+                        inspibook={dataContent}
+                        path={props.path.path}
+                        loading={props.loading}
+                        onFetchData={handleFetchPodcast}
+                    />
+                </>
+            )
+        default:
+            return (
+                <>
+                    <Head>
+                        <title>{categories}</title>
+                    </Head>
+                    <AudioLearning
+                        podcast={dataContent}
+                        path={props.path.path}
+                        loading={props.loading}
+                        onFetchData={handleFetchPodcast}
+                    />
+                </>
+            )
+    }
 }
 
-DynamicPage.propTypes = {
-    fetchInspibook: PropTypes.func,
-    inspibook: PropTypes.any,
+PodcastCategoriesPage.propTypes = {
     path: PropTypes.any,
-    loading: PropTypes.object,
-    navbar: PropTypes.array,
+    fetchDynamicContent: PropTypes.func,
+    loading: PropTypes.any,
 }
-const mapStateToProps = ({ navbar }) => ({ navbar })
 
-export default connect(mapStateToProps, { fetchInspibook })(DynamicPage)
+const mapStateToProps = ({ path, loading }) => ({ path, loading })
+
+export default connect(mapStateToProps, { fetchDynamicContent })(
+    PodcastCategoriesPage
+)

@@ -1,4 +1,4 @@
-import { ACTIVE_FILTER, ACTIVE_PROFILE, ACTIVE_SORTING } from '../types'
+import { ACTIVE_FILTER, ACTIVE_PROFILE, ACTIVE_SORTING } from '../../types'
 
 export const activeFilter = val => {
     return {

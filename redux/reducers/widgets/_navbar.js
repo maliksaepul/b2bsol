@@ -1,4 +1,4 @@
-import { GET_NAVBAR } from '../types'
+import { GET_NAVBAR } from '@/redux/types'
 
 const initialState = []
 
