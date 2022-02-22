@@ -4,8 +4,4 @@
     @include media-max-width($mobile-breakpoint) {
         font-size: 16px;
     }
-
-    @include media-max-width($s-mobile-breakpoint) {
-        font-size: unset;
-    }
 }

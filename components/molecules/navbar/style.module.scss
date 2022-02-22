@@ -13,9 +13,6 @@
         font-size: 16px;
     }
 
-    @include media-max-width($s-mobile-breakpoint) {
-        font-size: unset;
-    }
     overflow-x: auto;
     @include verticaless-gap();
 

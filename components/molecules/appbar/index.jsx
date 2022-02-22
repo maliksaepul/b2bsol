@@ -14,32 +14,32 @@ const Appbar = ({ activeSidebar, sidebarState, account, path }) => {
     } else {
         disableScroll.off()
     }
-    if (sidebarState) {
-        return (
+
+    return (
+        <>
+            {!sidebarState ? (
+                <div className={styles.appbar}>
+                    <Logo link={path.path} />
+                    <div className={styles.toolbar}>
+                        <ProfileBar
+                            username={account.name}
+                            usercover={account.cover?.url || 'S'}
+                        />
+                    </div>
+                    <div className={styles.humberger}>
+                        <Humberger
+                            variant={'primary'}
+                            open={sidebarState}
+                            toggleNav={() => {
+                                activeSidebar(!sidebarState)
+                            }}
+                        />
+                    </div>
+                </div>
+            ) : null}
             <Sidebar username={account.name} usercover={account.cover?.url} />
-        )
-    } else {
-        return (
-            <div className={styles.appbar}>
-                <Logo link={path.path} />
-                <div className={styles.toolbar}>
-                    <ProfileBar
-                        username={account.name}
-                        usercover={account.cover?.url || 'S'}
-                    />
-                </div>
-                <div className={styles.humberger}>
-                    <Humberger
-                        variant={'primary'}
-                        open={sidebarState}
-                        toggleNav={() => {
-                            activeSidebar(!sidebarState)
-                        }}
-                    />
-                </div>
-            </div>
-        )
-    }
+        </>
+    )
 }
 
 Appbar.propTypes = {

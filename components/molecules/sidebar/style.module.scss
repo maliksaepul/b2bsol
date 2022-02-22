@@ -2,8 +2,9 @@
 @import 'styles/colors';
 
 .sidebar {
-    display: none;
-    @include media-max-width($mobile-breakpoint) {
+    visibility: hidden;
+    height: 0;
+    &.open {
         width: 100vw;
         height: 100vh;
         position: fixed;
@@ -11,7 +12,17 @@
         display: flex;
         flex-direction: column;
         z-index: -1;
+        visibility: visible;
+        transition: all 1s;
     }
+
+    .title {
+        font-size: 20px;
+    }
+    .text {
+        font-size: 16px;
+    }
+
     &_head {
         height: 40%;
         display: flex;
@@ -31,8 +42,8 @@
         background-color: #dcdcdc;
         border-radius: 50%;
         content: '';
-        width: 6rem;
-        height: 6rem;
+        width: 80px;
+        height: 80px;
         aspect-ratio: 1/1;
         display: flex;
         justify-content: center;
@@ -50,8 +61,9 @@
         background-color: #fff;
         padding: 8vw;
         border-radius: 1.25rem 1.25rem 0 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+
+        & > div:not(:last-child) {
+            margin-bottom: 2rem;
+        }
     }
 }

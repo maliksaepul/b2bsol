@@ -3,6 +3,10 @@
     padding: 0 1rem;
 }
 
+.p-t-1 {
+    padding: 1rem 0;
+}
+
 .global-gap {
     padding: 2.1rem 7.5rem;
     @include media-max-width($initial-responsive-breakpoint) {
