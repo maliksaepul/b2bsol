@@ -5,7 +5,7 @@ import Navbar from '@/components/molecules/navbar'
 import routes from '@/utils/routes'
 import { PROFILE_ITEM } from '@/utils/constants'
 import Logout from '@/containers/components/Logout'
-import { disableScroll } from '@/utils/helpers'
+
 import Humberger from '../humberger'
 
 const Sidebar = ({
@@ -18,7 +18,7 @@ const Sidebar = ({
 }) => {
     const renderBody = () => {
         if (sidebarState) {
-            disableScroll.on()
+            console.log('hallo hi')
             return (
                 <aside className={styles.sidebar}>
                     <div className={styles.sidebar_head}>
@@ -94,7 +94,6 @@ const Sidebar = ({
                 </aside>
             )
         } else {
-            disableScroll.off()
             return null
         }
     }

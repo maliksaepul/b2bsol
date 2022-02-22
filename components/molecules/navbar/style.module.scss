@@ -9,9 +9,12 @@
     list-style: none;
     background-color: $stroke;
     font-size: 13px;
-
     @include media-max-width($mobile-breakpoint) {
-        font-size: inherit;
+        font-size: 16px;
+    }
+
+    @include media-max-width($s-mobile-breakpoint) {
+        font-size: unset;
     }
     overflow-x: auto;
     @include verticaless-gap();
