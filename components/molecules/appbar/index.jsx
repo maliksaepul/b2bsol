@@ -7,26 +7,37 @@ import PropTypes from 'prop-types'
 import Sidebar from '@/containers/components/bars/Sidebar'
 
 const Appbar = ({ activeSidebar, sidebarState, account, path }) => {
-    return (
-        <div className={styles.appbar}>
-            <Logo link={path.path} />
-            <div className={styles.toolbar}>
-                <ProfileBar
+    if (sidebarState) {
+        return (
+            <div>
+                <Sidebar
                     username={account.name}
-                    usercover={account.cover?.url || 'S'}
+                    usercover={account.cover?.url}
                 />
             </div>
-            <div className={styles.humberger}>
-                <Humberger
-                    open={sidebarState}
-                    toggleNav={() => {
-                        activeSidebar(!sidebarState)
-                    }}
-                />
+        )
+    } else {
+        return (
+            <div className={styles.appbar}>
+                <Logo link={path.path} />
+                <div className={styles.toolbar}>
+                    <ProfileBar
+                        username={account.name}
+                        usercover={account.cover?.url || 'S'}
+                    />
+                </div>
+                <div className={styles.humberger}>
+                    <Humberger
+                        variant={'primary'}
+                        open={sidebarState}
+                        toggleNav={() => {
+                            activeSidebar(!sidebarState)
+                        }}
+                    />
+                </div>
             </div>
-            <Sidebar username={account.name} usercover={account.cover?.url} />
-        </div>
-    )
+        )
+    }
 }
 
 Appbar.propTypes = {

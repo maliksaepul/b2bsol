@@ -6,6 +6,7 @@ import routes from '@/utils/routes'
 import { PROFILE_ITEM } from '@/utils/constants'
 import Logout from '@/containers/components/Logout'
 import { disableScroll } from '@/utils/helpers'
+import Humberger from '../humberger'
 
 const Sidebar = ({
     sidebarState,
@@ -21,6 +22,15 @@ const Sidebar = ({
             return (
                 <aside className={styles.sidebar}>
                     <div className={styles.sidebar_head}>
+                        <div className={styles.humberger}>
+                            <Humberger
+                                open={sidebarState}
+                                variant={'light'}
+                                toggleNav={() => {
+                                    activeSidebar(!sidebarState)
+                                }}
+                            />
+                        </div>
                         <div className={styles.sidebar_cover}>
                             <img
                                 src={

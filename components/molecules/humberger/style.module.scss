@@ -16,11 +16,23 @@
     -o-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
     cursor: pointer;
+
+    &.primary {
+        span {
+            background: $primary !important;
+        }
+    }
+    &.light {
+        span {
+            background: #fff !important;
+        }
+    }
+
     span {
         display: block;
         position: absolute;
-        height: 5px;
         background: $primary;
+        height: 5px;
         border-radius: 5px;
         opacity: 1;
         left: 0;
@@ -60,6 +72,9 @@
     }
 
     &.open {
+        right: unset;
+        left: 2.5rem;
+        top: 2.5rem;
         span:nth-child(1) {
             top: 0.5rem;
             -webkit-transform: rotate(135deg);
@@ -69,7 +84,7 @@
         }
         span:nth-child(2) {
             opacity: 0;
-            left: -60px;
+            right: -60px;
         }
         span:nth-child(3) {
             top: 0.5rem;
