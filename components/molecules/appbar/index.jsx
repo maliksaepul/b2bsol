@@ -9,12 +9,7 @@ import Sidebar from '@/containers/components/bars/Sidebar'
 const Appbar = ({ activeSidebar, sidebarState, account, path }) => {
     if (sidebarState) {
         return (
-            <div>
-                <Sidebar
-                    username={account.name}
-                    usercover={account.cover?.url}
-                />
-            </div>
+            <Sidebar username={account.name} usercover={account.cover?.url} />
         )
     } else {
         return (
