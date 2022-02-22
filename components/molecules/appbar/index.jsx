@@ -37,6 +37,7 @@ const Appbar = ({ activeSidebar, sidebarState, account, path }) => {
                     </div>
                 </div>
             ) : null}
+
             <Sidebar username={account.name} usercover={account.cover?.url} />
         </>
     )
