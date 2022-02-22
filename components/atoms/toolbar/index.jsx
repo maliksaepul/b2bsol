@@ -13,7 +13,6 @@ const Toolbar = ({
     sortingActive,
     filterActive,
     fetchData,
-    api,
 }) => {
     const [search, setSearch] = useState('')
     const [filter, setFilter] = useState('')
@@ -44,7 +43,7 @@ const Toolbar = ({
                     label="Category"
                     onChange={val => {
                         setFilter(val)
-                        fetchData({ search, filter: val, sort: sorting }, api)
+                        fetchData({ search, filter: val, sort: sorting })
                         activeFilter(false)
                     }}
                     filter={filter.trim().split(',')}
@@ -60,7 +59,7 @@ const Toolbar = ({
             <Search
                 onChange={val => {
                     setSearch(val)
-                    fetchData({ search: val, filter, sort: sorting }, api)
+                    fetchData({ search: val, filter, sort: sorting })
                 }}
             />
         )
@@ -72,7 +71,7 @@ const Toolbar = ({
                 <Sorting
                     onChange={val => {
                         setSorting(val)
-                        fetchData({ search, filter, sort: val }, api)
+                        fetchData({ search, filter, sort: val })
                         activeSorting(false)
                     }}
                     sortingList={[
@@ -123,7 +122,6 @@ Toolbar.propTypes = {
     sortingActive: PropTypes.bool,
     filterActive: PropTypes.bool,
     fetchData: PropTypes.func,
-    api: PropTypes.any,
 }
 
 export default Toolbar

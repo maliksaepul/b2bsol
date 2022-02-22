@@ -1,4 +1,4 @@
-import { API_START, API_STOP } from '../types'
+import { API_START, API_STOP } from '@/redux/types'
 
 const initialState = {
     state: false,

@@ -15,7 +15,6 @@ const Search = ({ onChange }) => {
     const handleSubmit = e => {
         e.preventDefault()
         onChange && onChange(searchVal)
-        setSearchVal('')
     }
 
     return (

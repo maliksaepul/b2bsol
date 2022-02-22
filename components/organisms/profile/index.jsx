@@ -20,9 +20,6 @@ const Profile = props => {
                 </div>
                 <div>
                     <h5>{props.username}</h5>
-                    {/* <p className="p2">
-                        {props.userRole || 'Frontend Engineer'}
-                    </p> */}
                 </div>
             </div>
             <Navbar bgcolor={'white'} variant="column" navitem={PROFILE_ITEM} />

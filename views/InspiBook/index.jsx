@@ -6,9 +6,7 @@ import About from '@/components/templates/about'
 import Grid from '@/components/atoms/grid'
 import Contents from '@/components/organisms/contents'
 import Toolbar from '@/containers/components/bars/Toolbar'
-import { content } from '@/utils/apiroutelist'
 import InspiBookCard from '@/components/organisms/inspibook-card'
-import { TOOLBAR_INSPIBOOK } from '@/redux/types'
 import SkeletonContent from '@/components/templates/skeletoncontent'
 import Pagination from '@/components/molecules/pagination'
 import { defaultContentLimit } from '@/utils/constants'
@@ -37,12 +35,7 @@ const InspiBook = ({ inspibook, onFetchData, path, loading }) => {
             </Section>
             <Section>
                 <Contents>
-                    <Toolbar
-                        api={{
-                            url: content.inspibook(path),
-                            type: TOOLBAR_INSPIBOOK,
-                        }}
-                    />
+                    <Toolbar fetchData={onFetchData} />
                     {inspibook?.results?.length === 0 && !loading.state ? (
                         <NoContent />
                     ) : (

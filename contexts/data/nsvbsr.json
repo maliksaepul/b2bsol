@@ -1,0 +1,59 @@
+[
+    {
+        "id": "8e726a5c-3539-4e7c-5678-29d8a4251ede",
+        "identifier": "LIST-ITEM",
+        "title": "Inspibook",
+        "secondaryTitle": "Dengarkan dan baca ringkasan buku terbaik.",
+        "path": "/podcasts/inspibook",
+        "service": "inspigo-b2b-api",
+        "style": {
+            "primaryColor": "#00ffffff",
+            "secondaryColor": "#00ffffff",
+            "fontColor": "#2D2A26"
+        },
+        "canViewAll": false,
+        "action": {
+            "name": "podcasts",
+            "lookup": null
+        },
+        "icon": null
+    },
+    {
+        "id": "8e726a5c-3539-4e7c-1234-29d8a4251ede",
+        "identifier": "LIST-ITEM",
+        "title": "Audio Learning",
+        "secondaryTitle": "Kembangkan diri dengan format podcast audio visual.",
+        "path": "/podcasts/recommendation",
+        "service": "inspigo-b2b-api",
+        "style": {
+            "primaryColor": "#00ffffff",
+            "secondaryColor": "#00ffffff",
+            "fontColor": "#2D2A26"
+        },
+        "canViewAll": false,
+        "action": {
+            "name": "podcasts",
+            "lookup": null
+        },
+        "icon": null
+    },
+    {
+        "id": "8e726a5c-3539-4e7c-9101-29d8a4251ede",
+        "identifier": "LIST-ITEM",
+        "title": "Meditasi",
+        "secondaryTitle": "Kembangkan diri dengan format podcast audio visual.",
+        "path": "/podcasts/meditation",
+        "service": "inspigo-b2b-api",
+        "style": {
+            "primaryColor": "#00ffffff",
+            "secondaryColor": "#00ffffff",
+            "fontColor": "#2D2A26"
+        },
+        "canViewAll": false,
+        "action": {
+            "name": "podcasts",
+            "lookup": null
+        },
+        "icon": null
+    }
+]

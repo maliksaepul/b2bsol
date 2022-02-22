@@ -1,0 +1,44 @@
+[
+    {
+        "organization": {
+            "id": 1,
+            "name": "inspigo"
+        },
+        "page": {
+            "id": "home",
+            "title": "Inspigo",
+            "description": "learning platform for inspigo employee",
+            "style": {
+                "backgroundHeader": {
+                    "image": "url",
+                    "Color": "#hex"
+                },
+                "primaryColor": "#hex",
+                "secondaryColor": "#hex"
+            }
+        },
+        "sections": [
+            {
+                "id": "hero_section",
+                "sectionComponentType": "Regular_Section",
+                "sectionComponentVariant": "row-reverse",
+                "section": {
+                    "title": {
+                        "type": "text",
+                        "content": "Hero Section"
+                    },
+                    "description": "<p> lorem ipsum dolor sit amet, consectetur adip </p>",
+                    "actions": [
+                        { "url": "https://zoom.us", "label": "explore" }
+                    ],
+                    "illustration": {
+                        "type": "image",
+                        "src": "https://images",
+                        "width": null,
+                        "height": null
+                    }
+                }
+            }
+        ]
+    }
+]

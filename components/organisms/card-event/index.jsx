@@ -9,7 +9,7 @@ import AddToCalendar from '@/components/molecules/addtocalendar'
 import { CARD_EVENT_TYPE } from '@/utils/constants'
 import { DoorOpen, quiz, sertificate, share } from '@/utils/icons'
 import { connect } from 'react-redux'
-import { modalEvent, modalClose } from '@/redux/actions/_modal'
+import { modalEvent, modalClose } from '@/redux/actions/widgets/_modal'
 import Skeleton from 'react-loading-skeleton'
 import moment from 'moment'
 

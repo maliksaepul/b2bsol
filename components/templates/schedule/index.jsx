@@ -24,7 +24,7 @@ const NoContent = path => {
                     <a className="text-primary"> Audio Learning</a>
                 </Link>
                 &nbsp; dan
-                <Link href={routes.audiolearning(path)}>
+                <Link href={routes.inspibook(path)}>
                     <a className="text-primary"> InspiBook!</a>
                 </Link>
             </p>{' '}

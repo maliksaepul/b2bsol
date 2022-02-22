@@ -1,4 +1,4 @@
-import { CLOSE_MODAL, MODAL_EVENT } from '../types'
+import { CLOSE_MODAL, MODAL_EVENT } from '@/redux/types'
 
 const initialState = {
     close: true,

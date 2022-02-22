@@ -1,4 +1,5 @@
-import { GET_PATH } from '../types'
+import { GET_PATH } from '@/redux/types'
+
 const initialState = {
     path: '',
 }

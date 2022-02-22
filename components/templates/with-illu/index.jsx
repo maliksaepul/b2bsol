@@ -11,7 +11,12 @@ const WithIllu = ({ children, illu, className }) => {
                 {children}
             </div>
             <div className={cx(styles.withIllu_illu, styles.item)}>
-                <Image src={illu.src} width={illu.width} height={illu.height} />
+                <Image
+                    src={illu.src}
+                    width={illu.width || 500}
+                    height={illu.height || 500}
+                    layouts="responsive"
+                />
             </div>
         </div>
     )

@@ -32,9 +32,6 @@ const Sidebar = ({
                         </div>
                         <div>
                             <h5>{username || 'John Due'}</h5>
-                            {/* <p className="p2">
-                                {userRole || 'Frontend Engineer'}
-                            </p> */}
                         </div>
                     </div>
 

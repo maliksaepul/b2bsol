@@ -1,4 +1,4 @@
-const { ACTIVE_SORTING, ACTIVE_FILTER, ACTIVE_PROFILE } = require('../types')
+import { ACTIVE_FILTER, ACTIVE_PROFILE, ACTIVE_SORTING } from '@/redux/types'
 
 const initialState = {
     active_filter: false,

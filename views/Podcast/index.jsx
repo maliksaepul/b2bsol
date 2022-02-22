@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import Pagination from '@/components/molecules/pagination'
 import { defaultContentLimit } from '@/utils/constants'
 import NoContent from '@/components/templates/nocontent'
-// import SkeletonContent from '@/components/templates/skeletoncontent'
 const Layout = dynamic(() => import('@/hoc/layouts/ondemand'))
 const Section = dynamic(() => import('@/components/atoms/section'))
 const About = dynamic(() => import('@/components/templates/about'))
@@ -18,7 +17,14 @@ const SkeletonContent = dynamic(() =>
     import('@/components/templates/skeletoncontent')
 )
 
-const AudioLearning = ({ podcast, onFetchData, path, loading }) => {
+const Podcast = ({
+    title,
+    description,
+    podcast,
+    onFetchData,
+    path,
+    loading,
+}) => {
     const renderAudioCard = () => {
         if (loading.state) {
             return <SkeletonContent />
@@ -33,9 +39,9 @@ const AudioLearning = ({ podcast, onFetchData, path, loading }) => {
         <Layout>
             <Section>
                 <About
-                    title={'Audio Learning'}
+                    title={title}
                     subtitle={''}
-                    description={'Pembelajaran berbasis audio yang fleksibel'}
+                    description={description}
                     height={'10rem'}
                 />
             </Section>
@@ -65,11 +71,13 @@ const AudioLearning = ({ podcast, onFetchData, path, loading }) => {
     )
 }
 
-AudioLearning.propTypes = {
+Podcast.propTypes = {
     podcast: PropTypes.any,
     onFetchData: PropTypes.func,
     path: PropTypes.any,
     loading: PropTypes.object,
+    title: PropTypes.string,
+    description: PropTypes.string,
 }
 
-export default AudioLearning
+export default Podcast

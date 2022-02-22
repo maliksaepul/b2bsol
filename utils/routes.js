@@ -7,7 +7,15 @@ const routes = {
      */
     audiolearning: (path, alias) => {
         if (alias) return `/${path}/audiolearning/${alias}`
-        else return `/${path}/audiolearning/`
+        else return `/${path}/podcasts/learning`
+    },
+
+    /**
+     * Audio Learning
+     * @returns
+     */
+    dynamicpath: (path, link) => {
+        return `/${path}${link}`
     },
 
     /**
@@ -16,7 +24,7 @@ const routes = {
      */
     meditasi: (path, alias) => {
         if (alias) return `/${path}/meditasi/${alias}`
-        else return `/${path}/meditasi/`
+        else return `/${path}/podcasts/meditation`
     },
 
     /**
@@ -25,7 +33,7 @@ const routes = {
      */
     inspibook: (path, alias) => {
         if (alias) return `/${path}/inspibook/${alias}`
-        else return `/${path}/inspibook`
+        else return `/${path}/podcasts/inspibook`
     },
     /**
      * Video Learning

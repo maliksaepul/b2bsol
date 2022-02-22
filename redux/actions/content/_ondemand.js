@@ -59,17 +59,16 @@ export const fetchPodcast =
         }
     }
 
-export const fetchPodcastMeditation =
+export const fetchDynamicContent =
     (path = '', params) =>
     async dispatch => {
         dispatch(apiStart())
         try {
             const request = new Request(params, null, true)
-            const response = await request.get(content.meditation(path))
-            dispatch(getPodcastMeditation(response.data.data))
+            const response = await request.get(content.dynamic(path))
+            return response
         } catch (e) {
-            dispatch(getPodcastMeditation(e.response))
-            return e
+            return e || e.response
         } finally {
             dispatch(apiEnd())
         }

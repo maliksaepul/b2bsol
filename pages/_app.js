@@ -10,8 +10,9 @@ import { GTM, IS_DEVELOPMENT } from 'utils/constants'
 import '@/styles/App.global.scss'
 import { wrapper } from '@/redux/store'
 import NextProgress from '@/components/atoms/next-progress'
-import Dashboard from '@/hoc/layouts/dashboard'
 import TagManager from 'react-gtm-module'
+// import Base from '@/hoc/base'
+import Dashboard from '@/hoc/layouts/dashboard'
 
 const App = ({ Component, pageProps }) => {
     const meta = {
@@ -55,9 +56,11 @@ const App = ({ Component, pageProps }) => {
                 height={2}
                 showOnShallow={false}
             />
+            {/* <Base> */}
             <Dashboard>
                 <Component {...pageProps} />
             </Dashboard>
+            {/* </Base> */}
         </React.Fragment>
     )
 }

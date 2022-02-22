@@ -1,4 +1,4 @@
-import { SERVICE } from './constants'
+import { BASEURL, SERVICE } from './constants'
 
 export const API_PODCAST = `${process.env.BASEURL}/api/podcast`
 
@@ -12,8 +12,19 @@ export const content = {
     inspibook: path => {
         return `${process.env.SERVICE_CONTENT}/organization/${path}/podcasts/inspibook`
     },
-    meditation: path => {
-        return `${process.env.SERVICE_CONTENT}/organization/${path}/podcasts/meditation`
+    dynamic: path => {
+        return `${process.env.SERVICE_CONTENT}/organization${path}`
+    },
+}
+
+export const dynamicUi = {
+    home: path => BASEURL + path + 'home',
+    podcasts: (path, link) => BASEURL + path + link,
+}
+
+export const serverDriven = {
+    navbar: path => {
+        return `${process.env.SERVICE_CONTENT}/organization/${path}/navbar`
     },
 }
 
