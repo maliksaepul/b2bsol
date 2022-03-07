@@ -16,7 +16,7 @@ const InspiBook = ({ path }) => {
                     <Card
                         title={{
                             type: 'string',
-                            content: 'InspiBook',
+                            content: 'InspiBook: Audio Book Summary',
                         }}
                         body="<p>Dengarkan dan baca ringkasan buku terbaik</p>"
                         cta={[]}>
