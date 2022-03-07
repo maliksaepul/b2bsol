@@ -11,6 +11,7 @@ const Pagination = ({ limit, pages, skip, toPage }) => {
 
     const toCurrentPage = event => {
         toPage({ skip: getSkip(event.selected) })
+        console.log('event.selected')
     }
 
     const isMobile = mediaMaxWidth(MobileBreakpoint)
