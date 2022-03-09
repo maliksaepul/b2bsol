@@ -16,19 +16,19 @@
     overflow-x: auto;
     @include verticaless-gap();
 
-    &_left {
+    &.left {
         justify-content: flex-start;
     }
 
-    &_right {
+    &.right {
         justify-content: flex-end;
     }
 
-    &_center {
+    &.center {
         justify-content: center;
     }
 
-    &_column {
+    &.column {
         flex-direction: column;
         padding: 1rem !important;
         .nav_item {
@@ -68,6 +68,11 @@
         padding: 0.75rem 0;
         position: relative;
         z-index: 10;
+        &.highlight {
+            background-color: $primary;
+            padding: 0 0.5rem;
+            color: white;
+        }
     }
     &_link:hover::before {
         color: white;

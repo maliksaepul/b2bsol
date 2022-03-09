@@ -3,44 +3,28 @@ import Link from 'next/link'
 import styles from './style.module.scss'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
 
 const Navbar = ({ navitem, align, txcolor, bgcolor, variant }) => {
-    let direction = 'row'
-    let aligned = ''
-    switch (align) {
-        case 'right':
-            aligned = styles.nav_right
-            break
-
-        case 'center':
-            aligned = styles.nav_center
-            break
-        default:
-            aligned = styles.nav_left
-            break
-    }
-
-    switch (variant) {
-        case 'column':
-            direction = styles.nav_column
-            break
-        default:
-            direction = ''
-            break
-    }
-
+    const router = useRouter()
     const renderNavItem = val => {
         return (
             <ul
-                className={cx(styles.nav, aligned, direction)}
+                className={cx(styles.nav, styles[align], styles[variant])}
                 style={{ color: txcolor, backgroundColor: bgcolor }}>
                 {val.map((item, key) => (
-                    <li className={cx(styles.nav_item, aligned)} key={key}>
+                    <li
+                        className={cx(styles.nav_item, styles[align])}
+                        key={key}>
                         <Link href={item.url}>
                             <a
-                                className={styles.nav_link}
+                                className={cx(
+                                    styles.nav_link,
+                                    item.url === router.asPath
+                                        ? styles.highlight
+                                        : null
+                                )}
                                 target={item.behavior || null}>
-                                {' '}
                                 {item.label}
                             </a>
                         </Link>
